@@ -1,0 +1,11 @@
+# requirements.txt for enhance_image.py (GIMP2 plugin)
+#
+# This file documents the Python dependencies for this plugin.
+#
+# Note: A standard installation of GIMP2 includes the required Python environment and the 'gimpfu' module.
+# No additional packages are required for standard usage.
+
+# GIMP Python-Fu module (provided by GIMP2)
+gimpfu
+
+datetime  # Standard library, included with Python
