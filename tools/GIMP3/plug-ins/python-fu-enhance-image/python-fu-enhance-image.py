@@ -147,6 +147,7 @@ class KonradFiltersPlugin(Gimp.PlugIn):
         image.insert_layer(wb_bw, grey_group, 0)
         filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
         filt.get_config().set_property("std-dev-x", blur_radius)
+        filt.get_config().set_property("std-dev-y", blur_radius)
         wb_bw.merge_filter(filt)
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw)
         self._call_pdb('gimp-drawable-threshold', drawable=wb_bw, low_threshold=threshold_val, high_threshold=1.0)
