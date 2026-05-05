@@ -1,0 +1,12 @@
+# requirements.txt for python-fu-enhance-image.py (GIMP3 plugin)
+#
+# This file documents the Python dependencies for this plugin.
+#
+# Note: A standard installation of GIMP 3 should include the required Python environment and the 'gi' (PyGObject) module for GIMP plug-ins.
+# No additional packages are required for standard usage unless your script uses extra libraries.
+
+# PyGObject for GIMP 3 plug-ins (provided by GIMP 3)
+gi
+
+# If your script uses additional libraries, list them below:
+# e.g. numpy, pillow, etc.
