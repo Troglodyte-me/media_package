@@ -1,6 +1,9 @@
-# 🚒 Media Package for Volunteer Firefighters
+# Media Package
 
-Welcome to the documentation for the Fire Department Media Package. This repository serves as a central hub for media-related tasks within our organization.
+Welcome to the documentation for the Fire Department Media Package. This repository serves as a central hub for media-related tasks for volunteer firefighters but also beyond.
+This is a private project. This is not legal advice. Use at your own discretion.
+
+Standard language is German. An English version for international audiences is provided, although in its most basic version only.
 
 ---
 
