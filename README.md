@@ -12,3 +12,5 @@ Welcome to the documentation for the Fire Department Media Package. This reposit
 
 ---
 *Note: The German version contains the full range of documentation. The English version provides basic international guidelines.*
+
+**Lizenz**: Dieses Werk ist lizenziert unter [https://creativecommons.org/licenses/by-sa/4.0/deed.de](CC BY-SA 4.0).
