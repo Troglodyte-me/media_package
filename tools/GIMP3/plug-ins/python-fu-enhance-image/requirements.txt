@@ -1,4 +1,8 @@
 # requirements.txt for python-fu-enhance-image.py (GIMP3 plugin)
+# 
+# Copyright (c) 2026 Troglodyte-me
+# This software is released under the GNU GPL v3.0 under https://github.com/Troglodyte-me/media_package
+# See LICENSE file in the repository root for full details.
 #
 # This file documents the Python dependencies for this plugin.
 #
