@@ -10,3 +10,5 @@ Willkommen beim Leitfaden für die Presse- und Öffentlichkeitsarbeit.
 
 ---
 [Switch to English 🇬🇧](../EN/index.md) | [Impressum](../../LEGAL.md)
+
+**Lizenz**: Dieses Werk ist lizenziert unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de).

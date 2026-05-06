@@ -10,3 +10,5 @@ Basic guidelines for photography and media handling during emergency services.
 
 ---
 [Zur deutschen Version 🇩🇪](../DE/index.md)
+
+**Lisence**: This Work is licenced under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de).
