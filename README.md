@@ -34,7 +34,7 @@ This project is made possible by the support, tools, and services listed below:
 ### Software & Services
 
 - [<img src="https://static.deepl.com/img/logo/DeepL_Logo_darkBlue_v2.svg" alt="DeepL" width="20" style="vertical-align:middle;"/> DeepL](https://www.deepl.com/) — Translation
-- [<img src="https://mammouth.io/favicon.ico" alt="Mammouth" width="20" style="vertical-align:middle;"/> Mammouth](https://mammouth.io/) — AI tools
+- [<img src="https://mammouth.ai/favicon.ico" alt="Mammouth" width="20" style="vertical-align:middle;"/> Mammouth](https://mammouth.ai/) — AI tools
 - [<img src="https://code.visualstudio.com/favicon.ico" alt="VS Code" width="20" style="vertical-align:middle;"/> Visual Studio Code](https://code.visualstudio.com/) — Code editing
 - [<img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub" width="20" style="vertical-align:middle;"/> GitHub](https://github.com/) — Repository hosting
 - [<img src="https://typst.app/favicon.ico" alt="Typst" width="20" style="vertical-align:middle;"/> Typst](https://typst.app/) — Document preparation
