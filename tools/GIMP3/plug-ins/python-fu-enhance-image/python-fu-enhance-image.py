@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Copyright (c) 2026 Troglodyte-me
+# This software is released under the GNU GPL v3.0 under https://github.com/Troglodyte-me/media_package
+# See LICENSE file in the repository root for full details.
+
 import sys
 import gi
 gi.require_version('Gimp', '3.0')

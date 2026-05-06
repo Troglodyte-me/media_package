@@ -1,3 +1,25 @@
+LICENSING TERMS
+
+This project is a collaborative work for the volunteer fire service. To ensure 
+the project remains open and fair, it uses a dual-licensing model:
+
+1. DOCUMENTATION & MEDIA: All files in the /docs folder, "Taschenkarten", 
+   and README files are licensed under Creative Commons Attribution-ShareAlike 
+   4.0 International (CC BY-SA 4.0). 
+   Full text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+2. SOFTWARE & CODE: All plugins, scripts, and source code are licensed under 
+   the GNU General Public License v3.0 (GPL-3.0) as included below.
+
+-------------------------------------------------------------------------------
+1. DOCUMENTATION (CC BY-SA 4.0) SUMMARY:
+- You must give credit (Attribution).
+- If you change the guides, you must share them under the same license (ShareAlike).
+- Commercial use is allowed, provided the above conditions are met.
+
+-------------------------------------------------------------------------------
+2. SOFTWARE (GNU GPL v3) FULL LEGAL TEXT:
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 

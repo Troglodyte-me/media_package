@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Copyright (c) 2026 Troglodyte-me
+# This software is released under the GNU GPL v3.0 under https://github.com/Troglodyte-me/media_package
+# See LICENSE file in the repository root for full details.
 
 # Tutorial available at: https://www.youtube.com/watch?v=nmb-0KcgXzI
 # Feedback welcome: jacksonbates@hotmail.com
