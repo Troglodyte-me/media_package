@@ -19,7 +19,7 @@ You don't need to know how to code to help! Have a photo tip? Found a typo? Let 
 - No political content.
 
 ### Translation
-If you are fluent in English or German, help us translate the `/de/` folders.
+If you are fluent in English or German or any other language, help us translate.
 
 ---
 
@@ -39,4 +39,4 @@ Du musst nicht programmieren können, um zu helfen! Hast du einen Fototipp? Eine
 - Keine politischen Inhalte.
 
 ### Übersetzung
-Wenn du Englisch oder Deutsch sprichst, hilf uns, die `/de/`-Ordner zu übersetzen.
+Wenn du Englisch oder Deutsch oder eine andere Sprache sprichst, hilf uns zu übersetzen.
