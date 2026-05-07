@@ -1,6 +1,6 @@
 # Plugins
 
-find the following plugins [here](../../tools/). Use at you own discretion: 
+Find the following plugins [here](../../tools/). Use at your own discretion: 
 
 ## GIMP 2 (legacy)
 GIMP has been upgraded and rebased to GIMP3 making legacy plugins dysfunctional.
