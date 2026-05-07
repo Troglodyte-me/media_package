@@ -12,7 +12,7 @@ Creation of image layers to quickly enhance image in post-processing.
 
 ## GIMP3
 GIMP3 is the latest major version of the __GNU Image Manipulation Program (GIMP)__. 
-Be aware, that GIMP3 requires folders to be named like the plugin to be installed. 
+Be aware that GIMP3 requires folders to be named like the plugin to be installed. 
 Find further details in the [official documentation](https://testing.docs.gimp.org/3.2/en/) on [how to install plugins](https://testing.docs.gimp.org/3.2/en/gimp-scripting.html#gimp-plugins-install).
 
 ### [Enhance Image](../../tools/GIMP3/plug-ins/python-fu-enhance-image/) (ported)
