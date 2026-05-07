@@ -5,7 +5,7 @@ Find the following plugins [here](../../tools/). Use at your own discretion:
 ## GIMP 2 (legacy)
 GIMP has been upgraded and rebased to GIMP3 making legacy plugins dysfunctional.
 If you're still using GIMP 2, you may use the plugin below.
-See [official documentation](https://docs.gimp.org/2.10/en/) on the [installations of plug-ins](https://docs.gimp.org/2.10/en/gimp-scripting.html#gimp-plugins-install).
+See [official documentation](https://docs.gimp.org/2.10/en/) on the [installation of plug-ins](https://docs.gimp.org/2.10/en/gimp-scripting.html#gimp-plugins-install).
 
 ### [Enhance Image](../../tools/GIMP2/plug-ins/enhance_image.py) (legacy)
 Creation of image layers to quickly enhance image in post-processing.
