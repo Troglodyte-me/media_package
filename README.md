@@ -45,14 +45,15 @@ Other tools, libraries, and services may be mentioned throughout this repository
 Please cite like this: APA 
 > Keck, Konrad. (2026). Media Package (Version 0.1.0) [Computer software]. GitHub. https://github.com/Troglodyte-me/media_package
 
->
-> @software{media_package2026,
->   author = {YourName},
->   title = {Media Package: GIMP 3 Resource Collection},
->   url = {https://github.com/Troglodyte-me/media_package},
->   version = {1.0.0},
->   year = {2026}
-> }
+``` bibtex
+@software{media_package2026,
+    author = {YourName},
+    title = {Media Package: GIMP 3 Resource Collection},
+    url = {https://github.com/Troglodyte-me/media_package},
+    version = {1.0.0},
+    year = {2026}
+}
+```
 
 done with markdown:
 https://www.markdownguide.org/basic-syntax/
