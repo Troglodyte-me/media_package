@@ -52,10 +52,10 @@ L = STRINGS[get_lang()]
 
 # --- LOGGING ---
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("KonradFilters")
+logger = logging.getLogger("MediaPackageFilters")
 
 
-class KonradFiltersPlugin(Gimp.PlugIn):
+class MediaPackageFiltersPlugin(Gimp.PlugIn):
     # --- STATISTICS ENGINE (OPTIMIZATION) ---
     def _get_cached_stats(self, drawable):
         hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
@@ -124,7 +124,7 @@ class KonradFiltersPlugin(Gimp.PlugIn):
         elif name == "kk-dummy-b":
             procedure.set_menu_label(L['dummy_b'])
             procedure.add_menu_path(L['menu_path'])
-        procedure.set_attribution("Konrad Keck", "2024", "2024")
+        procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
 
     def run(self, procedure, run_mode, image, drawables, config, run_data):
@@ -142,4 +142,4 @@ class KonradFiltersPlugin(Gimp.PlugIn):
         return procedure.new_return_values(Gimp.PDBStatusType.SUCCESS, GLib.Error())
 
 if __name__ == "__main__":
-    Gimp.main(KonradFiltersPlugin.__gtype__, sys.argv)
+    Gimp.main(MediaPackageFiltersPlugin.__gtype__, sys.argv)
