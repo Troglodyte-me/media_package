@@ -57,13 +57,12 @@ Please cite like this: APA
 
 ``` bibtex
 @software{media_package2026,
-    author = {YourName},
+    author = {Keck, Konrad},
     title = {Media Package: GIMP 3 Resource Collection},
     url = {https://github.com/Troglodyte-me/media_package},
-    version = {1.0.0},
+    version = {0.1.0},
     year = {2026}
 }
-```
 
 done with markdown:
 https://www.markdownguide.org/basic-syntax/
