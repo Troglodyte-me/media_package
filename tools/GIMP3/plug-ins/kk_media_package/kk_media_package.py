@@ -13,42 +13,23 @@ from gi.repository import Gio
 import logging
 
 # --- FEATURE MODULES ---
-from features.enhance_image import enhance_image_logic
-from features.dummy_a import dummy_a_logic
-from features.dummy_b import dummy_b_logic
+from modules.enhance_image import enhance_image_logic
+from modules.dummy_a import dummy_a_logic
+from modules.dummy_b import dummy_b_logic
+
 
 # --- LOCALIZATION SETUP ---
-# To add languages, add keys to this dictionary
-STRINGS = {
-    "en": {
-        "menu_path": "<Image>/Filters/Media Package/",
-        "enhance_label": "Create Image Enhancement Layers",
-        "dummy_a": "Dummy Filter A",
-        "dummy_b": "Dummy Filter B",
-        "group_name": "Enhancement Stack",
-        "wb_name": "White Balance",
-        "det_eq": "Detail Equalization",
-        "grey_grp": "Contrast/Grey Mix",
-        "orig": "Original"
-    },
-    "de": {
-        "menu_path": "<Image>/Filters/Medien Paket/",
-        "enhance_label": "Bildoptimierungs-Ebenen erstellen",
-        "dummy_a": "Platzhalter Filter A",
-        "dummy_b": "Platzhalter Filter B",
-        "group_name": "Optimierungs-Stapel",
-        "wb_name": "Weißabgleich",
-        "det_eq": "Detail-Egalisierung",
-        "grey_grp": "Kontrast/Grau-Mix",
-        "orig": "Original"
-    }
-}
+import importlib
 
-def get_lang():
+def get_strings():
     lang = GLib.get_language_names()[0][:2]
-    return lang if lang in STRINGS else "en"
+    if lang == "de":
+        mod = importlib.import_module("modules.STRINGS_de")
+    else:
+        mod = importlib.import_module("modules.STRINGS_en")
+    return mod.STRINGS
 
-L = STRINGS[get_lang()]
+L = get_strings()
 
 # --- LOGGING ---
 logging.basicConfig(level=logging.INFO)
