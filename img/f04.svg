@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!--
+   File: f04.svg
+   Description: Illustration generated with Inkscape and design from Nano Banana. This SVG is part of the media_package project.
+   Author: Konrad Keck
+   Date: 2026-05-15
+   License: See LICENSE in project root.
+   Usage: For documentation, presentation, or educational purposes within the media_package project.
+   Source: Created with Inkscape (http://www.inkscape.org/)
+-->
 
 <svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:svg="http://www.w3.org/2000/svg"
    version="1.1"
    id="svg1"
    width="310"
    height="310"
-   viewBox="0 0 310 310"
-   sodipodi:docname="Nano Banana-2026-05-15-18-29-48.png"
-   inkscape:export-batch-name="Nano Banana-2026-05-15-18-29-48"
-   inkscape:export-batch-path="C:\Users\konra\Downloads"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs1" />
+   viewBox="1 1 308 308"
+   sodipodi:docname="f04.svg">
+   <defs id="defs1" />
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
