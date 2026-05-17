@@ -1,0 +1,5 @@
+<!-- 3. PERSON RUNNING -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle fill="currentColor" cx="60" cy="15" r="10" />
+  <path fill="currentColor" d="M40 30 L55 35 L50 55 L70 75 L60 85 L40 60 L25 85 L15 75 L35 50 Z" />
+</svg>

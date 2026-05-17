@@ -1,0 +1,5 @@
+<!-- 2. PERSON STANDING -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle fill="currentColor" cx="50" cy="20" r="10" />
+  <path fill="currentColor" d="M35 35 H65 V70 H60 V95 H40 V70 H35 Z" />
+</svg>

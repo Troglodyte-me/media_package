@@ -1,0 +1,4 @@
+<!-- 1. TREE -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="currentColor" d="M50 10 L80 50 L20 50 Z M50 35 L85 75 L15 75 Z M45 75 H55 V90 H45 Z" />
+</svg>
