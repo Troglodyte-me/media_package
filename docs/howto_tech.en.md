@@ -14,21 +14,35 @@ Finally, time is a factor that allows more or less light to pass through the len
 When more time passes, not just more light can be read, but also the motive may change (e.g. move or jitter) in the meantime. 
 Less time, makes more crisp images but may lack light. 
 
-
-
 How to bring these factors together is a craft as well as artistic choice. 
 There is no definitive *right* or *wrong*. 
 However, the chapters below are meant how things are working and are interconnected, so you can make an informed decision.
 
 > **Tip**: Beginners and hobbyists are well advices, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
 
-
-
 ## Sensor
-* Sensor crop & pixels
-* ISO
 
-Originally **light** was collected with a photosensitive chemical (silver halide crystals) on a **film**. Different kinds of films would use different components to create various effects. Most of that is now virtually available through more sensitive, "*intelligent*" and adjustable **sensors**.
+### ISO levels
+Originally **light** was collected with a photosensitive chemical (i.e. silver halide crystals) on a **film**.
+Different kinds of films would use different components to create various effects like black-and-white versus color, or various levels of light sensitivity measured in ISO.
+Important here is, that a film with ```ISO 400``` would perform better at low light conditions than an ```ISO 100``` film, as it has more photo sensitive particles per square [see [Wikipedia: Film speed](https://en.wikipedia.org/wiki/Film_speed)]. Yet, with higher ISO numbers colors get dimmer, contrast more subtle and the overall appeal more flat. Worse yet, photos may become grainy (as if there is snow on the picture, or random pixels) especially when the high ISO film is exposed to condition with (even for it) too little light.
+Therefore, one should shoot at the lowest possible ISO level and only dial up, if light get's too dim. 
+
+This logic has been passed down to the digital age as well. 
+Unlike the analogue predecessors, modern **sensors** can be adjusted on-the-fly, to run a large volume of various ISO levels. The general behaviour however, is largely the same. 
+At the same time, what has to be considered "dim" as well as "high" or "low" ISO levels, depends largely on the camera. 
+It is adviced to shoot several pictures at low and high ISO levels to get a feeling how the camera interprets the specific szene (or lighting to be exact) and how the camera interpretes it at various ISO levels. 
+Try to find the level of where it is too dark or the ISO too high - and use those as guardrails for your photography.
+
+### Sensor Size
+Usually people look at the numbers of pixel (px) or size of the resulting image file (MB). However, most interesting is the sensor form factor of the sensor. 
+
+Originally, one of the most common film format was 35mm [see [Wikipedia: 135 film](https://en.wikipedia.org/wiki/135_film)]. That means it measures 24×36mm in a 3:4 side ratio. 
+This ratio has been continued into digital as "full-frame" sensor size and is the de-facto standard used in professional photography, TV and cinema. 
+There are certainly other form factors like the bigger [Medium format](https://en.wikipedia.org/wiki/Medium_format) [Wikipedia] (used for high class advertisement) or the smaller [Micro Four Thirds system](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system) [Wikipedia] or the various even smaller smartphone sensors. 
+
+![Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system#/media/File:Sensor_sizes_overlaid_inside_-_updated.svg)
+
 
 ## Lenses
 Light in this topic must follow a geometric logic in time and space. 
