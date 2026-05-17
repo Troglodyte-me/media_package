@@ -46,6 +46,29 @@ There are certainly other form factors like the bigger [Medium format](https://e
 
 ## Lenses
 Light in this topic must follow a geometric logic in time and space. 
+The lens (device) plays a major role, as the build in (individual) lens (or lenses) distort the light in multiple ways: 
+
+Depending on the amount of lenses, their material, layering, and cut the final image may very in curvature, coloring, contrast, and exposure - and therefore result in a more or less distorted image.
+They come in hard attached (fixed) or exchangeable, as well as with variable focal length (als known as Zoom lens) or fixed (also known as Prime lens).
+
+### Focal Length / Zoom
+The focal length is the percieved closeness of the motive to the final image. It is primarily expressed in Millimeter (mm) instead of the vocational "Zoom factor" for two reasons: 
+1. The apearance of closeness to the motive depends on the sensor size. At full-frame sensors ``50mm`` is considered equal zo the perception of the human eye. To achieve the same effect on micro-four-third sensors (MFT, about half the size of full-frame) can be achieved at about ```25mm```. However the curvature and crop of the image perspective will be percieved differently.  
+1. Zoom has no genuine definition:
+    - In cameras and lens advertisement it is usually the ratio between maximum devided by minimum focal length. E.g. a lens ranging from ```14-150mm``` would be labeled ```10.7x Zoom```.By that definition Prime lenses have a Zoom-level of ```1x```. 
+    - Comparing focal length to the human eye, one can calculate another Zoom value (see above). However, that will change between lens as well as sensor combination: 
+  A ```25mm``` lens on an MFT sensor results in 1x Zoom (eye level) while the same lens on an Pentax ASP-C camera would result in a 0.75x Zoom.
+    - Virtual Zoom in software is often a result of User Acceptance Testing (UAT) and also often only digital (cropping the original image) rather then optical (optical means as above). Hence, the Zoom factors are hardly compareable.
+
+In general lenses and zooms are defined like this: 
+  - Normal lenses at eye level till double that (so 25-50mm on an MFT sensor)
+  - Wide angle and Ultr-wide at lower levels than human perception (below 25mm on an MFT sensor)
+  - Zoom and Tele-Zoom lenses beyond double human perception (beyond 50mm on an MFT sensor)
+
+### F-stop
+F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
+The lower the f-Stop (e.g. ```f/1.4```) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. ```f/22```) will narrow the iris and thereby allow only little light to pass. 
+At the same time however, f-stops will also define the field that can be focused on. Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
 
 * Zoom / focal length
   * what is normal?
@@ -54,12 +77,6 @@ Light in this topic must follow a geometric logic in time and space.
   * macro-photography
 * iris / f-stop / aperture
 * Focus
-
-However, the lens (device) plays a major role, as the build in (individual) lens (or lenses) distort the light in multiple ways: 
-Depending on the amount of lenses, their material, layering, and cut the final image may very in curvature, coloring, contrast, and light - and therefore result in a more or less distorted image.
-The later is expressed in f-stop or otherwise known as "**aperture**". It usually corresponds to an **iris** within the lens allowing more or less light to pass.
-The lower the f-Stop (e.g. ```f/1.4```) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. ```f/22```) will narrow the iris and thereby allow only little light to pass. 
-At the same time however, f-stops will also define the field that can be focused on. Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
 
 ## Time
 * time measurement 
