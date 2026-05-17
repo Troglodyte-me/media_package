@@ -27,3 +27,28 @@ However, the choice how to configure each aspect, is less technical but certainl
 There is no right or wrong! 
 
 > **Tip**: Beginners and hobbyists are well advices, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
+
+Light in this topic must follow a geometric logic in time and space. 
+
+## Sensor
+* Sensor crop & pixels
+* ISO
+
+## Lenses
+* Zoom / focal length
+  * what is normal?
+  * wide angle
+  * tele lens
+  * macro-photography
+* iris / f-stop / aperture
+* Focus
+
+## Time
+* time measurement 
+* shake: 
+  * jitter (own hand) / time delay / tripod
+  * movement (motive) 
+* long time exposure
+
+## Exposure
+* exposure triangle
