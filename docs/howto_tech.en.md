@@ -100,7 +100,7 @@ Three things have to be acknowledged here however:
 |---|---|---|---|---|---|
 | | $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
 | iris position | <img src="./img/aperture-f01-wide.svg" width="25" alt="Aperture f/1 - iris wide open"> | <img src="./img/aperture-f04-open.svg" width="25" alt="Aperture f/4 - iris very open"> | <img src="./img/aperture-f08-medium.svg" width="25" alt="Aperture f/8 - iris medium open"> | <img src="./img/aperture-f16-narrow.svg" width="25" alt="Aperture f/16 - iris narrow"> | <img src="./img/aperture-f22-tight.svg" width="25" alt="Aperture f/22 - iris tight and nearly closed"> |
-| lighting |FD|F7|E0|81|02|
+| lighting | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#F5F5F5"><rect width="50" height="50" fill="#F5F5F5"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#AAAAAA"><rect width="50" height="50" fill="#AAAAAA"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#7F7F7F"><rect width="50" height="50" fill="#7F7F7F"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#555555"><rect width="50" height="50" fill="#555555"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#0A0A0A"><rect width="50" height="50" fill="#0A0A0A"/></svg> |
 | focus | | | | | |
 
 (images simplified for reference)
