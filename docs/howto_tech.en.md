@@ -6,15 +6,15 @@ It focuses on using photo cameras with exchangeable lenses, but also applies in 
 ## Basic vocabulary
 In photography everything starts with light:
 
-Originally **light** was collected with a **film**. Today this purpose is software controlled **sensors**. 
+Originally **light** was collected with a **film** leading to **exposure**. Today this purpose is carried by software controlled **sensors**. 
 
-Before hitting the sensor, light is transmitted through a **lens** that can be hard attached (fixed) or exchangeable. In general higher **lengths** - *also known as **Zoom*** - make the motive appear more close in the final image; while **aperture** - *also known as **f-stop*** - controls not just how much light passes through the lens but also how tight (and thereby easy or difficult) the **focus** is. 
+Before hitting the sensor, light is transmitted through a **lens** that can be hard attached (fixed) or exchangeable. In general, higher **lengths** - *also known as **Zoom*** - make the motive appear more close in the final image; while **aperture** - *also known as **f-stop*** - controls not just how much light passes through the lens but also how tight (and thereby easy or difficult) the **focus** is. 
 
-Finally, time is a factor that allows more or less light to pass through the lens onto the sensor. 
-When more time passes, not just more light can be read, but also the motive may change (e.g. move or jitter) in the meantime. 
+Finally, **time** is a factor that allows more or less light to pass through the lens onto the sensor till exposure is completed. 
+When more time passes, not just more light can be read, but also the motive may change in the meantime (e.g. move or jitter). 
 Less time, makes more crisp images but may lack light. 
 
-How to bring these factors together is a craft as well as artistic choice. 
+How to bring these factors together is a *craft* as well as it is an *artistic choice*. 
 There is no definitive *right* or *wrong*. 
 However, the chapters below are meant how things are working and are interconnected, so you can make an informed decision.
 
@@ -41,7 +41,7 @@ Originally, one of the most common film format was 35mm [see [Wikipedia: 135 fil
 This ratio has been continued into digital as "full-frame" sensor size and is the de-facto standard used in professional photography, TV and cinema. 
 There are certainly other form factors like the bigger [Medium format](https://en.wikipedia.org/wiki/Medium_format) [Wikipedia] (used for high class advertisement) or the smaller [Micro Four Thirds system](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system) [Wikipedia] or the various even smaller smartphone sensors. 
 
-<img src="[./img/aperture-f01-wide.svg](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system#/media/File:Sensor_sizes_overlaid_inside_-_updated.svg)" width="25" alt="Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame (thanks to wikipedia)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sensor_sizes_overlaid_inside_-_updated.svg" width="150" alt="Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame (thanks to Wikipedia)">
 
 ### in-camera image processing 
 As film is only used in vintage photography, all photos are now primarily digital files.
