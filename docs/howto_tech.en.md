@@ -43,6 +43,26 @@ There are certainly other form factors like the bigger [Medium format](https://e
 
 ![Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system#/media/File:Sensor_sizes_overlaid_inside_-_updated.svg)
 
+### in-camera image processing 
+As film is only used in vintage photography, all photos are now primarily digital files.
+It should be noted here, that photo film reacts chemical to light, while sensors do so on a photon-electronic level. 
+The results may be similar, but can differ in subtle details, rendering neither technology superior in terms of quality. 
+
+At the same time, in-camera technology keeps evolving. 
+Largely, this sentiment is held towards the sensors that not only come in sizes but also types (see CCD and CMO in [Wikipedia: Image sensor](https://en.wikipedia.org/wiki/Image_sensor)). Today however, this is enhanced by computing power running the sensor readings, applying image "filters" and converting them into manageable files. 
+It is considered professional, not just saving the result (e.g. a JPG file) but where possible also the RAW-file (often DNG, ORF, RAW or other file extentions depending on manufacturer). 
+Largely RAW files are considered the "negatives" of the digital age.
+They allow proof who shot the photo, reproduceability and potential enhanced post-processing (see [Wikipedia: Raw image format](https://en.wikipedia.org/wiki/Raw_image_format)). 
+However, it takes special software, further training and practice to actually make use of them. 
+They are certainly pro-material - but in order to learn them, one should try collecting them early.
+
+> **Tip**: Check your camera and mobile settings. They often allow to enable saving in RAW format end may even safe them  alongside JPG.
+
+Newer cameras (and especially phones with *CPU*, *GPU* or better *NPU*) enhance images further through **AI**. 
+Artistically this is okay.
+From a craftsmens' perspective the image produced is not any longer the image taken but mixed and changed through other images beyond what would manually be humanly pheasable. 
+There is a large philosophical debate, whether these images can still be acknowledged as photos [source] and whether they touch legal matters [source]. 
+Therefore - for the intermediate - caution is advised with such technology. 
 
 ## Lenses
 Light in this topic must follow a geometric logic in time and space. 
