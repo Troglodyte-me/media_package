@@ -68,30 +68,22 @@ In general lenses and zooms are defined like this:
 ### F-stop
 F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
 The lower the f-Stop (e.g. `f/1.4`) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. `f/22`) will narrow the iris and thereby allow only little light to pass. 
-Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halfing the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). Examples:
-
-| `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
-|---|---|---|---|---|
-| ![Aperture f/1](./img/aperture-f01-wide.svg) | ![Aperture f/4](./img/aperture-f04-open.svg) | ![Aperture f/8](./img/aperture-f08-medium.svg) | ![Aperture f/16](./img/aperture-f16-narrow.svg) | ![Aperture f/22](./img/aperture-f22-tight.svg) |
-| $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
+Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halfing the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). 
 
 Three things have to be acknowledged here however: 
 1. with a wider opened lens / a lower f-stop, focus becomes much harder (see below).
 1. with digital photography and mobile phones, a physical iris is not available but handled digitally.
-1. depending on the lens, the full spectrum of f-stop/aperture is never available. Instead, lenses will have the minimal f-stop engraved for reference. 
+1. due to physical limitations, no lens has the full spectrum of f-stop/aperture available. Instead, lenses will have the minimal f-stop engraved for reference. 
+
+#### Examples for Aperture
+| `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
+|---|---|---|---|---|
+| ![Aperture f/1](./img/aperture-f01-wide.svg) | ![Aperture f/4](./img/aperture-f04-open.svg) | ![Aperture f/8](./img/aperture-f08-medium.svg) | ![Aperture f/16](./img/aperture-f16-narrow.svg) | ![Aperture f/22](./img/aperture-f22-tight.svg) |
+| $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
+(lens images only stylised)
 
 ### Focus
 At the same time however, f-stops will also define the field that can be focused on. Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
-
-
-
-* Zoom / focal length
-  * what is normal?
-  * wide angle
-  * tele lens
-  * macro-photography
-* iris / f-stop / aperture
-* Focus
 
 ## Time
 * time measurement 
