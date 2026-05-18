@@ -96,11 +96,14 @@ Three things have to be acknowledged here however:
 1. due to physical limitations, no lens has the full spectrum of f-stop/aperture available. Instead, lenses will have the minimal f-stop engraved for reference. 
 
 #### Examples for Aperture
-| `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
-|---|---|---|---|---|
-| ![Aperture f/1](./img/aperture-f01-wide.svg) | ![Aperture f/4](./img/aperture-f04-open.svg) | ![Aperture f/8](./img/aperture-f08-medium.svg) | ![Aperture f/16](./img/aperture-f16-narrow.svg) | ![Aperture f/22](./img/aperture-f22-tight.svg) |
-| $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
-(lens images only stylised)
+| Aperture | `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
+|---|---|---|---|---|---|
+| | $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
+| iris position | ![Aperture f/1](./img/aperture-f01-wide.svg) | ![Aperture f/4](./img/aperture-f04-open.svg) | ![Aperture f/8](./img/aperture-f08-medium.svg) | ![Aperture f/16](./img/aperture-f16-narrow.svg) | ![Aperture f/22](./img/aperture-f22-tight.svg) |
+| lighting |FD|F7|E0|81|02|
+| focus | | | | | |
+
+(images simplified for reference)
 
 ### Focus
 At the same time however, f-stops will also define the field that can be focused on. Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
