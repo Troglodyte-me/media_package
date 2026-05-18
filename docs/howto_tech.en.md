@@ -41,7 +41,7 @@ Originally, one of the most common film format was 35mm [see [Wikipedia: 135 fil
 This ratio has been continued into digital as "full-frame" sensor size and is the de-facto standard used in professional photography, TV and cinema. 
 There are certainly other form factors like the bigger [Medium format](https://en.wikipedia.org/wiki/Medium_format) [Wikipedia] (used for high class advertisement) or the smaller [Micro Four Thirds system](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system) [Wikipedia] or the various even smaller smartphone sensors. 
 
-![Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system#/media/File:Sensor_sizes_overlaid_inside_-_updated.svg)
+<img src="[./img/aperture-f01-wide.svg](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system#/media/File:Sensor_sizes_overlaid_inside_-_updated.svg)" width="25" alt="Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame (thanks to wikipedia)">
 
 ### in-camera image processing 
 As film is only used in vintage photography, all photos are now primarily digital files.
