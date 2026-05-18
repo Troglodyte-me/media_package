@@ -53,11 +53,11 @@ They come in hard attached (fixed) or exchangeable, as well as with variable foc
 
 ### Focal Length / Zoom
 The focal length is the percieved closeness of the motive to the final image. It is primarily expressed in Millimeter (mm) instead of the vocational "Zoom factor" for two reasons: 
-1. The apearance of closeness to the motive depends on the sensor size. At full-frame sensors ``50mm`` is considered equal zo the perception of the human eye. To achieve the same effect on micro-four-third sensors (MFT, about half the size of full-frame) can be achieved at about ```25mm```. However the curvature and crop of the image perspective will be percieved differently.  
+1. The apearance of closeness to the motive depends on the sensor size. At full-frame sensors `50mm` is considered equal zo the perception of the human eye. To achieve the same effect on micro-four-third sensors (MFT, about half the size of full-frame) can be achieved at about `25mm`. However the curvature and crop of the image perspective will be percieved differently.  
 1. Zoom has no genuine definition:
-    - In cameras and lens advertisement it is usually the ratio between maximum devided by minimum focal length. E.g. a lens ranging from ```14-150mm``` would be labeled ```10.7x Zoom```.By that definition Prime lenses have a Zoom-level of ```1x```. 
+    - In cameras and lens advertisement it is usually the ratio between maximum devided by minimum focal length. E.g. a lens ranging from ```14-150mm``` would be labeled `10.7x Zoom`.By that definition Prime lenses have a Zoom-level of `1x`. 
     - Comparing focal length to the human eye, one can calculate another Zoom value (see above). However, that will change between lens as well as sensor combination: 
-  A ```25mm``` lens on an MFT sensor results in 1x Zoom (eye level) while the same lens on an Pentax ASP-C camera would result in a 0.75x Zoom.
+  A `25mm` lens on an MFT sensor results in 1x Zoom (eye level) while the same lens on an Pentax ASP-C camera would result in a 0.75x Zoom.
     - Virtual Zoom in software is often a result of User Acceptance Testing (UAT) and also often only digital (cropping the original image) rather then optical (optical means as above). Hence, the Zoom factors are hardly compareable.
 
 In general lenses and zooms are defined like this: 
@@ -67,8 +67,30 @@ In general lenses and zooms are defined like this:
 
 ### F-stop
 F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
-The lower the f-Stop (e.g. ```f/1.4```) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. ```f/22```) will narrow the iris and thereby allow only little light to pass. 
+The lower the f-Stop (e.g. `f/1.4`) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. `f/22`) will narrow the iris and thereby allow only little light to pass. 
+Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halfing the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). Examples:
+
+| `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
+|---|---|---|---|---|
+| ![Aperture f/1](./img/aperture-f01-wide.svg) | ![Aperture f/4](./img/aperture-f04-open.svg) | ![Aperture f/8](./img/aperture-f08-medium.svg) | ![Aperture f/16](./img/aperture-f16-narrow.svg) | ![Aperture f/22](./img/aperture-f22-tight.svg) |
+| $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
+
+
+* $$ f/1 = \frac{f}{(\sqrt{2})^0} $$
+* $$ f/1.4 = \frac{f}{(\sqrt{2})^1} $$
+* $$ f/2 = \frac{f}{(\sqrt{2})^2} $$
+* $$ f/2.8 = \frac{f}{(\sqrt{2})^3} $$
+* $$ f/4 = \frac{f}{(\sqrt{2})^4} $$
+* $$ f/5.6 = \frac{f}{(\sqrt{2})^5} $$
+* $$ f/8 = \frac{f}{(\sqrt{2})^6} $$
+* $$ f/11 = \frac{f}{(\sqrt{2})^7} $$
+* $$ f/16 = \frac{f}{(\sqrt{2})^8} $$
+* $$ f/22 = \frac{f}{(\sqrt{2})^9} $$
+
+### Focus
 At the same time however, f-stops will also define the field that can be focused on. Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
+
+
 
 * Zoom / focal length
   * what is normal?
