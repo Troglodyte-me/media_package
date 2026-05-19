@@ -162,3 +162,13 @@ There is no right or wrong!
 * Stabilization
   * IBIS / OIS
   * Tripod vs handheld
+* Camera settings
+  * dial wheel
+  * modes
+    * M
+    * A
+    * S
+    * P / Auto
+    * Video & Other
+  * Touch screen
+  * Visor (with eye sight compensation)
