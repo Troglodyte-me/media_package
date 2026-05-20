@@ -3,7 +3,7 @@
 This introduction to photography serves as a quick start for beginners. 
 It focuses on using photo cameras with exchangeable lenses, but also applies in its basics for usage with other cameras - like in smart phones.
 
-## Basic vocabulary
+## Introduction
 In photography everything starts with light:
 
 Originally **light** was collected with a **film** leading to **exposure**. Today this purpose is carried by software controlled **sensors**. 
@@ -87,22 +87,30 @@ Focal length determines the field of view in the final image. It is primarily ex
     - **Optical Zoom** is applied via mechanics inside the lens or camera body. This stands in contrast to **Digital Zoom**, which is applied by software, cropping the image. 
     - Beyond digital zoom, the **Crop Factor** is to be considered when using a *"big" lens* and a *"small" sensor*, as the light that shines through the lenses into the body might not fully cover the sensor, the image is cropped.
 
-> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` is a `10.7x Zoom`.
-
-> **compariison with natural perspective**: the $ratio = \frac{focal length}{natural perspective}$ (given sensor size) - `75mm` lens on MFT = 3x Zoom
-
-> **virtual Zoom** in some software heavy products (e.g. smart phones) often employ their own Zoom factors, which are hardly compareable by themselfs.
-
-
+> Rules of thumb:
+>> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` makes $\frac{150mm}{14mm} = 10.7x Zoom (lens)$.
+>
+>> **comparirison with natural perspective**: the $ratio = \frac{focal-length}{natural-perspective}$ (given sensor size) - `75mm` lens on MFT = 3x Zoom (factor)
+>
+>> **virtual Zoom**: software heavy products (e.g. smart phones) often employ their own Zoom-calculation, which are hardly compareable by themselfs. Look up the technical specifications for more information.
 
 In general lenses and zooms are defined like this: 
-  - Normal lenses at eye level till double that (so 25-50mm on an MFT sensor)
+  - Normal lenses at natural perspective till double that (so 25-50mm on an MFT sensor)
   - Wide angle and Ultr-wide at lower levels than human perception (below 25mm on an MFT sensor)
   - Zoom and Tele-Zoom lenses beyond double human perception (beyond 50mm on an MFT sensor)
 
+Special applications (examples):
+  - **Portrait**: any lenses but especially at around 1.3x till 2.5x natural perception with high aperture (around `f/1`), are optically especially fit for portrait photography (of people) as their geomatrical representation of human features and faces appears eastically more pleasing to the human eye.
+  - **Macro**: usually around normal lenses, especially designed for a depth of field (see below) at very close distances for extemely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be genereated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
+  - **Fish-eye**: wide-angle lenses, bending the image perspective beyond natural proportions. Used for artistic purposes and often less costly then a normal wide-angle lenses of same focal lenght.
+  - **Anamorphic**: lensed that stretches the image which then needs to be squeezed to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
+
+> **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
+
 ### F-stop
 F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
-The lower the f-Stop (e.g. `f/1.4`) the more light can pass through an open iris. In contrast, a higher f-Stop (e.g. `f/22`) will narrow the iris and thereby allow only little light to pass. 
+The lower the f-Stop (e.g. `f/1.4`) the more light can pass through an open iris. 
+In contrast, a higher f-Stop (e.g. `f/22`) will narrow the iris and thereby allow only little light to pass. 
 Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halfing the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). 
 
 Three things have to be acknowledged here however: 
@@ -127,7 +135,7 @@ Dependent on motive distance, a low f-stop is hard to focus on while a high f-st
 ## Time
 * time measurement 
 * shake: 
-  * jitter (own hand) / time delay / tripod
+  * jitter (own hand) / time delay / tripod (rule-of-thumb: shutter speed by focal length)
   * movement (motive) 
 * long time exposure
 
@@ -155,6 +163,7 @@ There is no right or wrong!
   * Framing
   * Subject separation
 * White balance
+  * Lighting (natural/artificial)
 * Autofocus
   * AF-S / AF-C
   * Focus points
@@ -162,3 +171,13 @@ There is no right or wrong!
 * Stabilization
   * IBIS / OIS
   * Tripod vs handheld
+
+# FAQ
+## Blurry photos
+In general there are two reasons for blur:
+1. Out of focus blur (see Focus): Ensure you are focusing on it correctly. If that is too hard, try another positioning between you and your subject (more distance makes it raises the depth of field) and/or raise the f-stop (again raising the depth of field but also darkening the image!).
+1. Movement blur (see Time: Happens when things are moving too quickly. This is either you hand shakes too much (try keeping your hand calmer or rest your camera somewhere stable like a tripod) or you subject is moving too fast. If nothing helps, raise your shutter speed (darkening the image!).
+
+## Noisy/Grainy/Specled photos
+Probably a matter of too high ISO (see ISO). Try lowering it. If that darkens your image too much (often it's auto-applied), consider higher f-stop/longer exposure or adding more light to the szene.
+
