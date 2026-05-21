@@ -88,9 +88,9 @@ Focal length determines the field of view in the final image. It is primarily ex
     - Beyond digital zoom, the **Crop Factor** is to be considered when using a *"big" lens* and a *"small" sensor*, as the light that shines through the lenses into the body might not fully cover the sensor, the image is cropped.
 
 > Rules of thumb:
->> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` makes $\frac{150mm}{14mm} = 10.7x Zoom (lens)$.
+>> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` makes $\frac{150mm}{14mm} = 10.7x\ Zoom$ (lens).
 >
->> **comparirison with natural perspective**: the $ratio = \frac{focal-length}{natural-perspective}$ (given sensor size) - `75mm` lens on MFT = 3x Zoom (factor)
+>> **comparirison with natural perspective**: the $ratio = \frac{focal\ length}{natural\ perspective}$ (given sensor size) - e.g. a `75mm` lens on MFT $= 3x\ Zoom$ (factor)
 >
 >> **virtual Zoom**: software heavy products (e.g. smart phones) often employ their own Zoom-calculation, which are hardly compareable by themselfs. Look up the technical specifications for more information.
 
@@ -132,7 +132,11 @@ Three things have to be acknowledged here however:
 At the same time however, f-stops affects how much of the scene appears in focus (depth of field), not the focus itself. 
 Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
 
-## Time
+## Light
+Light behaves as particals but also in waves, giving it unique physical propperties. 
+Furthermore you measure intensity in lux ($lx$) and temperature in degrees Kelvin ($°K$).
+
+### Shutter Speed & Time
 * time measurement 
 * shake: 
   * jitter (own hand) / time delay / tripod (rule-of-thumb: shutter speed by focal length)
@@ -142,6 +146,14 @@ Dependent on motive distance, a low f-stop is hard to focus on while a high f-st
 Finally, time is a factor that allows more or less light to pass through the lens onto the sensor. 
 More time means more light but also risks losing touch of a motive that may change (e.g. move or jitter) in the meantime. 
 Less time, makes more crisp images but may lack light. 
+
+-------
+
+Quick shutter speeds will allow you to see light travel through your image i.e. when using a flash light.
+On the other way around, with long exposures even small lights accumulate and amplify to a ghostly effect. 
+
+### White balance
+...
 
 ## Exposure
 * exposure triangle
