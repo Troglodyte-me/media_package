@@ -156,7 +156,6 @@ However, the choice how to configure each aspect, is less technical but certainl
 There is no right or wrong! 
 
 # Missing Themes
-
 * Composition 
   * Rule of thirds
   * Leading lines
@@ -181,7 +180,6 @@ There is no right or wrong!
     * Video & Other
   * Touch screen
   * Visor (with eye sight compensation)
-
 
 # FAQ
 ## Blurry photos
