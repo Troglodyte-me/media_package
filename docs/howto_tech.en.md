@@ -48,6 +48,9 @@ Originally, one of the most common film format was 35mm [see [Wikipedia: 135 fil
 This ratio has been continued into digital as "full-frame" sensor size and is the de-facto standard used in professional photography.
 Alongside other professional systems, it has also become a common reference format depending on the application, but also in TV and cinema. 
 There are certainly other form factors like the bigger [Medium format](https://en.wikipedia.org/wiki/Medium_format) [Wikipedia] (used for high class advertisement) or the smaller [Micro Four Thirds system](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system) [Wikipedia] or the various even smaller smartphone sensors. 
+The smaller sensors are also referenced as "crop" sized, whereas the ratio between full-frame and the sensor in use is described as "crop factor": 
+$C = \frac{full}{crop} \Longrightarrow \frac{full-frame = 50mm}{MFT = 25mm} = 2x$.
+
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sensor_sizes_overlaid_inside_-_updated.svg" width="150" alt="Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame (thanks to Wikipedia)">
 
@@ -100,10 +103,10 @@ In general lenses and zooms are defined like this:
   - Zoom and Tele-Zoom lenses beyond double human perception (beyond 50mm on an MFT sensor)
 
 Special applications (examples):
-  - **Portrait**: any lenses but especially at around 1.3x till 2.5x natural perception with high aperture (around `f/1`), are optically especially fit for portrait photography (of people) as their geomatrical representation of human features and faces appears eastically more pleasing to the human eye.
-  - **Macro**: usually around normal lenses, especially designed for a depth of field (see below) at very close distances for extemely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be genereated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
-  - **Fish-eye**: wide-angle lenses, bending the image perspective beyond natural proportions. Used for artistic purposes and often less costly then a normal wide-angle lenses of same focal lenght.
-  - **Anamorphic**: lensed that stretches the image which then needs to be squeezed to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
+  - **Portrait**: any lens but especially at around 1.3x till 2.5x natural perception with high aperture (around `f/1`), are optically especially fit for portrait photography (of people) as their geomatrical representation of human features and faces appears eastically more pleasing to the human eye while the low aperture makes them stand out from the background.
+  - **Macro**: especially designed for a depth of field (see below) at very close distances for extemely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be genereated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
+  - **Fish-eye**: bending the image perspective beyond natural proportions (like seeing through a fish eye / fish eye perspective). Used for artistic purposes and often less costly then a normal wide-angle lenses of same focal lenght. Effect can also reproduced with adapters ontop the lense.
+  - **Anamorphic**: lenses that stretch the image in one dimension which then needs to be squeezed back to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
 
 > **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
 
@@ -129,31 +132,98 @@ Three things have to be acknowledged here however:
 (images simplified for reference)
 
 ### Focus
-At the same time however, f-stops affects how much of the scene appears in focus (depth of field), not the focus itself. 
-Dependent on motive distance, a low f-stop is hard to focus on while a high f-stop has a very broad field of focus. 
+At the same time however, f-stops affects how much of the scene appears in focus. This effect is described as **depth of field**. 
+It is dialed in through the physical lens or when physics aren't available software controlled (e.g. in smart phones). 
+This process can also be done electronically - by **autofocus** (AF) - if lenses and body are digital and their connection is intact (the connection can be tethered if lens and body are not compatible or if the contacts are blocked, like with analog rings or adapters inbetween).
+
+At the same aperture / f-stop, the depth of field grows with distance to the camera, making it easier to dial in the focus point or making it impossible at lower distances (macro photography).
+
+> **Tip**: if focus on a subject is very hard or not possible at all, either raise the f-stop (increasing the depth of field but also darkening the image) and/or distance yourself from the subject.
 
 ## Light
 Light behaves as particals but also in waves, giving it unique physical propperties. 
 Furthermore you measure intensity in lux ($lx$) and temperature in degrees Kelvin ($°K$).
 
-### Shutter Speed & Time
+### Time & Shutter Speed
 * time measurement 
 * shake: 
   * jitter (own hand) / time delay / tripod (rule-of-thumb: shutter speed by focal length)
   * movement (motive) 
 * long time exposure
 
-Finally, time is a factor that allows more or less light to pass through the lens onto the sensor. 
-More time means more light but also risks losing touch of a motive that may change (e.g. move or jitter) in the meantime. 
-Less time, makes more crisp images but may lack light. 
+Finally, time is a factor that allows more or less light to pass through the lens (see above) onto the sensor (see above). 
+More time means more light but also a risk of losing touch of a motive that may change in the meantime. 
+That can both happen due to movement of subjects or jitter of camera. 
+The later can be helped with stabalisation (see below).
 
--------
+In general cameras measure time in fractions of one second ($s/x$), so for example $1/250 = 0.004\sec$. 
+Longer exposures are measured in seconds (abbrivated $s$, $\sec$ or most comonly as double prime i.e. "$1.5^{\prime\prime}$") or minutes (abbrivated $s$, $\sec$ or most comonly as single prime "$1.5^{\prime}$").
 
+> **Tip**: when unsure which prime is which, remember they get smaller when writing times `1' 30"` means 1 minute 30 seconds.
+
+Less time, makes more crisp images but may lack light (darkening the final image). 
 Quick shutter speeds will allow you to see light travel through your image i.e. when using a flash light.
-On the other way around, with long exposures even small lights accumulate and amplify to a ghostly effect. 
+On the other way around, with long exposure times even small lights accumulate and amplify to a ghostly flare effect. 
+
+#### Handling Motion Blur
+The following techniques will stabalize your image when shooting with slower shutter speeds (and therefore higher risk of motion blur). 
+However, not all situations or camera setups allow for all options. 
+Sometimes raising shutter speeds is the only remaining option, if motion blur is to be avoided.
+
+> **Rule-of-Thumb**: the minmal shutter speed can be calculated as $\frac{1}{focal\ legth\ *\ crop\ factor}$ so with a 150mm lens on an MFT camera it's $\frac{1}{150mm * 2x} = 1/300$ or faster.
+
+Basically any movement can happen in all three spacial dimensions (up/down, left/right, forward/backwards) as well as in rolling/tilting motions (to the sideways/vertically/horizontally). 
+Image stabalisation attempts to stabalize either movement when it happens in quick succession (e.g. a jittering hand). 
+As shifting the camera in filming can also be an artistic choice - that may require dampening but not full negation - time is an important aspect to keep in mind. 
+
+- **Shooting still technique**: Living organisms (humans) are never totally still. 
+We get a better "stillness", when grounding ourselfes and controll our breathing and haerd rate when shooting (you may employ some sharp shooter techniques here). 
+
+> **"Joe McNally" Shoulder Grip**: [Da Grip](https://joemcnally.com/2008/03/10/da-grip/) push the camera with both hands into your shoulder (best for bulkier models) and look over your shoulder through the viewfinder. 
+
+> **Marksman’s "Natural Respiratory Pause"**
+
+> **Tension-Based Stabilization (The Strap Hack)**
+
+> **Advanced Body Postures**
+
+> **The "Burst Mode" Trick**
+
+> **Environmental Bracing**
+
+- **Image stabalisation**: Often build as hardware into lenses as *Optical Image Stabilization (OIS)* or dealt with via software (e.g. in smart phones). 
+Dampens shake along one or more axis and may be configurable in direction as well as dampening factor.
+
+> **Tip**: Olympus/OM Systems is probably the last manufacturer offering *In-Body Image Stabilization (IBIS)*, which is arguably the best in the industry.
+This allow photography even with low grade lenses to be stabalised at world class level.
+
+- **Tripod**: Resting the camera during longer exposure is very much adviced. Ideally this is done by a classic tripod. 
+In rough situations it is adviced to fix their position (e.g. a weight at the base or with rope and tent stakes). 
+There is a wide variety of tripods, mono-pods and similar gear.
+
+> **Tip**: Carrying a tripod wherever you go is a nouance and hinders you from spontaneous snap shots. So if you don't have any such gear on you, just resting the camera somewhere and securing it from movement (e.g. with a weight on top) will do just as fine. It's less convenient and professional, but it get's the job done.
+
+- **Gimbal**: Often used in filming, a gimbal is an aparature that compensates movement along axes creating extremely stable imagery. 
+However, they are usually bulky and less usefull for photography.
 
 ### White balance
 ...
+
+--> good source [Understanding and Using Color Temperature in Photography](https://progradedigital.com/understanding-and-using-color-temperature-in-photography/)
+
+#### Lighting
+The strongest and most natural light is **sun light**. 
+Of course sometimes strong is not what a picture needs. 
+And sometimes the sun light is not available (indoors or at night).
+Furthermore, often sun light is also too strong or direct, as with strong light, one also gehts very dark shadows.
+
+For most photography - depending on what is to be shot and what effect should be achieved - a mildly strong but defuse light is advised. 
+The ideal is a szene that is well lit in all spots, with shadows that are not too dark.
+Outdoors, this is can be observed best at overcast weather or during golden hour (around sundown or sunrise).
+
+Indoor, this can be quite tricky.
+Letting in sun light through windows, can create uneven lighting but also picturesque szenes.
+Artificial light, is hardly ever as strong (and can even be perceaved as painfull to subjects when created). 
 
 ## Exposure
 * exposure triangle
@@ -174,15 +244,10 @@ There is no right or wrong!
   * Leading lines
   * Framing
   * Subject separation
-* White balance
-  * Lighting (natural/artificial)
 * Autofocus
   * AF-S / AF-C
   * Focus points
   * Face detection
-* Stabilization
-  * IBIS / OIS
-  * Tripod vs handheld
 * Camera settings
   * dial wheel
   * modes
@@ -192,8 +257,22 @@ There is no right or wrong!
     * P / Auto
     * Video & Other
   * Touch screen
-  * Visor (with eye sight compensation)
-
+  * Visor (option & with eye sight compensation)
+* Post Processing
+  * Basics
+    * Colors
+      * Simplified example: Binary --> R G B --> Compression
+    * File Formats (Compressions)
+      * Vector
+      * Raster
+      * RAW
+  * Software
+    * RAW processing (rawtherapee, darktable)
+    * Image editing (GIMP)
+    * publishing
+      * writing --> articles, books, blogs
+      * printing --> flyer, poster
+      * online --> social networks, apps
 
 # FAQ
 ## Blurry photos
