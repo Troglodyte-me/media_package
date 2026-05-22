@@ -22,8 +22,8 @@ However, the chapters below are meant how things are working and are interconnec
 > **Tip**: Beginners and hobbyists are well advices, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
 
 For starts you should look at these chapters first and then do an in-depth read, where you see need for more information: 
-1. **Exposure Triangle**
 1. **Rule of thirds**
+1. **Exposure Triangle**
 
 ## Sensor
 
@@ -51,8 +51,7 @@ There are certainly other form factors like the bigger [Medium format](https://e
 The smaller sensors are also referenced as "crop" sized, whereas the ratio between full-frame and the sensor in use is described as "crop factor": 
 $C = \frac{full}{crop} \Longrightarrow \frac{full-frame = 50mm}{MFT = 25mm} = 2x$.
 
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sensor_sizes_overlaid_inside_-_updated.svg" width="150" alt="Drawing showing the relative sizes of sensors used in most current digital cameras, relative to a 35mm film frame (thanks to Wikipedia)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sensor_sizes_overlaid_inside_-_updated.svg" width="150" alt="Nested rectangular outlines compare digital camera sensor formats inside a larger 35 mm full frame rectangle, showing how smaller formats crop the captured scene. Labels in the diagram identify common formats and sizes, including full frame 36 × 24 mm and smaller classes such as APS C, Micro Four Thirds, and compact or phone style sensors. The layout is a neutral technical chart on a plain background and conveys an informative educational tone.">
 
 ### in-camera image processing 
 As film is only used in vintage photography, all photos are now primarily digital files.
@@ -124,7 +123,7 @@ Three things have to be acknowledged here however:
 #### Examples for Aperture
 | Aperture | `f/1` | `f/4` | `f/8` | `f/16` | `f/22` |
 |---|---|---|---|---|---|
-| | $$ f/1 = \frac{f}{(\sqrt{2})^0} $$ | $$ f/4 = \frac{f}{(\sqrt{2})^4} $$ | $$ f/8 = \frac{f}{(\sqrt{2})^6} $$ | $$ f/16 = \frac{f}{(\sqrt{2})^8} $$ | $$ f/22 = \frac{f}{(\sqrt{2})^9} $$ |
+| | $ f/1 = \frac{f}{(\sqrt{2})^0} $ | $ f/4 = \frac{f}{(\sqrt{2})^4} $ | $ f/8 = \frac{f}{(\sqrt{2})^6} $ | $ f/16 = \frac{f}{(\sqrt{2})^8} $ | $ f/22 = \frac{f}{(\sqrt{2})^9} $ |
 | iris position | <img src="./img/aperture-f01-wide.svg" width="25" alt="Aperture f/1 - iris wide open"> | <img src="./img/aperture-f04-open.svg" width="25" alt="Aperture f/4 - iris very open"> | <img src="./img/aperture-f08-medium.svg" width="25" alt="Aperture f/8 - iris medium open"> | <img src="./img/aperture-f16-narrow.svg" width="25" alt="Aperture f/16 - iris narrow"> | <img src="./img/aperture-f22-tight.svg" width="25" alt="Aperture f/22 - iris tight and nearly closed"> |
 | lighting | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#F5F5F5"><rect width="50" height="50" fill="#F5F5F5"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#AAAAAA"><rect width="50" height="50" fill="#AAAAAA"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#7F7F7F"><rect width="50" height="50" fill="#7F7F7F"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#555555"><rect width="50" height="50" fill="#555555"/></svg> | <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="#0A0A0A"><rect width="50" height="50" fill="#0A0A0A"/></svg> |
 | focus | | | | | |
@@ -139,6 +138,12 @@ This process can also be done electronically - by **autofocus** (AF) - if lenses
 At the same aperture / f-stop, the depth of field grows with distance to the camera, making it easier to dial in the focus point or making it impossible at lower distances (macro photography).
 
 > **Tip**: if focus on a subject is very hard or not possible at all, either raise the f-stop (increasing the depth of field but also darkening the image) and/or distance yourself from the subject.
+
+
+* Autofocus
+  * AF-S / AF-C
+  * Focus points
+  * Face detection
 
 ## Light
 Light behaves as particals but also in waves, giving it unique physical propperties. 
@@ -243,10 +248,6 @@ There is no right or wrong!
   * Leading lines
   * Framing
   * Subject separation
-* Autofocus
-  * AF-S / AF-C
-  * Focus points
-  * Face detection
 * Camera settings
   * dial wheel
   * modes
