@@ -286,6 +286,16 @@ If you want to test the exposure triangle as well as other settings try [photosk
       * printing --> flyer, poster
       * online --> social networks, apps
 
+# Post-Processing
+
+## dark room 
+Use RAW files whenever you intend to post-process. While high-quality JPEGs or PNGs "bake in" settings like white balance and contrast through lossy or processed compression, RAW preserves the original 12- to 14-bit sensor data. This provides the dynamic range necessary to recover blown-out highlights or deep shadows and allows for seamless white balance adjustments—corrections that would cause significant banding and data loss in a pre-processed 8-bit format, regardless of file size.
+ok
+
+Opting for RAW introduces significant operational overhead. Expect file sizes to increase by 3x to 6x, necessitating high-capacity storage and potentially throttling burst-shooting performance due to camera buffer bottlenecks. Since RAW is a collection of sensor data rather than a standardized image, it requires specialized "digital darkroom" software to interpret proprietary formats (e.g., .CR3, .NEF, .ARW) and manage non-destructive edits via "sidecar" metadata files. Furthermore, because RAW bypasses in-camera processing, images appear flat and undersaturated by default, requiring a manual development and export phase before they are viable for viewing, printing, or sharing.
+
+
+
 # FAQ
 ## Blurry photos
 In general there are two reasons for blur:
