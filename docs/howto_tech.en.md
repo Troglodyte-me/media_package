@@ -27,6 +27,14 @@ For starts you should look at these chapters first and then do an in-depth read,
 
 ## Sensor
 
+### types of camera
+Incomplete list of examples to keep the conversation running:
+
+| --- | --- | --- |
+| Mirror | A mirror in the camera body allows to see the picture as you take it. | Obsolete as digital sensors can do both things simultaniously without mirror |
+| DSLR | Mirrorless cameras | replacing mirror-cameras (with few exceptions) |
+| Smart Phones | Smart Phones | Very smart phones |
+
 ### ISO levels
 Originally **light** was collected with a photosensitive chemical (i.e. silver halide crystals) on a **film**.
 Different kinds of films would use different components to create various effects like black-and-white versus color, or various levels of light sensitivity measured in ISO.
