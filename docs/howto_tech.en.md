@@ -289,7 +289,8 @@ If you want to test the exposure triangle as well as other settings try [photosk
 # Post-Processing
 
 > **Note**: there is of plenty of software for various purposes out there. 
-However, here is not the place to advertise or judge. The here mentioned software is freely available and considered fit-for-purpose. 
+However, here is not the place to advertise or judge. 
+Yet unlike equipment, there is freely available and fit-for-purpose software available from the OpenSource community, that do just as good as proprietary software.
 For everything else, please do your own research. 
 
 ## The dark room 
