@@ -196,6 +196,8 @@ We get a better "stillness", when grounding ourselfes and controll our breathing
 
 > **Environmental Bracing**
 
+> **timer trick**
+
 - **Image stabalisation**: Often build as hardware into lenses as *Optical Image Stabilization (OIS)* or dealt with via software (e.g. in smart phones). 
 Dampens shake along one or more axis and may be configurable in direction as well as dampening factor.
 
@@ -241,6 +243,8 @@ All three are complementary.
 There are ideals how an image should be lit, and it takes quite some practice to do it well in all circumstances.
 However, the choice how to configure each aspect, is less technical but certainly an artistic choice. 
 There is no right or wrong! 
+
+If you want to test the exposure triangle as well as other settings try [photoskop.com](https://photoskop.com/).
 
 # Missing Themes
 * Composition 
