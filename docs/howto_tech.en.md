@@ -287,12 +287,17 @@ If you want to test the exposure triangle as well as other settings try [photosk
       * online --> social networks, apps
 
 # Post-Processing
-## dark room 
-Use RAW files whenever you intend to post-process. 
+
+> **Note**: there is of plenty of software for various purposes out there. 
+However, here is not the place to advertise or judge. The here mentioned software is freely available and considered fit-for-purpose. 
+For everything else, please do your own research. 
+
+## The dark room 
+Using RAW files should be considered whenever intending image post-processing. 
 While high-quality JPEGs or PNGs "bake in" settings like white balance and contrast through lossy or processed compression, RAW preserves the original 12- to 14-bit sensor data. 
 This provides the dynamic range necessary to recover blown-out highlights or deep shadows and allows for seamless white balance adjustments-corrections that would cause significant banding and data loss in a pre-processed 8-bit format, regardless of file size.
 
-Opting for RAW introduces significant operational overhead. 
+Opting for RAW however, introduces significant operational overhead. 
 Expect file sizes to increase by 3x to 6x, necessitating high-capacity storage and potentially throttling burst-shooting performance due to camera buffer bottlenecks. 
 Since RAW is a collection of sensor data rather than a standardized image, it requires specialized "digital darkroom" software to interpret proprietary formats (e.g., .CR3, .NEF, .ARW) and manage non-destructive edits via "sidecar" metadata files. 
 Furthermore, because RAW bypasses in-camera processing, images appear flat and undersaturated by default, requiring a manual development and export phase before they are viable for viewing, printing, or sharing.
@@ -302,9 +307,6 @@ However, they also allow for more control and better results when done right.
 
 For this purpose **[darktable](https://www.darktable.org/)** & **[RawTherapee](https://rawtherapee.com/)** are two OpenSource RAW image processors. 
 One can use them for free to open, edit and export RAW files. 
-
-> **Note**: there are of course more RAW image processors out there. 
-However, here is not the place to advertise or judge. The here mentioned software is freely available and considered complete. For everything else, please do your own research. 
 
 # FAQ
 ## Blurry photos
