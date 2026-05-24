@@ -287,7 +287,6 @@ If you want to test the exposure triangle as well as other settings try [photosk
       * online --> social networks, apps
 
 # Post-Processing
-
 ## dark room 
 Use RAW files whenever you intend to post-process. 
 While high-quality JPEGs or PNGs "bake in" settings like white balance and contrast through lossy or processed compression, RAW preserves the original 12- to 14-bit sensor data. 
@@ -300,6 +299,12 @@ Furthermore, because RAW bypasses in-camera processing, images appear flat and u
 
 Therefore RAW files are a steep learning curve and higher effort in post-production and hardware requirements. 
 However, they also allow for more control and better results when done right.
+
+For this purpose **[darktable](https://www.darktable.org/)** & **[RawTherapee](https://rawtherapee.com/)** are two OpenSource RAW image processors. 
+One can use them for free to open, edit and export RAW files. 
+
+> **Note**: there are of course more RAW image processors out there. 
+However, here is not the place to advertise or judge. The here mentioned software is freely available and considered complete. For everything else, please do your own research. 
 
 # FAQ
 ## Blurry photos
