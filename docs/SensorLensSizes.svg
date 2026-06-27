@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="375.74023mm"
+   height="144.65044mm"
+   viewBox="0 0 375.74023 144.65044"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="375.74023"
+       height="144.65044"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(694.29007,321.63159)">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,-659.07708,-325.4375)"
+       id="g51">
+      <text
+         fill="#d9d9d9"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="48px"
+         transform="translate(388.996,260)"
+         id="text1">Human Perception</text>
+      <text
+         fill="#d9d9d9"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="48px"
+         transform="translate(85.7239,143)"
+         id="text2">Wide</text>
+      <text
+         fill="#d9d9d9"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="48px"
+         transform="translate(208.391,143)"
+         id="text3">Angl</text>
+      <text
+         fill="#d9d9d9"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="48px"
+         transform="translate(304.724,143)"
+         id="text4">e</text>
+      <text
+         fill="#d9d9d9"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="48px"
+         transform="translate(1088.99,448)"
+         id="text5">Tele</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(606.247,48)"
+         id="text6">50mm</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(322.783,48)"
+         id="text7">25mm</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(889.712,48)"
+         id="text8">75mm</text>
+      <path
+         d="M 3.7037e-7,-2 566.929,-1.99989 V 2.0001 L -3.7037e-7,2 Z M -1.11111e-6,6 C -3.31371,6 -6,3.31371 -6,-1.11111e-6 -6,-3.31371 -3.31371,-6 1.11111e-6,-6 3.31371,-6 6,-3.31371 6,1.11111e-6 6,3.31371 3.31371,6 -1.11111e-6,6 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,639.929,180)"
+         id="path8-2" />
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="24px"
+         transform="translate(-116.092,180)"
+         id="text9">Full</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="24px"
+         transform="translate(-75.0451,180)"
+         id="text10">-</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="24px"
+         transform="translate(-66.8784,180)"
+         id="text11">frame</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-116.092,200)"
+         id="text12">(35mm Film)</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-116.092,87)"
+         id="text13-7">Medium</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-116.092,368)"
+         id="text14-9">M4/3</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-116.092,388)"
+         id="text15-5">(Micro</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-72.9251,388)"
+         id="text16-4">Four</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-44.0918,388)"
+         id="text17-3">-</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-39.0918,388)"
+         id="text18-1">Thirds</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(2.74158,388)"
+         id="text19-2">/ MFT)</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-116.092,310)"
+         id="text20-3">ASP</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-75.4651,310)"
+         id="text21-3">-</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-67.2984,310)"
+         id="text22-4">C</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-116.092,330)"
+         id="text23-1">(Crop)</text>
+      <path
+         d="M 1.46276e-7,-1 717.732,-0.999895 V 1.0001 L -1.46276e-7,1 Z M -5.85097e-7,4 C -2.20914,4 -4,2.20914 -4,-5.85097e-7 -4,-2.20914 -2.20914,-4 5.85097e-7,-4 2.20914,-4 4,-2.20914 4,5.85097e-7 4,2.20914 2.20914,4 -5.85097e-7,4 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,790.732,79)"
+         id="path23" />
+      <path
+         d="M 0,0 566.929,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="4"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1206.93,180)"
+         id="path24" />
+      <path
+         d="M 3.7037e-7,-1 283.465,-0.999895 V 1.0001 L -3.7037e-7,1 Z M -1.48148e-6,4 C -2.20914,4 -4,2.20914 -4,-1.48148e-6 -4,-2.20914 -2.20914,-4 1.48148e-6,-4 2.20914,-4 4,-2.20914 4,1.48148e-6 4,2.20914 2.20914,4 -1.48148e-6,4 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,356.465,368)"
+         id="path25" />
+      <path
+         d="M 0,0 850.394,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1207.39,368)"
+         id="path26" />
+      <path
+         d="M 0,0 416.126,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1207.13,79)"
+         id="path27" />
+      <path
+         d="M 2.83447e-7,-1 370.394,-0.999895 V 1.0001 L -2.83447e-7,1 Z M -1.13378e-6,4 C -2.20914,4 -4,2.20914 -4,-1.13378e-6 -4,-2.20914 -2.20914,-4 1.13378e-6,-4 2.20914,-4 4,-2.20914 4,1.13378e-6 4,2.20914 2.20914,4 -1.13378e-6,4 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,443.394,310)"
+         id="path28" />
+      <path
+         d="M 0,0 763.465,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1206.46,310)"
+         id="path29" />
+      <path
+         d="M 1.11557e-6,-1 94.1102,-0.999895 V 1.0001 L -1.11557e-6,1 Z M -4.46229e-6,4 C -2.20914,4 -4,2.20913 -4,-4.46229e-6 -4,-2.20914 -2.20913,-4 4.46229e-6,-4 2.20914,-4 4,-2.20913 4,4.46229e-6 4,2.20914 2.20913,4 -4.46229e-6,4 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,167.11,495)"
+         id="path30-1" />
+      <path
+         d="M 0,0 1039.75,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1206.75,495)"
+         id="path31-3" />
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-116.092,523)"
+         id="text31">1/2.5&quot;</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-116.092,543)"
+         id="text32">(z.B. iPhone XS)</text>
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(-116.092,456)"
+         id="text33">1/2.3&quot;</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-116.092,476)"
+         id="text34">(z.B.</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(-85.0918,476)"
+         id="text35">Google Pixel/Pixel+</text>
+      <text
+         fill="#7f7f7f"
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="15px"
+         transform="translate(36.0749,476)"
+         id="text36">)</text>
+      <path
+         d="M 1.04428e-6,-1 100.535,-0.999895 V 1.0001 L -1.04428e-6,1 Z M -4.1771e-6,4 C -2.20914,4 -4,2.20914 -4,-4.1771e-6 -4,-2.20914 -2.20914,-4 4.1771e-6,-4 2.20914,-4 4,-2.20914 4,4.1771e-6 4,2.20914 2.20914,4 -4.1771e-6,4 Z"
+         fill="#7f7f7f"
+         fill-opacity="0.901961"
+         transform="matrix(-1,0,0,1,173.535,489)"
+         id="path36-8" />
+      <path
+         d="M 0,0 1033.32,1.04987e-4"
+         stroke="#7f7f7f"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         stroke-opacity="0.901961"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1207.32,489)"
+         id="path37-7" />
+      <text
+         font-family="Aptos, Aptos_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="24px"
+         transform="translate(1166.3,48)"
+         id="text37">100mm</text>
+      <path
+         d="m 6.66666,-0.999989 6.00004,9e-6 v 2 l -6.00005,-10e-6 z m 8.00004,1.2e-5 6,10e-6 V 1.00003 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00005 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00006 l -6,-10e-6 z m 8,1.2e-5 6,1e-5 V 1.00007 l -6,-1e-5 z m 8,1.3e-5 6,10e-6 V 1.00008 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.0001 l -6,-1e-5 z m 8,1.2e-5 3.5593,6e-6 V 1.0001 H 62.6667 Z M 7.99999,4.00001 0,0 8.00001,-3.99999 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,79)"
+         id="path38-4" />
+      <path
+         d="m 10,-1.99998 12,1e-5 v 4 l -12,-1e-5 z m 16,2e-5 12,2e-5 v 4 l -12,-2e-5 z m 16,3e-5 12,2e-5 v 4 l -12,-2e-5 z m 16,2e-5 8.226,2e-5 V 2.0001 L 58,2.00009 Z M 12,6.00002 0,0 12,-5.99998 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,180)"
+         id="path39" />
+      <path
+         d="m 6.66666,-0.999989 6.00004,9e-6 v 2 l -6.00005,-10e-6 z m 8.00004,1.2e-5 6,10e-6 V 1.00003 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00005 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00006 l -6,-10e-6 z m 8,1.2e-5 6,1e-5 V 1.00007 l -6,-1e-5 z m 8,1.3e-5 6,10e-6 V 1.00008 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.0001 l -6,-1e-5 z m 8,1.2e-5 3.5593,6e-6 V 1.0001 H 62.6667 Z M 7.99999,4.00001 0,0 8.00001,-3.99999 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,310)"
+         id="path40" />
+      <path
+         d="m 6.66666,-0.999989 6.00004,9e-6 v 2 l -6.00005,-10e-6 z m 8.00004,1.2e-5 6,10e-6 V 1.00003 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00005 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00006 l -6,-10e-6 z m 8,1.2e-5 6,1e-5 V 1.00007 l -6,-1e-5 z m 8,1.3e-5 6,10e-6 V 1.00008 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.0001 l -6,-1e-5 z m 8,1.2e-5 3.5593,6e-6 V 1.0001 H 62.6667 Z M 7.99999,4.00001 0,0 8.00001,-3.99999 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,368)"
+         id="path41" />
+      <path
+         d="m 6.66666,-0.999989 6.00004,9e-6 v 2 l -6.00005,-10e-6 z m 8.00004,1.2e-5 6,10e-6 V 1.00003 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00005 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00006 l -6,-10e-6 z m 8,1.2e-5 6,1e-5 V 1.00007 l -6,-1e-5 z m 8,1.3e-5 6,10e-6 V 1.00008 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.0001 l -6,-1e-5 z m 8,1.2e-5 3.5593,6e-6 V 1.0001 H 62.6667 Z M 7.99999,4.00001 0,0 8.00001,-3.99999 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,489)"
+         id="path42" />
+      <path
+         d="m 6.66666,-0.999989 6.00004,9e-6 v 2 l -6.00005,-10e-6 z m 8.00004,1.2e-5 6,10e-6 V 1.00003 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00005 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.00006 l -6,-10e-6 z m 8,1.2e-5 6,1e-5 V 1.00007 l -6,-1e-5 z m 8,1.3e-5 6,10e-6 V 1.00008 l -6,-1e-5 z m 8,1.3e-5 6,9e-6 V 1.0001 l -6,-1e-5 z m 8,1.2e-5 3.5593,6e-6 V 1.0001 H 62.6667 Z M 7.99999,4.00001 0,0 8.00001,-3.99999 Z"
+         fill="#7f7f7f"
+         transform="matrix(-1,0,0,1,1273.23,495)"
+         id="path43" />
+      <path
+         d="M 640.5,62.5001 V 629.429"
+         stroke="#156082"
+         stroke-width="3.33333"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-opacity="0.670588"
+         fill="none"
+         fill-rule="evenodd"
+         id="path44" />
+      <path
+         d="M 357.5,62.5001 V 629.429"
+         stroke="#156082"
+         stroke-width="3.33333"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-opacity="0.670588"
+         fill="none"
+         fill-rule="evenodd"
+         id="path45-2" />
+      <path
+         d="M 923.5,60.5001 V 627.429"
+         stroke="#156082"
+         stroke-width="3.33333"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-opacity="0.670588"
+         fill="none"
+         fill-rule="evenodd"
+         id="path46-7" />
+      <path
+         d="M 1207.5,60.5001 V 627.429"
+         stroke="#156082"
+         stroke-width="3.33333"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-opacity="0.670588"
+         fill="none"
+         fill-rule="evenodd"
+         id="path47" />
+      <path
+         d="M 71,560 1509,76 432.166,77.3333 Z"
+         fill="#fbe3d6"
+         fill-rule="evenodd"
+         fill-opacity="0.341176"
+         id="path48-7" />
+      <path
+         d="M 7.85543,3.22754 763.357,506.207 761.509,508.981 6.00818,6.00221 Z M 5.55314,9.70374 0,0 11.0949,1.37974 Z"
+         fill="#e97132"
+         transform="matrix(-1,0,0,1,829.933,53.5001)"
+         id="path49-9" />
+      <path
+         d="M 0,0 363.592,484.092"
+         stroke="#e97132"
+         stroke-width="1.33333"
+         stroke-linecap="square"
+         stroke-miterlimit="8"
+         stroke-dasharray="4, 1.33333"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,432.092,77.5001)"
+         id="path50-3" />
+      <path
+         d="M 0,0 1199.69,408.097"
+         stroke="#e97132"
+         stroke-width="1.33333"
+         stroke-linecap="square"
+         stroke-miterlimit="8"
+         stroke-dasharray="4, 1.33333"
+         fill="none"
+         fill-rule="evenodd"
+         transform="matrix(-1,0,0,1,1273.19,153.5)"
+         id="path51-1" />
+    </g>
+    <rect
+       style="opacity:0;fill:none;stroke:#ff0000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:7"
+       id="rect2"
+       width="374.74023"
+       height="143.65042"
+       x="-693.79004"
+       y="-321.13159" />
+  </g>
+</svg>
