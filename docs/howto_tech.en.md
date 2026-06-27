@@ -114,6 +114,8 @@ Special applications (examples):
   - **Macro**: especially designed for a depth of field (see below) at very close distances for extemely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be genereated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
   - **Fish-eye**: bending the image perspective beyond natural proportions (like seeing through a fish eye / fish eye perspective). Used for artistic purposes and often less costly then a normal wide-angle lenses of same focal lenght. Effect can also reproduced with adapters ontop the lense.
   - **Anamorphic**: lenses that stretch the image in one dimension which then needs to be squeezed back to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
+  - **Cinelens**: Similar to normal lenses, but specifically designed to produce continuously stable pictures required in filming. I.e. keeping focus while zooming. 
+  - **[tilt–shift lenses](https://en.wikipedia.org/wiki/Tilt%E2%80%93shift_photography)**: lenses that allow tilting or shifting the otherwise barrel-like lens body. Especially useful when doing fake-miniture photos. 
 
 > **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
 
