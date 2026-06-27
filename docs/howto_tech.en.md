@@ -106,7 +106,7 @@ Focal length determines the field of view in the final image. It is primarily ex
 
 In general lenses and zooms are defined like this: 
   - Normal lenses at natural perspective till double that (so 25-50mm on an MFT sensor)
-  - Wide angle and Ultr-wide at lower levels than human perception (below 25mm on an MFT sensor)
+  - Wide angle and Ultra-wide at lower levels than human perception (below 25mm on an MFT sensor)
   - Zoom and Tele-Zoom lenses beyond double human perception (beyond 50mm on an MFT sensor)
 
 Special applications (examples):
@@ -116,6 +116,8 @@ Special applications (examples):
   - **Anamorphic**: lenses that stretch the image in one dimension which then needs to be squeezed back to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
 
 > **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
+
+## filters
 
 ### F-stop
 F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
@@ -313,7 +315,7 @@ One can use them for free to open, edit and export RAW files.
 ## Blurry photos
 In general there are two reasons for blur:
 1. Out of focus blur (see Focus): Ensure you are focusing on it correctly. If that is too hard, try another positioning between you and your subject (more distance makes it raises the depth of field) and/or raise the f-stop (again raising the depth of field but also darkening the image!).
-1. Movement blur (see Time: Happens when things are moving too quickly. This is either you hand shakes too much (try keeping your hand calmer or rest your camera somewhere stable like a tripod) or you subject is moving too fast. If nothing helps, raise your shutter speed (darkening the image!).
+1. Movement blur (see Time): Happens when things are moving too quickly. This is either you hand shakes too much (try keeping your hand calmer or rest your camera somewhere stable like a tripod) or you subject is moving too fast. If nothing helps, raise your shutter speed (darkening the image!).
 
 ## Noisy/Grainy/Specled photos
 Probably a matter of too high ISO (see ISO). Try lowering it. If that darkens your image too much (often it's auto-applied), consider higher f-stop/longer exposure or adding more light to the szene.
