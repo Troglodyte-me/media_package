@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!--
+   File: CamDial.svg
+   Description: Illustration generated with Inkscape and design from Nano Banana. This SVG is part of the media_package project.
+   Author: Konrad Keck
+   Date: 2026-06-28
+   License: See LICENSE in project root.
+   Usage: For documentation, presentation, or educational purposes within the media_package project.
+   Source: Created with Inkscape (http://www.inkscape.org/)
+-->
 
 <svg
    width="309.38214mm"
@@ -106,7 +114,7 @@
            style="
            font-weight:bold;
            font-size:70.5556px;
-           fill:#ff00ff;
+           fill:#ffffff;
            stroke-width:0;
            stroke-dasharray:none;
            font-family:sans-serif;
