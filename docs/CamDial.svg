@@ -43,7 +43,18 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <circle
-         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:9.37249;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:28.1175, 18.745;stroke-dashoffset:0;stroke-opacity:1"
+         style="
+            opacity:1;
+            fill:#000000;
+            fill-opacity:1;
+            stroke:#000000;
+            stroke-width:9.37249;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:7;
+            stroke-dasharray:28.1175, 18.745;
+            stroke-dashoffset:0;
+            stroke-opacity:1"
          id="path2"
          cx="541.34973"
          cy="377.86789"
@@ -52,7 +63,13 @@
          transform="rotate(-159.43441)" />
       <text
          xml:space="preserve"
-         style="font-size:70.5556px;writing-mode:lr-tb;direction:ltr;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
          x="-795.00104"
          y="125.98744"
          id="text49"
@@ -60,12 +77,25 @@
          transform="rotate(64.418286)"><tspan
            sodipodi:role="line"
            id="tspan2"
-           style="font-weight:bold;font-size:70.5556px;fill:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-dashoffset:0"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
            x="-795.00104"
            y="125.98744">M</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:70.5556px;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
          x="249.04523"
          y="-511.06628"
          id="text49-00"
@@ -73,7 +103,14 @@
          transform="rotate(-70.538117)"><tspan
            sodipodi:role="line"
            id="tspan2-6"
-           style="font-weight:bold;font-size:70.5556px;fill:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-dashoffset:0"
+           style="
+           font-weight:bold;
+           font-size:70.5556px;
+           fill:#ff00ff;
+           stroke-width:0;
+           stroke-dasharray:none;
+           font-family:sans-serif;
+           stroke-dashoffset:0"
            x="249.04523"
            y="-511.06628">P</tspan></text>
       <text
@@ -91,7 +128,13 @@
            y="-128.22304">AUTO</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:70.5556px;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
          x="-226.47409"
          y="-636.87079"
          id="text49-0"
@@ -99,12 +142,25 @@
          transform="rotate(-26.574299)"><tspan
            sodipodi:role="line"
            id="tspan2-2"
-           style="font-weight:bold;font-size:70.5556px;fill:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-dashoffset:0"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
            x="-226.47409"
            y="-636.87079">A</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:70.5556px;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
          x="-650.35651"
          y="-402.38474"
          id="text49-0-4"
@@ -112,7 +168,14 @@
          transform="rotate(16.206083)"><tspan
            sodipodi:role="line"
            id="tspan2-2-8"
-           style="font-weight:bold;font-size:70.5556px;fill:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-dashoffset:0"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
            x="-650.35651"
            y="-402.38474">S</tspan></text>
       <g
