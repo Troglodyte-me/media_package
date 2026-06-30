@@ -30,7 +30,7 @@ Assemble gear, but use lens caps for transportation.
 
 Ensure batteries are charged. One charge will last about 2 hours depending on usage. You can take chargers along with you.
 
-AA and AAA batteries are not provided with the gear. Please bring your own if needed.
+Single-use batteries are not provided with the gear. Please bring your own if needed.
 
 Also ensure memory card has sufficient space.
 
@@ -80,7 +80,7 @@ From here on, post processing and editing of images is your responsibility.
 
 #check_item("Recharge battery and pack in case")
 
-Any AA or AAA batteries used in accessories should be removed and disposed of properly. Rechargeable batteries should be recharged before returning.
+Any single-use batteries used in accessories should be removed and disposed of properly. Rechargeable batteries should be recharged before returning.
 
 #check_item("Disassemble gear and pack in case")
 
