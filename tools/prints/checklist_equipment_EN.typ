@@ -43,9 +43,21 @@
   ]
 }
 
-= EQUIPMENT CHECKLIST
+// ---- DOCUMENT CONTENT ----
 
-== Before Leaving
+// Main Title
+#align(left)[
+  #text(size: 22pt, weight: "bold", fill: brand-red)[
+    = EQUIPMENT CHECKLIST
+    ] 
+]
+#v(1em)
+
+#align(left)[
+  #text(size: 16pt, weight: "bold", fill: brand-dark)[
+    == Before Leaving
+  ]
+]
 // #todo("Pick Camera / Lens / Accessory")
 #check_item("Pick Camera / Lens / Accessory", explanation: "Check compatibility of all accessories with the camera / lens being rented.
 Less is more: Avoid picking more than two cameras per person and not more then two lenses per camera body and person. 
@@ -68,8 +80,11 @@ Also ensure memory card has sufficient space.")
 
 #v(3em)
 
-== While Using
-
+#align(left)[
+  #text(size: 16pt, weight: "bold", fill: brand-dark)[
+    == While Using
+  ]
+]
 #check_item("Remove lens cap and keep it close by", explanation: "Lens caps needs to be removed before taking photos and should be kept close by to prevent dust between takes.
 Lens hoods can be used to protect the lens from scratches and reduce glare.")
 
@@ -83,7 +98,11 @@ Works best between 0°C and 40°C. Avoid using the gear in extreme temperatures 
 
 #v(3em)
 
-== On Return
+#align(left)[
+  #text(size: 16pt, weight: "bold", fill: brand-dark)[
+    == On Return
+  ]
+]
 #check_item("Check everything works as expected and isn't damaged", explanation: "Check that the camera and lens are functioning properly. Make sure all buttons, dials, and switches are working as expected.
 Make notes of any damage or issues with the gear. If you notice any damage, please report it immediately.
 Keep the gear clean and dry. Clean the gear if necessary before returning it.")
