@@ -7,7 +7,7 @@
       size: 8pt, 
       fill: luma(100), 
       font: "Arial")[
-      Media Package | #datetime.today().display("[year]-[month]-[day]") | Equipment Checklist 
+      Media Package | #datetime.today().display("[year]-[month]-[day]") | Equipment Checkliste
     ]
   ],
   footer: align(center)[
@@ -48,7 +48,7 @@
 // Main Title
 #align(left)[
   #text(size: 22pt, weight: "bold", fill: brand-red)[
-    = EQUIPMENT CHECKLIST
+    = EQUIPMENT CHECKLISTE
     ] 
 ]
 #v(1em)
@@ -71,7 +71,7 @@ Einwegbatterien sind nicht mitgeliefert. Bitte bei Bedarf eigene verwenden.
 Stelle außerdem sicher, dass auf der Speicherkarte ausreichend Speicherplatz vorhanden ist.")
 
 #v(1em)
-#check_item("Auf Funktionalität und Schäden prüfen", explanation: "Konfigurieren der Kamera prüfen:
+#check_item("Funktionalität und Schäden prüfen", explanation: "Konfigurieren der Kamera prüfen:
   - Eine/Mehrere Testaufnahme machen und 
       - Prüfen, ob Datum und Uhrzeit korrekt sind als auch, ob das Bild fleckig ist
   - Datum und Uhrzeit einstellen
@@ -100,21 +100,23 @@ Die Ausrüstung funktioniert am besten bei Temperaturen zwischen 0 °C und 40 °
 
 #align(left)[
   #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == On Return
+    == Rückgabe
   ]
 ]
-#check_item("Check everything works as expected and isn't damaged", explanation: "Check that the camera and lens are functioning properly. Make sure all buttons, dials, and switches are working as expected.
-Make notes of any damage or issues with the gear. If you notice any damage, please report it immediately.
-Keep the gear clean and dry. Clean the gear if necessary before returning it.")
+#check_item("Funktionalität und Schäden prüfen", explanation: "Überprüfen, ob Kamera und Objektiv ordnungsgemäß funktionieren. Prüfen, ob alle Tasten, Einstellräder und Schalter wie erwartet funktionieren.
+Etwaige Beschädigungen oder Probleme mit der Ausrüstung notieren und umgehend melden.
+Vor der Rückgabe Ausrüstung bei Bedarf reinigen und trocknen.")
 
 #v(1em)
-#check_item("Read out data from memory card", explanation: "Make sure to read out all data from the memory card before returning it.
-Do not delete any data from previous users. If you have taken photos, please copy them to your own device and delete them from the memory card before returning it.
-From here on, post processing and editing of images is your responsibility.")
+#check_item("Speicherkarte auslesen", explanation: "Vor der Rückgabe sicherstellen, dass alle Daten von der Speicherkarte ausgelesen sind.
+Keine Daten früherer Nutzer löschen. Nur die eignen Aufnahmen auf ein eigenes Gerät übertragen und von der Speicherkarte löschen.
+Verarbeitung und Nachbearbeitung liegen bei dir.")
+
 
 #v(1em)
-#check_item("Recharge battery and pack in case", explanation:
-"Any single-use batteries used in accessories should be removed and disposed of properly. Rechargeable batteries should be recharged before returning.")
+#check_item("Akkus aufladen", explanation:
+"Alle in Zubehörteilen verwendeten Einwegbatterien sollten entfernt und ordnungsgemäß entsorgt werden. Wiederaufladbare Akkus sollten vor der Rückgabe aufgeladen werden.")
 
 #v(1em)
-#check_item("Disassemble gear and pack in case", explanation: "Reattach lens caps and body caps. Ensure all gear is packed securely in its case to prevent damage during transport.")
+#check_item("Ausrüstung zerlegen und zurück in den Koffer packen", explanation: "Setup zerlegen und Objektivdeckel/Gehäusedeckel wieder anbringen. 
+Anschließend sicherstellen, dass die gesamte Ausrüstung sicher im Koffer verpackt ist, um Transportschäden zu vermeiden.")
