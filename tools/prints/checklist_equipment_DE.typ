@@ -55,7 +55,7 @@
 
 #align(left)[
   #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Vorher
+    == Vorbereitung
   ]
 ]
 // #todo("Pick Camera / Lens / Accessory")
@@ -82,19 +82,19 @@ Stelle außerdem sicher, dass auf der Speicherkarte ausreichend Speicherplatz vo
 
 #align(left)[
   #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Währenddessen 
+    == Im Feld 
   ]
 ]
-#check_item("Remove lens cap and keep it close by", explanation: "Lens caps needs to be removed before taking photos and should be kept close by to prevent dust between takes.
-Lens hoods can be used to protect the lens from scratches and reduce glare.")
+#check_item("Objektivdeckel abnehmen und griffbereit halten", explanation: "Nicht vergessen, den Objektivdeckel vor dem Fotografieren abzunehmen. Der Deckel sollte griffbereit aufbewahrt werden, um zwischen den Aufnahmen das Eindringen von Staub zu verhindern.
+Mit einer Gegenlichtblende lässt sich das Objektiv vor Kratzern schützen und Blendeffekte reduzieren.")
 
 #v(1em)
-#check_item("Keep gear clean and dry", explanation: "Avoid touching the lens glass with your fingers. Use a microfiber cloth to clean the lens if necessary.
-Cameras are usually weather sealed, but avoid using them in heavy rain or snow. If the gear gets wet, dry it as soon as possible.
-Works best between 0°C and 40°C. Avoid using the gear in extreme temperatures -- otherwise try to keep it in a bag or case to protect it from the elements.")
+#check_item("Ausrüstung sauber und trocken halten", explanation: "Das Objektivglas frei von Fingerabdrücken und Staub halten. Zur Reinigung des Objektivs bei Bedarf ein Mikrofasertuch verwenden.
+Kameras sind in der Regel wetterfest, sollten jedoch nicht bei starkem Regen oder Schnee eingesetzt werden. Sollte die Ausrüstung nass werden, so schnell wie möglich trocknen.
+Die Ausrüstung funktioniert am besten bei Temperaturen zwischen 0 °C und 40 °C. Einsatz der Ausrüstung bei extremen Temperaturen vermeiden -- andernfalls Aufbewahrung in einer Tasche oder einem Koffer ist dringend empfohlen, um sie vor Witterungseinflüssen zu schützen.")
 
 #v(1em)
-#check_item("When changing batteries", explanation: "Check that the camera settings are still in effect after changing batteries (e.g. date and time).")
+#check_item("Batteriewechsel", explanation: "Überprüfen, ob die Kameraeinstellungen nach dem Batteriewechsel weiterhin gültig sind (z. B. Datum und Uhrzeit).")
 
 #v(3em)
 
