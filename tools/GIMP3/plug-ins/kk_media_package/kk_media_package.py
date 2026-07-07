@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
+import gettext
 import gi
 gi.require_version('Gimp', '3.0')
 from gi.repository import Gimp
@@ -10,7 +12,6 @@ from gi.repository import GimpUi
 from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Gio
-import logging
 from typing import List, Dict, Any
 
 # --- FEATURE MODULES ---
@@ -18,24 +19,20 @@ from modules.enhance_image import enhance_image_logic
 from modules.dummy_a import dummy_a_logic
 from modules.dummy_b import dummy_b_logic
 
-
-# --- LOCALIZATION SETUP ---
-import importlib
-
-def get_strings():
-    lang = GLib.get_language_names()[0][:2]
-    if lang == "de":
-        mod = importlib.import_module("modules.STRINGS_de")
-    else:
-        mod = importlib.import_module("modules.STRINGS_en")
-    return mod.STRINGS
-
-L = get_strings()
-
 # --- LOGGING ---
+import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("MediaPackageFilters")
 
+# --- LOCALIZATION SETUP ---
+# Get the absolute path to this plugin's directory
+PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
+LOCALEDIR = os.path.join(PLUGIN_DIR, 'locale')
+DOMAIN = "kk_media_package"  # Must match your folder and .mo file names
+
+# Install "_" into Python's built-in namespace globally.
+# This makes the _() function automatically available in any imported module (like enhance_image.py)
+gettext.install(DOMAIN, LOCALEDIR)
 
 class MediaPackageFiltersPlugin(Gimp.PlugIn):
     # --- STATISTICS ENGINE (OPTIMIZATION) ---
@@ -96,22 +93,22 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         procedure.set_image_types("*")
         procedure.set_sensitivity_mask(Gimp.ProcedureSensitivityMask.DRAWABLE)
         if name == "kk-enhance-image":
-            procedure.set_menu_label(L['enhance_label'])
-            procedure.add_menu_path(L['menu_path'])
+            procedure.set_menu_label(_("Enhance Image"))
+            procedure.add_menu_path(_("Filters/Enhance"))
             procedure.set_documentation(
-                "Creates a stack of enhancement layers for the active image using ported GIMP 2 logic. "
+                _("Creates a stack of enhancement layers for the active image using ported GIMP 2 logic. "
                 "Parameters: image (Gimp.Image), drawable (Gimp.Drawable). "
-                "Output: Enhancement layers grouped for further editing.",
-                "This procedure enhances the image by adding multiple adjustment layers such as white balance, detail equalization, and contrast/grey mix. "
-                "It is intended for use on RGB images and returns the enhanced image with new layers grouped under a common group.",
+                "Output: Enhancement layers grouped for further editing."),
+                _("This procedure enhances the image by adding multiple adjustment layers such as white balance, detail equalization, and contrast/grey mix. "
+                "It is intended for use on RGB images and returns the enhanced image with new layers grouped under a common group."),
                 name
             )
         elif name == "kk-dummy-a":
-            procedure.set_menu_label(L['dummy_a'])
-            procedure.add_menu_path(L['menu_path'])
+            procedure.set_menu_label(_("Dummy A"))
+            procedure.add_menu_path(_("Filters/Dummy"))
         elif name == "kk-dummy-b":
-            procedure.set_menu_label(L['dummy_b'])
-            procedure.add_menu_path(L['menu_path'])
+            procedure.set_menu_label(_("Dummy B"))
+            procedure.add_menu_path(_("Filters/Dummy"))
         procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
 
