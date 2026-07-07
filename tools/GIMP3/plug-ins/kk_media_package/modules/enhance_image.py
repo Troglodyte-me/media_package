@@ -152,7 +152,7 @@ class enhance_image(image_processor):
         layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
         return layer_group
     
-    def create_layer_whitebalace(
+    def create_layer_whitebalance(
             self,
             image: Gimp.Image,
             drawable: Gimp.Drawable,
@@ -250,42 +250,46 @@ class enhance_image(image_processor):
         super().__init__()
         image.undo_group_start() # Start an undo group for the entire enhancement process
         # image.insert_layer(drawable, layer_group, 0)
+        try:
+            # Calculate prerequisites for enhancement layers
+            original_name   = drawable.get_name()
+            stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
+            size            = self.get_size(image)
+            blur_radius     = self.get_blur_radius(size)
+            threshold_val   = self.get_threshold_value(stats)
+            logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Threshold value: {threshold_val}")
 
-        # Calculate prerequisites for enhancement layers
-        original_name   = drawable.get_name()
-        stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
-        size            = self.get_size(image)
-        blur_radius     = self.get_blur_radius(size)
-        threshold_val   = self.get_threshold_value(stats)
-        logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Threshold value: {threshold_val}")
+            # start layering process
+            main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
+                image=image, 
+                name=f"""{original_name} {_("Enhancement Stack")}"""
+            )
+            image.insert_layer(main_layer_group, None, 0)
+            drawable.set_name(_("Original"))
 
-        # start layering process
-        main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
-            image=image, 
-            name=f"""{original_name} {_("Enhancement Stack")}"""
-        )
-        image.insert_layer(main_layer_group, None, 0)
-        drawable.set_name(_("Original"))
-
-        self.create_layer_whitebalace(# Create and insert the white balance layer
-            image=image, 
-            drawable=drawable, 
-            layer_group=main_layer_group
-        ) 
-        self.create_group_contrast_greymix( # Create and insert the contrast/grey mix group layer
-            image=image,
-            drawable=drawable,
-            main_layer_group=main_layer_group,
-            blur_radius=blur_radius,
-            threshold_val=threshold_val)
-        self.create_layer_detail_equalization( # Create and insert the detail equalization layer
-            image=image,
-            drawable=drawable,
-            image_stats=stats,
-            layer_group=main_layer_group,
-            blur_radius=blur_radius
-        )
-        image.undo_group_end()
+            self.create_layer_whitebalance( # Create and insert the white balance layer
+                image=image, 
+                drawable=drawable, 
+                layer_group=main_layer_group
+            ) 
+            self.create_group_contrast_greymix( # Create and insert the contrast/grey mix group layer
+                image=image,
+                drawable=drawable,
+                main_layer_group=main_layer_group,
+                blur_radius=blur_radius,
+                threshold_val=threshold_val)
+            self.create_layer_detail_equalization( # Create and insert the detail equalization layer
+                image=image,
+                drawable=drawable,
+                image_stats=stats,
+                layer_group=main_layer_group,
+                blur_radius=blur_radius
+            )
+        except Exception as e:
+            logger.error(f"Error during enhancement process: {e}")
+            Gimp.message(f"Error during enhancement process: {e}")
+        finally:
+            image.undo_group_end()
         Gimp.displays_flush()
 
     # --- STATISTICS ENGINE (OPTIMIZATION) ---

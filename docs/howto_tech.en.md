@@ -8,20 +8,20 @@ In photography everything starts with light:
 
 Originally **light** was collected with a **film** leading to **exposure**. Today this purpose is carried by software controlled **sensors**. 
 
-Before hitting the sensor, light is transmitted through a **lens** that can be hard attached (fixed) or exchangeable. In general, longer focal **lengths** - *vacationally known as **Zoom*** - make the motive appear closer in the final image; while **aperture** - *also known as **f-stop*** - controls how much light passes through the lens and affects **depth of field** (how much of the image appears **in focus**).
+Before hitting the sensor, light is transmitted through a **lens** that can be hard attached (fixed) or exchangeable. In general, longer focal **lengths** - *colloquially known as **zoom*** - make the motive appear closer in the final image; while **aperture** - *also known as **f-stop*** - controls how much light passes through the lens and affects **depth of field** (how much of the image appears **in focus**).
 
 Finally, **time** is a factor that allows more or less light to pass through the lens onto the sensor till exposure is completed. 
 When more time passes, not just more light can be read, but also the motive may change in the meantime (e.g. move or jitter). 
-Less exposure time, reduces motion blur makes and therefore more crisp images. 
+Shorter exposure times reduce motion blur and therefore produce crisper images. 
 But they also may lack light. 
 
 How to bring these factors together is a *craft* as well as it is an *artistic choice*. 
 There is no definitive *right* or *wrong*. 
 However, the chapters below are meant how things are working and are interconnected, so you can make an informed decision.
 
-> **Tip**: Beginners and hobbyists are well advices, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
+> **Tip**: Beginners and hobbyists are well advised, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
 
-For starts you should look at these chapters first and then do an in-depth read, where you see need for more information: 
+To start, you should look at these chapters first and then do an in-depth read, where you see need for more information: 
 1. **Rule of thirds**
 1. **Exposure Triangle**
 
@@ -41,16 +41,16 @@ Different kinds of films would use different components to create various effect
 Important here is, that a film with ```ISO 400``` would perform better at low light conditions than an ```ISO 100``` film, as it has more photo sensitive particles per square [see [Wikipedia: Film speed](https://en.wikipedia.org/wiki/Film_speed)].
 The higher ISO film uses larger, more light-sensitive grains, which capture light more easily but produce more visible grain.
 Therefore higher ISO increases noise and reduces dynamic range, which can make images look grainy and less detailed.
-Therefore, one should shoot at the lowest possible ISO level and only dial up, if light get's too dim. 
+Therefore, one should shoot at the lowest possible ISO level and only dial up if light gets too dim. 
 
 This logic has been passed down to the digital age as well. 
 Unlike the analogue predecessors, modern **sensors** can be adjusted on-the-fly, to run a large volume of various ISO levels. The general behaviour however, is largely the same. 
 At the same time, what has to be considered "dim" as well as "high" or "low" ISO levels, depends largely on the camera. 
-It is adviced to shoot several pictures at low and high ISO levels to get a feeling how the camera interprets the specific szene (or lighting to be exact) and how the camera interpretes it at various ISO levels. 
+It is advised to shoot several pictures at low and high ISO levels to get a feeling how the camera interprets the specific scene (or lighting to be exact) and how the camera interprets it at various ISO levels. 
 Try to find the level of where it is too dark or the ISO too high - and use those as guardrails for your photography.
 
 ### Sensor Size
-Usually people look at the numbers of pixel (px) or size of the resulting image file (MB). However, most interesting is the sensor form factor of the sensor. 
+Usually people look at the numbers of pixels (px) or size of the resulting image file (MB). However, most interesting is the sensor form factor of the sensor. 
 
 Originally, one of the most common film format was 35mm [see [Wikipedia: 135 film](https://en.wikipedia.org/wiki/135_film)]. That means it measures 24×36mm in a 3:2 side ratio. 
 This ratio has been continued into digital as "full-frame" sensor size and is the de-facto standard used in professional photography.
@@ -68,14 +68,14 @@ Both film and digital have distinct characteristics; digital offers greater flex
 
 At the same time, in-camera technology keeps evolving. 
 Largely, this sentiment is held towards the sensors that not only come in sizes but also types (see CCD and CMO in [Wikipedia: Image sensor](https://en.wikipedia.org/wiki/Image_sensor)). Today however, this is enhanced by computing power running the sensor readings, applying image "filters" and converting them into manageable files. 
-It is considered professional, not just saving the result (e.g. a JPG file) but where possible also the RAW-file (often DNG, ORF, RAW or other file extentions depending on manufacturer). 
+It is considered professional, not just saving the result (e.g. a JPG file) but where possible also the RAW file (often DNG, ORF, RAW or other file extensions depending on manufacturer). 
 Largely RAW files are considered the "negatives" of the digital age.
 Holders of the original RAW file are often considered owner and photographer of an image. 
-They allow reproduceability and potential enhanced post-processing (see [Wikipedia: Raw image format](https://en.wikipedia.org/wiki/Raw_image_format)). 
+They allow reproducibility and potential enhanced post-processing (see [Wikipedia: Raw image format](https://en.wikipedia.org/wiki/Raw_image_format)). 
 However, it takes special software, further training and practice to actually make use of them. 
 They are certainly pro-material - but in order to learn them, one should try collecting them early.
 
-> **Tip**: Check your camera and mobile settings. They often allow to enable saving in RAW format end may even safe them  alongside JPG.
+> **Tip**: Check your camera and mobile settings. They often allow to enable saving in RAW format end may even save them  alongside JPG.
 
 Newer cameras (and especially phones with *CPU*, *GPU* or better *NPU*) enhance images further through **AI**, changing how images are taken and processed later on. 
 
@@ -91,7 +91,7 @@ Lens design affects sharpness, distortion, color rendering, and contrast.
 They come in hard attached (fixed) or exchangeable, as well as with variable focal length (als known as Zoom lens) or fixed (also known as Prime lens).
 
 ### Focal Length / Zoom
-Focal length determines the field of view in the final image. It is primarily expressed in Millimeter (mm) instead of the vocational "Zoom factor" for two reasons: 
+Focal length determines the field of view in the final image. It is primarily expressed in Millimeter (mm) instead of what is colloquially known as zoom for two reasons: 
 1. The appearance of closeness to the motive depends on the sensor size. `50mm` on full-frame roughly resembles a natural perspective. To achieve the same effect on micro-four-third sensors (MFT, about half the size of full-frame) can be achieved at about `25mm`. However the curvature and crop of the image perspective will be percieved slightly differently.  
 1. Zoom has no genuine definition (see below). 
     - **Optical Zoom** is applied via mechanics inside the lens or camera body. This stands in contrast to **Digital Zoom**, which is applied by software, cropping the image. 
@@ -100,9 +100,9 @@ Focal length determines the field of view in the final image. It is primarily ex
 > Rules of thumb:
 >> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` makes $\frac{150mm}{14mm} = 10.7x\ Zoom$ (lens).
 >
->> **comparirison with natural perspective**: the $ratio = \frac{focal\ length}{natural\ perspective}$ (given sensor size) - e.g. a `75mm` lens on MFT $= 3x\ Zoom$ (factor)
+>> **comparison with natural perspective**: the $ratio = \frac{focal\ length}{natural\ perspective}$ (given sensor size) - e.g. a `75mm` lens on MFT $= 3x\ Zoom$ (factor)
 >
->> **virtual Zoom**: software heavy products (e.g. smart phones) often employ their own Zoom-calculation, which are hardly compareable by themselfs. Look up the technical specifications for more information.
+>> **virtual Zoom**: software heavy products (e.g. smart phones) often employ their own Zoom-calculation, which are hardly comparable by themselves. Look up the technical specifications for more information.
 
 In general lenses and zooms are defined like this: 
   - Normal lenses at natural perspective till double that (so 25-50mm on an MFT sensor)
@@ -110,12 +110,12 @@ In general lenses and zooms are defined like this:
   - Zoom and Tele-Zoom lenses beyond double human perception (beyond 50mm on an MFT sensor)
 
 Special applications (examples):
-  - **Portrait**: any lens but especially at around 1.3x till 2.5x natural perception with high aperture (around `f/1`), are optically especially fit for portrait photography (of people) as their geomatrical representation of human features and faces appears eastically more pleasing to the human eye while the low aperture makes them stand out from the background.
-  - **Macro**: especially designed for a depth of field (see below) at very close distances for extemely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be genereated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
-  - **Fish-eye**: bending the image perspective beyond natural proportions (like seeing through a fish eye / fish eye perspective). Used for artistic purposes and often less costly then a normal wide-angle lenses of same focal lenght. Effect can also reproduced with adapters ontop the lense.
+  - **Portrait**: any lens but especially at around 1.3x till 2.5x natural perception with high aperture (around `f/1`), are optically especially fit for portrait photography (of people) as their geometrical representation of human features and faces appears aesthetically more pleasing to the human eye while the low aperture makes them stand out from the background.
+  - **Macro**: especially designed for a depth of field (see below) at very close distances for extremely detailed close distance pictures (e.g. insects, electronics, etc). Similar effect can be generated with macro-rings between any other lens and the camera body shortening pushing the focal length geometrically.
+  - **Fish-eye**: bending the image perspective beyond natural proportions (like seeing through a fish eye / fish eye perspective). Used for artistic purposes and often less costly than a normal wide‑angle lens of same focal length. Effect can also reproduced with adapters ontop the lense.
   - **Anamorphic**: lenses that stretch the image in one dimension which then needs to be squeezed back to normal proportions in post-production, leading to a special cinematic look (see [Wikipedia: Anamorphic format](https://en.wikipedia.org/wiki/Anamorphic_format))
   - **Cinelens**: Similar to normal lenses, but specifically designed to produce continuously stable pictures required in filming. I.e. keeping focus while zooming. 
-  - **[tilt–shift lenses](https://en.wikipedia.org/wiki/Tilt%E2%80%93shift_photography)**: lenses that allow tilting or shifting the otherwise barrel-like lens body. Especially useful when doing fake-miniture photos. 
+  - **[tilt–shift lenses](https://en.wikipedia.org/wiki/Tilt%E2%80%93shift_photography)**: lenses that allow tilting or shifting the otherwise barrel-like lens body. Especially useful when doing fake-miniature photos. 
 
 > **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
 
@@ -125,7 +125,7 @@ Special applications (examples):
 F-stop or otherwise known as "**aperture**" is primarily realised as a physical **iris** within the lens allowing more or less light to pass.
 The lower the f-Stop (e.g. `f/1.4`) the more light can pass through an open iris. 
 In contrast, a higher f-Stop (e.g. `f/22`) will narrow the iris and thereby allow only little light to pass. 
-Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halfing the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). 
+Conventional scales are calculated in stops of $f/(\sqrt{2})^n$, where $n$ is defined as a step doubling/halving the amount of light to the next step (see [Wikipedia: f-number](https://en.wikipedia.org/wiki/F-number)). 
 
 Three things have to be acknowledged here however: 
 1. with a wider opened lens / a lower f-stop, depth of field becomes shallower (see below).
@@ -143,7 +143,7 @@ Three things have to be acknowledged here however:
 (images simplified for reference)
 
 ### Focus
-At the same time however, f-stops affects how much of the scene appears in focus. This effect is described as **depth of field**. 
+At the same time however, f-stops affect how much of the scene appears in focus. This effect is described as **depth of field**. 
 It is dialed in through the physical lens or when physics aren't available software controlled (e.g. in smart phones). 
 This process can also be done electronically - by **autofocus** (AF) - if lenses and body are digital and their connection is intact (the connection can be tethered if lens and body are not compatible or if the contacts are blocked, like with analog rings or adapters inbetween).
 
@@ -158,7 +158,7 @@ At the same aperture / f-stop, the depth of field grows with distance to the cam
   * Face detection
 
 ## Light
-Light behaves as particals but also in waves, giving it unique physical propperties. 
+Light behaves as particles but also in waves, giving it unique physical properties. 
 Furthermore you measure intensity in lux ($lx$) and temperature in degrees Kelvin ($°K$).
 
 ### Time & Shutter Speed
@@ -171,7 +171,7 @@ Furthermore you measure intensity in lux ($lx$) and temperature in degrees Kelvi
 Finally, time is a factor that allows more or less light to pass through the lens (see above) onto the sensor (see above). 
 More time means more light but also a risk of losing touch of a motive that may change in the meantime. 
 That can both happen due to movement of subjects or jitter of camera. 
-The later can be helped with stabalisation (see below).
+The later can be helped with stabilization (see below).
 
 In general cameras measure time in fractions of one second ($s/x$), so for example $1/250 = 0.004\sec$. 
 Longer exposures are measured in seconds (abbrivated $s$, $\sec$ or most comonly as double prime i.e. "$1.5^{\prime\prime}$") or minutes (abbrivated $s$, $\sec$ or most comonly as single prime "$1.5^{\prime}$").
@@ -183,18 +183,18 @@ Quick shutter speeds will allow you to see light travel through your image i.e. 
 On the other way around, with long exposure times even small lights accumulate and amplify to a ghostly flare effect. 
 
 #### Handling Motion Blur
-The following techniques will stabalize your image when shooting with slower shutter speeds (and therefore higher risk of motion blur). 
+The following techniques will stabilize your image when shooting with slower shutter speeds (and therefore higher risk of motion blur). 
 However, not all situations or camera setups allow for all options. 
 Sometimes raising shutter speeds is the only remaining option, if motion blur is to be avoided.
 
-> **Rule-of-Thumb**: the minmal shutter speed can be calculated as $\frac{1}{focal\ legth\ *\ crop\ factor}$ so with a 150mm lens on an MFT camera it's $\frac{1}{150mm * 2x} = 1/300$ or faster.
+> **Rule-of-Thumb**: the minimal shutter speed can be calculated as $\frac{1}{focal\ length\ *\ crop\ factor}$ so with a 150mm lens on an MFT camera it's $\frac{1}{150mm * 2x} = 1/300$ or faster.
 
 Basically any movement can happen in all three spacial dimensions (up/down, left/right, forward/backwards) as well as in rolling/tilting motions (to the sideways/vertically/horizontally). 
-Image stabalisation attempts to stabalize either movement when it happens in quick succession (e.g. a jittering hand). 
+Image stabilization attempts to stabilize either movement when it happens in quick succession (e.g. a jittering hand). 
 As shifting the camera in filming can also be an artistic choice - that may require dampening but not full negation - time is an important aspect to keep in mind. 
 
 - **Shooting still technique**: Living organisms (humans) are never totally still. 
-We get a better "stillness", when grounding ourselfes and controll our breathing and haerd rate when shooting (you may employ some sharp shooter techniques here). 
+We get a better "stillness", when grounding ourselves and control our breathing and heart rate when shooting (you may employ some sharp shooter techniques here). 
 
 > **"Joe McNally" Shoulder Grip**: [Da Grip](https://joemcnally.com/2008/03/10/da-grip/) push the camera with both hands into your shoulder (best for bulkier models) and look over your shoulder through the viewfinder. 
 
@@ -210,17 +210,17 @@ We get a better "stillness", when grounding ourselfes and controll our breathing
 
 > **timer trick**
 
-- **Image stabalisation**: Often build as hardware into lenses as *Optical Image Stabilization (OIS)* or dealt with via software (e.g. in smart phones). 
+- **Image stabilization**: Often build as hardware into lenses as *Optical Image Stabilization (OIS)* or dealt with via software (e.g. in smart phones). 
 Dampens shake along one or more axis and may be configurable in direction as well as dampening factor.
 
 > **Tip**: Olympus/OM Systems is probably the last manufacturer offering *In-Body Image Stabilization (IBIS)*, which is arguably the best in the industry.
-This allow photography even with low grade lenses to be stabalised at world class level.
+This allow photography even with low grade lenses to be stabilized at world class level.
 
 - **Tripod**: Resting the camera during longer exposure is very much adviced. Ideally this is done by a classic tripod. 
 In rough situations it is adviced to fix their position (e.g. a weight at the base or with rope and tent stakes). 
 There is a wide variety of tripods, mono-pods and similar gear.
 
-> **Tip**: Carrying a tripod wherever you go is a nouance and hinders you from spontaneous snap shots. So if you don't have any such gear on you, just resting the camera somewhere and securing it from movement (e.g. with a weight on top) will do just as fine. It's less convenient and professional, but it get's the job done.
+> **Tip**: Carrying a tripod wherever you go is a nuisance and hinders you from spontaneous snap shots. So if you don't have any such gear on you, just resting the camera somewhere and securing it from movement (e.g. with a weight on top) will do just as fine. It's less convenient and professional, but it gets the job done.
 
 - **Gimbal**: Often used in filming, a gimbal is an aparature that compensates movement along axes creating extremely stable imagery. 
 However, they are usually bulky and less usefull for photography.
@@ -236,13 +236,13 @@ Of course sometimes strong is not what a picture needs.
 And sometimes the sun light is not available (indoors or at night).
 Furthermore, often sun light is also too strong or direct, as with strong light, one also gehts very dark shadows.
 
-For most photography - depending on what is to be shot and what effect should be achieved - a mildly strong but defuse light is advised. 
-The ideal is a szene that is well lit in all spots, with shadows that are not too dark.
+For most photography - depending on what is to be shot and what effect should be achieved - a mildly strong but diffuse light is advised. 
+The ideal is a scene that is well lit in all spots, with shadows that are not too dark.
 Outdoors, this is can be observed best at overcast weather or during golden hour (around sundown or sunrise).
 
 Indoor, this can be quite tricky.
-Letting in sun light through windows, can create uneven lighting but also picturesque szenes.
-Artificial light, is hardly ever as strong (and can even be perceaved as painfull to subjects when created). 
+Letting in sun light through windows, can create uneven lighting but also picturesque scenes.
+Artificial light, is hardly ever as strong (and can even be perceived as painfull to subjects when created). 
 
 ## Exposure
 * exposure triangle
@@ -292,9 +292,9 @@ If you want to test the exposure triangle as well as other settings try [photosk
 
 # Post-Processing
 
-> **Note**: there is of plenty of software for various purposes out there. 
+> **Note**: there is plenty of software for various purposes out there. 
 However, here is not the place to advertise or judge. 
-Yet unlike equipment, there is freely available and fit-for-purpose software available from the OpenSource community, that do just as good as proprietary software.
+Yet unlike equipment, there is freely available, fit-for-purpose open-source software from the community that does just as well as proprietary software.
 For everything else, please do your own research. 
 
 ## The dark room 
@@ -307,17 +307,17 @@ Expect file sizes to increase by 3x to 6x, necessitating high-capacity storage a
 Since RAW is a collection of sensor data rather than a standardized image, it requires specialized "digital darkroom" software to interpret proprietary formats (e.g., .CR3, .NEF, .ARW) and manage non-destructive edits via "sidecar" metadata files. 
 Furthermore, because RAW bypasses in-camera processing, images appear flat and undersaturated by default, requiring a manual development and export phase before they are viable for viewing, printing, or sharing.
 
-Therefore RAW files are a steep learning curve and higher effort in post-production and hardware requirements. 
+Therefore, working with RAW files comes with a steep learning curve and requires more effort in post-production and hardware.
 However, they also allow for more control and better results when done right.
 
-For this purpose **[darktable](https://www.darktable.org/)** & **[RawTherapee](https://rawtherapee.com/)** are two OpenSource RAW image processors. 
+For this purpose **[darktable](https://www.darktable.org/)** & **[RawTherapee](https://rawtherapee.com/)** are two open-source RAW image processors. 
 One can use them for free to open, edit and export RAW files. 
 
 # FAQ
 ## Blurry photos
 In general there are two reasons for blur:
 1. Out of focus blur (see Focus): Ensure you are focusing on it correctly. If that is too hard, try another positioning between you and your subject (more distance makes it raises the depth of field) and/or raise the f-stop (again raising the depth of field but also darkening the image!).
-1. Movement blur (see Time): Happens when things are moving too quickly. This is either you hand shakes too much (try keeping your hand calmer or rest your camera somewhere stable like a tripod) or you subject is moving too fast. If nothing helps, raise your shutter speed (darkening the image!).
+1. Movement blur (see Time): Happens when things are moving too quickly. This is either your hand shakes too much (try keeping your hand calmer or rest your camera somewhere stable like a tripod) or your subject is moving too fast. If nothing helps, raise your shutter speed (darkening the image!).
 
-## Noisy/Grainy/Specled photos
-Probably a matter of too high ISO (see ISO). Try lowering it. If that darkens your image too much (often it's auto-applied), consider higher f-stop/longer exposure or adding more light to the szene.
+## Noisy/Grainy/Speckled photos
+Probably a matter of too high ISO (see ISO). Try lowering it. If that darkens your image too much (often it's auto-applied), consider higher f-stop/longer exposure or adding more light to the scene.
