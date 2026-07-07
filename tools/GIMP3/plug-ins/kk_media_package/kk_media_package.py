@@ -39,7 +39,7 @@ logger = logging.getLogger("MediaPackageFilters")
 
 class MediaPackageFiltersPlugin(Gimp.PlugIn):
     # --- STATISTICS ENGINE (OPTIMIZATION) ---
-    def _get_cached_stats(self, drawable):
+    def _get_cached_stats(self, drawable: Gimp.Drawable) -> Dict[str, Any]:
         hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
         hist_config = hist_proc.create_config()
         hist_config.set_property('drawable', drawable)
@@ -57,7 +57,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         return {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
 
     # --- PDB WRAPPERS ---
-    def _call_pdb(self, proc_name, **kwargs):
+    def _call_pdb(self, proc_name: str, **kwargs) -> Any:
         pdb = Gimp.get_pdb()
         proc = pdb.lookup_procedure(proc_name)
         if not proc:
@@ -82,11 +82,17 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         return result
 
     # --- GIMP 3 PLUGIN ARCHITECTURE ---
-    def do_query_procedures(self):
+    def do_query_procedures(self) -> List[str]:
         return ["kk-enhance-image", "kk-dummy-a", "kk-dummy-b"]
 
-    def do_create_procedure(self, name):
-        procedure = Gimp.ImageProcedure.new(self, name, Gimp.PDBProcType.PLUGIN, self.run, None)
+    def do_create_procedure(self, name: str) -> Gimp.ImageProcedure:
+        procedure = Gimp.ImageProcedure.new(
+            self,
+            name,
+            Gimp.PDBProcType.PLUGIN,
+            self.run,
+            None
+        )
         procedure.set_image_types("*")
         procedure.set_sensitivity_mask(Gimp.ProcedureSensitivityMask.DRAWABLE)
         if name == "kk-enhance-image":
@@ -109,7 +115,15 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
 
-    def run(self, procedure, run_mode, image: Gimp.Image, drawables: List[Gimp.Drawable], config, run_data):
+    def run(
+            self,
+            procedure: Gimp.ImageProcedure,
+            run_mode,
+            image: Gimp.Image,
+            drawables: List[Gimp.Drawable],
+            config: GLib.Variant,
+            run_data: GLib.Variant
+        ):
         if not drawables:
             return procedure.new_return_values(Gimp.PDBStatusType.CALLING_ERROR, GLib.Error())
         name = procedure.get_name()

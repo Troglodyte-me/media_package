@@ -91,12 +91,49 @@ class base:
         pass
 
 class image_processor(base):
-    def _call_pdb(self, func_name, **kwargs):
+    # def _call_pdb(self, func_name, **kwargs):
+    #     try:
+    #         return Gimp.pdb_call(func_name, **kwargs)
+    #     except Exception as e:
+    #         logger.error(f"Error calling PDB function '{func_name}': {e}")
+    #         raise
+        # --- PDB WRAPPERS ---
+    def _call_pdb(self, proc_name: str, **kwargs) -> Any:
+        """Calls a PDB procedure with the given arguments.
+
+        Args:
+            proc_name (str): The name of the PDB procedure to call.
+
+        Raises:
+            RuntimeError: If the PDB procedure is not found.
+            RuntimeError: If the PDB procedure fails to run.
+
+
+        Returns:
+            Any: The result of the PDB procedure.
+        """
+        pdb = Gimp.get_pdb()
+        proc = pdb.lookup_procedure(proc_name)
+        if not proc:
+            logger.error(f"PDB procedure '{proc_name}' not found.")
+            raise RuntimeError(f"PDB procedure '{proc_name}' not found.")
+        config = proc.create_config()
+        for k, v in kwargs.items():
+            try:
+                config.set_property(k, v)
+            except Exception as e:
+                logger.error(f"Failed to set property '{k}' for '{proc_name}': {e}")
+                raise
+        logger.info(f"Calling PDB: {proc_name} with args: {kwargs}")
         try:
-            return Gimp.pdb_call(func_name, **kwargs)
+            result = proc.run(config)
         except Exception as e:
-            logger.error(f"Error calling PDB function '{func_name}': {e}")
+            logger.error(f"Error running PDB procedure '{proc_name}': {e}")
             raise
+        if result.index(0) != Gimp.PDBStatusType.SUCCESS:
+            logger.error(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
+            raise RuntimeError(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
+        return result
         
     def __init__(self):
         super().__init__()
@@ -123,7 +160,7 @@ class enhance_image(image_processor):
             blur_radius: float,
             threshold_val: float
         ) -> None:
-        """_summary_
+        """Creates a black and white layer based on white balance with optional blur.
 
         Args:
             image (Gimp.Image): The image to process.
@@ -137,7 +174,8 @@ class enhance_image(image_processor):
         image.insert_layer(wb_bw, layer_group, 0)
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
-        filt.get_config().set_property("std-dev-x", blur_radius)
+        filt.get_config().set_property("std-dev-x", blur_radius/2)  # Adjusting blur radius for better effect
+        filt.get_config().set_property("std-dev-y", blur_radius/2)  # Adjusting blur radius for better effect
         wb_bw.merge_filter(filt)
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
@@ -233,6 +271,7 @@ class enhance_image(image_processor):
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
         filt.get_config().set_property("std-dev-x", blur_radius)
+        filt.get_config().set_property("std-dev-y", blur_radius)
         det_layer.merge_filter(filt)
         
         mode = Gimp.LayerMode.OVERLAY if image_stats['mean'] < 128 else Gimp.LayerMode.SCREEN
@@ -267,7 +306,39 @@ class enhance_image(image_processor):
         image.undo_group_end()
         Gimp.displays_flush()
 
+    # --- STATISTICS ENGINE (OPTIMIZATION) ---
     def _get_cached_stats(self, drawable: Gimp.Drawable) -> Dict[str, Any]:
-        # Placeholder for actual implementation to retrieve cached stats
-        # In a real scenario, this would compute or retrieve statistics like mean and median
-        return {'mean': 128, 'median': 128}
+        """Calculate and return histogram-based statistics for a drawable.
+
+        This helper queries GIMP's ``gimp-drawable-histogram`` procedure once
+        and returns values used by enhancement steps.
+
+        Args:
+            drawable: The source drawable to analyze.
+
+        Returns:
+            A dictionary containing:
+                - ``mean`` (float): Mean value of the VALUE histogram channel.
+                - ``std_dev`` (float): Standard deviation of pixel values.
+                - ``median`` (float): Median value of pixel values.
+                - ``pixels`` (int): Number of pixels considered.
+
+            If histogram retrieval fails, returns fallback defaults:
+            ``{"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}``.
+        """
+        hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
+        hist_config = hist_proc.create_config()
+        hist_config.set_property('drawable', drawable)
+        hist_config.set_property('channel', Gimp.HistogramChannel.VALUE)
+        hist_config.set_property('start-range', 0.0)
+        hist_config.set_property('end-range', 1.0)
+        res = hist_proc.run(hist_config)
+
+        if res.index(0) == Gimp.PDBStatusType.SUCCESS:
+            return {
+                "mean": res.index(1),
+                "std_dev": res.index(2),
+                "median": res.index(3),
+                "pixels": res.index(4)
+            }
+        return {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
