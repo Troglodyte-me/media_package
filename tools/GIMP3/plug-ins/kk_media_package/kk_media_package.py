@@ -96,11 +96,8 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             procedure.set_menu_label(_("Enhance Image"))
             procedure.add_menu_path(_("Filters/Enhance"))
             procedure.set_documentation(
-                _("Creates a stack of enhancement layers for the active image using ported GIMP 2 logic. "
-                "Parameters: image (Gimp.Image), drawable (Gimp.Drawable). "
-                "Output: Enhancement layers grouped for further editing."),
-                _("This procedure enhances the image by adding multiple adjustment layers such as white balance, detail equalization, and contrast/grey mix. "
-                "It is intended for use on RGB images and returns the enhanced image with new layers grouped under a common group."),
+                _("Python descripon for Enhance Image"),
+                _("procedure description for Enhance Image"),
                 name
             )
         elif name == "kk-dummy-a":
