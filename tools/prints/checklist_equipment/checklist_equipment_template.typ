@@ -44,4 +44,10 @@ You can add as many of these as you like, or design them to suit your needs.
 
 #check_item("Last Item", "Include some explanatory text here for the last checklist item. This is a template, so you can customize it as needed.")
 
-Feedback and suggestions for improvement are always welcome!
+// this is the end of the template - it closes with a feedback link to the GitHub repository for the media_package project, where you can provide feedback or suggestions for improvement.
+#feedback-link(
+  "https://github.com/Troglodyte-me/media_package",
+  "Feedback and suggestions for improvement are always welcome.",
+  alt-url: "" // already displayed url in footer, so no need to show it again
+)
+// you can also use the QR-code feature to link to your own project or website.

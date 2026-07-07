@@ -67,5 +67,5 @@ In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
 #feedback-link(
   "https://github.com/Troglodyte-me/media_package",
   "Feedback und Verbesserungsvorschläge sind stets willkommen.",
-  alt-url: ""
+  alt-url: "" // bereits im Fußbereich angezeigt, daher hier nicht erneut anzeigen
 )

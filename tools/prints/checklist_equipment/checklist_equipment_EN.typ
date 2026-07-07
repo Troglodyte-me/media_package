@@ -69,5 +69,5 @@ Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
 #feedback-link(
   "https://github.com/Troglodyte-me/media_package",
   "Feedback and suggestions for improvement are always welcome.",
-  alt-url: ""
+  alt-url: "" // already displayed url in footer, so no need to show it again
 )
