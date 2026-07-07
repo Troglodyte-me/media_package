@@ -14,10 +14,10 @@ Ensure ```gettext``` is imported and initialised as well as the ```babel``` pack
 pip install Babel
 ```
 
-Inside the script, mark afterwards every string to be translated as ```_(<sting>)```.
+Afterward, mark every string to be translated in the script as ```_(<string>)```.
 
 ### step 1: extract strings
-Navigate into the main directory and create a ```local``` sub-directory.
+Navigate into the main directory and create a ```locale``` sub-directory.
 Afterwards extract all placeholders into a .pot file. For that, define the .pot-file name (the domain name) and add all files to be localised:
 ```shell
 python -m babel.messages.frontend extract -o locale/<file_name>.pot <main_script>.py modules/<secondary_file>.py
