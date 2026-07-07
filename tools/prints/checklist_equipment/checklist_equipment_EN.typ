@@ -3,6 +3,7 @@
 // designed with Mammouth.AI and Gemini 3.5 Flash
 // by Konrad Keck, 2026
 #import "checklist_equipment_design.typ": *
+#import "@preview/qrcode": qrcode
 
 #show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
 #show: doc => setup-text(doc)
@@ -62,4 +63,13 @@ Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
 
 #check_item("Return Equipment", "Return all borrowed equipment and accessories promptly after use.")
 
-Feedback and suggestions for improvement are always welcome!
+
+#v(3em)
+
+#align(center)[
+  #text(size: 9pt, fill: muted-gray)[Feedback and suggestions for improvement are always welcome.]
+  #v(4pt)
+  #qrcode("https://github.com/Troglodyte-me/media_package", height: 22mm)
+  #v(2pt)
+  #text(size: 8pt, fill: muted-gray)[github.com/Troglodyte-me/media_package]
+]

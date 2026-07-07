@@ -21,7 +21,7 @@
       #grid(
         columns: (1fr, 1fr),
         text(8pt, fill: muted-gray)[github.com/Troglodyte-me/media_package],
-        align(right, text(8pt, fill: muted-gray)[Seite 1 von 1])
+        context align(right, text(8pt, fill: muted-gray)[#counter(page).display("1 / 1", both: true)])
       )
     ]
   )
@@ -52,7 +52,8 @@
 
 // Reusable styled header
 #let section-heading(title) = {
-  block(width: 100%, below: 14pt, above: 18pt)[
+  // Keep heading with following content so late-page headings move to next page.
+  block(width: 100%, below: 14pt, above: 18pt, sticky: true)[
     #text(weight: "bold", size: 13pt, fill: brand-red)[#title]
     #v(-4pt)
     #line(length: 100%, stroke: 1.5pt + brand-red)
