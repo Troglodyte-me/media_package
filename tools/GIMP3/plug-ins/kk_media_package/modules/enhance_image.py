@@ -88,18 +88,33 @@ class base:
     def __init__(self):
         pass
 
-class base_enhance_image(base):
-    def __init__(self, image, drawable):
-        super().__init__()
-        self.image = image
-        self.drawable = drawable
-
+class image_processor(base):
     def _call_pdb(self, func_name, **kwargs):
         try:
             return Gimp.pdb_call(func_name, **kwargs)
         except Exception as e:
             logger.error(f"Error calling PDB function '{func_name}': {e}")
             raise
+        
+    def __init__(self):
+        super().__init__()
+
+class enhance_image(image_processor):
+    def create_group(self):
+        pass
+    def create_layer_whitebalace(self):
+        pass
+    def create_group_contrast_greymix(self):
+        pass
+    def create_layer_detail_equalization(self):
+        pass
+    
+    def __init__(self, image, drawable):
+        super().__init__()
+        self.create_group()
+        self.create_layer_whitebalace()
+        self.create_group_contrast_greymix()
+        self.create_layer_detail_equalization()
 
     def _get_cached_stats(self, drawable):
         # Placeholder for actual implementation to retrieve cached stats
