@@ -7,63 +7,6 @@ from typing import List, Dict, Any
 
 logger = logging.getLogger("KonradFilters")
 
-def enhance_image_logic(self, image: Gimp.Image, drawable: Gimp.Drawable):
-    image.undo_group_start()
-    stats = self._get_cached_stats(drawable)
-    size = (((image.get_width()**2) + (image.get_height()**2))**0.5)
-    blur_radius = size / 1000.0
-    threshold_val = ((stats['mean'] * stats['median'])**0.5) / 255.0
-    main_group = Gimp.GroupLayer.new(image)
-    main_group.set_name(_("Enhancement Stack"))
-    image.insert_layer(main_group, None, 0)
-    drawable.set_name(_("Original"))
-    image.insert_layer(drawable, main_group, 0)
-    wb_layer = drawable.copy()
-    wb_layer.set_name(_("White Balance"))
-    image.insert_layer(wb_layer, main_group, 1)
-    self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_layer)
-    wb_layer.set_opacity(90.0)
-    grey_group = Gimp.GroupLayer.new(image)
-    grey_group.set_name(_("Contrast/Grey Mix"))
-    grey_group.set_mode(Gimp.LayerMode.MULTIPLY)
-    grey_group.set_opacity(10.0)
-    image.insert_layer(grey_group, main_group, 0)
-    wb_grey = wb_layer.copy()
-    wb_grey.set_name(_("grey by white balance"))
-    image.insert_layer(wb_grey, grey_group, 0)
-    self._call_pdb('gimp-drawable-desaturate', drawable=wb_grey)
-    self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_grey)
-    wb_bw = wb_layer.copy()
-    wb_bw.set_name(_("b/w by white balance (incl blur)"))
-    image.insert_layer(wb_bw, grey_group, 0)
-    filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
-    filt.get_config().set_property("std-dev-x", blur_radius)
-    wb_bw.merge_filter(filt)
-    self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw)
-    self._call_pdb('gimp-drawable-threshold', drawable=wb_bw, low_threshold=threshold_val, high_threshold=1.0)
-    wb_bw.set_opacity(10.0)
-    eq_grey = drawable.copy()
-    eq_grey.set_name(_("grey by equalize"))
-    image.insert_layer(eq_grey, grey_group, 0)
-    self._call_pdb('gimp-drawable-equalize', drawable=eq_grey, mask_only=False)
-    self._call_pdb('gimp-drawable-desaturate', drawable=eq_grey)
-    eq_grey.set_opacity(50.0)
-    eq_bw = drawable.copy()
-    eq_bw.set_name(_("b/w by equalize (incl bright+contrast)"))
-    image.insert_layer(eq_bw, grey_group, 0)
-    self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False)
-    self._call_pdb('gimp-drawable-threshold', drawable=eq_bw, low_threshold=threshold_val, high_threshold=1.0)
-    eq_bw.set_opacity(10.0)
-    det_layer = drawable.copy()
-    det_layer.set_name(_("Detail Equalize"))
-    image.insert_layer(det_layer, main_group, len(main_group.get_children()))
-    mode = Gimp.LayerMode.OVERLAY if stats['mean'] < 128 else Gimp.LayerMode.SCREEN
-    det_layer.set_mode(mode)
-    det_layer.set_opacity(25.0)
-    self._call_pdb('gimp-drawable-equalize', drawable=det_layer, mask_only=False)
-    image.undo_group_end()
-    Gimp.displays_flush()
-
 class base:
     def __init__(self):
         pass
@@ -270,9 +213,24 @@ class enhance_image(image_processor):
         image.insert_layer(main_layer_group, None, 0)
         drawable.set_name(_("Original"))
 
-        self.create_layer_whitebalace(image, drawable, main_layer_group) # Create and insert the white balance layer
-        self.create_group_contrast_greymix(image, drawable, main_layer_group, blur_radius, threshold_val) # Create and insert the contrast/grey mix group layer
-        self.create_layer_detail_equalization(image, drawable, stats, main_layer_group, blur_radius)
+        self.create_layer_whitebalace(# Create and insert the white balance layer
+            image=image, 
+            drawable=drawable, 
+            layer_group=main_layer_group
+        ) 
+        self.create_group_contrast_greymix( # Create and insert the contrast/grey mix group layer
+            image=image,
+            drawable=drawable,
+            main_layer_group=main_layer_group,
+            blur_radius=blur_radius,
+            threshold_val=threshold_val)
+        self.create_layer_detail_equalization( # Create and insert the detail equalization layer
+            image=image,
+            drawable=drawable,
+            image_stats=stats,
+            layer_group=main_layer_group,
+            blur_radius=blur_radius
+        )
         image.undo_group_end()
         Gimp.displays_flush()
 
