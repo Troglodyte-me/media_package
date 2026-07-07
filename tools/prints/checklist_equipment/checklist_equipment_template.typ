@@ -5,7 +5,7 @@
 // 
 // Use to create new language versions of the equipment checklist printout or make your own custom version.
 
-#import "checklist_equipment/checklist_equipment_design.typ": *
+#import "checklist_equipment_design.typ": *
 
 #show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
 #show: doc => setup-text(doc)
@@ -36,6 +36,9 @@ You can add as many of these as you like, and they will be displayed in the chec
 
 #check_item("Another Item", "Include some explanatory text here for another checklist item. This is a template, so you can customize it as needed.")
 
+*Hint* --
+These hints are free-form as are the headings and checklist items. 
+You can add as many of these as you like, or design them to suit your needs.
 
 #section-heading("3. After")
 
