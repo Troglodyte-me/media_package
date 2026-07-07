@@ -9,14 +9,17 @@
 #let brand-bg = rgb("#fcfcfc")      // Soft page background
 #let muted-gray = rgb("#7f8c8d")    // Details and borders
 
+// page setup component
 #let setup-page(title, body) = {
   set page(
-    paper: "a4",
-    margin: (x: 2cm, y: 2.2cm),
+    paper: "a4", // paper size
+    margin: (x: 2cm, y: 2.2cm), // page margins
     fill: brand-bg,
+    // page header 
     header: align(right)[
       #text(8pt, fill: muted-gray, weight: "bold")[#title]
     ],
+    // page footer
     footer: [
       #line(length: 100%, stroke: 0.5pt + muted-gray)
       #grid(
@@ -29,6 +32,7 @@
   body
 }
 
+// text setup component
 #let setup-text(body) = {
   // Gracefully falls back to sans-serif if Arial is missing on the compiling system
   set text(font: ("Arial", "Liberation Sans", "sans-serif"), size: 10pt, fill: brand-dark)
@@ -65,7 +69,8 @@
 #let feedback-link(url, body, alt-url: none) = {
   let shown-url = if alt-url == none { url } else { alt-url }
   
-  // MAGIC FORMULA: Base size of 12mm + 0.085mm per character.
+  // MAGIC FORMULA: 
+  // Base size of 12mm + 0.085mm per character.
   // This guarantees every QR pixel is printed at a comfortable ~0.42mm size.
   // Just to be on the safe side I've added an extra 10% margin to the QR code size calculation.
   let qr-size = (12mm + url.len() * 0.085mm) * 1.1

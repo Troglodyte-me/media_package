@@ -3,7 +3,6 @@
 // designed with Mammouth.AI and Gemini 3.5 Flash
 // by Konrad Keck, 2026
 #import "checklist_equipment_design.typ": *
-#import "@preview/qrcode": qrcode
 
 #show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
 #show: doc => setup-text(doc)
