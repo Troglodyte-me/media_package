@@ -15,7 +15,7 @@ from gi.repository import Gio
 from typing import List, Dict, Any
 
 # --- FEATURE MODULES ---
-from modules.enhance_image import enhance_image_logic
+from modules.enhance_image import enhance_image
 from modules.dummy_a import dummy_a_logic
 from modules.dummy_b import dummy_b_logic
 
@@ -122,7 +122,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             return procedure.new_return_values(Gimp.PDBStatusType.CALLING_ERROR, GLib.Error())
         name = procedure.get_name()
         if name == "kk-enhance-image":
-            enhance_image_logic(self, image, drawables[0])
+            enhance_image(self, image, drawables[0])
         elif name == "kk-dummy-a":
             dummy_a_logic(self, image, drawables[0])
         elif name == "kk-dummy-b":
