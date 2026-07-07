@@ -76,16 +76,17 @@
   let qr-size = (12mm + url.len() * 0.085mm) * 1.1
 
   grid(
-    columns: (auto, auto, 1fr),
-    rows: (auto, auto, auto),
-    gutter: (0.6em, 1em, 1em),
-    align: (left + top, left + top, left + top),
+    columns: (auto, 1fr),
+    rows: (auto, auto),
+    gutter: (1em, 0.6em),
+    align: (left + top, left + top),
 
-    grid.cell(colspan: 2)[
+    grid.cell(rowspan: 2)[
+        #qrcode(url, width: qr-size)
+    ],
+    align(left + top)[
       #link(url)[#body]
     ],
-    v(2em),
-    qrcode(url, width: qr-size),
     align(left + bottom)[
       #text(8.5pt, fill: muted-gray)[#shown-url]
     ]

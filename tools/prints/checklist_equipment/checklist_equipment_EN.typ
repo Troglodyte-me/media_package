@@ -62,11 +62,15 @@ Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
 
 #check_item("Return Equipment", "Return all borrowed equipment and accessories promptly after use.")
 
-
 #v(3em)
+
+Feedback and suggestions for improvement are always welcome.
+
+#v(1fr)
 
 #feedback-link(
   "https://github.com/Troglodyte-me/media_package",
-  "Feedback and suggestions for improvement are always welcome.",
+  "For more information and feedback
+simply follow the link.",
   alt-url: "" // already displayed url in footer, so no need to show it again
 )

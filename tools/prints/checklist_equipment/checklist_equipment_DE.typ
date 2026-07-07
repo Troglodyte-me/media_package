@@ -64,8 +64,13 @@ In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
 
 #v(3em)
 
+Feedback und Verbesserungsvorschläge sind stets willkommen.
+
+#v(1fr)
+
 #feedback-link(
   "https://github.com/Troglodyte-me/media_package",
-  "Feedback und Verbesserungsvorschläge sind stets willkommen.",
+  "Für mehr Informationen und Feedback
+einfach dem Link folgen.",
   alt-url: "" // bereits im Fußbereich angezeigt, daher hier nicht erneut anzeigen
 )
