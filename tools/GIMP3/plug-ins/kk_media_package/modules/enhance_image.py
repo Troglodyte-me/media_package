@@ -83,3 +83,25 @@ def enhance_image_logic(self, image, drawable):
     self._call_pdb('gimp-drawable-equalize', drawable=det_layer, mask_only=False)
     image.undo_group_end()
     Gimp.displays_flush()
+
+class base:
+    def __init__(self):
+        pass
+
+class base_enhance_image(base):
+    def __init__(self, image, drawable):
+        super().__init__()
+        self.image = image
+        self.drawable = drawable
+
+    def _call_pdb(self, func_name, **kwargs):
+        try:
+            return Gimp.pdb_call(func_name, **kwargs)
+        except Exception as e:
+            logger.error(f"Error calling PDB function '{func_name}': {e}")
+            raise
+
+    def _get_cached_stats(self, drawable):
+        # Placeholder for actual implementation to retrieve cached stats
+        # In a real scenario, this would compute or retrieve statistics like mean and median
+        return {'mean': 128, 'median': 128}
