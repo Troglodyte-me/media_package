@@ -14,7 +14,7 @@ Ensure ```gettext``` is imported and initialised as well as the ```babel``` pack
 pip install Babel
 ```
 
-Afterwards mark every string to be translated as ```_(<sting>)```
+Inside the script, mark afterwards every string to be translated as ```_(<sting>)```.
 
 ### step 1: extract strings
 Navigate into the main directory and create a ```local``` sub-directory.
@@ -28,7 +28,8 @@ Repeat when script changes.
 ### step 2: init / update translation
 After creating the .pot-file .po-files can be created for each language. 
 
-When doing this **the first time**, initialise by running the following per language to be translated:
+.po-files are already provided with the GIT repository, so the following can be ignored. 
+However, when doing this **the first time** anyway, initialise by running the following per language to be translated (e.g. for adding more language support):
 ```shell
 python -m babel.messages.frontend init -i locale/<file_name>.pot -d locale -l <two-digit language code> -D <domain name>
 ```
