@@ -94,7 +94,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         procedure.set_sensitivity_mask(Gimp.ProcedureSensitivityMask.DRAWABLE)
         if name == "kk-enhance-image":
             procedure.set_menu_label(_("Enhance Image"))
-            procedure.add_menu_path(_("Filters/Enhance"))
+            procedure.add_menu_path("<Image>/" + _("Filters/Enhance"))
             procedure.set_documentation(
                 _("Python descripon for Enhance Image"),
                 _("procedure description for Enhance Image"),
@@ -102,10 +102,10 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             )
         elif name == "kk-dummy-a":
             procedure.set_menu_label(_("Dummy A"))
-            procedure.add_menu_path(_("Filters/Dummy"))
+            procedure.add_menu_path("<Image>/" + _("Filters/Dummy"))
         elif name == "kk-dummy-b":
             procedure.set_menu_label(_("Dummy B"))
-            procedure.add_menu_path(_("Filters/Dummy"))
+            procedure.add_menu_path("<Image>/" + _("Filters/Dummy"))
         procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
 

@@ -1,19 +1,19 @@
 # from email.mime import image
-from gettext import gettext
+import gettext
 import logging
 import os
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any
 
-# --- LOCALIZATION SETUP ---
-# Get the absolute path to this plugin's directory
-PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
-LOCALEDIR = os.path.join(PLUGIN_DIR, 'locale')
-DOMAIN = "kk_media_package"  # Must match your folder and .mo file names
+# # --- LOCALIZATION SETUP ---
+# # Get the absolute path to this plugin's directory
+# PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
+# LOCALEDIR = os.path.join(PLUGIN_DIR, 'locale')
+# DOMAIN = "kk_media_package"  # Must match your folder and .mo file names
 
-# Install "_" into Python's built-in namespace globally.
-# This makes the _() function automatically available in any imported module (like enhance_image.py)
-gettext.install(DOMAIN, LOCALEDIR)
+# # Install "_" into Python's built-in namespace globally.
+# # This makes the _() function automatically available in any imported module (like enhance_image.py)
+# gettext.install(DOMAIN, LOCALEDIR)
 
 # STRINGS = {
 #     "en": {

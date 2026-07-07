@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-07-07 19:44+0200\n"
 "PO-Revision-Date: 2026-07-07 19:45+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Konrad Keck - nigma1985 <nigma-mania@web.de>\n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: kk_media_package.py:96
 msgid "Enhance Image"
-msgstr "Bild Korrekturebenen"
+msgstr "Korrekturebenen"
 
 #: kk_media_package.py:97
 msgid "Filters/Enhance"
-msgstr "Filters/Korrektur"
+msgstr "Filter/Medienpaket"
 
 #: kk_media_package.py:99
 msgid "Python descripon for Enhance Image"
@@ -40,7 +40,7 @@ msgstr "Platzhalter A"
 
 #: kk_media_package.py:105 kk_media_package.py:108
 msgid "Filters/Dummy"
-msgstr "Filters/Dummy"
+msgstr "Filter/Dummy"
 
 #: kk_media_package.py:107
 msgid "Dummy B"
