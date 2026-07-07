@@ -1,7 +1,7 @@
-# from email.mime import image
-import gettext
 import logging
-import os
+# import os
+# import gettext
+# from email.mime import image
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any
 

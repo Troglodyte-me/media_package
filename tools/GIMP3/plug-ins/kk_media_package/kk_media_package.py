@@ -122,11 +122,11 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             return procedure.new_return_values(Gimp.PDBStatusType.CALLING_ERROR, GLib.Error())
         name = procedure.get_name()
         if name == "kk-enhance-image":
-            enhance_image(self, image, drawables[0])
+            enhance_image(image, drawables[0])
         elif name == "kk-dummy-a":
-            dummy_a_logic(self, image, drawables[0])
+            dummy_a_logic(image, drawables[0])
         elif name == "kk-dummy-b":
-            dummy_b_logic(self, image, drawables[0])
+            dummy_b_logic(image, drawables[0])
         else:
             Gimp.message(f"Function {name} is a placeholder.")
         return procedure.new_return_values(Gimp.PDBStatusType.SUCCESS, GLib.Error())
