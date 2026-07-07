@@ -1,122 +1,64 @@
+// checklist_equipment_DE.typ
 // Simple Rental / Return Checklist
+// designed with Mammouth.AI and Gemini 3.5 Flash
+// by Konrad Keck, 2026
 
-#set page(
-  paper: "a4",
-  margin: (x: 1.8cm, y: 2cm),header: align(right)[
-    #text(
-      size: 8pt, 
-      fill: luma(100), 
-      font: "Arial")[
-      Media Package | #datetime.today().display("[year]-[month]-[day]") | Equipment Checkliste
-    ]
-  ],
-  footer: align(center)[
-    #text(
-      size: 8pt,
-      fill: luma(120))[Page #context counter(page).display()]
-  ]
-)
-#set text(
-  font: "Arial", // Widely available sans-serif
-  size: 10pt,
-  fill: rgb("#2c3e50") // Dark slate blue/grey instead of harsh pure black
-)
+#import "checklist_equipment_design.typ": *
 
-// ---- BRAND COLORS & DESIGN ELEMENTS ----
-#let brand-red = rgb("#b22222") // Firebrick Red
-#let brand-dark = rgb("#1a252f") // Deep Dark Navy
-#let brand-bg = rgb("#f8f9fa") // Soft off-white
-
-// Custom Checkbox Function
-#let check_item(text, explanation: none) = {
-  let indent = 1.1em + 0.8em + 2.3pt // Checkbox width + spacing + stroke width
-
-  block(width: 100%, inset: (y: 2pt))[
-    #box(width: 1.1em, height: 1.1em, stroke: 1.2pt + brand-dark, radius: 2pt, baseline: 20%)
-    #h(0.8em)
-    *#text*
-
-    #if explanation != none [
-      // #v(0.35em)
-      #pad(left: indent)[#explanation]
-    ]
-  ]
-}
+#show: doc => setup-page("AUSRÜSTUNGS-CHECKLISTE | GERÄTE-LEIHE", doc)
+#show: doc => setup-text(doc)
 
 // ---- DOCUMENT CONTENT ----
 
-// Main Title
-#align(left)[
-  #text(size: 22pt, weight: "bold", fill: brand-red)[
-    = EQUIPMENT CHECKLISTE
-    ] 
+#align(center)[
+  #text(size: 20pt, weight: "bold", fill: brand-dark)[Ausrüstungs-Checkliste] \
+  #text(size: 10pt, fill: muted-gray)[Schnellstart-Anleitung für die Geräteausleihe]
 ]
-#v(1em)
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Vorbereitung
-  ]
-]
-// #todo("Pick Camera / Lens / Accessory")
-#check_item("Kamera / Objektiv / Zubehör auswählen", explanation: "Kompatibilität der geliehenen Ausrüstung (Kamera, Objektiv und Filter) überprüfen.
-Weniger ist mehr: Wähle nicht mehr als zwei Kameras pro Person und nicht mehr als zwei Objektive pro Kameragehäuse und Person aus.
-Alternativ kann in bestimmten Situationen auch die Kamera vom Smartphone genutzt werden.
-Ausrüstung am besten gleich zusammenbauen und zum Transport Objektivdeckel verwenden.
-Eigene Taschen und Koffer für die geliehenen Gegenstände sind dringend empfohlen.")
+#v(10pt)
 
-#v(1em)
-#check_item("Batterie/Speicherkarte einlegen", explanation: "Ladung der Batterien sicherstellen. Eine Ladung reicht je nach Nutzung für etwa 2 Stunden oder 200 Fotos aus. Ladegeräte sind verfügbar und können mitgenommen werden.
-Einwegbatterien sind nicht mitgeliefert. Bitte bei Bedarf eigene verwenden.
-Stelle außerdem sicher, dass auf der Speicherkarte ausreichend Speicherplatz vorhanden ist.")
+#section-heading("1. Vorbereitung (Vor dem Aufbruch)")
 
-#v(1em)
-#check_item("Funktionalität und Schäden prüfen", explanation: "Konfigurieren der Kamera prüfen:
-  - Eine/Mehrere Testaufnahme machen und 
-      - Prüfen, ob Datum und Uhrzeit korrekt sind als auch, ob das Bild fleckig ist
-  - Datum und Uhrzeit einstellen
-  - Bildqualität (RAW / JPEG) und die Bildgröße einstellen
-  - gegebenenfalls Sensor und/oder Objektiv reinigen")
+#check_item("Sichtprüfung Set", "Prüfen, ob alles vorhanden ist wie angegeben. Anschließend Kameragehäuse, Objektive, Akkus, Speicherkarten und Tragegurt auf physische Schäden oder Verschmutzungen kontrollieren.")
 
-#v(3em)
+#check_item("Akkustand kontrollieren", "Sicherstellen, dass alle benötigten Akkus vollständig geladen sind. Ersatzakkus einpacken und ggf. Ladegerät mitnehmen. (Einweg-) Batterien werden nicht mitgeliefert, bitte selbst mitbringen.")
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Im Feld 
-  ]
-]
-#check_item("Objektivdeckel abnehmen und griffbereit halten", explanation: "Nicht vergessen, den Objektivdeckel vor dem Fotografieren abzunehmen. Der Deckel sollte griffbereit aufbewahrt werden, um zwischen den Aufnahmen das Eindringen von Staub zu verhindern.
-Mit einer Gegenlichtblende lässt sich das Objektiv vor Kratzern schützen und Blendeffekte reduzieren.")
+#check_item("Speicherkarten vorbereiten", "SD-Karten überprüfen, ob ausreichend Speicherplatz verfügbar ist. Keine Vorgängerdaten löschen! Gegebenenfalls Ersatz-Speicherkarten einpacken.")
 
-#v(1em)
-#check_item("Ausrüstung sauber und trocken halten", explanation: "Das Objektivglas frei von Fingerabdrücken und Staub halten. Zur Reinigung des Objektivs bei Bedarf ein Mikrofasertuch verwenden.
-Kameras sind in der Regel wetterfest, sollten jedoch nicht bei starkem Regen oder Schnee eingesetzt werden. Sollte die Ausrüstung nass werden, so schnell wie möglich trocknen.
-Die Ausrüstung funktioniert am besten bei Temperaturen zwischen 0 °C und 40 °C. Einsatz der Ausrüstung bei extremen Temperaturen vermeiden -- andernfalls Aufbewahrung in einer Tasche oder einem Koffer ist dringend empfohlen, um sie vor Witterungseinflüssen zu schützen.")
+#check_item("Objektivauswahl treffen", "Passende Brennweiten für den geplanten Einsatzzweck auswählen. Schutzdeckel auf ungenutzten Objektiven belassen.")
 
-#v(1em)
-#check_item("Batteriewechsel", explanation: "Überprüfen, ob die Kameraeinstellungen nach dem Batteriewechsel weiterhin gültig sind (z. B. Datum und Uhrzeit).")
+#check_item("Testphotos machen", "Testaufnahmen durchführen, um Funktionalität und Einstellungen der Kamera zu prüfen. Anpassungen vornehmen, falls erforderlich (insb. Datum und Uhrzeit).")
 
-#v(3em)
+#check_item("Zubehör verpacken", "Stative, optionale Mikrofone, Reinigungstücher, Verbindungskabel etc. transportsicher in der Tasche verstauen. Transporttasche (bitte selber mitbringen!) nicht überladen, um Schäden zu vermeiden.")
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Rückgabe
-  ]
-]
-#check_item("Funktionalität und Schäden prüfen", explanation: "Überprüfen, ob Kamera und Objektiv ordnungsgemäß funktionieren. Prüfen, ob alle Tasten, Einstellräder und Schalter wie erwartet funktionieren.
-Etwaige Beschädigungen oder Probleme mit der Ausrüstung notieren und umgehend melden.
-Vor der Rückgabe Ausrüstung bei Bedarf reinigen und trocknen.")
+*"Weniger ist mehr"* -- 
+nur einpacken, was transportabel ist und für den geplanten Einsatz benötigt wird. 
+Das minimiert das Risiko von Schäden und erleichtert die Handhabung im Einsatz.
 
-#v(1em)
-#check_item("Speicherkarte auslesen", explanation: "Vor der Rückgabe sicherstellen, dass alle Daten von der Speicherkarte ausgelesen sind.
-Keine Daten früherer Nutzer löschen. Nur die eignen Aufnahmen auf ein eigenes Gerät übertragen und von der Speicherkarte löschen.
-Verarbeitung und Nachbearbeitung liegen bei dir.")
+#section-heading("2. Im Einsatz (Während der Aufnahmen)")
 
+#check_item("Einstellungsprüfung", "Kameramodus (z. B. Programmautomatik oder Manuell), ISO-Wert und Weißabgleich vor den ersten Aufnahmen kontrollieren.")
 
-#v(1em)
-#check_item("Akkus aufladen", explanation:
-"Alle in Zubehörteilen verwendeten Einwegbatterien sollten entfernt und ordnungsgemäß entsorgt werden. Wiederaufladbare Akkus sollten vor der Rückgabe aufgeladen werden.")
+#check_item("Objektivsauberkeit wahren", "Objektivdeckel abnehmen und griffbereit halten. Frontlinse regelmäßig auf Staub, Wassertropfen oder Schmutz prüfen und bei Bedarf vorsichtig mit dem Reinigungstuch säubern. Nach dem Fotografieren Objektivdeckel wieder aufsetzen, um die Linse zu schützen.")
 
-#v(1em)
-#check_item("Ausrüstung zerlegen und zurück in den Koffer packen", explanation: "Setup zerlegen und Objektivdeckel/Gehäusedeckel wieder anbringen. 
-Anschließend sicherstellen, dass die gesamte Ausrüstung sicher im Koffer verpackt ist, um Transportschäden zu vermeiden.")
+#check_item("Batteriewechsel", "Nach Batteriewechsel überprüfen, ob die Kameraeinstellungen weiterhin gespeichert sind (z. B. Datum und Uhrzeit). Ggf. Einstellungen erneut anpassen.")
+
+#check_item("Objektivwechsel", "Beim Wechsel von Objektiven darauf achten, dass keine Staubpartikel auf den Sensor gelangen. Objektive vorsichtig wechseln und Schutzkappen verwenden.")
+
+*Sicherheit hat absolute Priorität!* 
+Immer auf sicheren Stand achten, nicht in Gefahr begeben und keine Einsatzkräfte behindern.
+In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
+
+#section-heading("3. Rückgabe (Nach dem Einsatz)")
+
+#check_item("Grobe Reinigung durchführen", "Alles wieder in Einzelkomponenten zerlegen. Insbesondere Kameragehäuse und Objektive vorsichtig von Staub, Schmutz oder Feuchtigkeit befreien. Niemals feucht oder dreckig wieder einpacken.")
+
+#check_item("Vollständigkeitskontrolle", "Sämtliche Kleinteile (Objektivdeckel, Blitzschuhabdeckungen, Gurte, Akkus und Speicherkarten) auf Vollständigkeit prüfen. Fehlende Teile und Schäden sofort melden.")
+
+#check_item("Datenübertragung", "Aufgenommenes Bild- und Videomaterial zeitnah auslesen und sichern. Backups und Datensicherheit nicht vergessen.")
+
+#check_item("Akkus laden", "Leere Einwegbatterien entfernen und ordnungsgemäß entsorgen. Wiederaufladbare Akkus aufladen.")
+
+#check_item("Material zurückgeben", "Alle ausgeliehenen Geräte und Zubehörteile zeitnah nach dem Einsatz zurückgeben. ")
+
+Feedback und Verbesserungsvorschläge sind stets willkommen!

@@ -1,120 +1,65 @@
+// checklist_equipment_EN.typ
 // Simple Rental / Return Checklist
+// designed with Mammouth.AI and Gemini 3.5 Flash
+// by Konrad Keck, 2026
+#import "checklist_equipment_design.typ": *
 
-#set page(
-  paper: "a4",
-  margin: (x: 1.8cm, y: 2cm),header: align(right)[
-    #text(
-      size: 8pt, 
-      fill: luma(100), 
-      font: "Arial")[
-      Media Package | #datetime.today().display("[year]-[month]-[day]") | Equipment Checklist 
-    ]
-  ],
-  footer: align(center)[
-    #text(
-      size: 8pt,
-      fill: luma(120))[Page #context counter(page).display()]
-  ]
-)
-#set text(
-  font: "Arial", // Widely available sans-serif
-  size: 10pt,
-  fill: rgb("#2c3e50") // Dark slate blue/grey instead of harsh pure black
-)
-
-// ---- BRAND COLORS & DESIGN ELEMENTS ----
-#let brand-red = rgb("#b22222") // Firebrick Red
-#let brand-dark = rgb("#1a252f") // Deep Dark Navy
-#let brand-bg = rgb("#f8f9fa") // Soft off-white
-
-// Custom Checkbox Function
-#let check_item(text, explanation: none) = {
-  let indent = 1.1em + 0.8em + 2.3pt // Checkbox width + spacing + stroke width
-
-  block(width: 100%, inset: (y: 2pt))[
-    #box(width: 1.1em, height: 1.1em, stroke: 1.2pt + brand-dark, radius: 2pt, baseline: 20%)
-    #h(0.8em)
-    *#text*
-
-    #if explanation != none [
-      // #v(0.35em)
-      #pad(left: indent)[#explanation]
-    ]
-  ]
-}
+#show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
+#show: doc => setup-text(doc)
 
 // ---- DOCUMENT CONTENT ----
 
-// Main Title
-#align(left)[
-  #text(size: 22pt, weight: "bold", fill: brand-red)[
-    = EQUIPMENT CHECKLIST
-    ] 
+#align(center)[
+  #text(size: 20pt, weight: "bold", fill: brand-dark)[Equipment Checklist] \
+  #text(size: 10pt, fill: muted-gray)[Quick Start Guide for Gear Rental & Operations]
 ]
-#v(1em)
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == Before Leaving
-  ]
-]
-// #todo("Pick Camera / Lens / Accessory")
-#check_item("Pick Camera / Lens / Accessory", explanation: "Check compatibility of all accessories with the camera / lens being rented.
-Less is more: Avoid picking more than two cameras per person and not more then two lenses per camera body and person. 
-Alternatively, consider using a phone camera for some scenarios.
-Provide your own bags and cases for the rented items.
-Assemble gear, but use lens caps for transportation.")
+#v(10pt)
 
-#v(1em)
-#check_item("Add Battery / Memory Card", explanation: "Ensure batteries are charged. One charge will last about 2 hours or 200 photos depending on usage. You can take chargers along with you.
-Single-use batteries are not provided with the gear. Please bring your own if needed.
-Also ensure memory card has sufficient space.")
+#section-heading("1. Preparation (Before Leaving)")
 
-#v(1em)
-#check_item("Check everything works as expected and isn't damaged", explanation: "Configure camera settings:
-  - make a test image 
-      - check for date and time accuracy, and spots on the sensor
-  - set Date and Time
-  - set Image Quality (RAW / JPEG) and size
-  - clean sensor or lens if necessary")
+#check_item("Verify Kit Completeness", "Check whether all items are present as listed. Then inspect the camera body, lenses, batteries, memory cards, and strap for physical damage or dirt.")
 
-#v(3em)
+#check_item("Check Battery Status", "Ensure all required rechargeable batteries are fully charged. Pack spare batteries and chargers if necessary. Single-use batteries are not provided; please bring your own if needed.")
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == While Using
-  ]
-]
-#check_item("Remove lens cap and keep it close by", explanation: "Lens caps needs to be removed before taking photos and should be kept close by to prevent dust between takes.
-Lens hoods can be used to protect the lens from scratches and reduce glare.")
+#check_item("Prepare Memory Cards", "Check SD cards, whether sufficient storage is available and cleanly remove old files. Do not delete files from other users. Pack spare memory cards if necessary.")
 
-#v(1em)
-#check_item("Keep gear clean and dry", explanation: "Avoid touching the lens glass with your fingers. Use a microfiber cloth to clean the lens if necessary.
-Cameras are usually weather sealed, but avoid using them in heavy rain or snow. If the gear gets wet, dry it as soon as possible.
-Works best between 0°C and 40°C. Avoid using the gear in extreme temperatures -- otherwise try to keep it in a bag or case to protect it from the elements.")
+#check_item("Select Lenses", "Choose appropriate focal lengths for the planned shoot. Keep protective caps on all unused lenses.")
 
-#v(1em)
-#check_item("When changing batteries", explanation: "Check that the camera settings are still in effect after changing batteries (e.g. date and time).")
+#check_item("Test Photos", "Take a few test shots to ensure the camera and lenses are functioning correctly and are configured properly. Make adjustments as needed (esp. date and time).")
 
-#v(3em)
+#check_item("Pack Accessories", "Securely pack tripods, optional microphones, cleaning cloths, and cables into the system bag. Transport bag (please bring your own!) should not be overloaded to avoid damage.")
 
-#align(left)[
-  #text(size: 16pt, weight: "bold", fill: brand-dark)[
-    == On Return
-  ]
-]
-#check_item("Check everything works as expected and isn't damaged", explanation: "Check that the camera and lens are functioning properly. Make sure all buttons, dials, and switches are working as expected.
-Make notes of any damage or issues with the gear. If you notice any damage, please report it immediately.
-Keep the gear clean and dry. Clean the gear if necessary before returning it.")
+*Less is more* --
+only pack what is portable and needed for the planned shoot. 
+This minimizes the risk of damage and makes handling easier during operations.
 
-#v(1em)
-#check_item("Read out data from memory card", explanation: "Make sure to read out all data from the memory card before returning it.
-Do not delete any data from previous users. If you have taken photos, please copy them to your own device and delete them from the memory card before returning it.
-From here on, post processing and editing of images is your responsibility.")
 
-#v(1em)
-#check_item("Recharge battery and pack in case", explanation:
-"Any single-use batteries used in accessories should be removed and disposed of properly. Rechargeable batteries should be recharged before returning.")
+#section-heading("2. In the Field (During Operation)")
 
-#v(1em)
-#check_item("Disassemble gear and pack in case", explanation: "Reattach lens caps and body caps. Ensure all gear is packed securely in its case to prevent damage during transport.")
+#check_item("Verify Settings", "Check the camera mode (e.g., Program or Manual), ISO settings, and white balance before taking the first shot.")
+
+#check_item("Maintain Lens Cleanliness", "Take off the lens cap and keep it close by. Regularly inspect the front lens element for dust, water droplets, or dirt. If dirty clean gently with a microfiber cloth. After shooting, replace the lens cap to protect the lens.")
+
+#check_item("Changing Batteries", "After changing batteries, check that the camera settings are still in effect (e.g., date and time). Adjust settings again if necessary.")
+
+#check_item("Changing Lenses", "When changing lenses make sure no dust particles get on the sensor. Change lenses carefully and use protective caps.")
+
+*Safety has highest priority!*
+Always ensure a safe stance, do not put yourself or your subject in danger, and do not obstruct emergency personnel.
+Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
+
+
+#section-heading("3. Return (After Operation)")
+
+#check_item("Perform Basic Cleaning", "Detach all components. Gently wipe off dust, dirt, or moisture especially from the camera body and lenses. Never pack gear while damp or dirty.")
+
+#check_item("Inventory Check", "Verify that all small parts (lens caps, hot shoe covers, straps, batteries, and cards) are present and accounted for. Report any missing items or damage immediately.")
+
+#check_item("Data Transfer", "Transfer all recorded photo and video files as soon as possible. Please mind backups and data security.")
+
+#check_item("Charge Batteries", "Remove any single-use batteries and dispose of them properly. Recharge all used rechargeable batteries.")
+
+#check_item("Return Equipment", "Return all borrowed equipment and accessories promptly after use.")
+
+Feedback and suggestions for improvement are always welcome!
