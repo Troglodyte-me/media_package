@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   File: CamDial.svg
+   Description: Illustration generated with Inkscape. This SVG is part of the media_package project.
+   Author: Konrad Keck
+   Date: 2026-06-28
+   License: See LICENSE in project root.
+   Usage: For documentation, presentation, or educational purposes within the media_package project.
+   Source: Created with Inkscape (http://www.inkscape.org/)
+-->
+
+<svg
+   width="309.38214mm"
+   height="309.3179mm"
+   viewBox="0 0 309.38214 309.3179"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="309.38214"
+       height="309.3179"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(528.83021,698.57198)">
+    <g
+       id="g70"
+       inkscape:export-filename="CamDial.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <circle
+         style="
+            opacity:1;
+            fill:#000000;
+            fill-opacity:1;
+            stroke:#000000;
+            stroke-width:9.37249;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:7;
+            stroke-dasharray:28.1175, 18.745;
+            stroke-dashoffset:0;
+            stroke-opacity:1"
+         id="path2"
+         cx="541.34973"
+         cy="377.86789"
+         inkscape:label="kreis"
+         r="150"
+         transform="rotate(-159.43441)" />
+      <text
+         xml:space="preserve"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
+         x="-795.00104"
+         y="125.98744"
+         id="text49"
+         inkscape:highlight-color="#ffffff"
+         transform="rotate(64.418286)"><tspan
+           sodipodi:role="line"
+           id="tspan2"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
+           x="-795.00104"
+           y="125.98744">M</tspan></text>
+      <text
+         xml:space="preserve"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
+         x="249.04523"
+         y="-511.06628"
+         id="text49-00"
+         inkscape:highlight-color="#ffffff"
+         transform="rotate(-70.538117)"><tspan
+           sodipodi:role="line"
+           id="tspan2-6"
+           style="
+           font-weight:bold;
+           font-size:70.5556px;
+           fill:#ffffff;
+           stroke-width:0;
+           stroke-dasharray:none;
+           font-family:sans-serif;
+           stroke-dashoffset:0"
+           x="249.04523"
+           y="-511.06628">P</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         x="510.00021"
+         y="-128.22304"
+         id="text49-00-3"
+         inkscape:highlight-color="#ffffff"
+         transform="rotate(-113.0679)"><tspan
+           sodipodi:role="line"
+           id="tspan2-6-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-dashoffset:0"
+           x="510.00021"
+           y="-128.22304">AUTO</tspan></text>
+      <text
+         xml:space="preserve"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
+         x="-226.47409"
+         y="-636.87079"
+         id="text49-0"
+         inkscape:highlight-color="#ffffff"
+         transform="rotate(-26.574299)"><tspan
+           sodipodi:role="line"
+           id="tspan2-2"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
+           x="-226.47409"
+           y="-636.87079">A</tspan></text>
+      <text
+         xml:space="preserve"
+         style="
+            font-size:70.5556px;
+            writing-mode:lr-tb;
+            direction:ltr;
+            opacity:1;
+            fill-opacity:1;
+            stroke-width:0"
+         x="-650.35651"
+         y="-402.38474"
+         id="text49-0-4"
+         inkscape:highlight-color="#ffffff"
+         transform="rotate(16.206083)"><tspan
+           sodipodi:role="line"
+           id="tspan2-2-8"
+           style="
+            font-weight:bold;
+            font-size:70.5556px;
+            font-family:sans-serif;
+            fill:#ffffff;
+            stroke-width:0;
+            stroke-dasharray:none;
+            stroke-dashoffset:0"
+           x="-650.35651"
+           y="-402.38474">S</tspan></text>
+      <g
+         id="g69"
+         transform="matrix(0.11755236,-0.31926862,-0.31926862,-0.11755236,-421.59711,-999.43318)"
+         style="stroke-width:6.42379;stroke-dasharray:none">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:6.42379;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect61"
+           width="120"
+           height="60"
+           x="-953.56213"
+           y="-596.94733" />
+        <circle
+           style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:6.42379;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path61"
+           cx="-931.61957"
+           cy="-635.99152"
+           r="37.5" />
+        <circle
+           style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:6.42379;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path61-6"
+           cx="-855.5047"
+           cy="-635.99152"
+           r="37.5" />
+        <path
+           d="m -833.27684,-581.40134 v 26.30957 l 31.74889,9.74421 v -43.19954 z"
+           style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:6.42379;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:7;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path69"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+  </g>
+</svg>

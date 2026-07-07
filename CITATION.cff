@@ -3,6 +3,10 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Keck"
   given-names: "Konrad"
+  orcid: https://orcid.org/0009-0003-2367-8885
+  affiliation: Troglodyte-me
+  github: nigma1985
+- name: Troglodyte-me contributors
 title: "Media Package"
 version: 0.1.0
 date-released: 2026-05-07

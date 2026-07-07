@@ -14,3 +14,4 @@ gi
 
 # If your script uses additional libraries, list them below:
 # e.g. numpy, pillow, etc.
+babel

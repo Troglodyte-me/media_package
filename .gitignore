@@ -18,3 +18,8 @@ _site/
 Gemfile.lock
 
 .mypy_cache/
+*.pptx
+*.docx
+*.xlsx
+*.pdf
+*.pot

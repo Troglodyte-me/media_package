@@ -1,0 +1,4 @@
+<!-- 4. PICKET FENCE -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="currentColor" d="M10 30 L20 20 L30 30 V85 H10 Z M40 30 L50 20 L60 30 V85 H40 Z M70 30 L80 20 L90 30 V85 H70 Z M5 45 H95 V55 H5 Z M5 65 H95 V75 H5 Z" />
+</svg>
