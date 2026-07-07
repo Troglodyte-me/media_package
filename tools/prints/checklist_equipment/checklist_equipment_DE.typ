@@ -4,7 +4,6 @@
 // by Konrad Keck, 2026
 
 #import "checklist_equipment_design.typ": *
-#import "@preview/qrcode": qrcode
 
 #show: doc => setup-page("AUSRÜSTUNGS-CHECKLISTE | GERÄTE-LEIHE", doc)
 #show: doc => setup-text(doc)
@@ -62,12 +61,11 @@ In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
 
 #check_item("Material zurückgeben", "Alle ausgeliehenen Geräte und Zubehörteile zeitnah nach dem Einsatz zurückgeben. ")
 
+
 #v(3em)
 
-#align(center)[
-  #text(size: 9pt, fill: muted-gray)[Feedback und Verbesserungsvorschläge sind stets willkommen.]
-  #v(4pt)
-  #qrcode("https://github.com/Troglodyte-me/media_package", height: 22mm)
-  #v(2pt)
-  #text(size: 8pt, fill: muted-gray)[github.com/Troglodyte-me/media_package]
-]
+#feedback-link(
+  "https://github.com/Troglodyte-me/media_package",
+  "Feedback und Verbesserungsvorschläge sind stets willkommen.",
+  alt-url: ""
+)

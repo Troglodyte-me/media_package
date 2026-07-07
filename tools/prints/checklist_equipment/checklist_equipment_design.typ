@@ -2,6 +2,7 @@
 // Centralized design system for the Gear Rental Checklist
 // designed with Mammouth.AI and Gemini 3.5 Flash
 // by Konrad Keck, 2026
+#import "@preview/tiaoma:0.3.0": qrcode
 
 #let brand-red = rgb("#b22222")     // Primary accent (Fire Service Red)
 #let brand-dark = rgb("#1a252f")    // Text and headers
@@ -58,4 +59,30 @@
     #v(-4pt)
     #line(length: 100%, stroke: 1.5pt + brand-red)
   ]
+}
+
+// Reusable QR code component with link and description
+#let feedback-link(url, body, alt-url: none) = {
+  let shown-url = if alt-url == none { url } else { alt-url }
+  
+  // MAGIC FORMULA: Base size of 12mm + 0.085mm per character.
+  // This guarantees every QR pixel is printed at a comfortable ~0.42mm size.
+  // Just to be on the safe side I've added an extra 10% margin to the QR code size calculation.
+  let qr-size = (12mm + url.len() * 0.085mm) * 1.1
+
+  grid(
+    columns: (auto, auto, 1fr),
+    rows: (auto, auto, auto),
+    gutter: (0.6em, 1em, 1em),
+    align: (left + top, left + top, left + top),
+
+    grid.cell(colspan: 2)[
+      #link(url)[#body]
+    ],
+    v(2em),
+    qrcode(url, width: qr-size),
+    align(left + bottom)[
+      #text(8.5pt, fill: muted-gray)[#shown-url]
+    ]
+  )
 }

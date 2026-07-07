@@ -66,10 +66,8 @@ Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
 
 #v(3em)
 
-#align(center)[
-  #text(size: 9pt, fill: muted-gray)[Feedback and suggestions for improvement are always welcome.]
-  #v(4pt)
-  #qrcode("https://github.com/Troglodyte-me/media_package", height: 22mm)
-  #v(2pt)
-  #text(size: 8pt, fill: muted-gray)[github.com/Troglodyte-me/media_package]
-]
+#feedback-link(
+  "https://github.com/Troglodyte-me/media_package",
+  "Feedback and suggestions for improvement are always welcome.",
+  alt-url: ""
+)
