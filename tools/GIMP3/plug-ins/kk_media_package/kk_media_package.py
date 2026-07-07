@@ -11,6 +11,7 @@ from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Gio
 import logging
+from typing import List, Dict, Any
 
 # --- FEATURE MODULES ---
 from modules.enhance_image import enhance_image_logic
@@ -108,7 +109,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
 
-    def run(self, procedure, run_mode, image, drawables, config, run_data):
+    def run(self, procedure, run_mode, image: Gimp.Image, drawables: List[Gimp.Drawable], config, run_data):
         if not drawables:
             return procedure.new_return_values(Gimp.PDBStatusType.CALLING_ERROR, GLib.Error())
         name = procedure.get_name()
