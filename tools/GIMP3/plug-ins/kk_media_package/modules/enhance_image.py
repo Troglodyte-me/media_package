@@ -98,10 +98,13 @@ class enhance_image(image_processor):
         wb_bw.merge_filter(filt)
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
+        temp_stats           = self._get_cached_stats(wb_bw) # Get cached statistics for the drawable
+        temp_threshold_val   = self.get_threshold_value(temp_stats)
+        new_threshold_val = (threshold_val + temp_threshold_val + (temp_stats['median']/255)) / 3
         self._call_pdb(
             'gimp-drawable-threshold', # apply thresholding to create black and white effect
             drawable=wb_bw,
-            low_threshold=threshold_val,
+            low_threshold=new_threshold_val,  # Adjusting threshold based on image statistics
             high_threshold=1.0
         )
         wb_bw.set_opacity(10.0)
@@ -132,18 +135,21 @@ class enhance_image(image_processor):
         eq_bw.set_name(_("b/w by equalize (incl bright+contrast)"))
         image.insert_layer(eq_bw, layer_group, 0)
         self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False) # apply equalization to enhance contrast
+        temp_stats           = self._get_cached_stats(eq_bw) # Get cached statistics for the drawable
+        temp_threshold_val   = self.get_threshold_value(temp_stats)
+        new_threshold = (threshold_val + temp_threshold_val + (temp_stats['median'] / 255)) / 3
         self._call_pdb(
             'gimp-drawable-threshold', # apply thresholding to create black and white effect
             drawable=eq_bw,
-            low_threshold=threshold_val,
+            low_threshold=new_threshold,  # Adjusting threshold based on image statistics
             high_threshold=1.0
         )
         eq_bw.set_opacity(10.0)  # Placeholder for the actual implementation
 
-    def create_layer_group(self, image) -> Gimp.GroupLayer:
+    def create_layer_group(self, image, name: str = "--NEW--") -> Gimp.GroupLayer:
         """Creates a new group layer in the given image."""
         layer_group = Gimp.GroupLayer.new(image)
-        layer_group.set_name(_("Enhancement Stack"))
+        layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
         return layer_group
     
     def create_layer_whitebalace(
@@ -153,10 +159,9 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer
         ) -> None:
         """Creates a white balance layer and inserts it into the given layer group."""
-        image.insert_layer(drawable, layer_group, 0)
         wb_layer = drawable.copy()
         wb_layer.set_name(_("White Balance"))
-        image.insert_layer(wb_layer, layer_group, 1)
+        image.insert_layer(wb_layer, layer_group, 0)
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_layer) # white balance adjustment
         wb_layer.set_opacity(90.0)
         
@@ -189,7 +194,7 @@ class enhance_image(image_processor):
         ) -> None:
         det_layer = drawable.copy()
         det_layer.set_name(_("Detail Equalize"))
-        image.insert_layer(det_layer, layer_group, 1)
+        image.insert_layer(det_layer, layer_group, 0)
         
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
@@ -202,6 +207,39 @@ class enhance_image(image_processor):
         det_layer.set_opacity(25.0)
         self._call_pdb('gimp-drawable-equalize', drawable=det_layer, mask_only=False)
 
+    def get_size(self, image: Gimp.Image) -> float:
+        """Calculates the size of the image based on its dimensions.
+
+        Args:
+            image (Gimp.Image): The image to calculate the size for.
+
+        Returns:
+            float: The calculated size.
+        """
+        return (((image.get_width()**2) + (image.get_height()**2))**0.5)
+
+    def get_blur_radius(self, size: float) -> float:
+        """Calculates a blur radius based on the image size.
+
+        Args:
+            size (float): The size of the image.
+
+        Returns:
+            float: The calculated blur radius.
+        """
+        return size / 1000.0
+
+    def get_threshold_value(self, stats: Dict[str, Any]) -> float:
+        """Calculates a threshold value based on image statistics.
+
+        Args:
+            stats (Dict[str, Any]): A dictionary containing image statistics.
+
+        Returns:
+            float: The calculated threshold value.
+        """
+        return ((stats['mean'] * stats['median'])**0.5) / 255.0
+
     def __init__(self, image: Gimp.Image, drawable:Gimp.Drawable) -> None:
         """Initialize the enhancement process.
 
@@ -211,15 +249,21 @@ class enhance_image(image_processor):
         """
         super().__init__()
         image.undo_group_start() # Start an undo group for the entire enhancement process
-        stats = self._get_cached_stats(drawable) # Get cached statistics for the drawable
+        # image.insert_layer(drawable, layer_group, 0)
 
         # Calculate prerequisites for enhancement layers
-        size = (((image.get_width()**2) + (image.get_height()**2))**0.5)
-        blur_radius = size / 1000.0
-        threshold_val = ((stats['mean'] * stats['median'])**0.5) / 255.0
+        original_name   = drawable.get_name()
+        stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
+        size            = self.get_size(image)
+        blur_radius     = self.get_blur_radius(size)
+        threshold_val   = self.get_threshold_value(stats)
+        logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Threshold value: {threshold_val}")
 
         # start layering process
-        main_layer_group = self.create_layer_group(image) # Create a group layer for all enhancement layers
+        main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
+            image=image, 
+            name=f"""{original_name} {_("Enhancement Stack")}"""
+        )
         image.insert_layer(main_layer_group, None, 0)
         drawable.set_name(_("Original"))
 
