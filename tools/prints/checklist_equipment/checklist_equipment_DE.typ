@@ -35,6 +35,7 @@
 nur einpacken, was transportabel ist und für den geplanten Einsatz benötigt wird. 
 Das minimiert das Risiko von Schäden und erleichtert die Handhabung im Einsatz.
 
+
 #section-heading("2. Im Einsatz (Während der Aufnahmen)")
 
 #check_item("Einstellungsprüfung", "Kameramodus (z. B. Programmautomatik oder Manuell), ISO-Wert und Weißabgleich vor den ersten Aufnahmen kontrollieren.")
@@ -49,6 +50,7 @@ Das minimiert das Risiko von Schäden und erleichtert die Handhabung im Einsatz.
 Immer auf sicheren Stand achten, nicht in Gefahr begeben und keine Einsatzkräfte behindern.
 In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
 
+
 #section-heading("3. Rückgabe (Nach dem Einsatz)")
 
 #check_item("Grobe Reinigung durchführen", "Alles wieder in Einzelkomponenten zerlegen. Insbesondere Kameragehäuse und Objektive vorsichtig von Staub, Schmutz oder Feuchtigkeit befreien. Niemals feucht oder dreckig wieder einpacken.")
@@ -62,7 +64,7 @@ In Einsatzsituationen ist adequate Schutzausrüstung (z.B. PSA) zu tragen.
 #check_item("Material zurückgeben", "Alle ausgeliehenen Geräte und Zubehörteile zeitnah nach dem Einsatz zurückgeben. ")
 
 
-#v(3em)
+#v(2em)
 
 Feedback und Verbesserungsvorschläge sind stets willkommen.
 

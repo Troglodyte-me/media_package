@@ -44,7 +44,8 @@ You can add as many of these as you like, or design them to suit your needs.
 
 #check_item("Last Item", "Include some explanatory text here for the last checklist item. This is a template, so you can customize it as needed.")
 
-#v(3em)
+#v(2em)
+
 Feedback and suggestions for improvement are always welcome.
 
 #v(1fr)

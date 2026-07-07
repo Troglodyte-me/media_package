@@ -62,7 +62,7 @@ Wearing adequate protective equipment (e.g. PPE) is mandatory on active scenes.
 
 #check_item("Return Equipment", "Return all borrowed equipment and accessories promptly after use.")
 
-#v(3em)
+#v(2em)
 
 Feedback and suggestions for improvement are always welcome.
 
