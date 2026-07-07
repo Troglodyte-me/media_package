@@ -152,7 +152,7 @@ class enhance_image(image_processor):
         layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
         return layer_group
     
-    def create_layer_whitebalace(
+    def create_layer_whitebalance(
             self,
             image: Gimp.Image,
             drawable: Gimp.Drawable,
@@ -267,7 +267,7 @@ class enhance_image(image_processor):
             image.insert_layer(main_layer_group, None, 0)
             drawable.set_name(_("Original"))
 
-            self.create_layer_whitebalace(# Create and insert the white balance layer
+            self.create_layer_whitebalance( # Create and insert the white balance layer
                 image=image, 
                 drawable=drawable, 
                 layer_group=main_layer_group
