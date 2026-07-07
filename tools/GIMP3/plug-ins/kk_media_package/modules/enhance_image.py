@@ -5,39 +5,6 @@ import os
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any
 
-# # --- LOCALIZATION SETUP ---
-# # Get the absolute path to this plugin's directory
-# PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
-# LOCALEDIR = os.path.join(PLUGIN_DIR, 'locale')
-# DOMAIN = "kk_media_package"  # Must match your folder and .mo file names
-
-# # Install "_" into Python's built-in namespace globally.
-# # This makes the _() function automatically available in any imported module (like enhance_image.py)
-# gettext.install(DOMAIN, LOCALEDIR)
-
-# STRINGS = {
-#     "en": {
-#         "group_name": "Enhancement Stack",
-#         "wb_name": "White Balance",
-#         "det_eq": "Detail Equalization",
-#         "grey_grp": "Contrast/Grey Mix",
-#         "orig": "Original"
-#     },
-#     "de": {
-#         "group_name": "Optimierungs-Stapel",
-#         "wb_name": "Weißabgleich",
-#         "det_eq": "Detail-Egalisierung",
-#         "grey_grp": "Kontrast/Grau-Mix",
-#         "orig": "Original"
-#     }
-# }
-
-# def get_lang():
-#     lang = GLib.get_language_names()[0][:2]
-#     return lang if lang in STRINGS else "en"
-
-# L = STRINGS[get_lang()]
-
 logger = logging.getLogger("KonradFilters")
 
 def enhance_image_logic(self, image: Gimp.Image, drawable: Gimp.Drawable):
@@ -102,13 +69,6 @@ class base:
         pass
 
 class image_processor(base):
-    # def _call_pdb(self, func_name, **kwargs):
-    #     try:
-    #         return Gimp.pdb_call(func_name, **kwargs)
-    #     except Exception as e:
-    #         logger.error(f"Error calling PDB function '{func_name}': {e}")
-    #         raise
-        # --- PDB WRAPPERS ---
     def _call_pdb(self, proc_name: str, **kwargs) -> Any:
         """Calls a PDB procedure with the given arguments.
 
@@ -276,7 +236,7 @@ class enhance_image(image_processor):
         ) -> None:
         det_layer = drawable.copy()
         det_layer.set_name(_("Detail Equalize"))
-        image.insert_layer(det_layer, layer_group, len(layer_group.get_children()))
+        image.insert_layer(det_layer, layer_group, 0)
         
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
