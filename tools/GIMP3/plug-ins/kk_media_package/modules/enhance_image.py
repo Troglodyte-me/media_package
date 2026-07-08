@@ -1,7 +1,4 @@
 import logging
-# import os
-# import gettext
-# from email.mime import image
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any, Optional
 
@@ -48,7 +45,7 @@ class image_processor(base):
             logger.error(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
             raise RuntimeError(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
         return result
-    
+
     def _copy_layer(
             self,
             image: Gimp.Image,
@@ -76,6 +73,76 @@ class image_processor(base):
         image.insert_layer(new_layer, layer_group, level)
         return new_layer
 
+    # --- STATISTICS ENGINE (OPTIMIZATION) ---
+    def _get_cached_stats(self, drawable: Gimp.Drawable) -> Dict[str, Any]:
+        """Calculate and return histogram-based statistics for a drawable.
+
+        This helper queries GIMP's ``gimp-drawable-histogram`` procedure once
+        and returns values used by enhancement steps.
+
+        Args:
+            drawable: The source drawable to analyze.
+
+        Returns:
+            A dictionary containing:
+                - ``mean`` (float): Mean value of the VALUE histogram channel.
+                - ``std_dev`` (float): Standard deviation of pixel values.
+                - ``median`` (float): Median value of pixel values.
+                - ``pixels`` (int): Number of pixels considered.
+
+            If histogram retrieval fails, returns fallback defaults:
+            ``{"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}``.
+        """
+        hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
+        hist_config = hist_proc.create_config()
+        hist_config.set_property('drawable', drawable)
+        hist_config.set_property('channel', Gimp.HistogramChannel.VALUE)
+        hist_config.set_property('start-range', 0.0)
+        hist_config.set_property('end-range', 1.0)
+        res = hist_proc.run(hist_config)
+
+        if res.index(0) == Gimp.PDBStatusType.SUCCESS:
+            return {
+                "mean": res.index(1),
+                "std_dev": res.index(2),
+                "median": res.index(3),
+                "pixels": res.index(4)
+            }
+        return {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
+    
+    def _get_size(self, image: Gimp.Image) -> float:
+        """Calculates the size of the image based on its dimensions.
+
+        Args:
+            image (Gimp.Image): The image to calculate the size for.
+
+        Returns:
+            float: The calculated size.
+        """
+        return (((image.get_width()**2) + (image.get_height()**2))**0.5)
+
+    def _get_blur_radius(self, size: float) -> float:
+        """Calculates a blur radius based on the image size.
+
+        Args:
+            size (float): The size of the image.
+
+        Returns:
+            float: The calculated blur radius.
+        """
+        return size / 1000.0
+
+    def _get_threshold_value(self, stats: Dict[str, Any]) -> float:
+        """Calculates a threshold value based on image statistics.
+
+        Args:
+            stats (Dict[str, Any]): A dictionary containing image statistics.
+
+        Returns:
+            float: The calculated threshold value.
+        """
+        return ((stats['mean'] * stats['median'])**0.5) / 255.0
+    
     def __init__(self):
         super().__init__()
 
@@ -85,6 +152,23 @@ class enhance_image(image_processor):
     Args:
         image_processor (image_processor): The base image processor class.
     """
+    def _get_threshold_value(
+            self, 
+            new_stats: Dict[str, Any],
+            orig_stats: Dict[str, Any] = {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
+        ) -> float:
+        """Calculates a threshold value based on image statistics.
+
+        Args:
+            orig_stats (Dict[str, Any]): A dictionary containing original image statistics.
+            new_stats (Dict[str, Any]): A dictionary containing new image statistics.
+
+        Returns:
+            float: The calculated threshold value.
+        """
+        new_threshold = super()._get_threshold_value(new_stats)
+        return ((orig_stats['mean'] + orig_stats['median'] + new_stats['mean'] + new_stats['median'] + new_threshold) / 5) / 255.0
+    
     def create_wb_grey(
             self, 
             image: Gimp.Image,
@@ -108,7 +192,7 @@ class enhance_image(image_processor):
             drawable: Gimp.Drawable,
             layer_group: Gimp.GroupLayer,
             blur_radius: float,
-            threshold_val: float
+            stats: Dict[str, Any]
         ) -> None:
         """Creates a black and white layer based on white balance with optional blur.
 
@@ -117,7 +201,7 @@ class enhance_image(image_processor):
             drawable (Gimp.Drawable): The drawable to process.
             layer_group (Gimp.GroupLayer): The layer group to insert the new layer into.
             blur_radius (float): The radius for the Gaussian blur.
-            threshold_val (float): The threshold value for the black and white effect.
+            stats (Dict[str, Any]): A dictionary containing image statistics.
         """
         wb_bw = self._copy_layer(
             image,
@@ -134,8 +218,10 @@ class enhance_image(image_processor):
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
         temp_stats           = self._get_cached_stats(wb_bw) # Get cached statistics for the drawable
-        temp_threshold_val   = self.get_threshold_value(temp_stats)
-        new_threshold_val = (threshold_val + temp_threshold_val + (temp_stats['median']/255)) / 3
+        new_threshold_val = self._get_threshold_value(
+            new_stats=temp_stats,
+            orig_stats=stats
+        )
         self._call_pdb(
             'gimp-drawable-threshold', # apply thresholding to create black and white effect
             drawable=wb_bw,
@@ -167,7 +253,7 @@ class enhance_image(image_processor):
             image: Gimp.Image,
             drawable: Gimp.Drawable,
             layer_group: Gimp.GroupLayer,
-            threshold_val: float
+            stats: Dict[str, Any]
         ) -> None:
         """Creates a black and white layer based on equalization."""
         eq_bw = self._copy_layer(
@@ -179,8 +265,10 @@ class enhance_image(image_processor):
         )
         self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False) # apply equalization to enhance contrast
         temp_stats           = self._get_cached_stats(eq_bw) # Get cached statistics for the drawable
-        temp_threshold_val   = self.get_threshold_value(temp_stats)
-        new_threshold = (threshold_val + temp_threshold_val + (temp_stats['median'] / 255)) / 3
+        new_threshold = self._get_threshold_value(
+            new_stats=temp_stats,
+            orig_stats=stats
+        )
         self._call_pdb(
             'gimp-drawable-threshold', # apply thresholding to create black and white effect
             drawable=eq_bw,
@@ -224,7 +312,7 @@ class enhance_image(image_processor):
             drawable: Gimp.Drawable,
             main_layer_group: Gimp.GroupLayer,
             blur_radius: float,
-            threshold_val: float
+            stats: Dict[str, Any]
         ) -> None:
         grey_layer_group = self.create_layer_group(
             image,
@@ -236,9 +324,9 @@ class enhance_image(image_processor):
         grey_layer_group.set_opacity(10.0)
         
         self.create_wb_grey(image, drawable, grey_layer_group)
-        self.create_wb_bw(image, drawable, grey_layer_group, blur_radius, threshold_val)
+        self.create_wb_bw(image, drawable, grey_layer_group, blur_radius, stats)
         self.create_eq_grey(image, drawable, grey_layer_group)
-        self.create_eq_bw(image, drawable, grey_layer_group, threshold_val)
+        self.create_eq_bw(image, drawable, grey_layer_group, stats)
         
     def create_layer_detail_equalization(
             self,
@@ -268,39 +356,6 @@ class enhance_image(image_processor):
         det_layer.set_opacity(25.0)
         self._call_pdb('gimp-drawable-equalize', drawable=det_layer, mask_only=False)
 
-    def get_size(self, image: Gimp.Image) -> float:
-        """Calculates the size of the image based on its dimensions.
-
-        Args:
-            image (Gimp.Image): The image to calculate the size for.
-
-        Returns:
-            float: The calculated size.
-        """
-        return (((image.get_width()**2) + (image.get_height()**2))**0.5)
-
-    def get_blur_radius(self, size: float) -> float:
-        """Calculates a blur radius based on the image size.
-
-        Args:
-            size (float): The size of the image.
-
-        Returns:
-            float: The calculated blur radius.
-        """
-        return size / 1000.0
-
-    def get_threshold_value(self, stats: Dict[str, Any]) -> float:
-        """Calculates a threshold value based on image statistics.
-
-        Args:
-            stats (Dict[str, Any]): A dictionary containing image statistics.
-
-        Returns:
-            float: The calculated threshold value.
-        """
-        return ((stats['mean'] * stats['median'])**0.5) / 255.0
-
     def __init__(self, image: Gimp.Image, drawable:Gimp.Drawable) -> None:
         """Initialize the enhancement process.
 
@@ -315,15 +370,17 @@ class enhance_image(image_processor):
             # Calculate prerequisites for enhancement layers
             original_name   = drawable.get_name()
             stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
-            size            = self.get_size(image)
-            blur_radius     = self.get_blur_radius(size)
-            threshold_val   = self.get_threshold_value(stats)
-            logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Threshold value: {threshold_val}")
+            size            = self._get_size(image)
+            blur_radius     = self._get_blur_radius(size)
+            # threshold_val   = super()._get_threshold_value(stats)
+            logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Stats: {stats}")
 
             # start layering process
             main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
                 image=image, 
-                name=f"""{original_name} {_("Enhancement Stack")}"""
+                name=f"""{original_name} {_("Enhancement Stack")}""",
+                parent_layer_group=None,
+                level=0
             )
             drawable.set_name(_("Original"))
 
@@ -337,7 +394,8 @@ class enhance_image(image_processor):
                 drawable=drawable,
                 main_layer_group=main_layer_group,
                 blur_radius=blur_radius,
-                threshold_val=threshold_val)
+                stats=stats
+            )
             self.create_layer_detail_equalization( # Create and insert the detail equalization layer
                 image=image,
                 drawable=drawable,
@@ -351,40 +409,3 @@ class enhance_image(image_processor):
         finally:
             image.undo_group_end()
         Gimp.displays_flush()
-
-    # --- STATISTICS ENGINE (OPTIMIZATION) ---
-    def _get_cached_stats(self, drawable: Gimp.Drawable) -> Dict[str, Any]:
-        """Calculate and return histogram-based statistics for a drawable.
-
-        This helper queries GIMP's ``gimp-drawable-histogram`` procedure once
-        and returns values used by enhancement steps.
-
-        Args:
-            drawable: The source drawable to analyze.
-
-        Returns:
-            A dictionary containing:
-                - ``mean`` (float): Mean value of the VALUE histogram channel.
-                - ``std_dev`` (float): Standard deviation of pixel values.
-                - ``median`` (float): Median value of pixel values.
-                - ``pixels`` (int): Number of pixels considered.
-
-            If histogram retrieval fails, returns fallback defaults:
-            ``{"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}``.
-        """
-        hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
-        hist_config = hist_proc.create_config()
-        hist_config.set_property('drawable', drawable)
-        hist_config.set_property('channel', Gimp.HistogramChannel.VALUE)
-        hist_config.set_property('start-range', 0.0)
-        hist_config.set_property('end-range', 1.0)
-        res = hist_proc.run(hist_config)
-
-        if res.index(0) == Gimp.PDBStatusType.SUCCESS:
-            return {
-                "mean": res.index(1),
-                "std_dev": res.index(2),
-                "median": res.index(3),
-                "pixels": res.index(4)
-            }
-        return {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
