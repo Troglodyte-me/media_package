@@ -3,7 +3,7 @@ import logging
 # import gettext
 # from email.mime import image
 from gi.repository import Gimp, GLib
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("KonradFilters")
 
@@ -48,7 +48,34 @@ class image_processor(base):
             logger.error(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
             raise RuntimeError(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
         return result
-        
+    
+    def _copy_layer(
+            self,
+            image: Gimp.Image,
+            drawable: Gimp.Drawable,
+            layer_group: Gimp.GroupLayer,
+            name: Optional[str] = None,
+            level: Optional[int] = 0
+        ) -> Gimp.Layer:
+        """Creates a copy of the given drawable and inserts it into the specified layer group.
+
+        Args:
+            image (Gimp.Image): The image to which the layer belongs.
+            drawable (Gimp.Drawable): The drawable to copy.
+            layer_group (Gimp.GroupLayer): The group layer to insert the new layer into.
+            name (Optional[str]): The name for the new layer.
+
+        Returns:
+            Gimp.Layer: The newly created layer.
+        """
+        new_layer = drawable.copy()
+        if name:
+            new_layer.set_name(name)
+        else:
+            new_layer.set_name(_("Copy of ") + drawable.get_name())
+        image.insert_layer(new_layer, layer_group, level)
+        return new_layer
+
     def __init__(self):
         super().__init__()
 
@@ -65,9 +92,13 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer
         ) -> None:
         """Creates a grey layer based on white balance."""
-        wb_grey = drawable.copy()
-        wb_grey.set_name(_("grey by white balance"))
-        image.insert_layer(wb_grey, layer_group, 0)
+        wb_grey = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("grey by white balance"),
+            level=0
+        )
         self._call_pdb('gimp-drawable-desaturate', drawable=wb_grey) # desaturate to grey
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_grey) # white balance adjustment
 
@@ -88,9 +119,13 @@ class enhance_image(image_processor):
             blur_radius (float): The radius for the Gaussian blur.
             threshold_val (float): The threshold value for the black and white effect.
         """
-        wb_bw = drawable.copy()
-        wb_bw.set_name(_("b/w by white balance (incl blur)"))
-        image.insert_layer(wb_bw, layer_group, 0)
+        wb_bw = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("b/w by white balance (incl blur)"),
+            level=0
+        )
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
         filt.get_config().set_property("std-dev-x", blur_radius/2)  # Adjusting blur radius for better effect
@@ -116,9 +151,13 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer
         ) -> None:
         """Creates a grey layer based on equalization."""
-        eq_grey = drawable.copy()
-        eq_grey.set_name(_("grey by equalize"))
-        image.insert_layer(eq_grey, layer_group, 0)
+        eq_grey = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("grey by equalize"),
+            level=0
+        )
         self._call_pdb('gimp-drawable-equalize', drawable=eq_grey, mask_only=False) # apply equalization to enhance contrast
         self._call_pdb('gimp-drawable-desaturate', drawable=eq_grey) # desaturate to grey
         eq_grey.set_opacity(50.0)
@@ -131,9 +170,13 @@ class enhance_image(image_processor):
             threshold_val: float
         ) -> None:
         """Creates a black and white layer based on equalization."""
-        eq_bw = drawable.copy()
-        eq_bw.set_name(_("b/w by equalize (incl bright+contrast)"))
-        image.insert_layer(eq_bw, layer_group, 0)
+        eq_bw = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("b/w by equalize (incl bright+contrast)"),
+            level=0
+        )
         self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False) # apply equalization to enhance contrast
         temp_stats           = self._get_cached_stats(eq_bw) # Get cached statistics for the drawable
         temp_threshold_val   = self.get_threshold_value(temp_stats)
@@ -146,10 +189,16 @@ class enhance_image(image_processor):
         )
         eq_bw.set_opacity(10.0)  # Placeholder for the actual implementation
 
-    def create_layer_group(self, image, name: str = "--NEW--") -> Gimp.GroupLayer:
+    def create_layer_group(
+            self,
+            image,
+            name: str = "--NEW--",
+            parent_layer_group: Optional[Gimp.GroupLayer] = None, 
+            level: int = 0) -> Gimp.GroupLayer:
         """Creates a new group layer in the given image."""
         layer_group = Gimp.GroupLayer.new(image)
         layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
+        image.insert_layer(layer_group, parent_layer_group, level)
         return layer_group
     
     def create_layer_whitebalance(
@@ -159,9 +208,13 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer
         ) -> None:
         """Creates a white balance layer and inserts it into the given layer group."""
-        wb_layer = drawable.copy()
-        wb_layer.set_name(_("White Balance"))
-        image.insert_layer(wb_layer, layer_group, 0)
+        wb_layer = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("White Balance"),
+            level=0
+        )
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_layer) # white balance adjustment
         wb_layer.set_opacity(90.0)
         
@@ -173,11 +226,14 @@ class enhance_image(image_processor):
             blur_radius: float,
             threshold_val: float
         ) -> None:
-        grey_layer_group = self.create_layer_group(image)
-        grey_layer_group.set_name(_("Contrast/Grey Mix"))
+        grey_layer_group = self.create_layer_group(
+            image,
+            name=_("Contrast/Grey Mix"),
+            parent_layer_group=main_layer_group,
+            level=0,
+        )
         grey_layer_group.set_mode(Gimp.LayerMode.MULTIPLY)
         grey_layer_group.set_opacity(10.0)
-        image.insert_layer(grey_layer_group, main_layer_group, 0)
         
         self.create_wb_grey(image, drawable, grey_layer_group)
         self.create_wb_bw(image, drawable, grey_layer_group, blur_radius, threshold_val)
@@ -192,9 +248,14 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer,
             blur_radius: float
         ) -> None:
-        det_layer = drawable.copy()
-        det_layer.set_name(_("Detail Equalize"))
-        image.insert_layer(det_layer, layer_group, 0)
+        """Creates a detail equalization layer and inserts it into the given layer group."""
+        det_layer = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("Detail Equalize"),
+            level=0
+        )
         
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
@@ -264,7 +325,6 @@ class enhance_image(image_processor):
                 image=image, 
                 name=f"""{original_name} {_("Enhancement Stack")}"""
             )
-            image.insert_layer(main_layer_group, None, 0)
             drawable.set_name(_("Original"))
 
             self.create_layer_whitebalance( # Create and insert the white balance layer
