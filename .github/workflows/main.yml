@@ -17,8 +17,11 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       # Replace "document.typ" and "document.pdf" with your file names
-      - name: Compile Typst file
-        run: typst compile document.typ document.pdf
+      - name: Checklist Equipment DE
+        # run: typst compile document.typ document.pdf
+        run: /tools/prints/checklist_equipment/checklist_equipment_DE.typ /tools/prints/checklist_equipment/checklist_equipment_DE.pdf
+      - name: Checklist Equipment EN
+        run: /tools/prints/checklist_equipment/checklist_equipment_EN.typ /tools/prints/checklist_equipment/checklist_equipment_EN.pdf        
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
