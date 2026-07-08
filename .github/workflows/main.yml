@@ -14,17 +14,26 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Typst
-        uses: typst-community/setup-typst@v3
+        # Upgraded to v5 to native Node.js 24 support, which removes the deprecation warning
+        uses: typst-community/setup-typst@v5
 
-      # Replace "document.typ" and "document.pdf" with your file names
-      - name: Checklist Equipment DE
-        # run: typst compile document.typ document.pdf
-        run: /tools/prints/checklist_equipment/checklist_equipment_DE.typ /tools/prints/checklist_equipment/checklist_equipment_DE.pdf
-      - name: Checklist Equipment EN
-        run: /tools/prints/checklist_equipment/checklist_equipment_EN.typ /tools/prints/checklist_equipment/checklist_equipment_EN.pdf        
+      - name: Compile Typst files
+        run: |
+          # 1. Finds all .typ files in the repository.
+          # 2. Excludes paths/filenames containing "template" or "design".
+          # 3. Uses -print0 and read -d to safely handle file names containing spaces.
+          # thanks @ Mammouth.AI / Gemini 3.5 Flash for support
+          find . -name "*.typ" -not -path "*template*" -not -path "*design*" -print0 | while IFS= read -r -d '' file; do
+            # Replace the .typ extension with .pdf
+            pdf_file="${file%.typ}.pdf"
+            echo "Compiling: $file -> $pdf_file"
+            
+            typst compile "$file" "$pdf_file"
+          done
 
-      - name: Upload PDF
+      - name: Upload PDFs
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-pdf
-          path: document.pdf
+          name: compiled-pdfs
+          # This glob pattern gathers all compiled PDF files across your repo
+          path: "**/*.pdf"
