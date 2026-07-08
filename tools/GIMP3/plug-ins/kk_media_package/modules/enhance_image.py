@@ -335,7 +335,7 @@ class enhance_image(image_processor):
         eq_bw.set_opacity(10.0)  # Placeholder for the actual implementation
 
     ## Pop Enhancement Layer
-    ## creates a blur-based pop enhancement layer to boost perceived image presence
+    ## todo: implement a more sophisticated pop enhancement algorithm, possibly using edge detection or frequency separation techniques.
     def create_layer_pop_enhancement(
             self,
             image: Gimp.Image,
@@ -353,6 +353,48 @@ class enhance_image(image_processor):
             level=0
         )
         
+        # 1. Eliminating Hue Shifts (The "Luminosity" Fix)
+        # The most effective way to avoid the "unnatural" color shifts caused by Equalize or Overlay is to isolate the Luminance.
+        # The Hack: After you create your blurred/equalized layer, set its Layer Mode to "Luminosity" (instead of Normal) and then use your script to merge or blend it.
+        # Why: This ensures that the "stunt" only affects the brightness and contrast of the pixels, leaving the original Hue and Saturation untouched. This instantly makes the effect look more professional and "analog."
+        
+        
+        
+        # 2. Smarter Logic: The "Three-Way" Switch
+        # Instead of just checking if an image is "light" or "dark," you should calculate the Standard Deviation (Contrast) of the histogram.
+        # The Problem: A low-contrast dark image needs a different treatment than a high-contrast dark image.
+        # The Solution: Use a ternary logic (Screen, Soft Light, Overlay) based on Mean and StdDev:
+        # Image Profile	Histogram Characteristic	Recommended Mode
+        # Underexposed	Low Mean (< 100)	Screen (Lifts shadows)
+        # Flat/Dull	Mid Mean, Low StdDev	Overlay (Pushes contrast)
+        # Balanced	Mid Mean, High StdDev	Soft Light (Subtle "pop")
+        # Overexposed	High Mean (> 160)	Multiply (at very low opacity)
+
+        # 3. Dynamic Variables (Blur and Opacity)
+        # Hardcoding "20px blur" or "15% opacity" often fails because image resolutions vary.
+        # Smart Blur Radius: Base the blur on the image dimensions.
+        # Formula: Radius = (Width + Height) / 200
+        # This ensures the "glow/halo" effect of the blur is proportional whether it's a thumbnail or a 20MP RAW file.
+        # Smart Opacity: Use the "Distance from Neutral" logic.
+        # If the image is already well-balanced (Mean is near 127), lower the opacity (e.g., 5-8%).
+        # If the image is extremely dark/light, increase the opacity (up to 25%) to compensate.
+
+        # 4. Implementation Logic (The Pseudo-Code)
+        # If you want to "smartify" the Python script, your logic flow should look like this:
+        # Analyze: Get Mean and StdDev from GIMP's histogram.
+        # Color Space Protection: Set the layer's blend mode to Luminosity.
+        # The Switch:
+        # If Mean < 90: Use Screen @ 20% Opacity.
+        # Else if StdDev < 40 (Flat image): Use Overlay @ 15% Opacity.
+        # Else: Use Soft Light @ 20% Opacity (The "Safe" default).
+        # The "Detail Safe" Filter (Optional CLAHE substitute):
+        # Before blurring the copy, run a very slight Unsharp Mask. When this is later blurred and blended back, it creates a "Local Contrast" effect similar to CLAHE without the complexity.
+
+        # 5. How this compares to "Pro" methods
+        # By adding the Luminosity blend mode and the Soft Light switch, you are essentially creating a simplified version of Frequency Separation.
+        # Versus RawTherapee: Your script will still be faster for "salvaging" batches of JPEGs. RawTherapee’s "Tone Mapping" is technically better but requires a human to look at every image to ensure the halos aren't too strong.
+        # The "Media Package" Advantage: Since your script introduces these as layers, the user still has the "safety valve." If your "Smart Switch" chooses Overlay but the user hates it, they can just toggle the layer off.
+
         # Apply Gaussian blur to the layer
         filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
         filt.get_config().set_property("std-dev-x", blur_radius)
