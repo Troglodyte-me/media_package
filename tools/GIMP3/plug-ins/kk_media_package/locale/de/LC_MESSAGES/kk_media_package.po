@@ -28,7 +28,8 @@ msgstr "Filter/Medienpaket"
 
 #: kk_media_package.py:99
 msgid "Python descripon for Enhance Image"
-msgstr "Erstellt einen Stapel von Korrekturebenen für das aktive Bild unter Verwendung der portierten GIMP-2-Logik.\n Parameter: image (Gimp.Image), drawable (Gimp.Drawable).\n Ausgabe: Korrekturebenen, gruppiert zur weiteren Bearbeitung."
+msgstr ""
+"Erstellt einen Stapel von Korrekturebenen für das aktive Bild unter Verwendung der portierten GIMP-2-Logik.\n Parameter: image (Gimp.Image), drawable (Gimp.Drawable).\n Ausgabe: Korrekturebenen, gruppiert zur weiteren Bearbeitung."
 
 #: kk_media_package.py:100
 msgid "procedure description for Enhance Image"
@@ -81,4 +82,3 @@ msgstr "s/w nach Farbabgleich (inkl Helligkeit+Kontrast)"
 #: modules/enhance_image.py:91 modules/enhance_image.py:278
 msgid "Detail Equalize"
 msgstr "Detail Farbabgleich"
-
