@@ -2,38 +2,47 @@ name: Compile Typst to PDF
 
 on:
   push:
-    # Only run when files ending in .typ are pushed/updated
+    # Trigger only when .typ files are modified
     paths:
       - '**.typ'
+
+permissions:
+  contents: write # Grants GitHub permission to push the PDF files back to your repo
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Typst
-        # Upgraded to v5 to native Node.js 24 support, which removes the deprecation warning
         uses: typst-community/setup-typst@v5
 
       - name: Compile Typst files
         run: |
-          # 1. Finds all .typ files in the repository.
-          # 2. Excludes paths/filenames containing "template" or "design".
-          # 3. Uses -print0 and read -d to safely handle file names containing spaces.
+          # 1. Finds all .typ files
+          # 2. Excludes folders/filenames containing "template" or "design"
+          # 3. Compiles each into its matching local folder
           # thanks @ Mammouth.AI / Gemini 3.5 Flash for support
           find . -name "*.typ" -not -path "*template*" -not -path "*design*" -print0 | while IFS= read -r -d '' file; do
-            # Replace the .typ extension with .pdf
             pdf_file="${file%.typ}.pdf"
             echo "Compiling: $file -> $pdf_file"
-            
             typst compile "$file" "$pdf_file"
           done
 
-      - name: Upload PDFs
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-pdfs
-          # This glob pattern gathers all compiled PDF files across your repo
-          path: "**/*.pdf"
+      - name: Commit and push PDFs back to repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Safely stage all newly created PDFs
+          find . -name "*.pdf" -exec git add {} +
+          
+          # Only commit and push if there are actual changes
+          if git diff --staged --quiet; then
+            echo "No PDF changes to commit."
+          else
+            git commit -m "Auto-compile Typst to PDF [skip ci]"
+            git push
+          fi
