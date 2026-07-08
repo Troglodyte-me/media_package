@@ -15,9 +15,9 @@ from gi.repository import Gio
 from typing import List, Dict, Any
 
 # --- FEATURE MODULES ---
-from modules.enhance_image import enhance_image
+from modules.enhance_image import EnhanceImage
+from modules.anonymiser import anonymiser
 from modules.dummy_a import dummy_a_logic
-from modules.dummy_b import dummy_b_logic
 
 # --- LOGGING ---
 import logging
@@ -80,7 +80,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
 
     # --- GIMP 3 PLUGIN ARCHITECTURE ---
     def do_query_procedures(self) -> List[str]:
-        return ["kk-enhance-image", "kk-dummy-a", "kk-dummy-b"]
+        return ["kk-enhance-image", "kk-anonymiser", "kk-dummy-a"]
 
     def do_create_procedure(self, name: str) -> Gimp.ImageProcedure:
         procedure = Gimp.ImageProcedure.new(
@@ -100,11 +100,16 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
                 _("procedure description for Enhance Image"),
                 name
             )
+        elif name == "kk-anonymiser":
+            procedure.set_menu_label(_("Anonymiser"))
+            procedure.add_menu_path("<Image>/" + _("Filters/Enhance"))
+            procedure.set_documentation(
+                _("Python description for Anonymiser"),
+                _("procedure description for Anonymiser"),
+                name
+            )
         elif name == "kk-dummy-a":
             procedure.set_menu_label(_("Dummy A"))
-            procedure.add_menu_path("<Image>/" + _("Filters/Dummy"))
-        elif name == "kk-dummy-b":
-            procedure.set_menu_label(_("Dummy B"))
             procedure.add_menu_path("<Image>/" + _("Filters/Dummy"))
         procedure.set_attribution("Konrad Keck (nigma1985)", "2024-2026", "2024")
         return procedure
@@ -122,11 +127,11 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             return procedure.new_return_values(Gimp.PDBStatusType.CALLING_ERROR, GLib.Error())
         name = procedure.get_name()
         if name == "kk-enhance-image":
-            enhance_image(image, drawables[0])
+            EnhanceImage(image, drawables[0])
+        elif name == "kk-anonymiser":
+            anonymiser(image, drawables[0])
         elif name == "kk-dummy-a":
             dummy_a_logic(image, drawables[0])
-        elif name == "kk-dummy-b":
-            dummy_b_logic(image, drawables[0])
         else:
             Gimp.message(f"Function {name} is a placeholder.")
         return procedure.new_return_values(Gimp.PDBStatusType.SUCCESS, GLib.Error())

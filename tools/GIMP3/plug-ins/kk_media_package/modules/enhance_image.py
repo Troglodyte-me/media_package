@@ -1,14 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import logging
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("KonradFilters")
 
-class base:
+class Base:
     def __init__(self):
         pass
 
-class image_processor(base):
+class ImageProcessor(Base):
     def _call_pdb(self, proc_name: str, **kwargs) -> Any:
         """Calls a PDB procedure with the given arguments.
 
@@ -146,7 +149,7 @@ class image_processor(base):
     def __init__(self):
         super().__init__()
 
-class enhance_image(image_processor):
+class EnhanceImage(ImageProcessor):
     """Enhance image processing class.
     
     Args:
