@@ -167,9 +167,55 @@ class enhance_image(image_processor):
         Returns:
             float: The calculated threshold value.
         """
-        new_threshold = super()._get_threshold_value(new_stats)
+        new_threshold = super()._get_threshold_value(new_stats) * 255.0  # Convert to 0-255 scale
         return ((orig_stats['mean'] + orig_stats['median'] + new_stats['mean'] + new_stats['median'] + new_threshold) / 5) / 255.0
     
+    def _get_adaptive_unsharp_settings(
+            self,
+            blur_radius: float,
+            stats: Dict[str, Any] = {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
+        ) -> Optional[Dict[str, float]]:
+        """Return subtle unsharp-mask settings for soft images.
+
+        The decision is based on histogram standard deviation as a simple
+        softness proxy. If the image is not soft enough, returns ``None``
+        to skip sharpening.
+
+        Args:
+            stats (Dict[str, Any]): Cached image statistics.
+            blur_radius (float): Size-adaptive blur radius already used in the pipeline.
+
+        Returns:
+            Optional[Dict[str, float]]: ``radius``, ``amount`` and ``threshold``
+            for ``gimp-drawable-unsharp-mask``, or ``None`` when sharpening
+            should be skipped.
+        """
+        std_dev = float(stats.get('std_dev', 0.0))
+        mid = super()._get_threshold_value(stats) * 255.0 
+
+        # softness in [0, 1]: 0 means already crisp, 1 means very soft/flat
+        softness = max(0.0, min(1.0, (55.0 - std_dev) / 30.0))
+
+        # Skip sharpening unless softness is noticeable.
+        if softness < 0.20:
+            return None
+
+        # Keep this intentionally subtle and below the large local-contrast blur radius.
+        radius = max(0.6, min(2.2, blur_radius * (0.22 + 0.28 * softness)))
+        amount = max(0.12, min(0.30, 0.12 + 0.18 * softness))
+
+        # Use a small non-zero threshold to avoid boosting noise.
+        threshold = 0.06 - (0.03 * softness)
+        if mid < 90.0:
+            threshold += 0.02
+        threshold = max(0.02, min(0.12, threshold))
+
+        return {
+            'radius': radius,
+            'amount': amount,
+            'threshold': threshold
+        }
+
     ## Create a new layer group in the given image
     ## maybe move to image_processor class if needed for other purposes
     def create_layer_group(
@@ -345,66 +391,92 @@ class enhance_image(image_processor):
             blur_radius: float
         ) -> None:
         """Creates a blur-based pop enhancement layer and inserts it into the given layer group."""
-        det_layer = self._copy_layer(
+        
+        # Smart Mode Logic: "Three-Way" Switch
+        if   max(image_stats['mean'], image_stats['median']) < 100:
+            # Underexposed	Low Mean (< 100)	Screen (Lifts shadows)
+            mode = Gimp.LayerMode.SCREEN
+        elif min(image_stats['mean'], image_stats['median']) > 160:  # if the image is overexposed, apply a subtle enhancement
+            # Overexposed	High Mean (> 160)	Multiply (at very low opacity)
+            mode = Gimp.LayerMode.MULTIPLY
+        elif image_stats['std_dev'] < 50:  # if the image is flat/dull, apply a moderate enhancement
+            # Flat/Dull	Mid Mean, Low StdDev	Overlay (Pushes contrast)
+            mode = Gimp.LayerMode.OVERLAY
+        elif image_stats['std_dev'] >= 50:  # if the image is balanced, apply a subtle enhancement
+            # Balanced	Mid Mean, High StdDev	Soft Light (Subtle "pop")
+            mode = Gimp.LayerMode.SOFTLIGHT
+        else:
+            mode = Gimp.LayerMode.NORMAL  # Default to normal mode if none of the conditions are met
+
+        # Dynamic Variables (Blur and Opacity)
+        # blur_radius # done
+
+        # Smart Opacity: Use the "Distance from Neutral" logic.
+        threshold = super()._get_threshold_value(stats=image_stats) * 255.0  # Convert to 0-255 scale
+        dark = 50
+        darker_mid = 100
+        lighter_mid = 130
+        
+        if threshold < dark:  # Very dark image
+            opacity = 25.0
+        elif threshold < darker_mid:  # Dark image
+            opacity = 8.0
+            opacity += (darker_mid - threshold) / (darker_mid - dark) * (25.0 - 8.0)  # Scale opacity between 8% and 25%
+        elif threshold < lighter_mid:  # quite light image
+            opacity = 5.0
+            opacity += (lighter_mid - threshold) / (lighter_mid - darker_mid) * (8.0 - 5.0)  # Scale opacity between 5% and 8%
+        else:  # Extremely light image
+            opacity = 1.0
+            opacity += (255.0 - threshold) / (255.0 - lighter_mid) * (5.0 - 1.0)  # Scale opacity between 1% and 5%
+
+        eq_layer = self._copy_layer(
             image,
             drawable,
             layer_group,
-            name="Pop Enhancement (Equalization)",
+            name="Temporary Equalization Layer",
             level=0
         )
-        
-        # 1. Eliminating Hue Shifts (The "Luminosity" Fix)
-        # The most effective way to avoid the "unnatural" color shifts caused by Equalize or Overlay is to isolate the Luminance.
-        # The Hack: After you create your blurred/equalized layer, set its Layer Mode to "Luminosity" (instead of Normal) and then use your script to merge or blend it.
-        # Why: This ensures that the "stunt" only affects the brightness and contrast of the pixels, leaving the original Hue and Saturation untouched. This instantly makes the effect look more professional and "analog."
-        
-        
-        
-        # 2. Smarter Logic: The "Three-Way" Switch
-        # Instead of just checking if an image is "light" or "dark," you should calculate the Standard Deviation (Contrast) of the histogram.
-        # The Problem: A low-contrast dark image needs a different treatment than a high-contrast dark image.
-        # The Solution: Use a ternary logic (Screen, Soft Light, Overlay) based on Mean and StdDev:
-        # Image Profile	Histogram Characteristic	Recommended Mode
-        # Underexposed	Low Mean (< 100)	Screen (Lifts shadows)
-        # Flat/Dull	Mid Mean, Low StdDev	Overlay (Pushes contrast)
-        # Balanced	Mid Mean, High StdDev	Soft Light (Subtle "pop")
-        # Overexposed	High Mean (> 160)	Multiply (at very low opacity)
+        luminosity_layer = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name="Temporary Luminosity Layer",
+            level=0
+        )
 
-        # 3. Dynamic Variables (Blur and Opacity)
-        # Hardcoding "20px blur" or "15% opacity" often fails because image resolutions vary.
-        # Smart Blur Radius: Base the blur on the image dimensions.
-        # Formula: Radius = (Width + Height) / 200
-        # This ensures the "glow/halo" effect of the blur is proportional whether it's a thumbnail or a 20MP RAW file.
-        # Smart Opacity: Use the "Distance from Neutral" logic.
-        # If the image is already well-balanced (Mean is near 127), lower the opacity (e.g., 5-8%).
-        # If the image is extremely dark/light, increase the opacity (up to 25%) to compensate.
-
-        # 4. Implementation Logic (The Pseudo-Code)
-        # If you want to "smartify" the Python script, your logic flow should look like this:
-        # Analyze: Get Mean and StdDev from GIMP's histogram.
-        # Color Space Protection: Set the layer's blend mode to Luminosity.
-        # The Switch:
-        # If Mean < 90: Use Screen @ 20% Opacity.
-        # Else if StdDev < 40 (Flat image): Use Overlay @ 15% Opacity.
-        # Else: Use Soft Light @ 20% Opacity (The "Safe" default).
-        # The "Detail Safe" Filter (Optional CLAHE substitute):
-        # Before blurring the copy, run a very slight Unsharp Mask. When this is later blurred and blended back, it creates a "Local Contrast" effect similar to CLAHE without the complexity.
-
-        # 5. How this compares to "Pro" methods
-        # By adding the Luminosity blend mode and the Soft Light switch, you are essentially creating a simplified version of Frequency Separation.
-        # Versus RawTherapee: Your script will still be faster for "salvaging" batches of JPEGs. RawTherapee’s "Tone Mapping" is technically better but requires a human to look at every image to ensure the halos aren't too strong.
-        # The "Media Package" Advantage: Since your script introduces these as layers, the user still has the "safety valve." If your "Smart Switch" chooses Overlay but the user hates it, they can just toggle the layer off.
+        # Apply subtle, adaptive unsharp mask only when the image appears soft.
+        unsharp_filt = self._get_adaptive_unsharp_settings(
+            blur_radius=blur_radius,
+            stats=image_stats
+        )
+        if unsharp_filt is not None:
+            self._call_pdb(
+                'gimp-drawable-unsharp-mask',
+                drawable=luminosity_layer,
+                radius=unsharp_filt['radius'],
+                amount=unsharp_filt['amount'],
+                threshold=unsharp_filt['threshold']
+            )
+        else:
+            logger.info("Skipping unsharp mask: image is not soft enough for subtle sharpening.")
 
         # Apply Gaussian blur to the layer
-        filt = Gimp.DrawableFilter.new(det_layer, "gegl:gaussian-blur", "Blur")
-        filt.get_config().set_property("std-dev-x", blur_radius)
-        filt.get_config().set_property("std-dev-y", blur_radius)
-        det_layer.merge_filter(filt)
+        blr_filt = Gimp.DrawableFilter.new(eq_layer, "gegl:gaussian-blur", "Blur")
+        blr_filt.get_config().set_property("std-dev-x", blur_radius)
+        blr_filt.get_config().set_property("std-dev-y", blur_radius)
         
-        mode = Gimp.LayerMode.OVERLAY if image_stats['mean'] < 128 else Gimp.LayerMode.SCREEN
-        det_layer.set_mode(mode)
-        det_layer.set_opacity(25.0)
-        self._call_pdb('gimp-drawable-equalize', drawable=det_layer, mask_only=False)
+        self._call_pdb('gimp-drawable-equalize', drawable=eq_layer, mask_only=False)
+        eq_layer.merge_filter(blr_filt)
+        eq_layer.set_mode(Gimp.LayerMode.NORMAL)
+
+        # Keep luminosity layer on top of equalized layer, then merge into one pop layer
+        luminosity_layer.set_mode(Gimp.LayerMode.LUMINANCE)
+        luminosity_layer.set_opacity(50.0)
+        pop_layer = image.merge_down(luminosity_layer, Gimp.MergeType.EXPAND_AS_NECESSARY)
+        pop_layer.set_name(_("Pop Enhancement (Equalized)"))
+        
+        pop_layer.set_mode(mode)
+        pop_layer.set_opacity(opacity)
 
     def __init__(self, image: Gimp.Image, drawable:Gimp.Drawable) -> None:
         """Initialize the enhancement process.
