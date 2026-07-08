@@ -152,6 +152,7 @@ class enhance_image(image_processor):
     Args:
         image_processor (image_processor): The base image processor class.
     """
+    ## Override the threshold calculation to consider both original and new statistics
     def _get_threshold_value(
             self, 
             new_stats: Dict[str, Any],
@@ -169,6 +170,62 @@ class enhance_image(image_processor):
         new_threshold = super()._get_threshold_value(new_stats)
         return ((orig_stats['mean'] + orig_stats['median'] + new_stats['mean'] + new_stats['median'] + new_threshold) / 5) / 255.0
     
+    ## Create a new layer group in the given image
+    ## maybe move to image_processor class if needed for other purposes
+    def create_layer_group(
+            self,
+            image,
+            name: str = "--NEW--",
+            parent_layer_group: Optional[Gimp.GroupLayer] = None, 
+            level: int = 0) -> Gimp.GroupLayer:
+        """Creates a new group layer in the given image."""
+        layer_group = Gimp.GroupLayer.new(image)
+        layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
+        image.insert_layer(layer_group, parent_layer_group, level)
+        return layer_group
+    
+    ## --- Enhancement Layer Creation Methods ---
+    ## White Balance Layer
+    def create_layer_whitebalance(
+            self,
+            image: Gimp.Image,
+            drawable: Gimp.Drawable,
+            layer_group: Gimp.GroupLayer
+        ) -> None:
+        """Creates a white balance layer and inserts it into the given layer group."""
+        wb_layer = self._copy_layer(
+            image,
+            drawable,
+            layer_group,
+            name=_("White Balance"),
+            level=0
+        )
+        self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_layer) # white balance adjustment
+        wb_layer.set_opacity(90.0)
+
+    ## Contrast/Grey Mix Group Layer
+    def create_group_contrast_greymix(
+            self,
+            image: Gimp.Image,
+            drawable: Gimp.Drawable,
+            main_layer_group: Gimp.GroupLayer,
+            blur_radius: float,
+            stats: Dict[str, Any]
+        ) -> None:
+        grey_layer_group = self.create_layer_group(
+            image,
+            name=_("Contrast/Grey Mix"),
+            parent_layer_group=main_layer_group,
+            level=0,
+        )
+        grey_layer_group.set_mode(Gimp.LayerMode.MULTIPLY)
+        grey_layer_group.set_opacity(10.0)
+        
+        self.create_wb_grey(image, drawable, grey_layer_group)
+        self.create_wb_bw(image, drawable, grey_layer_group, blur_radius, stats)
+        self.create_eq_grey(image, drawable, grey_layer_group)
+        self.create_eq_bw(image, drawable, grey_layer_group, stats)
+
     def create_wb_grey(
             self, 
             image: Gimp.Image,
@@ -277,58 +334,9 @@ class enhance_image(image_processor):
         )
         eq_bw.set_opacity(10.0)  # Placeholder for the actual implementation
 
-    def create_layer_group(
-            self,
-            image,
-            name: str = "--NEW--",
-            parent_layer_group: Optional[Gimp.GroupLayer] = None, 
-            level: int = 0) -> Gimp.GroupLayer:
-        """Creates a new group layer in the given image."""
-        layer_group = Gimp.GroupLayer.new(image)
-        layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
-        image.insert_layer(layer_group, parent_layer_group, level)
-        return layer_group
-    
-    def create_layer_whitebalance(
-            self,
-            image: Gimp.Image,
-            drawable: Gimp.Drawable,
-            layer_group: Gimp.GroupLayer
-        ) -> None:
-        """Creates a white balance layer and inserts it into the given layer group."""
-        wb_layer = self._copy_layer(
-            image,
-            drawable,
-            layer_group,
-            name=_("White Balance"),
-            level=0
-        )
-        self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_layer) # white balance adjustment
-        wb_layer.set_opacity(90.0)
-        
-    def create_group_contrast_greymix(
-            self,
-            image: Gimp.Image,
-            drawable: Gimp.Drawable,
-            main_layer_group: Gimp.GroupLayer,
-            blur_radius: float,
-            stats: Dict[str, Any]
-        ) -> None:
-        grey_layer_group = self.create_layer_group(
-            image,
-            name=_("Contrast/Grey Mix"),
-            parent_layer_group=main_layer_group,
-            level=0,
-        )
-        grey_layer_group.set_mode(Gimp.LayerMode.MULTIPLY)
-        grey_layer_group.set_opacity(10.0)
-        
-        self.create_wb_grey(image, drawable, grey_layer_group)
-        self.create_wb_bw(image, drawable, grey_layer_group, blur_radius, stats)
-        self.create_eq_grey(image, drawable, grey_layer_group)
-        self.create_eq_bw(image, drawable, grey_layer_group, stats)
-        
-    def create_layer_detail_equalization(
+    ## Pop Enhancement Layer
+    ## creates a blur-based pop enhancement layer to boost perceived image presence
+    def create_layer_pop_enhancement(
             self,
             image: Gimp.Image,
             drawable: Gimp.Drawable,
@@ -336,12 +344,12 @@ class enhance_image(image_processor):
             layer_group: Gimp.GroupLayer,
             blur_radius: float
         ) -> None:
-        """Creates a detail equalization layer and inserts it into the given layer group."""
+        """Creates a blur-based pop enhancement layer and inserts it into the given layer group."""
         det_layer = self._copy_layer(
             image,
             drawable,
             layer_group,
-            name=_("Detail Equalize"),
+            name="Pop Enhancement (Equalization)",
             level=0
         )
         
@@ -396,7 +404,7 @@ class enhance_image(image_processor):
                 blur_radius=blur_radius,
                 stats=stats
             )
-            self.create_layer_detail_equalization( # Create and insert the detail equalization layer
+            self.create_layer_pop_enhancement( # Create and insert the blur-based pop enhancement layer
                 image=image,
                 drawable=drawable,
                 image_stats=stats,
