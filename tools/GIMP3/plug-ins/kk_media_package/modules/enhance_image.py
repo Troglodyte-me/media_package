@@ -297,6 +297,38 @@ class EnhanceImage(ImageProcessor):
             'threshold': threshold
         }
 
+    def _get_auto_threshold_value(
+            self,
+            new_stats: Dict[str, Any],
+            orig_stats: Dict[str, Any] = {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
+        ) -> float:
+        """Estimate an auto threshold similar to GIMP GUI auto behavior.
+
+        This uses histogram summary stats and intentionally biases thresholding
+        down for darker images to avoid losing midtone detail.
+        """
+        n_mean = float(new_stats.get('mean', 127.0))
+        n_median = float(new_stats.get('median', 127.0))
+        n_std = float(new_stats.get('std_dev', 0.0))
+
+        o_mean = float(orig_stats.get('mean', 127.0))
+        o_median = float(orig_stats.get('median', 127.0))
+
+        # Blend current and original luminance center, then normalize to [0, 1].
+        center = (0.45 * n_mean) + (0.30 * n_median) + (0.15 * o_mean) + (0.10 * o_median)
+        threshold = center / 255.0
+
+        # Dark-scene compensation: lower threshold when overall tone is dark.
+        darkness = max(0.0, min(1.0, (128.0 - center) / 128.0))
+        threshold -= 0.18 * darkness
+
+        # Low local contrast compensation: nudge down a bit for flatter images.
+        flatness = max(0.0, min(1.0, (55.0 - n_std) / 55.0))
+        threshold -= 0.06 * flatness
+
+        # Clamp to a practical auto-threshold window.
+        return max(0.12, min(0.78, threshold))
+
     ## Create a new layer group in the given image
     ## maybe move to image_processor class if needed for other purposes
     def create_layer_group(
@@ -404,7 +436,7 @@ class EnhanceImage(ImageProcessor):
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
         temp_stats           = self._get_cached_stats(wb_bw) # Get cached statistics for the drawable
-        new_threshold_val = self._get_threshold_value(
+        new_threshold_val = self._get_auto_threshold_value(
             new_stats=temp_stats,
             orig_stats=stats
         )
@@ -451,7 +483,7 @@ class EnhanceImage(ImageProcessor):
         )
         self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False) # apply equalization to enhance contrast
         temp_stats           = self._get_cached_stats(eq_bw) # Get cached statistics for the drawable
-        new_threshold = self._get_threshold_value(
+        new_threshold = self._get_auto_threshold_value(
             new_stats=temp_stats,
             orig_stats=stats
         )
