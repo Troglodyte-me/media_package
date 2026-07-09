@@ -4,7 +4,7 @@
 import logging
 from . import ImageProcessor
 from gi.repository import Gimp, GLib
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 logger = logging.getLogger("EnhanceImage")
 
@@ -125,6 +125,42 @@ class EnhanceImage(ImageProcessor):
         self._set_unique_name(image, layer_group, desired_name)
         image.insert_layer(layer_group, parent_layer_group, level)
         return layer_group
+
+    def _get_current_layer_parent_and_level(
+            self,
+            image: Gimp.Image,
+            drawable: Gimp.Drawable
+        ) -> Tuple[Optional[Gimp.GroupLayer], int]:
+        """Return parent group and index level of the current drawable."""
+        parent = drawable.get_parent()
+        siblings = parent.get_children() if parent else image.get_layers()
+
+        for idx, item in enumerate(siblings or []):
+            if item == drawable:
+                return parent, idx
+
+        # Fallback if not found, keep behavior stable.
+        return parent, 0
+
+    def _move_item_to_layer_group(
+            self,
+            image: Gimp.Image,
+            item: Gimp.Item,
+            parent_group: Gimp.GroupLayer,
+            position: int = 0
+        ) -> None:
+        """Move an item under a target group at the specified position."""
+        try:
+            image.reorder_item(item, parent_group, position)
+        except Exception:
+            # Fallback for bindings/environments where method dispatch differs.
+            self._call_pdb(
+                'gimp-image-reorder-item',
+                image=image,
+                item=item,
+                parent=parent_group,
+                position=position
+            )
     
     ## --- Enhancement Layer Creation Methods ---
     ## White Balance Layer
@@ -391,17 +427,23 @@ class EnhanceImage(ImageProcessor):
             stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
             size            = self._get_size(image)
             blur_radius     = self._get_blur_radius(size)
-            # threshold_val   = super()._get_threshold_value(stats)
+            current_parent_group, current_level = self._get_current_layer_parent_and_level(image, drawable)
             logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Stats: {stats}")
 
             # start layering process
             main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
                 image=image, 
                 name=f"""{original_name} {_("Enhancement Stack")}""",
-                parent_layer_group=None,
-                level=0
+                parent_layer_group=current_parent_group,
+                level=current_level
             )
             self._set_unique_name(image, drawable, _("Original"))
+            self._move_item_to_layer_group(
+                image=image,
+                item=drawable,
+                parent_group=main_layer_group,
+                position=0
+            )
 
             self.create_layer_whitebalance( # Create and insert the white balance layer
                 image=image, 
