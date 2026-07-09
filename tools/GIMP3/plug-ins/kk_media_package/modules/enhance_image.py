@@ -12,6 +12,52 @@ class Base:
         pass
 
 class ImageProcessor(Base):
+    def _set_unique_name(self, image: Gimp.Image, item: Any, desired_name: str) -> str:
+        """Set a unique name for an image item by appending numbered suffixes.
+
+        If ``desired_name`` already exists in the image, this method uses
+        ``"<name> (2)"``, ``"<name> (3)"``, ... until a free name is found.
+
+        Args:
+            image (Gimp.Image): The image containing the item.
+            item (Any): The item to be renamed (layer/group/drawable).
+            desired_name (str): Preferred name.
+
+        Returns:
+            str: The effective unique name that was assigned.
+        """
+        existing_names = set()
+
+        def _collect_names(layer_items: Any) -> None:
+            for layer in layer_items or []:
+                try:
+                    if layer != item:
+                        existing_names.add(layer.get_name())
+                except Exception:
+                    continue
+                try:
+                    children = layer.get_children()
+                except Exception:
+                    children = None
+                if children:
+                    _collect_names(children)
+
+        try:
+            _collect_names(image.get_layers())
+        except Exception:
+            # Best effort: if layers cannot be listed, keep requested name.
+            pass
+
+        effective_name = desired_name
+        if effective_name in existing_names:
+            idx = 2
+            while f"{desired_name} ({idx})" in existing_names:
+                idx += 1
+            effective_name = f"{desired_name} ({idx})"
+
+        item.set_name(effective_name)
+        return effective_name
+
     def _call_pdb(self, proc_name: str, **kwargs) -> Any:
         """Calls a PDB procedure with the given arguments.
 
@@ -69,10 +115,8 @@ class ImageProcessor(Base):
             Gimp.Layer: The newly created layer.
         """
         new_layer = drawable.copy()
-        if name:
-            new_layer.set_name(name)
-        else:
-            new_layer.set_name(_("Copy of ") + drawable.get_name())
+        desired_name = name if name else _("Copy of ") + drawable.get_name()
+        self._set_unique_name(image, new_layer, desired_name)
         image.insert_layer(new_layer, layer_group, level)
         return new_layer
 
@@ -135,6 +179,26 @@ class ImageProcessor(Base):
         """
         return size / 1000.0
 
+    def _apply_unsharp_mask(
+            self,
+            drawable: Gimp.Drawable,
+            radius: float,
+            amount: float,
+            threshold: float
+        ) -> None:
+        """Apply unsharp masking through the GEGL filter backend.
+
+        The legacy PDB procedure ``gimp-drawable-unsharp-mask`` is not
+        available in this GIMP3 setup, so we apply ``gegl:unsharp-mask``
+        directly on the drawable.
+        """
+        filt = Gimp.DrawableFilter.new(drawable, "gegl:unsharp-mask", "Unsharp Mask")
+        cfg = filt.get_config()
+        cfg.set_property("std-dev", radius)
+        cfg.set_property("scale", amount)
+        cfg.set_property("threshold", threshold)
+        drawable.merge_filter(filt)
+
     def _get_threshold_value(self, stats: Dict[str, Any]) -> float:
         """Calculates a threshold value based on image statistics.
 
@@ -190,7 +254,7 @@ class EnhanceImage(ImageProcessor):
 
         Returns:
             Optional[Dict[str, float]]: ``radius``, ``amount`` and ``threshold``
-            for ``gimp-drawable-unsharp-mask``, or ``None`` when sharpening
+            for the unsharp-mask filter, or ``None`` when sharpening
             should be skipped.
         """
         std_dev = float(stats.get('std_dev', 0.0))
@@ -229,7 +293,8 @@ class EnhanceImage(ImageProcessor):
             level: int = 0) -> Gimp.GroupLayer:
         """Creates a new group layer in the given image."""
         layer_group = Gimp.GroupLayer.new(image)
-        layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
+        desired_name = name if name != "--NEW--" else _("New Layer Group")
+        self._set_unique_name(image, layer_group, desired_name)
         image.insert_layer(layer_group, parent_layer_group, level)
         return layer_group
     
@@ -453,8 +518,7 @@ class EnhanceImage(ImageProcessor):
             stats=image_stats
         )
         if unsharp_filt is not None:
-            self._call_pdb(
-                'gimp-drawable-unsharp-mask',
+            self._apply_unsharp_mask(
                 drawable=luminosity_layer,
                 radius=unsharp_filt['radius'],
                 amount=unsharp_filt['amount'],
@@ -476,7 +540,7 @@ class EnhanceImage(ImageProcessor):
         luminosity_layer.set_mode(Gimp.LayerMode.LUMINANCE)
         luminosity_layer.set_opacity(50.0)
         pop_layer = image.merge_down(luminosity_layer, Gimp.MergeType.EXPAND_AS_NECESSARY)
-        pop_layer.set_name(_("Pop Enhancement (Equalized)"))
+        self._set_unique_name(image, pop_layer, _("Pop Enhancement (Equalized)"))
         
         pop_layer.set_mode(mode)
         pop_layer.set_opacity(opacity)
@@ -507,7 +571,7 @@ class EnhanceImage(ImageProcessor):
                 parent_layer_group=None,
                 level=0
             )
-            drawable.set_name(_("Original"))
+            self._set_unique_name(image, drawable, _("Original"))
 
             self.create_layer_whitebalance( # Create and insert the white balance layer
                 image=image, 
