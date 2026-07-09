@@ -199,6 +199,20 @@ class ImageProcessor(Base):
         cfg.set_property("threshold", threshold)
         drawable.merge_filter(filt)
 
+    def _apply_gaussian_blur(
+            self,
+            drawable: Gimp.Drawable,
+            std_dev_x: float,
+            std_dev_y: Optional[float] = None,
+            label: str = "Blur"
+        ) -> None:
+        """Apply a GEGL gaussian blur to a drawable."""
+        blur_filter = Gimp.DrawableFilter.new(drawable, "gegl:gaussian-blur", label)
+        cfg = blur_filter.get_config()
+        cfg.set_property("std-dev-x", std_dev_x)
+        cfg.set_property("std-dev-y", std_dev_x if std_dev_y is None else std_dev_y)
+        drawable.merge_filter(blur_filter)
+
     def _get_threshold_value(self, stats: Dict[str, Any]) -> float:
         """Calculates a threshold value based on image statistics.
 
@@ -381,11 +395,12 @@ class EnhanceImage(ImageProcessor):
             name=_("b/w by white balance (incl blur)"),
             level=0
         )
-        # Apply Gaussian blur to the layer
-        filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
-        filt.get_config().set_property("std-dev-x", blur_radius/2)  # Adjusting blur radius for better effect
-        filt.get_config().set_property("std-dev-y", blur_radius/2)  # Adjusting blur radius for better effect
-        wb_bw.merge_filter(filt)
+        self._apply_gaussian_blur(
+            drawable=wb_bw,
+            std_dev_x=blur_radius / 2,
+            std_dev_y=blur_radius / 2,
+            label="Blur"
+        )
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
         temp_stats           = self._get_cached_stats(wb_bw) # Get cached statistics for the drawable
@@ -527,13 +542,14 @@ class EnhanceImage(ImageProcessor):
         else:
             logger.info("Skipping unsharp mask: image is not soft enough for subtle sharpening.")
 
-        # Apply Gaussian blur to the layer
-        blr_filt = Gimp.DrawableFilter.new(eq_layer, "gegl:gaussian-blur", "Blur")
-        blr_filt.get_config().set_property("std-dev-x", blur_radius)
-        blr_filt.get_config().set_property("std-dev-y", blur_radius)
-        
         self._call_pdb('gimp-drawable-equalize', drawable=eq_layer, mask_only=False)
-        eq_layer.merge_filter(blr_filt)
+        self._apply_gaussian_blur(
+            drawable=eq_layer,
+            std_dev_x=blur_radius,
+            std_dev_y=blur_radius,
+            label="Blur"
+        )
+        
         eq_layer.set_mode(Gimp.LayerMode.NORMAL)
 
         # Keep luminosity layer on top of equalized layer, then merge into one pop layer
