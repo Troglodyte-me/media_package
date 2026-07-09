@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from gi.repository import Gimp, Gegl
+import logging
+from . import ImageProcessor
+from gi.repository import Gimp, GLib, Gegl
+from typing import List, Dict, Any, Optional
+
+logger = logging.getLogger("Anonymiser")
+
 
 def black_bar(image, drawable):
     """Create a black bar on a new layer using the current selection.
