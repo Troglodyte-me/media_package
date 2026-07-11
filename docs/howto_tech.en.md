@@ -7,8 +7,8 @@ The technical adaption of each principle described here, may be realized in very
 Please refer to named sources for more information, lookup device usage in their respective manuals or start your own research.
 
 Feedback and error correction always welcome.
-
 ## Introduction
+
 In photography everything starts with light:
 
 Originally **light** was collected with a **film** leading to **exposure**. Today this purpose is carried by software controlled **sensors**. 
