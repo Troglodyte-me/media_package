@@ -1,4 +1,4 @@
-# HowTo: Ethics and Legals in Photography
+# Ethics and Legals in Photography
 
 This introduction to photography ethics and legals serves as a quick start for beginners. 
 It is by no means designed to replace legal advisory!
