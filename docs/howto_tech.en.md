@@ -3,7 +3,8 @@
 This introduction to photography serves as a quick start for beginners. 
 It focuses on using photo cameras with exchangeable lenses, but also applies in its basics for usage with other cameras - like in smart phones.
 It's not meant to be a complete guide. 
-Please refer to named sources for more information or start your own research.
+The technical adaption of each principle described here, may be realized in very different ways depending on the device in use.
+Please refer to named sources for more information, lookup device usage in their respective manuals or start your own research.
 
 Feedback and error correction always welcome.
 
