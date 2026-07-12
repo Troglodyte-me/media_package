@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from gi.repository import Gimp, GLib
+from gi.repository import Gimp, GLib, Gegl
 from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("KonradFilters")
@@ -94,6 +94,38 @@ class ImageProcessor(Base):
             logger.error(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
             raise RuntimeError(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
         return result
+
+    def _create_solid_filled_layer(
+        self,
+        image,
+        drawable,
+        name: str,
+        color: str,
+        position: int = 0,
+        opacity: float = 100.0,
+        mode=Gimp.LayerMode.NORMAL,
+    ):
+        """Create, insert, and solid-fill a full-size layer at a given stack position."""
+        layer = Gimp.Layer.new(
+            image,
+            name,
+            image.get_width(),
+            image.get_height(),
+            drawable.type_with_alpha(),
+            opacity,
+            mode,
+        )
+        image.insert_layer(layer, None, position)
+        layer.fill(Gimp.FillType.TRANSPARENT)
+
+        Gimp.context_push()
+        try:
+            Gimp.context_set_foreground(Gegl.Color.new(color))
+            layer.edit_fill(Gimp.FillType.FOREGROUND)
+        finally:
+            Gimp.context_pop()
+
+        return layer
 
     def _copy_layer(
             self,

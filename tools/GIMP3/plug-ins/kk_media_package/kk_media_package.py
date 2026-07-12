@@ -16,7 +16,7 @@ from typing import List, Dict, Any
 
 # --- FEATURE MODULES ---
 from modules.enhance_image import EnhanceImage
-from modules.anonymiser import anonymiser, black_bar, pixeled, blurred
+from modules.anonymiser import Anonymiser, black_bar, pixeled, blurred
 from modules.dummy_a import dummy_a_logic
 
 # --- LOGGING ---
@@ -144,7 +144,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         if name == "kk-enhance-image":
             EnhanceImage(image, drawables[0])
         elif name == "kk-anonymiser":
-            anonymiser(image, drawables[0])
+            Anonymiser(image, drawables[0])
         elif name == "kk-black-bar":
             black_bar(image, drawables[0])
         elif name == "kk-pixeled":
