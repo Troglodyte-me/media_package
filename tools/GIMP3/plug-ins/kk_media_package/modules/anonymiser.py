@@ -13,6 +13,42 @@ def check_selection(drawable: Gimp.Drawable) -> bool:
     has_selection, _, _, _, _ = drawable.mask_intersect()
     return has_selection
 
+def convert_selection_to_dimensions(
+        selection: Gimp.Selection,
+        pos_x: int, pos_y: int,
+        width_by_height: str = "1:1"
+    ) -> Optional[Gimp.Selection]:
+    """Convert the current selection to a black bar shape.
+
+    This function assumes that there is an active selection. It calculates
+    the bounding box of the selection and returns a new selection that
+    represents a black bar covering the selected area.
+    """
+    try:
+        # Get the bounding box of the current selection
+        bbox = selection.get_bounds()
+        if bbox is None:
+            logger.warning("No active selection found.")
+            return None
+
+        # Calculate the new dimensions for the black bar
+        new_x = bbox.x + pos_x
+        new_y = bbox.y + pos_y
+        width_ratio, height_ratio = map(int, width_by_height.split(":"))
+        new_width = bbox.width * width_ratio // (width_ratio + height_ratio)
+        new_height = bbox.height * height_ratio // (width_ratio + height_ratio)
+
+        # Create a new selection representing the black bar
+        new_selection = Gimp.Selection.new_rectangle(new_x, new_y, new_width, new_height)
+        return new_selection
+    except Exception as e:
+        logger.error(f"Error converting selection to dimensions: {e}")
+        return None
+    # Placeholder for actual implementation
+    # In a real implementation, you would calculate the bounding box of the selection
+    # and create a new selection that represents a black bar.
+    # return None  # Replace with actual selection conversion logic
+
 #################################################
 
 def black_bar(image, drawable):
@@ -26,12 +62,16 @@ def black_bar(image, drawable):
     try:
         # Ensure there is an active selection to anonymize.
         if not check_selection(drawable):
-            Gimp.message("No active selection found. Please select an area to anonymize.")
+            Gimp.message(_("No active selection found. Please select an area to anonymize."))
             return
 
+        original_selection = drawable.get_selection()
+        new_selection = convert_selection_to_dimensions(original_selection, pos_x=x, pos_y=y, width_by_height="4:1")
+        drawable.set_selection(new_selection)
+        
         black_bar_layer = Gimp.Layer.new(
             image,
-            "Black Bar",
+            _("Black Bar"),
             image.get_width(),
             image.get_height(),
             drawable.type_with_alpha(),
@@ -50,6 +90,7 @@ def black_bar(image, drawable):
         finally:
             Gimp.context_pop()
     finally:
+        drawable.set_selection(original_selection)
         image.undo_group_end()
 
     Gimp.displays_flush()
