@@ -98,17 +98,18 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
             procedure.set_menu_label(_("Enhance Image"))
             procedure.add_menu_path("<Image>/" + _("Filters/Enhance"))
             procedure.set_documentation(
-                _("Python descripon for Enhance Image"),
                 _("procedure description for Enhance Image"),
+                _("Python descripon for Enhance Image"),
                 name
             )
+
         ## Anonymiser and related functions
         elif name == "kk-anonymiser":
             procedure.set_menu_label(_("Anonymiser Wizzard"))
-            procedure.add_menu_path("<Image>/" + _("Filters/Anonymiser"))
+            procedure.add_menu_path("<Image>/" + _("Filters/Enhance/Anonymiser"))
             procedure.set_documentation(
-                _("Python description for Anonymiser"),
                 _("procedure description for Anonymiser"),
+                _("Python description for Anonymiser"),
                 name
             )
         elif name == "kk-black-bar":
@@ -120,6 +121,7 @@ class MediaPackageFiltersPlugin(Gimp.PlugIn):
         elif name == "kk-blurred":
             procedure.set_menu_label(_("Blurred"))
             procedure.add_menu_path("<Image>/" + _("Filters/Enhance/Anonymiser"))
+
         ## placeholder for future dummy functions
         elif name == "kk-dummy-a":
             procedure.set_menu_label(_("Dummy A"))

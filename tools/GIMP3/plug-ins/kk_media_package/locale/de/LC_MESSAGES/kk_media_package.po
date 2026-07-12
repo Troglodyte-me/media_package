@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-07 19:44+0200\n"
+"POT-Creation-Date: 2026-07-12 10:54+0200\n"
 "PO-Revision-Date: 2026-07-07 19:45+0200\n"
 "Last-Translator: Konrad Keck - nigma1985 <nigma-mania@web.de>\n"
 "Language: de\n"
@@ -18,67 +18,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: kk_media_package.py:96
+#: kk_media_package.py:98
 msgid "Enhance Image"
 msgstr "Korrekturebenen"
 
-#: kk_media_package.py:97
+#: kk_media_package.py:99
 msgid "Filters/Enhance"
 msgstr "Filter/Medienpaket"
 
-#: kk_media_package.py:99
+#: kk_media_package.py:101
 msgid "Python descripon for Enhance Image"
-msgstr ""
-"Erstellt einen Stapel von Korrekturebenen für das aktive Bild unter Verwendung der portierten GIMP-2-Logik.\n Parameter: image (Gimp.Image), drawable (Gimp.Drawable).\n Ausgabe: Korrekturebenen, gruppiert zur weiteren Bearbeitung."
+msgstr "Erstellt einen Stapel von Korrekturebenen für das aktive Bild unter Verwendung der portierten GIMP-2-Logik.\n Parameter: image (Gimp.Image), drawable (Gimp.Drawable).\n Ausgabe: Korrekturebenen, gruppiert zur weiteren Bearbeitung."
 
-#: kk_media_package.py:100
+#: kk_media_package.py:102
 msgid "procedure description for Enhance Image"
 msgstr "Diese Prozedur verbessert das Bild durch Hinzufügen mehrerer Korrekturebenen wie Weißabgleich, Detailausgleich und Kontrast/Grau-Mix.\n Sie ist für die Verwendung mit RGB-Bildern vorgesehen und gibt das verbesserte Bild mit neuen Ebenen zurück, die unter einer gemeinsamen Gruppe zusammengefasst sind."
 
-#: kk_media_package.py:104
+#: kk_media_package.py:107
+msgid "Anonymiser Wizzard"
+msgstr "Anonymisierer Assistent"
+
+#: kk_media_package.py:108
+msgid "Filters/Anonymiser"
+msgstr "Filter/Anonymisierer"
+
+#: kk_media_package.py:110
+msgid "Python description for Anonymiser"
+msgstr "Erstellt einen Stapel von Korrekturebenen für das aktive Bild unter Verwendung der portierten GIMP-2-Logik.\n Parameter: image (Gimp.Image), drawable (Gimp.Drawable).\n Ausgabe: Korrekturebenen, gruppiert zur weiteren Bearbeitung."
+
+#: kk_media_package.py:111
+msgid "procedure description for Anonymiser"
+msgstr "Diese Prozedur verbessert das Bild durch Hinzufügen mehrerer Korrekturebenen wie Weißabgleich, Detailausgleich und Kontrast/Grau-Mix.\n Sie ist für die Verwendung mit RGB-Bildern vorgesehen und gibt das verbesserte Bild mit neuen Ebenen zurück, die unter einer gemeinsamen Gruppe zusammengefasst sind."
+
+#: kk_media_package.py:115
+msgid "Black Bar"
+msgstr "Schwarzer Balken"
+
+#: kk_media_package.py:116 kk_media_package.py:119 kk_media_package.py:122
+#, fuzzy
+msgid "Filters/Enhance/Anonymiser"
+msgstr "Filter/Medienpaket/Anonymisierer"
+
+#: kk_media_package.py:118
+msgid "Pixeled"
+msgstr "Verpixelt"
+
+#: kk_media_package.py:121
+msgid "Blurred"
+msgstr "Verwaschen"
+
+#: kk_media_package.py:125
 msgid "Dummy A"
 msgstr "Platzhalter A"
 
-#: kk_media_package.py:105 kk_media_package.py:108
+#: kk_media_package.py:126
 msgid "Filters/Dummy"
 msgstr "Filter/Dummy"
 
-#: kk_media_package.py:107
-msgid "Dummy B"
-msgstr "Platzhalter B"
+#: modules/enhance_image.py:124
+msgid "New Layer Group"
+msgstr "Neue Ebene"
 
-#: modules/enhance_image.py:50 modules/enhance_image.py:234
-msgid "Enhancement Stack"
-msgstr "Korrekturebenen"
-
-#: modules/enhance_image.py:52 modules/enhance_image.py:311
-msgid "Original"
-msgstr "Original"
-
-#: modules/enhance_image.py:55 modules/enhance_image.py:245
+#: modules/enhance_image.py:178
 msgid "White Balance"
 msgstr "Weißabgleich"
 
-#: modules/enhance_image.py:60 modules/enhance_image.py:259
+#: modules/enhance_image.py:195
 msgid "Contrast/Grey Mix"
 msgstr "Kontrast/Grau Mix"
 
-#: modules/enhance_image.py:65 modules/enhance_image.py:160
+#: modules/enhance_image.py:218
 msgid "grey by white balance"
 msgstr "grau nach Weißabgleich"
 
-#: modules/enhance_image.py:70 modules/enhance_image.py:183
+#: modules/enhance_image.py:245
 msgid "b/w by white balance (incl blur)"
 msgstr "s/w nach Weißabgleich (inkl Verwischen)"
 
-#: modules/enhance_image.py:79 modules/enhance_image.py:207
+#: modules/enhance_image.py:280
 msgid "grey by equalize"
 msgstr "grau nach Farbabgleich"
 
-#: modules/enhance_image.py:85 modules/enhance_image.py:221
+#: modules/enhance_image.py:299
 msgid "b/w by equalize (incl bright+contrast)"
 msgstr "s/w nach Farbabgleich (inkl Helligkeit+Kontrast)"
 
-#: modules/enhance_image.py:91 modules/enhance_image.py:278
-msgid "Detail Equalize"
-msgstr "Detail Farbabgleich"
+#: modules/enhance_image.py:409
+msgid "Pop Enhancement (Equalized)"
+msgstr ""
+
+#: modules/enhance_image.py:436
+msgid "Enhancement Stack"
+msgstr "Korrekturebenen"
+
+#: modules/enhance_image.py:440
+msgid "Original"
+msgstr "Original"
+
+#~ msgid "Dummy B"
+#~ msgstr "Platzhalter B"
+
+#~ msgid "Detail Equalize"
+#~ msgstr "Detail Farbabgleich"
+
