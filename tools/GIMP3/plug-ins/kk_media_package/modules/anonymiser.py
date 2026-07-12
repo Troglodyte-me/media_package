@@ -8,46 +8,56 @@ from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("Anonymiser")
 
+# Helper translation function if not defined globally
+try:
+    _
+except NameError:
+    _ = lambda x: x
+
 def check_selection(drawable: Gimp.Drawable) -> bool:
     """Check if there is an active selection in the drawable."""
     has_selection, _, _, _, _ = drawable.mask_intersect()
     return has_selection
 
 def convert_selection_to_dimensions(
-        selection: Gimp.Selection,
-        pos_x: int, pos_y: int,
+        image: Gimp.Image,
         width_by_height: str = "1:1"
-    ) -> Optional[Gimp.Selection]:
-    """Convert the current selection to a black bar shape.
+    ) -> Optional[tuple]:
+    """Calculate the dimensions for a black bar based on the current selection.
 
-    This function assumes that there is an active selection. It calculates
-    the bounding box of the selection and returns a new selection that
-    represents a black bar covering the selected area.
+    This function calculates the bounding box of the active selection and returns
+    (new_x, new_y, new_width, new_height) representing the centered black bar.
     """
     try:
-        # Get the bounding box of the current selection
-        bbox = selection.get_bounds()
-        if bbox is None:
+        selection = image.get_selection()
+        if selection is None:
             logger.warning("No active selection found.")
             return None
 
-        # Calculate the new dimensions for the black bar
-        new_x = bbox.x + pos_x
-        new_y = bbox.y + pos_y
-        width_ratio, height_ratio = map(int, width_by_height.split(":"))
-        new_width = bbox.width * width_ratio // (width_ratio + height_ratio)
-        new_height = bbox.height * height_ratio // (width_ratio + height_ratio)
+        # GIMP 3 selection.bounds returns: (success, non_empty, x1, y1, x2, y2)
+        success, non_empty, x1, y1, x2, y2 = selection.bounds(image)
+        if not success or not non_empty:
+            logger.warning("No active selection bounds found.")
+            return None
 
-        # Create a new selection representing the black bar
-        new_selection = Gimp.Selection.new_rectangle(new_x, new_y, new_width, new_height)
-        return new_selection
+        width = x2 - x1
+        height = y2 - y1
+
+        # Calculate the new dimensions for the black bar
+        width_ratio, height_ratio = map(int, width_by_height.split(":"))
+        new_width = width * width_ratio // (width_ratio + height_ratio)
+        new_height = height * height_ratio // (width_ratio + height_ratio)
+        
+        # Keep the new selection centered on the original selection midpoint
+        center_x = x1 + (width / 2)
+        center_y = y1 + (height / 2)
+        new_x = int(center_x - (new_width / 2))
+        new_y = int(center_y - (new_height / 2))
+
+        return (new_x, new_y, new_width, new_height)
     except Exception as e:
         logger.error(f"Error converting selection to dimensions: {e}")
         return None
-    # Placeholder for actual implementation
-    # In a real implementation, you would calculate the bounding box of the selection
-    # and create a new selection that represents a black bar.
-    # return None  # Replace with actual selection conversion logic
 
 #################################################
 
@@ -59,15 +69,20 @@ def black_bar(image, drawable):
     selected area with black on the new layer.
     """
     image.undo_group_start()
+    original_selection = None
     try:
-        # Ensure there is an active selection to anonymize.
-        if not check_selection(drawable):
-            Gimp.message(_("No active selection found. Please select an area to anonymize."))
-            return
+        # Save the original selection to a temporary channel
+        original_selection = Gimp.Selection.save(image)
 
-        original_selection = drawable.get_selection()
-        new_selection = convert_selection_to_dimensions(original_selection, pos_x=x, pos_y=y, width_by_height="4:1")
-        drawable.set_selection(new_selection)
+        # Get coordinates for the 4:1 black bar shape
+        coords = convert_selection_to_dimensions(image, width_by_height="4:1")
+        if coords is None:
+            return
+        
+        new_x, new_y, new_width, new_height = coords
+        
+        # Set the new selection rectangle on the image
+        image.select_rectangle(Gimp.ChannelOps.REPLACE, new_x, new_y, new_width, new_height)
         
         black_bar_layer = Gimp.Layer.new(
             image,
@@ -89,8 +104,16 @@ def black_bar(image, drawable):
             black_bar_layer.edit_fill(Gimp.FillType.FOREGROUND)
         finally:
             Gimp.context_pop()
+            
     finally:
-        drawable.set_selection(original_selection)
+        # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
+        if original_selection is not None:
+            try:
+                image.select_item(Gimp.ChannelOps.REPLACE, original_selection)
+                image.remove_channel(original_selection)
+            except Exception as e:
+                logger.error(f"Failed to restore original selection: {e}")
+                
         image.undo_group_end()
 
     Gimp.displays_flush()
