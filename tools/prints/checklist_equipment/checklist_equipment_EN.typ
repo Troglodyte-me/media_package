@@ -4,14 +4,18 @@
 // by Konrad Keck, 2026
 #import "checklist_equipment_design.typ": *
 
-#show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
+#let title = "Equipment Checklist"
+#let title_header = upper(title) + " | RENTAL"
+#let sub_title = "Quick Start Guide for Gear Rental & Operations"
+
+#show: doc => setup-page(title_header, doc)
 #show: doc => setup-text(doc)
 
 // ---- DOCUMENT CONTENT ----
 
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: brand-dark)[Equipment Checklist] \
-  #text(size: 10pt, fill: muted-gray)[Quick Start Guide for Gear Rental & Operations]
+  #text(size: 20pt, weight: "bold", fill: brand-dark)[#title] \
+  #text(size: 10pt, fill: muted-gray)[#sub_title]
 ]
 
 #v(10pt)

@@ -5,14 +5,18 @@
 
 #import "checklist_equipment_design.typ": *
 
-#show: doc => setup-page("AUSRÜSTUNGS-CHECKLISTE | GERÄTE-LEIHE", doc)
+#let title = "Ausrüstungs-Checkliste"
+#let title_header = upper(title) + " | GERÄTE-LEIHE"
+#let sub_title = "Schnellstart-Anleitung für die Geräteausleihe & Einsatz"
+
+#show: doc => setup-page(title_header, doc)
 #show: doc => setup-text(doc)
 
 // ---- DOCUMENT CONTENT ----
 
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: brand-dark)[Ausrüstungs-Checkliste] \
-  #text(size: 10pt, fill: muted-gray)[Schnellstart-Anleitung für die Geräteausleihe]
+  #text(size: 20pt, weight: "bold", fill: brand-dark)[#title] \
+  #text(size: 10pt, fill: muted-gray)[#sub_title]
 ]
 
 #v(10pt)
