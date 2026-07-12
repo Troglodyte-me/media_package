@@ -8,6 +8,12 @@ from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("Anonymiser")
 
+def check_selection(drawable: Gimp.Drawable) -> bool:
+    """Check if there is an active selection in the drawable."""
+    has_selection, _, _, _, _ = drawable.mask_intersect()
+    return has_selection
+
+#################################################
 
 def black_bar(image, drawable):
     """Create a black bar on a new layer using the current selection.
@@ -19,9 +25,8 @@ def black_bar(image, drawable):
     image.undo_group_start()
     try:
         # Ensure there is an active selection to anonymize.
-        has_selection, _, _, _, _ = drawable.mask_intersect()
-        if not has_selection:
-            Gimp.message("No active selection found. Create a selection first.")
+        if not check_selection(drawable):
+            Gimp.message("No active selection found. Please select an area to anonymize.")
             return
 
         black_bar_layer = Gimp.Layer.new(
