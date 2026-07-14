@@ -3,7 +3,7 @@
 
 import logging
 from . import ImageProcessor
-from gi.repository import Gimp, GLib, Gegl
+from gi.repository import Gimp, GLib
 from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("Anonymiser")
@@ -16,6 +16,65 @@ except NameError:
 
 
 #################################################
+
+def _duplicate_blur_pixelate_and_crop(image, drawable, coords, blur_radius):
+    """Duplicate drawable, apply blur+pixelate, and keep only coords area."""
+    new_x, new_y, new_width, new_height = coords
+
+    edited_layer = drawable.copy()
+    if edited_layer is None:
+        raise RuntimeError("Could not duplicate drawable.")
+
+    edited_layer.set_name(_("Anonymised"))
+    image.insert_layer(edited_layer, None, 0)
+
+    half_blur = max(0.1, float(blur_radius) / 2.0)
+    pixel_size = max(1.0, float(blur_radius) * 10.0)
+
+    pdb = Gimp.get_pdb()
+    pdb.run_procedure(
+        "plug-in-gauss",
+        [
+            Gimp.RunMode.NONINTERACTIVE,
+            image,
+            edited_layer,
+            half_blur,
+            half_blur,
+            0,
+        ],
+    )
+
+    pixelized = False
+    try:
+        pdb.run_procedure(
+            "plug-in-pixelize2",
+            [
+                Gimp.RunMode.NONINTERACTIVE,
+                image,
+                edited_layer,
+                pixel_size,
+                pixel_size,
+            ],
+        )
+        pixelized = True
+    except Exception:
+        pass
+
+    if not pixelized:
+        pdb.run_procedure(
+            "plug-in-pixelize",
+            [
+                Gimp.RunMode.NONINTERACTIVE,
+                image,
+                edited_layer,
+                pixel_size,
+            ],
+        )
+
+    image.select_rectangle(Gimp.ChannelOps.REPLACE, new_x, new_y, new_width, new_height)
+    Gimp.Selection.invert(image)
+    edited_layer.edit_clear()
+    Gimp.Selection.none(image)
 
 def black_bar(image, drawable):
     """Create a black bar on a new layer using the current selection.
@@ -42,17 +101,14 @@ def black_bar(image, drawable):
         # Set the new selection rectangle on the image
         image.select_rectangle(Gimp.ChannelOps.REPLACE, new_x, new_y, new_width, new_height)
         
-        black_bar_layer = operation._create_solid_filled_layer(
-            image=image,
-            drawable=drawable,
-            name=_("Black Bar"),
-            color="black",
-            position=0,
-            opacity=100.0,
-            mode=Gimp.LayerMode.NORMAL,
+        blur_radius = getattr(operation, "blur_radius", 10.0)
+        _duplicate_blur_pixelate_and_crop(
+            image,
+            drawable,
+            (new_x, new_y, new_width, new_height),
+            blur_radius,
         )
-        # black_bar_layer.resize_to_image_size()
-        black_bar_layer.resize_to_selection()
+
     finally:
         # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
         if original_selection is not None:
@@ -67,10 +123,50 @@ def black_bar(image, drawable):
     Gimp.displays_flush()
 
 def pixeled(image, drawable):
-    # this function will pixelate a selected area in a seperate layer at a selected position, with a selected size and pixelation level. The user will be able to select the position, size and pixelation level (with defaults & smart values).
-    # todos:
-    ## default values: mid of image, default size: 2% of image height 4x5 dimensions, default opacity: 100%, default orientation: portrait, default pixelation level: 10px
-    Gimp.message("Function kk-pixeled is a placeholder.")
+    """Create a black bar on a new layer using the current selection.
+
+    The function expects an active non-empty selection. It creates a new
+    transparent layer, keeps the current selection as-is, and fills the
+    selected area with black on the new layer.
+    """
+    image.undo_group_start()
+    operation = Anonymiser(image, drawable)
+    original_selection = None
+    
+    try:
+        # Save the original selection to a temporary channel
+        original_selection = Gimp.Selection.save(image)
+
+        # Get coordinates for the 4:1 black bar shape
+        coords = operation.convert_selection_to_dimensions(image, width_by_height="4:5")
+        if coords is None:
+            return
+        
+        new_x, new_y, new_width, new_height = coords
+        
+        # Set the new selection rectangle on the image
+        image.select_rectangle(Gimp.ChannelOps.REPLACE, new_x, new_y, new_width, new_height)
+        
+        blur_radius = getattr(operation, "blur_radius", 10.0)
+        _duplicate_blur_pixelate_and_crop(
+            image,
+            drawable,
+            (new_x, new_y, new_width, new_height),
+            blur_radius,
+        )
+
+    finally:
+        # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
+        if original_selection is not None:
+            try:
+                image.select_item(Gimp.ChannelOps.REPLACE, original_selection)
+                image.remove_channel(original_selection)
+            except Exception as e:
+                logger.error(f"Failed to restore original selection: {e}")
+
+        image.undo_group_end()
+
+    Gimp.displays_flush()
 
 def blurred(image, drawable):
     # this function will blur a selected area in a seperate layer at a selected position, with a selected size and blur level. The user will be able to select the position, size and blur level (with defaults & smart values).
@@ -113,8 +209,25 @@ class Anonymiser(ImageProcessor):
 
             # Calculate the new dimensions for the black bar
             width_ratio, height_ratio = map(int, width_by_height.split(":"))
-            new_width = width * width_ratio // (width_ratio + height_ratio)
-            new_height = height * height_ratio // (width_ratio + height_ratio)
+            if width_ratio <= 0 or height_ratio <= 0:
+                logger.warning("Invalid width_by_height ratio provided.")
+                return None
+
+            target_ratio = width_ratio / height_ratio
+            selection_ratio = width / height if height != 0 else 0
+
+            # Keep requested ratio and fit it inside the current selection bounds
+            if selection_ratio >= target_ratio:
+                # Selection is wider than target ratio: use full height
+                new_height = height
+                new_width = int(round(new_height * target_ratio))
+            else:
+                # Selection is taller/narrower than target ratio: use full width
+                new_width = width
+                new_height = int(round(new_width / target_ratio))
+
+            new_width = max(1, min(new_width, width))
+            new_height = max(1, min(new_height, height))
             
             # Keep the new selection centered on the original selection midpoint
             center_x = x1 + (width / 2)

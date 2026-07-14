@@ -11,6 +11,43 @@ Feedback and error correction always welcome.
 
 ## General Overview
 
+In order to understand how image processing software works one must know the basics of how they operate.
+
+Data Compression
+All images are stored in some form of compression. This is better known as file format like JPEG, GIF, PNG, BNP, and others. For illustration purposes there is the color space called RGB (red (R), green (G) and blue (B)) in which for each color a value is stored between 0 and 255. The reason for this crude number is that each color is represented by 8 binary numbers (aka bits) and kan therefore be stored as 1 Byte. That also allows representation in hex code in contrast to decimal numbers. 
+
+Example:
+base color | binary | decimal | hexadecimal
+--- | --- | --- | ---
+RED | 00000000 | 0 | #00
+GREEN | 11111111 | 255 | #FF
+BLUE | 01111111 | 127 | 7F
+--- | --- | --- | ---
+final color |  | RGB(0, 255, 127) | #00FF7F
+
+As there are three base colors represented by one Byte each, there are a total 16.8 million colors in the RGB color space. For the human eye, that is – in most cases – good enough. In simple *raster images* like BMP this makes calculating the size of an image file pretty easy: Just multiply the dimensionen by 3 Byte and divide by 1024 to convert to KB and MB.
+
+```
+1920:1200
+(1920 pixels width * 1200 pixels height) * 3 Byte
+= 2,304,000 pixels * 3 Byte
+= 6,912,000 Bytes
+= 6,750 KiloBytes (KB)
+~ 6.6 MegaByte (MB)
+```
+
+
+There are however, other color encodings running different schemes. Such are sRGB, ... 
+In either way, compression is the art to find the most efficient way to store the information one needs for the purpose at hand. Therefore, storing color information per pixel has proven to be a too crude method and other formats have been conceived being more sophisticated for certain jobs.
+
+
+
+
+
+When editing background algorithms tab into the numbers behind those colors and thereby calculate alteration to the image. This is especially relevant for changes in color space contrast white balance and other broad alterations of the image.
+
+-------
+
 There are a number of classes of software available for different purposes with overlapping capabilities. 
 Main categories: 
 
