@@ -3,8 +3,13 @@ name: Compile Typst to PDF
 
 on:
   push:
+    # Trigger only when .typ files are modified
     paths:
       - '**.typ'
+
+permissions:
+  contents: write # Grants GitHub permission to push the PDF files back to your repo
+
 
 jobs:
   build:
@@ -18,14 +23,27 @@ jobs:
 
       - name: Compile Typst files
         run: |
+          # 1. Finds all .typ files
+          # 2. Excludes folders/filenames containing "template" or "design"
+          # 3. Compiles each into its matching local folder
           find . -name "*.typ" -not -path "*template*" -not -path "*design*" -print0 | while IFS= read -r -d '' file; do
             pdf_file="${file%.typ}.pdf"
             echo "Compiling: $file -> $pdf_file"
             typst compile "$file" "$pdf_file"
           done
 
-      - name: Upload PDFs (Keeps folder structure in ZIP)
-        uses: actions/upload-artifact@v7
-        with:
-          name: compiled-pdfs
-          path: "**/*.pdf"
+      - name: Commit and push PDFs back to repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Safely stage all newly created PDFs
+          find . -name "*.pdf" -exec git add {} +
+          
+          # Only commit and push if there are actual changes
+          if git diff --staged --quiet; then
+            echo "No PDF changes to commit."
+          else
+            git commit -m "Auto-compile Typst to PDF [skip ci]"
+            git push
+          fi
