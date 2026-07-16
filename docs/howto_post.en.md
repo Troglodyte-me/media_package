@@ -105,6 +105,11 @@ However, the results can be much more advanced then the out-of-the-box directly 
 * [Darktable Beginner Workflow (2026 Update)](https://www.youtube.com/watch?v=EN2JnWCPiBA) by [Kyle Axley](https://www.youtube.com/@KyleAxley)
 * Playlist: [Darktable Tutorial](https://www.youtube.com/watch?v=NMcA6MIhg0Q&list=PLqazFFzUAPc6ZUGNzA0cHEm0M06SsMYx7) by [TJ FREE](https://www.youtube.com/@TJFREE)
 * [Darktable für Einsteiger: Bildbearbeitung & Verwaltung kostenlos!](https://www.youtube.com/watch?v=eprxpq2xZIQ) by [Schulung Für Dich](https://www.youtube.com/@schulungfurdich)
+* "The Darktable Sceptic's Guide to Darktable" by [Andy Hutchinson](https://www.youtube.com/@Andyhutchinson)
+  * [Part One: Module Madness](https://www.youtube.com/watch?v=eEKkv-PT00Q)
+  * [Part 2 - The Bombshell is Revealed](https://www.youtube.com/watch?v=8bqTXEYC_7o)
+  * [Part 3 - Beginner's Workflow](https://www.youtube.com/watch?v=h88DTIntCIc)
+  * ...
 
 ## Photo Editors
 Photo editors  share a lot of features with RAW processors, but photo editors are usually only able to edit flat files (like JPG, PNG, etc) and specialize in editing specifics such as adding/subtracting/replacing elements in the picture, or combining elements of several pictures. 
