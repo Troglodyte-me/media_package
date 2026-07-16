@@ -97,7 +97,7 @@ class EnhanceImage(ImageProcessor):
         o_median = float(orig_stats.get('median', 127.0))
 
         # Blend current and original luminance center, then normalize to [0, 1].
-        center = (0.45 * n_mean) + (0.30 * n_median) + (0.15 * o_mean) + (0.10 * o_median)
+        center = ((5 * n_mean) + (10 * n_median) + (1 * o_mean) + (2 * o_median)) / (5+10+1+2)
         threshold = center / 255.0
 
         # Dark-scene compensation: lower threshold when overall tone is dark.
