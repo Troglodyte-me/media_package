@@ -3,7 +3,6 @@
 
 import logging
 
-from networkx import center
 from . import ImageProcessor
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any, Optional, Tuple
