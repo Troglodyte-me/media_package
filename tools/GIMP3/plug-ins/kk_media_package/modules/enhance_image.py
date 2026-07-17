@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import logging
+
+from networkx import center
 from . import ImageProcessor
 from gi.repository import Gimp, GLib
 from typing import List, Dict, Any, Optional, Tuple
@@ -97,16 +99,8 @@ class EnhanceImage(ImageProcessor):
         o_median = float(orig_stats.get('median', 127.0))
 
         # Blend current and original luminance center, then normalize to [0, 1].
-        center = ((5 * n_mean) + (10 * n_median) + (1 * o_mean) + (2 * o_median)) / (5+10+1+2)
-        threshold = center / 255.0
-
-        # Dark-scene compensation: lower threshold when overall tone is dark.
-        darkness = max(0.0, min(1.0, (128.0 - center) / 128.0))
-        threshold -= 0.18 * darkness
-
-        # Low local contrast compensation: nudge down a bit for flatter images.
-        flatness = max(0.0, min(1.0, (55.0 - n_std) / 55.0))
-        threshold -= 0.06 * flatness
+        threshold = ((5 * n_mean) + (10 * n_median) + (1 * o_mean) + (2 * o_median)) / (5+10+1+2)
+        logger.debug(f"Auto threshold calculation:\n n_mean={n_mean}, n_median={n_median}, n_std={n_std},\n o_mean={o_mean}, o_median={o_median},\n preliminary threshold={threshold}, final threshold={max(0.12, min(0.78, threshold))}")
 
         # Clamp to a practical auto-threshold window.
         return max(0.12, min(0.78, threshold))
