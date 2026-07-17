@@ -317,18 +317,19 @@ class EnhanceImage(ImageProcessor):
             blur_radius: float
         ) -> None:
         """Creates a blur-based pop enhancement layer and inserts it into the given layer group."""
+        logger.debug(f"Creating pop enhancement layer with stats: {image_stats} and blur radius: {blur_radius}")
         
         # Smart Mode Logic: "Three-Way" Switch
-        if   max(image_stats['mean'], image_stats['median']) < 100:
+        if   max(image_stats['mean'], image_stats['median']) < (100/255):
             # Underexposed	Low Mean (< 100)	Screen (Lifts shadows)
             mode = Gimp.LayerMode.SCREEN
-        elif min(image_stats['mean'], image_stats['median']) > 160:  # if the image is overexposed, apply a subtle enhancement
+        elif min(image_stats['mean'], image_stats['median']) > (160/255):  # if the image is overexposed, apply a subtle enhancement
             # Overexposed	High Mean (> 160)	Multiply (at very low opacity)
             mode = Gimp.LayerMode.MULTIPLY
-        elif image_stats['std_dev'] < 50:  # if the image is flat/dull, apply a moderate enhancement
+        elif image_stats['std_dev'] < (50/255):  # if the image is flat/dull, apply a moderate enhancement
             # Flat/Dull	Mid Mean, Low StdDev	Overlay (Pushes contrast)
             mode = Gimp.LayerMode.OVERLAY
-        elif image_stats['std_dev'] >= 50:  # if the image is balanced, apply a subtle enhancement
+        elif image_stats['std_dev'] >= (50/255):  # if the image is balanced, apply a subtle enhancement
             # Balanced	Mid Mean, High StdDev	Soft Light (Subtle "pop")
             mode = Gimp.LayerMode.SOFTLIGHT
         else:
