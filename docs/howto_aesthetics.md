@@ -18,11 +18,31 @@ Please refer to named sources for more information or start your own research.
 Feedback and error correction always welcome.
 
 ## Image Composition
+The human eye is trained to find patterns and systematically scans images accordingly. 
+When creating images -- like photos -- one can exploit this capability to *lead the eye*.
+
 ### Rules of ...
 Most famously the "Rule-of-Thirds" is used to composite interesting photos and is probably the most easy and useful advice to give. 
 > If not already displayed in your camera, divide mentally the image in three sections of equal size vertically as well as horizontally, giving you a framework of nine segments.
-> Try to position subjects of interest on an intersection of horizontal and vertical lines. 
-> When the subject is long (like the horizon) or high (like a building) try to align them with one of the respective horizontal/vertical lines. 
+> Try to position the subjects of interest on an intersection of a horizontal and a vertical line.
+> When the subject is long (like the horizon) or high (like a building) try to align them with one of the respective horizontal/vertical lines.
+
+### Guiding lines
+
+### Lead the Gaze
+When people -- or anthropomorphic subjects like animals or robots -- look at something, the human eye tends to follow their view.
+Even if that something is not present within the image frame.
+
+This effect is strengthened, when ...
+* the gazing subject is at a position of interest (e.g. see Rule of Third)
+* there is a lot of empty space in the view line of the subject (see Ma)
+* there are leading lines following the gaze, especially pointing fingers/hands.
+
+### Symmetry
+
+### Symbolic Patterns
+The human eye is very strong recognizing certain patterns. 
+The most strongest are faces, that can be recognized even if they are not there (like on the moon, in clouds, etc.).
 
 ### Ma (negative space)
 Originally a traditional Japanese art style, that utilizing "empty" space to emote reflection in the viewer. 
