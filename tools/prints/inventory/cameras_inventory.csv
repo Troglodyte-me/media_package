@@ -1,0 +1,4 @@
+name,image_path,qr_url,icon_path
+"Aurelia the Mage","images/mage.png","https://example.com/mage","icons/fire.png"
+"Garrick the Knight","images/knight.png","https://example.com/knight","icons/shield.png"
+"Zephyr the Rogue","images/rogue.png","https://example.com/rogue","icons/dagger.png"
