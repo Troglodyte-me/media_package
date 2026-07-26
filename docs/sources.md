@@ -16,11 +16,11 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 
 | icon | Meaning (English) | Bedeutung (Deutsch) |
 | --- | --- | --- |
-|CROSS| Medical Emergency| Medizinische Notfälle |
+| ⚕️ | Medical Emergency | Medizinische Notfälle |
 | 🇩🇪 | German Language | Deutsche Sprache |
-|FIRE| Fire Fighter | Feuerwehr |
+| 🔥 | Fire Fighter | Feuerwehr |
 | 🇬🇧 | English Language | Englische Sprache |
-|POLICE| Police & Civil Security | Polizei & Zivile Sicherheit |
+| 👮 | Police & Civil Security | Polizei & Zivile Sicherheit |
 
 <!-- * Author, Date: Title. Sub-Title. (Last Access) -->
 ------
@@ -29,9 +29,34 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 * 
 
 # Inspirations
-* Hana Gabriel (🇩🇪 | CROSS)
-    * [Instagram](https://www.instagram.com/hanagabr1el/) | [Facebook](https://www.facebook.com/profile.php?id=61578243483437)
-* Innenministerium Sachsen (🇩🇪 | CROSS | FIRE | POLICE)
-    * [Website](https://www.smi.sachsen.de/) | [Instagram](https://www.instagram.com/smisachsen/) | [Threads](https://www.threads.com/@smisachsen)
-* Nurse Gwenny (🇬🇧 | CROSS)
-    * [Website](https://www.NurseGwenny.com) | [Instagram](https://www.instagram.com/nursegwennyrn/) | [YouTube](https://www.youtube.com/@NurseGwenny) 
+<!-- * Elizabeth McMullen (🇬🇧 | 🔥)
+    * [Instagram](https://www.instagram.com/elizabeth.mcmullen27/)
+    | [Threads](https://www.threads.com/@elizabeth.mcmullen27) -->
+* Gemeinsam im Feuer (🇩🇪 | 🔥)
+    * [Beacons.AI](https://beacons.ai/gemeinsamimfeuer112)
+    | [Atește birlikte @ Instagram](https://www.instagram.com/gemeinsamimfeuer_atestebirlik)
+    | [Cinar Taha Eren @ Instgram](https://www.instagram.com/firetaha_112)
+    | [Erkan Eren @ YouTube](https://www.youtube.com/@GemeinsamimFeuer112)
+    | [Itfaiye @ TikTok](https://www.tiktok.com/@gemeinsamimfeuer_112)
+    | [Mail](mailto:gemeinsamimfeuer112@outlook.de)
+* Hana Gabriel (🇩🇪 | ⚕️)
+    * [Facebook](https://www.facebook.com/profile.php?id=61578243483437)
+    | [Instagram](https://www.instagram.com/hanagabr1el/)
+    | [Threads](https://www.threads.com/@hanagabr1el)
+* Innenministerium Sachsen (🇩🇪 | ⚕️ | 🔥 | 👮)
+    * [Website](https://www.smi.sachsen.de/) 
+    | [Instagram](https://www.instagram.com/smisachsen/) 
+    | [Threads](https://www.threads.com/@smisachsen)
+* Nurse Gwenny (🇬🇧 | ⚕️)
+    * [Website](https://www.NurseGwenny.com) 
+    | [linktree](https://linktr.ee/NurseGwenny)
+    | [Instagram](https://www.instagram.com/nursegwennyrn/) 
+    | [TikTok](https://www.tiktok.com/@nurse.gwenny)
+    | [YouTube](https://www.youtube.com/@NurseGwenny) 
+* Prof. Dr. Thomas-Gabriel Rüdiger (🇩🇪 | 👮)
+    * [Instagram](https://www.instagram.com/cyberkriminologe)
+    | [LinkedIn](https://www.linkedin.com/in/tgruediger/)
+    | [Linktree](https://linktr.ee/cyberkriminologe)
+    | [Threads](https://www.threads.com/@cyberkriminologe)
+    | [TikTok](https://www.tiktok.com/@cyberkriminologe)
+    | [Twitter/X](https://x.com/TGRuediger)
