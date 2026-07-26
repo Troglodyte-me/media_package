@@ -16,14 +16,22 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 
 | icon | Meaning (English) | Bedeutung (Deutsch) |
 | --- | --- | --- |
+|CROSS| Medical Emergency| Medizinische Notfälle |
 | 🇩🇪 | German Language | Deutsche Sprache |
+|FIRE| Fire Fighter | Feuerwehr |
 | 🇬🇧 | English Language | Englische Sprache |
+|POLICE| Police & Civil Security | Polizei & Zivile Sicherheit |
 
 <!-- * Author, Date: Title. Sub-Title. (Last Access) -->
 ------
 
 # Sources / Quellen
-*
+* 
 
 # Inspirations
-* 
+* Hana Gabriel (🇩🇪 | CROSS)
+    * [Instagram](https://www.instagram.com/hanagabr1el/) | [Facebook](https://www.facebook.com/profile.php?id=61578243483437)
+* Innenministerium Sachsen (🇩🇪 | CROSS | FIRE | POLICE)
+    * [Website](https://www.smi.sachsen.de/) | [Instagram](https://www.instagram.com/smisachsen/) | [Threads](https://www.threads.com/@smisachsen)
+* Nurse Gwenny (🇬🇧 | CROSS)
+    * [Website](https://www.NurseGwenny.com) | [Instagram](https://www.instagram.com/nursegwennyrn/) | [YouTube](https://www.youtube.com/@NurseGwenny) 
