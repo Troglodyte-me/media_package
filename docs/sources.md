@@ -70,6 +70,8 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [TikTok](https://www.tiktok.com/@xfirelouis)
     | [YouTube](https://www.youtube.com/@xFireLouis)
     | [Linktree](https://linktr.ee/xfirelouis)
+* "*Feuer und Flamme*" (🇩🇪 | ⚕️ | 🔥)
+    * [WDR/ARD Mediathek](https://www.ardmediathek.de/serie/feuer-und-flamme)
 * Feuerwehr Guttaring (🇩🇪 | 🔥)
     * [Website](https://ff-guttaring.at/)
     | [Instagram](https://www.instagram.com/feuerwehr_guttaring/)
@@ -156,6 +158,8 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [YouTube](https://www.youtube.com/@mehrztin)
     | [Mail](mailto:mehrztin@wholesome-artists.de)
     | [Linktree](https://linktr.ee/mehr.ztin)
+* "*Mein Einsatz*" (Podcast 🇩🇪 | 🔥)
+    * [NDR/ARD Sounds](https://www.ardsounds.de/sendung/mein-einsatz-der-ndr-feuerwehr-podcast)
 
 * Nurse Gwenny (🇬🇧 | ⚕️)
     * [Website](https://www.NurseGwenny.com) 
@@ -164,6 +168,18 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [YouTube](https://www.youtube.com/@NurseGwenny) 
     | [linktree](https://linktr.ee/NurseGwenny)
 
+* Polizei Hamburg (🇩🇪 | 👮)
+    * [Website](https://www.polizei.hamburg/)
+    | [Facebook](https://www.facebook.com/polizeihamburg)
+    | [Instagram](https://www.instagram.com/polizeihamburg)
+    | [LinkedIn](https://www.linkedin.com/company/polizeihamburg/)
+    | [Twitter/X](https://x.com/polizeihamburg)
+    | [YouTube](https://www.youtube.com/@PolizeiHamburgYoutube)
+* Polizei Frankfurt am Main (🇩🇪 | 👮)
+    * [Website](https://www.polizei.hessen.de/polizeipraesidien/polizeipraesidium-frankfurt-am-main/)
+    | [Facebook](https://www.facebook.com/PolizeiFrankfurt/)
+    | [Instagram](https://www.instagram.com/polizei_ffm/)
+    | [Twitter/X](https://x.com/Polizei_Ffm)
 * Polizeidirektion Hannover (🇩🇪 | 👮)
     * [Website](https://www.pd-h.polizei-nds.de/startseite/)
 * Polizeikommissar Petermax (🇩🇪 | 👮)
@@ -201,6 +217,11 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [Threads](https://www.threads.com/@scairnationalguard)
     | [YouTube](https://www.youtube.com/@SCAirNationalGuard)
 
+* *utoky_od_naty* (🇨🇿 | 🔥)
+    * [Instagram](https://www.instagram.com/utoky_od_naty/)
+    | [Mail](mailto:utokyodnaty@gmail.com)
+
 * Wiebke Kempen Notärztin und Hausärztin (🇩🇪 | ⚕️)
     * [Instagram](https://www.instagram.com/wiebodoc)
     | [Threads](https://www.threads.com/@wiebodoc)
+
