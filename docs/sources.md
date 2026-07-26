@@ -18,9 +18,9 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 | --- | --- | --- |
 | 🇨🇿 | Czech Language | Tschechische Sprache |
 | 🇬🇧 | English Language | Englische Sprache |
-| 🔥 | Fire Fighter | Feuerwehr |
+| 🔥 | Fire Fighting | Feuerwehr |
 | 🇩🇪 | German Language | Deutsche Sprache |
-| ⚕️ | Medical Emergency | Medizinische Notfälle |
+| ⚕️ | Medical Emergency | Notfallmedizin |
 | 👮 | Police & Civil Security | Polizei & Zivile Sicherheit |
 | 🇺🇿 | Uzbek Language | Usbekische Sprache |
 
