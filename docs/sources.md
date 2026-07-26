@@ -22,6 +22,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 | 🇩🇪 | German Language | Deutsche Sprache |
 | ⚕️ | Medical Emergency | Medizinische Notfälle |
 | 👮 | Police & Civil Security | Polizei & Zivile Sicherheit |
+| 🇺🇿 | Uzbek Language | Usbekische Sprache |
 
 <!-- * Author, Date: Title. Sub-Title. (Last Access) -->
 ------
@@ -33,6 +34,10 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 <!-- * Title (Country Code | Specialisations)
     * [Platform](URL)
     | [Platform](URL) -->
+
+* Bewerbsgruppe Glanz (🇩🇪 | 🔥)
+    * [Instagram](https://www.instagram.com/bewerbsgruppe_glanz/)
+
 * Die_OpBros (🇩🇪 | ⚕️)
     * [Website](https://www.opbros.de/)
     | [Instagram](https://www.instagram.com/die_opbros)
@@ -45,6 +50,12 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Instagram](https://www.instagram.com/elizabeth.mcmullen27/)
     | [Threads](https://www.threads.com/@elizabeth.mcmullen27) -->
 
+* Favqulodda vaziyatlar vazirligi (Uzbek Minitry of Emergency Situations) (🇺🇿 | 🔥)
+    * [Instagram](https://www.instagram.com/fvvmchs/)
+* Fire Department Chronicles (🇬🇧 | ⚕️ | 🔥)
+    * [Instagram](https://www.instagram.com/firedepartmentchronicles/)
+    | [Threads](https://www.threads.com/@firedepartmentchronicles)
+    | [YouTube](https://www.youtube.com/@FireDepartmentChronicles)
 * Fire Department Coffee (🇬🇧 | 🔥)
     * [Webshop](https://www.firedeptcoffee.com/)
     | [Instagram](https://www.instagram.com/firedeptcoffee/)
@@ -59,6 +70,9 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [TikTok](https://www.tiktok.com/@xfirelouis)
     | [YouTube](https://www.youtube.com/@xFireLouis)
     | [Linktree](https://linktr.ee/xfirelouis)
+* Feuerwehr Guttaring (🇩🇪 | 🔥)
+    * [Website](https://ff-guttaring.at/)
+    | [Instagram](https://www.instagram.com/feuerwehr_guttaring/)
 * Freiwillige Feuerwehr Ahrensburg (🇩🇪 | 🔥)
     * [Website](https://www.feuerwehr-ahrensburg.de)
     | [Facebook](https://www.facebook.com/FFAhrensburg/)
@@ -83,6 +97,10 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [Erkan Eren @ YouTube](https://www.youtube.com/@GemeinsamimFeuer112)
     | [Itfaiye @ TikTok](https://www.tiktok.com/@gemeinsamimfeuer_112)
     | [Mail](mailto:gemeinsamimfeuer112@outlook.de)
+* *gesundheitsakademiebohndorf* (🇩🇪 | ⚕️ | 🔥)
+    * [Website](https://gesundheitsakademie-bohndorf.de)
+    | [Instagram](https://www.instagram.com/gesundheitsakademiebohndorf/)
+    | [Threads](https://www.threads.com/@gesundheitsakademiebohndorf)
 
 * Hana Gabriel (🇩🇪 | ⚕️)
     * [Facebook](https://www.facebook.com/profile.php?id=61578243483437)
@@ -176,13 +194,13 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Instagram](https://www.instagram.com/s.k.v.nordost/)
 * SDH Pozděchov (🇨🇿 | 🔥)
     * [Instagram](https://www.instagram.com/sdhpozdechov/)
+* South Carolina Air National Guard (🇬🇧 | 🔥)
+    * [Facebook](https://www.facebook.com/scang.swampfox)
+    | [Flickr](https://www.flickr.com/photos/thescang/albums/)
+    | [Instagram](https://www.instagram.com/scairnationalguard/)
+    | [Threads](https://www.threads.com/@scairnationalguard)
+    | [YouTube](https://www.youtube.com/@SCAirNationalGuard)
 
 * Wiebke Kempen Notärztin und Hausärztin (🇩🇪 | ⚕️)
     * [Instagram](https://www.instagram.com/wiebodoc)
     | [Threads](https://www.threads.com/@wiebodoc)
-
-
-
-
-
-
