@@ -23,6 +23,7 @@ When creating images -- like photos -- one can exploit this capability to *lead 
 
 ### Rules of ...
 Most famously the "Rule-of-Thirds" is used to composite interesting photos and is probably the most easy and useful advice to give. 
+> [!TIP]
 > If not already displayed in your camera, divide mentally the image in three sections of equal size vertically as well as horizontally, giving you a framework of nine segments.
 > Try to position the subjects of interest on an intersection of a horizontal and a vertical line.
 > When the subject is long (like the horizon) or high (like a building) try to align them with one of the respective horizontal/vertical lines.
