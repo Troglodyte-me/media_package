@@ -1,8 +1,9 @@
-# Ethics and Legals in Photography
+# Ethics and Legalities in Photography :classical_building:
 
-This introduction to photography ethics and legals serves as a quick start for beginners. 
+This introduction to photography ethics and legal framework serves as a quick start for beginners. 
 It is by no means designed to replace legal advisory!
 
+> [!CAUTION]
 > **No legal council was part in the conception of the below text.**
 > If you are in a different part of the world, please take extra caution and double-check. 
 > Furthermore, perspectives on right-and-wrong change over time.
