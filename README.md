@@ -49,7 +49,8 @@ A very special thank you to the local emergency services for their inspiration a
 | **Automation** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | GIMP scripting (Legacy Py2 & Modern Py3+) |
 | **Sync & Media** | ![GIMP](https://img.shields.io/badge/GIMP-5C5543?style=flat-square&logo=gimp&logoColor=white) | Core image processing engine |
 
-> **Note:** Other libraries and open-source dependencies used within the code are gratefully acknowledged in our `requirements.txt` and specific source headers.
+> [!NOTE]
+> Other libraries and open-source dependencies used within the code are gratefully acknowledged in our `requirements.txt` and specific source headers.
 
 
 Please cite like this: APA 
