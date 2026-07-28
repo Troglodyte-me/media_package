@@ -11,7 +11,7 @@ Standard language is German. An English version for international audiences is p
 
 ### Choose your language
 
-| [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg" width="100" alt="Union Jack flag representing English language selection, rectangular flag with red cross and diagonal white and red stripes on blue background, neutral tone">](docs/EN/index.md) | [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" width="100" alt="German national flag representing German language selection, horizontal stripes of black, red, and gold, neutral tone">](docs/DE/index.md) |
+| [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg" width="75" alt="Union Jack flag representing English language selection, rectangular flag with red cross and diagonal white and red stripes on blue background, neutral tone">](./docs/index.en.md) | [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" width="75" alt="German national flag representing German language selection, horizontal stripes of black, red, and gold, neutral tone">](./docs/index.de.md) |
 |:---:|:---:|
 | **English Version** | **Deutsche Version (Vollständig)** |
 
