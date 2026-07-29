@@ -4,10 +4,11 @@ This introduction to photography ethics and legal framework serves as a quick st
 It is by no means designed to replace legal advisory!
 
 > [!CAUTION]
-> **No legal council was part in the conception of the below text.**
+> **No legal council was part in the conception of below text.**
 > If you are in a different part of the world, please take extra caution and double-check. 
 > Furthermore, perspectives on right-and-wrong change over time.
 > Use with caution, and make up your own mind in a situation-to-situation basis.
+> In doubt, take legal council.
 > No guarantees granted.
 
 This is not meant to be a complete guide. 
