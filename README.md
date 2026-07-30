@@ -1,37 +1,15 @@
 # Media Package
 
-Welcome to the documentation for the Fire Department Media Package. This repository serves as a central hub for media-related tasks for volunteer firefighters and other related use cases.
-This is a private project.
-
-Standard language is German. Only a basic version is provided in English for international audiences.
-
-Standard language is German. An English version for international audiences is provided, although in its most basic version only.
-
----
-
 ### Choose your language
-
-| [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg" width="75" alt="Union Jack flag representing English language selection, rectangular flag with red cross and diagonal white and red stripes on blue background, neutral tone">](./docs/index.en.md) | [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" width="75" alt="German national flag representing German language selection, horizontal stripes of black, red, and gold, neutral tone">](./docs/index.de.md) |
-|:---:|:---:|
-| **English Version** | **Deutsche Version (Vollständig)** |
-
----
-*Note: The German version contains the full range of documentation. The English version provides basic international guidelines.*
-
-**Lizenz**: Dieses Werk ist lizenziert unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de).
-
-**License**: This work is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+|  |  | 
+| :---: | :--- | 
+| [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" height="33" alt="German national flag representing German language selection, horizontal stripes of black, red, and gold, neutral tone">](./docs/index.de.md) | **Deutsche Version (Vollständig)** |
+| [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg" height="33" alt="Union Jack flag representing English language selection, rectangular flag with red cross and diagonal white and red stripes on blue background, neutral tone">](./docs/index.en.md) | **English Version** |
 
 ---
+*Note: The German version contains the full range of documentation. The English version provides basic guidelines.*
 
-## Acknowledgments & Empowered by
-
-This project is made possible by the generous support of our community and the world-class tools listed below.
-
-### Special Thanks
-A very special thank you to the local emergency services for their inspiration and support in the regional context of this project:
-*   [**Freiwillige Feuerwehr Samtgemeinde Tostedt**](https://www.ff-sgtostedt.de/)
-*   [**Ortsfeuerwehr Dohren**](https://www.ff-sgtostedt.de/ortsfeuerwehr-dohren/) (Niedersachsen)
+**License**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ---
 
