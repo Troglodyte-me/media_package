@@ -11,11 +11,21 @@ Die Standardsprache ist Deutsch. Für ein internationales Publikum wird lediglic
 
 Die Standardsprache ist Deutsch. Eine englische Version für ein internationales Publikum...
 
-## Navigation
-- [📷 Hardware & Technik](hardware.md) - Kameraeinstellungen, Handhabung im Einsatz.
-- [💻 Software & Bearbeitung](software.md) - Tools (GIMP, RawTherapee) & eigene Plugins.
-- [⚖️ Recht, Ethik & Ästhetik](ethics_law.md) - Datenschutz, Bildrechte, Opferschutz.
-- [ cards Taschenkarten](pocket_cards.md) - Kurzübersichten für die Westentasche.
+# Navigation (EN)
+* **[Ethics & Legal](./ethics_legal.en.md)**
+* **HowTo**:
+    * [Shoot a Photo](./howto_tech.en.md)
+    * [Process Images](./howto_post.en.md) 
+    * [Picture Aesthetics](./howto_aesthetics.en.md)
+* **Tools & Prints**
+    * GIMP PlugIn "Media Package" ([GIMP2](../tools/GIMP2/)|[GIMP3](../tools/GIMP3/plug-ins/kk_media_package/readme.md))
+    * [Prints](../tools/prints/readme.md)
+* **[Disclaimer](./DISCLAIMER.en.md)**
+* **[Sources](./sources.md)** (multi-lingual)
+
+---
+[Switch to English 🇬🇧](./index.en.md) 
+
 
 # Danksagungen
 
@@ -27,6 +37,5 @@ Ein ganz besonderer Dank gilt den örtlichen Rettungsdiensten für ihre Inspirat
 *   [**Ortsfeuerwehr Dohren**](https://www.ff-sgtostedt.de/ortsfeuerwehr-dohren/) (Niedersachsen)
 
 ---
-[Switch to English 🇬🇧](./index.en.md) 
 
 **Lizenz**: Dieses Werk ist lizenziert unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de).

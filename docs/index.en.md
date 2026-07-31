@@ -11,7 +11,7 @@ Standard language is German. Only a basic version is provided in English for int
 
 Standard language is German. An English version for international audiences is provided, although in its most basic version only.
 
-# Sections
+# Navigation
 * **[Ethics & Legal](./ethics_legal.en.md)**
 * **HowTo**:
     * [Shoot a Photo](./howto_tech.en.md)
@@ -20,6 +20,7 @@ Standard language is German. An English version for international audiences is p
 * **Tools & Prints**
     * GIMP PlugIn "Media Package" ([GIMP2](../tools/GIMP2/)|[GIMP3](../tools/GIMP3/plug-ins/kk_media_package/readme.md))
     * [Prints](../tools/prints/readme.md)
+* **[Disclaimer](./DISCLAIMER.en.md)**
 * **[Sources](./sources.md)** (multi-lingual)
 
 ---
