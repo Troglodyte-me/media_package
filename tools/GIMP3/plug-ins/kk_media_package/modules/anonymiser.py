@@ -90,6 +90,9 @@ def black_bar(image, drawable):
     try:
         # Save the original selection to a temporary channel
         original_selection = Gimp.Selection.save(image)
+        ### Mockup for black bar creation logic
+        operation.determine_bar_selection()
+        operation.create_black_bar_layer()
 
     finally:
         # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
@@ -164,6 +167,10 @@ def pixeled(image, drawable):
     try:
         # Save the original selection to a temporary channel
         original_selection = Gimp.Selection.save(image)
+        
+        ### Mockup for pixeled creation logic
+        operation.determine_pixel_selection()
+        operation.create_pixelated_layer()
 
     finally:
         # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
@@ -226,10 +233,36 @@ def __legacy__pixeled(image, drawable):
     Gimp.displays_flush()
 
 def blurred(image, drawable):
-    # this function will blur a selected area in a seperate layer at a selected position, with a selected size and blur level. The user will be able to select the position, size and blur level (with defaults & smart values).
-    # todos:
-    ## default values: mid of image, default size: 2% of image height 4x5 dimensions, default opacity: 100%, default orientation: portrait, default blur level: 10px
-    Gimp.message("Function kk-blurred is a placeholder.")
+    """Create a black bar on a new layer using the current selection.
+
+    The function expects an active non-empty selection. It creates a new
+    transparent layer, keeps the current selection as-is, and fills the
+    selected area with black on the new layer.
+    """
+    image.undo_group_start()
+    operation = Anonymiser(image, drawable)
+    original_selection = None
+
+    try:
+        # Save the original selection to a temporary channel
+        original_selection = Gimp.Selection.save(image)
+        
+        ### Mockup for pixeled creation logic
+        operation.determine_blurred_selection()
+        operation.create_blurred_layer()
+
+    finally:
+        # Restore original selection (wrapped in try-except so undo_group_end is guaranteed to run)
+        if original_selection is not None:
+            try:
+                image.select_item(Gimp.ChannelOps.REPLACE, original_selection)
+                image.remove_channel(original_selection)
+            except Exception as e:
+                logger.error(f"Failed to restore original selection: {e}")
+
+        image.undo_group_end()
+
+    Gimp.displays_flush()
 
 
 class Anonymiser(ImageProcessor):
