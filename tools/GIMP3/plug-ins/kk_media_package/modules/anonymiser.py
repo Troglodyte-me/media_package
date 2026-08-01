@@ -335,16 +335,25 @@ class Anonymiser(ImageProcessor):
         # Placeholder logic for determining black bar selection
         logger.info("Determining black bar selection (placeholder).")
         # Actual implementation would analyze the current selection and set parameters accordingly.
+        
+        ### Mockup for bar selection logic
+        self.convert_selection_to_dimensions(width_by_height="4:1")
+        
     def create_black_bar_layer(self):
         """Create a black bar layer based on the determined selection."""
         # Placeholder logic for creating black bar layer
         logger.info("Creating black bar layer (placeholder).")
         # Actual implementation would create a new layer and fill the determined selection area with black.
+
     def determine_pixel_selection(self):
         """Determine the selection for pixelation based on the current selection."""
         # Placeholder logic for determining pixelation selection
         logger.info("Determining pixelation selection (placeholder).")
         # Actual implementation would analyze the current selection and set parameters accordingly.
+
+        ### Mockup for pixelation selection logic
+        self.convert_selection_to_dimensions(width_by_height="4:5")
+        
     def create_pixelated_layer(self):
         """Create a pixelated layer based on the determined selection."""
         # Placeholder logic for creating pixelated layer
@@ -355,6 +364,11 @@ class Anonymiser(ImageProcessor):
         # Placeholder logic for determining blurred selection
         logger.info("Determining blurred selection (placeholder).")
         # Actual implementation would analyze the current selection and set parameters accordingly.
+
+        ### Mockup for blur selection logic
+        ### return as is
+        pass
+
     def create_blurred_layer(self):
         """Create a blurred layer based on the determined selection."""
         # Placeholder logic for creating blurred layer
