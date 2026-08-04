@@ -17,7 +17,7 @@
 )
 
 // Read CSV rows as dictionaries (safely referencing columns by name)
-#let cards = csv("cards.csv", row-type: dictionary)
+#let cards = csv("cameras_inventory.csv", row-type: dictionary)
 
 // ==========================================
 // 2. DEFINE FRONT AND BACK CARD DESIGNS
@@ -25,7 +25,6 @@
 
 #let draw-front(card) = {
   if card == none { return box(width: card-width, height: card-height) } // Blank padding
-  
   box(
     width: card-width,
     height: card-height,
