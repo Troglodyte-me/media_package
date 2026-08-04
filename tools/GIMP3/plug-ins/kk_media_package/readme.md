@@ -1,9 +1,31 @@
 # Manual (EN)
 Move directory to your GIMP3 plug-in directory 
-- Windows: .../AppData/GIMP/\<current version number\>/plug-ins/
+- Windows: ```.../AppData/GIMP/\<current version number\>/plug-ins/```
 - other: ???
 
 Mind you: you can also change or add directories in the GIMP Preferences. 
+
+## Installation
+For GIMP3, just paste the entire directory into your respective system folder.
+
+The target directory can be found in GIMP under ```Edit``` → ```Preferences``` → ```Folders```
+and in this case under ```plug-ins```.
+You can edit the directories to point elsewhere or add more. 
+
+It is important, that the plug-in's folder and main file have the same naming.
+Otherwise GIMP will ignore it.
+
+```
+<main-directory>/
+└── ...
+└── plug-ins/
+    └── ...
+    └── <plugin-name>/
+        └── ...
+        └── <plugin-name>.py
+```
+
+> **Attention**: Before GIMP3.2 add-ons for Win11 on ARM  are not supported. Please update to a  later version.
 
 ## Localization of GIMP3 scripts in Python3
 

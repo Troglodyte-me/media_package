@@ -9,6 +9,10 @@
 #let brand-bg = rgb("#fcfcfc")      // Soft page background
 #let muted-gray = rgb("#7f8c8d")    // Details and borders
 
+#let title = "please define title"
+#let title_header = upper(title) + " | RENTAL"
+#let sub_title = "a subtitle can be defined here if needed"
+
 // page setup component
 #let setup-page(title, body) = {
   set page(

@@ -1,152 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import logging
+
+from . import ImageProcessor
 from gi.repository import Gimp, GLib
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
-logger = logging.getLogger("KonradFilters")
-
-class base:
-    def __init__(self):
-        pass
-
-class image_processor(base):
-    def _call_pdb(self, proc_name: str, **kwargs) -> Any:
-        """Calls a PDB procedure with the given arguments.
-
-        Args:
-            proc_name (str): The name of the PDB procedure to call.
-
-        Raises:
-            RuntimeError: If the PDB procedure is not found.
-            RuntimeError: If the PDB procedure fails to run.
+logger = logging.getLogger("EnhanceImage")
 
 
-        Returns:
-            Any: The result of the PDB procedure.
-        """
-        pdb = Gimp.get_pdb()
-        proc = pdb.lookup_procedure(proc_name)
-        if not proc:
-            logger.error(f"PDB procedure '{proc_name}' not found.")
-            raise RuntimeError(f"PDB procedure '{proc_name}' not found.")
-        config = proc.create_config()
-        for k, v in kwargs.items():
-            try:
-                config.set_property(k, v)
-            except Exception as e:
-                logger.error(f"Failed to set property '{k}' for '{proc_name}': {e}")
-                raise
-        logger.info(f"Calling PDB: {proc_name} with args: {kwargs}")
-        try:
-            result = proc.run(config)
-        except Exception as e:
-            logger.error(f"Error running PDB procedure '{proc_name}': {e}")
-            raise
-        if result.index(0) != Gimp.PDBStatusType.SUCCESS:
-            logger.error(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
-            raise RuntimeError(f"PDB procedure '{proc_name}' failed with status: {result.index(0)}")
-        return result
-
-    def _copy_layer(
-            self,
-            image: Gimp.Image,
-            drawable: Gimp.Drawable,
-            layer_group: Gimp.GroupLayer,
-            name: Optional[str] = None,
-            level: Optional[int] = 0
-        ) -> Gimp.Layer:
-        """Creates a copy of the given drawable and inserts it into the specified layer group.
-
-        Args:
-            image (Gimp.Image): The image to which the layer belongs.
-            drawable (Gimp.Drawable): The drawable to copy.
-            layer_group (Gimp.GroupLayer): The group layer to insert the new layer into.
-            name (Optional[str]): The name for the new layer.
-
-        Returns:
-            Gimp.Layer: The newly created layer.
-        """
-        new_layer = drawable.copy()
-        if name:
-            new_layer.set_name(name)
-        else:
-            new_layer.set_name(_("Copy of ") + drawable.get_name())
-        image.insert_layer(new_layer, layer_group, level)
-        return new_layer
-
-    # --- STATISTICS ENGINE (OPTIMIZATION) ---
-    def _get_cached_stats(self, drawable: Gimp.Drawable) -> Dict[str, Any]:
-        """Calculate and return histogram-based statistics for a drawable.
-
-        This helper queries GIMP's ``gimp-drawable-histogram`` procedure once
-        and returns values used by enhancement steps.
-
-        Args:
-            drawable: The source drawable to analyze.
-
-        Returns:
-            A dictionary containing:
-                - ``mean`` (float): Mean value of the VALUE histogram channel.
-                - ``std_dev`` (float): Standard deviation of pixel values.
-                - ``median`` (float): Median value of pixel values.
-                - ``pixels`` (int): Number of pixels considered.
-
-            If histogram retrieval fails, returns fallback defaults:
-            ``{"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}``.
-        """
-        hist_proc = Gimp.get_pdb().lookup_procedure('gimp-drawable-histogram')
-        hist_config = hist_proc.create_config()
-        hist_config.set_property('drawable', drawable)
-        hist_config.set_property('channel', Gimp.HistogramChannel.VALUE)
-        hist_config.set_property('start-range', 0.0)
-        hist_config.set_property('end-range', 1.0)
-        res = hist_proc.run(hist_config)
-
-        if res.index(0) == Gimp.PDBStatusType.SUCCESS:
-            return {
-                "mean": res.index(1),
-                "std_dev": res.index(2),
-                "median": res.index(3),
-                "pixels": res.index(4)
-            }
-        return {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
-    
-    def _get_size(self, image: Gimp.Image) -> float:
-        """Calculates the size of the image based on its dimensions.
-
-        Args:
-            image (Gimp.Image): The image to calculate the size for.
-
-        Returns:
-            float: The calculated size.
-        """
-        return (((image.get_width()**2) + (image.get_height()**2))**0.5)
-
-    def _get_blur_radius(self, size: float) -> float:
-        """Calculates a blur radius based on the image size.
-
-        Args:
-            size (float): The size of the image.
-
-        Returns:
-            float: The calculated blur radius.
-        """
-        return size / 1000.0
-
-    def _get_threshold_value(self, stats: Dict[str, Any]) -> float:
-        """Calculates a threshold value based on image statistics.
-
-        Args:
-            stats (Dict[str, Any]): A dictionary containing image statistics.
-
-        Returns:
-            float: The calculated threshold value.
-        """
-        return ((stats['mean'] * stats['median'])**0.5) / 255.0
-    
-    def __init__(self):
-        super().__init__()
-
-class enhance_image(image_processor):
+class EnhanceImage(ImageProcessor):
     """Enhance image processing class.
     
     Args:
@@ -187,7 +51,7 @@ class enhance_image(image_processor):
 
         Returns:
             Optional[Dict[str, float]]: ``radius``, ``amount`` and ``threshold``
-            for ``gimp-drawable-unsharp-mask``, or ``None`` when sharpening
+            for the unsharp-mask filter, or ``None`` when sharpening
             should be skipped.
         """
         std_dev = float(stats.get('std_dev', 0.0))
@@ -216,6 +80,30 @@ class enhance_image(image_processor):
             'threshold': threshold
         }
 
+    def _get_auto_threshold_value(
+            self,
+            new_stats: Dict[str, Any],
+            orig_stats: Dict[str, Any] = {"mean": 127, "std_dev": 0, "median": 127, "pixels": 0}
+        ) -> float:
+        """Estimate an auto threshold similar to GIMP GUI auto behavior.
+
+        This uses histogram summary stats and intentionally biases thresholding
+        down for darker images to avoid losing midtone detail.
+        """
+        n_mean = float(new_stats.get('mean', 127.0))
+        n_median = float(new_stats.get('median', 127.0))
+        n_std = float(new_stats.get('std_dev', 0.0))
+
+        o_mean = float(orig_stats.get('mean', 127.0))
+        o_median = float(orig_stats.get('median', 127.0))
+
+        # Blend current and original luminance center, then normalize to [0, 1].
+        threshold = ((5 * n_mean) + (10 * n_median) + (1 * o_mean) + (2 * o_median)) / (5+10+1+2)
+        logger.debug(f"Auto threshold calculation:\n n_mean={n_mean}, n_median={n_median}, n_std={n_std},\n o_mean={o_mean}, o_median={o_median},\n preliminary threshold={threshold}, final threshold={max(0.12, min(0.78, threshold))}")
+
+        # Clamp to a practical auto-threshold window.
+        return max(0.12, min(0.78, threshold))
+
     ## Create a new layer group in the given image
     ## maybe move to image_processor class if needed for other purposes
     def create_layer_group(
@@ -226,9 +114,46 @@ class enhance_image(image_processor):
             level: int = 0) -> Gimp.GroupLayer:
         """Creates a new group layer in the given image."""
         layer_group = Gimp.GroupLayer.new(image)
-        layer_group.set_name(name if name != "--NEW--" else _("New Layer Group"))
+        desired_name = name if name != "--NEW--" else _("New Layer Group")
+        self._set_unique_name(image, layer_group, desired_name)
         image.insert_layer(layer_group, parent_layer_group, level)
         return layer_group
+
+    def _get_current_layer_parent_and_level(
+            self,
+            image: Gimp.Image,
+            drawable: Gimp.Drawable
+        ) -> Tuple[Optional[Gimp.GroupLayer], int]:
+        """Return parent group and index level of the current drawable."""
+        parent = drawable.get_parent()
+        siblings = parent.get_children() if parent else image.get_layers()
+
+        for idx, item in enumerate(siblings or []):
+            if item == drawable:
+                return parent, idx
+
+        # Fallback if not found, keep behavior stable.
+        return parent, 0
+
+    def _move_item_to_layer_group(
+            self,
+            image: Gimp.Image,
+            item: Gimp.Item,
+            parent_group: Gimp.GroupLayer,
+            position: int = 0
+        ) -> None:
+        """Move an item under a target group at the specified position."""
+        try:
+            image.reorder_item(item, parent_group, position)
+        except Exception:
+            # Fallback for bindings/environments where method dispatch differs.
+            self._call_pdb(
+                'gimp-image-reorder-item',
+                image=image,
+                item=item,
+                parent=parent_group,
+                position=position
+            )
     
     ## --- Enhancement Layer Creation Methods ---
     ## White Balance Layer
@@ -313,15 +238,16 @@ class enhance_image(image_processor):
             name=_("b/w by white balance (incl blur)"),
             level=0
         )
-        # Apply Gaussian blur to the layer
-        filt = Gimp.DrawableFilter.new(wb_bw, "gegl:gaussian-blur", "Blur")
-        filt.get_config().set_property("std-dev-x", blur_radius/2)  # Adjusting blur radius for better effect
-        filt.get_config().set_property("std-dev-y", blur_radius/2)  # Adjusting blur radius for better effect
-        wb_bw.merge_filter(filt)
+        self._apply_gaussian_blur(
+            drawable=wb_bw,
+            std_dev_x=blur_radius / 2,
+            std_dev_y=blur_radius / 2,
+            label="Blur"
+        )
         # Apply white balance adjustment and thresholding to create a black and white effect
         self._call_pdb('gimp-drawable-levels-stretch', drawable=wb_bw) # white balance adjustment
         temp_stats           = self._get_cached_stats(wb_bw) # Get cached statistics for the drawable
-        new_threshold_val = self._get_threshold_value(
+        new_threshold_val = self._get_auto_threshold_value(
             new_stats=temp_stats,
             orig_stats=stats
         )
@@ -368,7 +294,7 @@ class enhance_image(image_processor):
         )
         self._call_pdb('gimp-drawable-equalize', drawable=eq_bw, mask_only=False) # apply equalization to enhance contrast
         temp_stats           = self._get_cached_stats(eq_bw) # Get cached statistics for the drawable
-        new_threshold = self._get_threshold_value(
+        new_threshold = self._get_auto_threshold_value(
             new_stats=temp_stats,
             orig_stats=stats
         )
@@ -391,18 +317,19 @@ class enhance_image(image_processor):
             blur_radius: float
         ) -> None:
         """Creates a blur-based pop enhancement layer and inserts it into the given layer group."""
+        logger.debug(f"Creating pop enhancement layer with stats: {image_stats} and blur radius: {blur_radius}")
         
         # Smart Mode Logic: "Three-Way" Switch
-        if   max(image_stats['mean'], image_stats['median']) < 100:
+        if   max(image_stats['mean'], image_stats['median']) < (100/255):
             # Underexposed	Low Mean (< 100)	Screen (Lifts shadows)
             mode = Gimp.LayerMode.SCREEN
-        elif min(image_stats['mean'], image_stats['median']) > 160:  # if the image is overexposed, apply a subtle enhancement
+        elif min(image_stats['mean'], image_stats['median']) > (160/255):  # if the image is overexposed, apply a subtle enhancement
             # Overexposed	High Mean (> 160)	Multiply (at very low opacity)
             mode = Gimp.LayerMode.MULTIPLY
-        elif image_stats['std_dev'] < 50:  # if the image is flat/dull, apply a moderate enhancement
+        elif image_stats['std_dev'] < (50/255):  # if the image is flat/dull, apply a moderate enhancement
             # Flat/Dull	Mid Mean, Low StdDev	Overlay (Pushes contrast)
             mode = Gimp.LayerMode.OVERLAY
-        elif image_stats['std_dev'] >= 50:  # if the image is balanced, apply a subtle enhancement
+        elif image_stats['std_dev'] >= (50/255):  # if the image is balanced, apply a subtle enhancement
             # Balanced	Mid Mean, High StdDev	Soft Light (Subtle "pop")
             mode = Gimp.LayerMode.SOFTLIGHT
         else:
@@ -450,8 +377,7 @@ class enhance_image(image_processor):
             stats=image_stats
         )
         if unsharp_filt is not None:
-            self._call_pdb(
-                'gimp-drawable-unsharp-mask',
+            self._apply_unsharp_mask(
                 drawable=luminosity_layer,
                 radius=unsharp_filt['radius'],
                 amount=unsharp_filt['amount'],
@@ -460,20 +386,21 @@ class enhance_image(image_processor):
         else:
             logger.info("Skipping unsharp mask: image is not soft enough for subtle sharpening.")
 
-        # Apply Gaussian blur to the layer
-        blr_filt = Gimp.DrawableFilter.new(eq_layer, "gegl:gaussian-blur", "Blur")
-        blr_filt.get_config().set_property("std-dev-x", blur_radius)
-        blr_filt.get_config().set_property("std-dev-y", blur_radius)
-        
         self._call_pdb('gimp-drawable-equalize', drawable=eq_layer, mask_only=False)
-        eq_layer.merge_filter(blr_filt)
+        self._apply_gaussian_blur(
+            drawable=eq_layer,
+            std_dev_x=blur_radius,
+            std_dev_y=blur_radius,
+            label="Blur"
+        )
+        
         eq_layer.set_mode(Gimp.LayerMode.NORMAL)
 
         # Keep luminosity layer on top of equalized layer, then merge into one pop layer
         luminosity_layer.set_mode(Gimp.LayerMode.LUMINANCE)
         luminosity_layer.set_opacity(50.0)
         pop_layer = image.merge_down(luminosity_layer, Gimp.MergeType.EXPAND_AS_NECESSARY)
-        pop_layer.set_name(_("Pop Enhancement (Equalized)"))
+        self._set_unique_name(image, pop_layer, _("Pop Enhancement (Equalized)"))
         
         pop_layer.set_mode(mode)
         pop_layer.set_opacity(opacity)
@@ -494,17 +421,23 @@ class enhance_image(image_processor):
             stats           = self._get_cached_stats(drawable) # Get cached statistics for the drawable
             size            = self._get_size(image)
             blur_radius     = self._get_blur_radius(size)
-            # threshold_val   = super()._get_threshold_value(stats)
+            current_parent_group, current_level = self._get_current_layer_parent_and_level(image, drawable)
             logger.info(f"Original Name: {original_name}, Image size: {size}, Blur radius: {blur_radius}, Stats: {stats}")
 
             # start layering process
             main_layer_group = self.create_layer_group( # Create a group layer for all enhancement layers
                 image=image, 
                 name=f"""{original_name} {_("Enhancement Stack")}""",
-                parent_layer_group=None,
-                level=0
+                parent_layer_group=current_parent_group,
+                level=current_level
             )
-            drawable.set_name(_("Original"))
+            self._set_unique_name(image, drawable, _("Original"))
+            self._move_item_to_layer_group(
+                image=image,
+                item=drawable,
+                parent_group=main_layer_group,
+                position=0
+            )
 
             self.create_layer_whitebalance( # Create and insert the white balance layer
                 image=image, 

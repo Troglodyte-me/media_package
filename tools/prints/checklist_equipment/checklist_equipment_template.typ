@@ -7,14 +7,18 @@
 
 #import "checklist_equipment_design.typ": *
 
-#show: doc => setup-page("EQUIPMENT CHECKLIST | RENTAL", doc)
+#let title = "Equipment Checklist Template"
+#let title_header = upper(title) + " | RENTAL"
+#let sub_title = "Barebone template for creating your own checklist printout"
+
+#show: doc => setup-page(title_header, doc)
 #show: doc => setup-text(doc)
 
 // ---- DOCUMENT CONTENT ----
 
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: brand-dark)[Equipment Checklist Template] \
-  #text(size: 10pt, fill: muted-gray)[Barebone template for creating your own checklist printout]
+  #text(size: 20pt, weight: "bold", fill: brand-dark)[#title] \
+  #text(size: 10pt, fill: muted-gray)[#sub_title]
 ]
 
 #v(10pt)

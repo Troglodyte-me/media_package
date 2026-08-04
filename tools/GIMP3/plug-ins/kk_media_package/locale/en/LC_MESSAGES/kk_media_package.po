@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-07 19:44+0200\n"
+"POT-Creation-Date: 2026-07-12 10:54+0200\n"
 "PO-Revision-Date: 2026-07-07 19:44+0200\n"
 "Last-Translator: Konrad Keck - nigma1985 <nigma-mania@web.de>\n"
 "Language: en\n"
@@ -18,67 +18,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: kk_media_package.py:96
+#: kk_media_package.py:98
 msgid "Enhance Image"
 msgstr "Enhance Image Layers"
 
-#: kk_media_package.py:97
+#: kk_media_package.py:99
 msgid "Filters/Enhance"
 msgstr "Filters/Media Package"
 
-#: kk_media_package.py:99
+#: kk_media_package.py:101
 msgid "Python descripon for Enhance Image"
-msgstr ""
-"Creates a stack of enhancement layers for the active image.\n Parameters: image (Gimp.Image), drawable (Gimp.Drawable).\n Output: Enhancement layers grouped for further editing."
+msgstr "Creates a stack of enhancement layers for the active image.\n Parameters: image (Gimp.Image), drawable (Gimp.Drawable).\n Output: Enhancement layers grouped for further editing."
 
-#: kk_media_package.py:100
+#: kk_media_package.py:102
 msgid "procedure description for Enhance Image"
 msgstr "This procedure enhances the image by adding multiple adjustment layers such as white balance, detail equalization, and contrast/grey mix.\n It is intended for use on RGB images and returns the enhanced image with new layers grouped under a common group."
 
-#: kk_media_package.py:104
+#: kk_media_package.py:107
+msgid "Anonymiser Wizzard"
+msgstr "Anonymiser Wizzard"
+
+#: kk_media_package.py:108
+msgid "Filters/Anonymiser"
+msgstr "Filters/Media Package"
+
+#: kk_media_package.py:110
+msgid "Python description for Anonymiser"
+msgstr "Creates a stack of enhancement layers for the active image.\n Parameters: image (Gimp.Image), drawable (Gimp.Drawable).\n Output: Enhancement layers grouped for further editing."
+
+#: kk_media_package.py:111
+msgid "procedure description for Anonymiser"
+msgstr "This procedure enhances the image by adding multiple adjustment layers such as white balance, detail equalization, and contrast/grey mix.\n It is intended for use on RGB images and returns the enhanced image with new layers grouped under a common group."
+
+#: kk_media_package.py:115
+msgid "Black Bar"
+msgstr "Black Bar"
+
+#: kk_media_package.py:116 kk_media_package.py:119 kk_media_package.py:122
+msgid "Filters/Enhance/Anonymiser"
+msgstr "Filters/Media Package/Anonymiser"
+
+#: kk_media_package.py:118
+msgid "Pixeled"
+msgstr "Pixeled"
+
+#: kk_media_package.py:121
+msgid "Blurred"
+msgstr "Blurred"
+
+#: kk_media_package.py:125
 msgid "Dummy A"
 msgstr "Dummy A"
 
-#: kk_media_package.py:105 kk_media_package.py:108
+#: kk_media_package.py:126
 msgid "Filters/Dummy"
 msgstr "Filters/Dummy"
 
-#: kk_media_package.py:107
-msgid "Dummy B"
-msgstr "Dummy B"
+#: modules/enhance_image.py:124
+msgid "New Layer Group"
+msgstr "New Layer Group"
 
-#: modules/enhance_image.py:50 modules/enhance_image.py:234
-msgid "Enhancement Stack"
-msgstr "Enhancement Stack"
-
-#: modules/enhance_image.py:52 modules/enhance_image.py:311
-msgid "Original"
-msgstr "Original"
-
-#: modules/enhance_image.py:55 modules/enhance_image.py:245
+#: modules/enhance_image.py:178
 msgid "White Balance"
 msgstr "White Balance"
 
-#: modules/enhance_image.py:60 modules/enhance_image.py:259
+#: modules/enhance_image.py:195
 msgid "Contrast/Grey Mix"
 msgstr "Contrast/Grey Mix"
 
-#: modules/enhance_image.py:65 modules/enhance_image.py:160
+#: modules/enhance_image.py:218
 msgid "grey by white balance"
 msgstr "grey by white balance"
 
-#: modules/enhance_image.py:70 modules/enhance_image.py:183
+#: modules/enhance_image.py:245
 msgid "b/w by white balance (incl blur)"
 msgstr "b/w by white balance (incl blur)"
 
-#: modules/enhance_image.py:79 modules/enhance_image.py:207
+#: modules/enhance_image.py:280
 msgid "grey by equalize"
 msgstr "grey by equalize"
 
-#: modules/enhance_image.py:85 modules/enhance_image.py:221
+#: modules/enhance_image.py:299
 msgid "b/w by equalize (incl bright+contrast)"
 msgstr "b/w by equalize (incl bright+contrast)"
 
-#: modules/enhance_image.py:91 modules/enhance_image.py:278
-msgid "Detail Equalize"
-msgstr "Detail Equalize"
+#: modules/enhance_image.py:409
+msgid "Pop Enhancement (Equalized)"
+msgstr "Pop Enhancement (Equalized)"
+
+#: modules/enhance_image.py:436
+msgid "Enhancement Stack"
+msgstr "Enhancement Stack"
+
+#: modules/enhance_image.py:440
+msgid "Original"
+msgstr "Original"
+
+#~ msgid "Dummy B"
+#~ msgstr "Dummy B"
+
+#~ msgid "Detail Equalize"
+#~ msgstr "Detail Equalize"

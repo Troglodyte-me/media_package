@@ -1,9 +1,15 @@
 # HowTo: Shoot a Photo
 
-This introduction to photography serves as a quick start for beginners. 
+This introduction to photography (aka "shooting a photo") serves as a quick start for beginners. 
 It focuses on using photo cameras with exchangeable lenses, but also applies in its basics for usage with other cameras - like in smart phones.
+It's not meant to be a complete guide. 
+The technical adaption of each principle described here, may be realized in very different ways depending on the device in use.
+Please refer to named sources for more information, lookup device usage in their respective manuals or start your own research.
+
+Feedback and error correction always welcome.
 
 ## Introduction
+
 In photography everything starts with light:
 
 Originally **light** was collected with a **film** leading to **exposure**. Today this purpose is carried by software controlled **sensors**. 
@@ -19,7 +25,10 @@ How to bring these factors together is a *craft* as well as it is an *artistic c
 There is no definitive *right* or *wrong*. 
 However, the chapters below are meant how things are working and are interconnected, so you can make an informed decision.
 
-> **Tip**: Beginners and hobbyists are well advised, to run automatic configurations at first. Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session. Only in non-essential situations or after well grounded training, switch to full manual mode.
+> [!TIP]
+> Beginners and hobbyists are well advised, to run automatic configurations at first.
+> Then opt towards self-set obstacles (only one focal length, fixed f-stop, certain exposure time) for training session.
+> Only in non-essential situations or after well grounded training, switch to full manual mode.
 
 To start, you should look at these chapters first and then do an in-depth read, where you see need for more information: 
 1. **Rule of thirds**
@@ -75,7 +84,9 @@ They allow reproducibility and potential enhanced post-processing (see [Wikipedi
 However, it takes special software, further training and practice to actually make use of them. 
 They are certainly pro-material - but in order to learn them, one should try collecting them early.
 
-> **Tip**: Check your camera and mobile settings. They often allow to enable saving in RAW format end may even save them  alongside JPG.
+> [!TIP]
+> Check your camera and mobile settings.
+> They often allow to enable saving in RAW format end may even save them  alongside JPG.
 
 Newer cameras (and especially phones with *CPU*, *GPU* or better *NPU*) enhance images further through **AI**, changing how images are taken and processed later on. 
 
@@ -97,6 +108,7 @@ Focal length determines the field of view in the final image. It is primarily ex
     - **Optical Zoom** is applied via mechanics inside the lens or camera body. This stands in contrast to **Digital Zoom**, which is applied by software, cropping the image. 
     - Beyond digital zoom, the **Crop Factor** is to be considered when using a *"big" lens* and a *"small" sensor*, as the light that shines through the lenses into the body might not fully cover the sensor, the image is cropped.
 
+> [!TIP]
 > Rules of thumb:
 >> **advertisement**: usually the $ratio = max/min$ of focal lengths - e.g. a lens of ```14-150mm``` makes $\frac{150mm}{14mm} = 10.7x\ Zoom$ (lens).
 >
@@ -117,7 +129,10 @@ Special applications (examples):
   - **Cinelens**: Similar to normal lenses, but specifically designed to produce continuously stable pictures required in filming. I.e. keeping focus while zooming. 
   - **[tilt–shift lenses](https://en.wikipedia.org/wiki/Tilt%E2%80%93shift_photography)**: lenses that allow tilting or shifting the otherwise barrel-like lens body. Especially useful when doing fake-miniature photos. 
 
-> **Important**: in a lot of tutorial you will encounter lens sizes for certain purposes. Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`. Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
+> [!IMPORTANT]
+> In a lot of tutorial you will encounter lens sizes for certain purposes.
+> Most assume full-frame standards, therefore the choise of lenses presented usually focuses on natural perception at `50mm`.
+> Ensure to convert always to the factor you are using e.g. MFT at half full-frame.
 
 ## filters
 
@@ -149,7 +164,8 @@ This process can also be done electronically - by **autofocus** (AF) - if lenses
 
 At the same aperture / f-stop, the depth of field grows with distance to the camera, making it easier to dial in the focus point or making it impossible at lower distances (macro photography).
 
-> **Tip**: if focus on a subject is very hard or not possible at all, either raise the f-stop (increasing the depth of field but also darkening the image) and/or distance yourself from the subject.
+> [!TIP]
+> If focus on a subject is very hard or not possible at all, either raise the f-stop (increasing the depth of field but also darkening the image) and/or distance yourself from the subject.
 
 
 * Autofocus
@@ -174,9 +190,10 @@ That can both happen due to movement of subjects or jitter of camera.
 The later can be helped with stabilization (see below).
 
 In general cameras measure time in fractions of one second ($s/x$), so for example $1/250 = 0.004\sec$. 
-Longer exposures are measured in seconds (abbrivated $s$, $\sec$ or most comonly as double prime i.e. "$1.5^{\prime\prime}$") or minutes (abbrivated $s$, $\sec$ or most comonly as single prime "$1.5^{\prime}$").
+Longer exposures are measured in seconds (abbreviated $s$, $\sec$ or most commonly as double prime i.e. "$1.5^{\prime\prime}$") or minutes (abbreviated $s$, $\sec$ or most commonly as single prime "$1.5^{\prime}$").
 
-> **Tip**: when unsure which prime is which, remember they get smaller when writing times `1' 30"` means 1 minute 30 seconds.
+> [!TIP]
+> When unsure which prime is which, remember they get smaller when writing times `1' 30"` means 1 minute 30 seconds.
 
 Less time, makes more crisp images but may lack light (darkening the final image). 
 Quick shutter speeds will allow you to see light travel through your image i.e. when using a flash light.
@@ -187,6 +204,7 @@ The following techniques will stabilize your image when shooting with slower shu
 However, not all situations or camera setups allow for all options. 
 Sometimes raising shutter speeds is the only remaining option, if motion blur is to be avoided.
 
+> [!TIP]
 > **Rule-of-Thumb**: the minimal shutter speed can be calculated as $\frac{1}{focal\ length\ *\ crop\ factor}$ so with a 150mm lens on an MFT camera it's $\frac{1}{150mm * 2x} = 1/300$ or faster.
 
 Basically any movement can happen in all three spacial dimensions (up/down, left/right, forward/backwards) as well as in rolling/tilting motions (to the sideways/vertically/horizontally). 
@@ -213,14 +231,18 @@ We get a better "stillness", when grounding ourselves and control our breathing 
 - **Image stabilization**: Often build as hardware into lenses as *Optical Image Stabilization (OIS)* or dealt with via software (e.g. in smart phones). 
 Dampens shake along one or more axis and may be configurable in direction as well as dampening factor.
 
-> **Tip**: Olympus/OM Systems is probably the last manufacturer offering *In-Body Image Stabilization (IBIS)*, which is arguably the best in the industry.
+> [!TIP]
+> Olympus/OM Systems is probably the last manufacturer offering *In-Body Image Stabilization (IBIS)*, which is arguably the best in the industry.
 This allow photography even with low grade lenses to be stabilized at world class level.
 
 - **Tripod**: Resting the camera during longer exposure is very much adviced. Ideally this is done by a classic tripod. 
 In rough situations it is adviced to fix their position (e.g. a weight at the base or with rope and tent stakes). 
 There is a wide variety of tripods, mono-pods and similar gear.
 
-> **Tip**: Carrying a tripod wherever you go is a nuisance and hinders you from spontaneous snap shots. So if you don't have any such gear on you, just resting the camera somewhere and securing it from movement (e.g. with a weight on top) will do just as fine. It's less convenient and professional, but it gets the job done.
+> [!TIP]
+> Carrying a tripod wherever you go is a nuisance and hinders you from spontaneous snap shots.
+> So if you don't have any such gear on you, just resting the camera somewhere and securing it from movement (e.g. with a weight on top) will do just as fine.
+> It's less convenient and professional, but it gets the job done.
 
 - **Gimbal**: Often used in filming, a gimbal is an aparature that compensates movement along axes creating extremely stable imagery. 
 However, they are usually bulky and less usefull for photography.
@@ -292,10 +314,11 @@ If you want to test the exposure triangle as well as other settings try [photosk
 
 # Post-Processing
 
-> **Note**: there is plenty of software for various purposes out there. 
-However, here is not the place to advertise or judge. 
-Yet unlike equipment, there is freely available, fit-for-purpose open-source software from the community that does just as well as proprietary software.
-For everything else, please do your own research. 
+> [!NOTE]
+> there is plenty of software for various purposes out there.
+> However, here is not the place to advertise or judge.
+> Yet unlike equipment, there is freely available, fit-for-purpose open-source software from the community that does just as well as proprietary software.
+> For everything else, please do your own research. 
 
 ## The dark room 
 Using RAW files should be considered whenever intending image post-processing. 
