@@ -1,4 +1,5 @@
-name,image_path,qr_url,icon_path
-"Aurelia the Mage","images/mage.png","https://example.com/mage","icons/fire.png"
-"Garrick the Knight","images/knight.png","https://example.com/knight","icons/shield.png"
-"Zephyr the Rogue","images/rogue.png","https://example.com/rogue","icons/dagger.png"
+id,brand,focal_length,aperture,focus,system,mount,filter_thread,hood,serial_id,location,notes,image_path,qr_url,icon_path
+1,Brand C Optics,14-42mm,f/3.5-5.6,AF,Digital,M4/3,37mm,Yes,AB123456,Koffer / Camera Case,Standard zoom lens,images/mage.png,https://example.com/mage,icons/fire.png
+2,Brand C Optics,25mm,f/1.7,AF,Digital,M4/3,46mm,Yes,CD789012,Koffer / Camera Case,Prime lens (Festbrennweite),images/knight.png,https://example.com/knight,icons/shield.png
+3,Brand D Classic,50mm,f/1.8,MF,Analog,P/K,52mm,No,EF345678,Auf Anfrage / On Request,Manual vintage lens,images/rogue.png,https://example.com/rogue,icons/dagger.png
+4,Brand D Zoom,70-210mm,f/4.0-5.6,MF,Analog,P/K,52mm,Yes,GH901234,Koffer / Camera Case,Telephoto zoom,images/mage.png,https://example.com/mage,icons/fire.png
