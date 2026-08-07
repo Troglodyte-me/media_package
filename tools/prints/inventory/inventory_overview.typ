@@ -13,13 +13,13 @@
   footer: [
     #align(center)[
       #text(size: 8pt, fill: luma(120))[
-        Page #counter(page).display() | github.com/Troglodyte-me/media_package
+        Page #context counter(page).display() | github.com/Troglodyte-me/media_package
       ]
     ]
   ]
 )
 #set text(
-  font: "Liberation Sans",
+  font: "Arial",
   size: 9.5pt,
   lang: "de"
 )
@@ -37,9 +37,7 @@
         fill: white,
         size: 18pt,
         weight: "bold"
-      )[
-        Kamera & Medienausstattung
-      ]
+      )[Kamera & Medienausstattung]
       #v(2pt)
       #text(fill: white.darken(10%), size: 11pt)[Camera & Media Equipment Inventory]
     ]
@@ -56,9 +54,7 @@
       weight: "bold",
       size: 10pt,
       fill: primary-color
-    )[
-      Hinweis für Einsteiger / Guide for Beginners
-    ]
+    )[Hinweis für Einsteiger / Guide for Beginners]
 #v(3pt)
 Diese Übersicht dokumentiert alle Kameras, Objektive, Filter und Zubehörteile im Medienpaket.
 Kurzer Begriffserklärungs-Guide:
@@ -89,7 +85,9 @@ Kurzer Begriffserklärungs-Guide:
   [
     #align(center)[
       // External Image Reference
-      #image("sensor_focal_length_diagram.png", width: 85%)
+      // #image("sensor_focal_length_diagram.png", width: 85%)
+      #image("../../../docs/SensorLensSizes.svg", width: 85%)
+      
     ]
     #v(4pt)
     #text(
