@@ -66,14 +66,25 @@ Kurzer Begriffserklärungs-Guide:
 )
 #v(12pt)// Section 1: Cameras
 == 1. Kameras / Cameras
-#let camera-data = csv("cameras_inventory.csv")
+#let camera-columns = (
+  // "id",
+  "brand_model",
+  "camera_type",
+  "sensor",
+  "mount",
+  "battery",
+  "storage",
+  "location",
+  "notes",
+)
+#let camera-data = csv("cameras_inventory.csv", row-type: dictionary)
 #table(
-  columns: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr),
+  columns: (2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },// Table Headers with white text
-..camera-data.at(0).map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),// Table Rows
-..camera-data.slice(1).flatten().map(cell => text(size: 8.5pt)[#cell])
+..camera-columns.map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),// Table Rows
+..camera-data.map(row => camera-columns.map(col => text(size: 8.5pt)[#row.at(col, default: "")])).flatten()
 )
 #v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
 == 2. Sensorgrößen & Brennweiten / Sensor Sizes & Perception
@@ -94,29 +105,51 @@ Kurzer Begriffserklärungs-Guide:
       size: 8pt,
       style: "italic",
       fill: luma(100))[
-    Abbildung 1: Zusammenhang zwischen Sensorformat (Full-frame, APS-C, M4/3, 1/2.3"), Brennweite (25mm - 100mm) und Bildwinkel (Weitwinkel vs. Tele vs. Menschliche Wahrnehmung).
+    Abbildung 1: Zusammenhang zwischen Sensorformat und Brennweite (Weitwinkel vs. Tele vs. Menschliche Wahrnehmung).
       ]
   ]
 )
 #v(16pt)// Section 3: Lenses
 == 3. Objektive / Lenses
-#let lens-data = csv("lenses_inventory.csv")
+#let lens-columns = (
+  // "id",
+  "brand",
+  "focal_length",
+  "aperture",
+  "focus",
+  "system",
+  "mount",
+  "filter_thread",
+  "hood",
+  "serial_id",
+  "location",
+  "notes",
+)
+#let lens-data = csv("lenses_inventory.csv", row-type: dictionary)
 #table(
-  columns: (auto, 1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.7fr, 1.2fr, 1.2fr, 1.8fr),
+  columns: (1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.7fr, 1.2fr, 1.2fr, 1.8fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..lens-data.at(0).map(header => text(fill: white, weight: "bold", size: 8pt)[#header]),
-..lens-data.slice(1).flatten().map(cell => text(size: 8pt)[#cell])
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..lens-columns.map(header => text(fill: white, weight: "bold", size: 8pt)[#header]),
+..lens-data.map(row => lens-columns.map(col => text(size: 8pt)[#row.at(col, default: "")])).flatten()
 )
 #v(16pt)// Section 4: Filters & Adapters
 == 4. Filter & Adapter / Filters & Adapters
-#let filter-data = csv("filters_inventory.csv")
+#let filter-columns = (
+  // "id",
+  "brand",
+  "filter_type",
+  "thread_size",
+  "location",
+  "notes",
+)
+#let filter-data = csv("filters_inventory.csv", row-type: dictionary)
 #table(
-  columns: (auto, 1.8fr, 3fr, 1.2fr, 1.5fr, 3fr),
+  columns: (1.8fr, 3fr, 1.2fr, 1.5fr, 3fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..filter-data.at(0).map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),
-  ..filter-data.slice(1).flatten().map(cell => text(size: 8.5pt)[#cell])
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..filter-columns.map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),
+  ..filter-data.map(row => filter-columns.map(col => text(size: 8.5pt)[#row.at(col, default: "")])).flatten()
 )
 == 5. Sonstiges & Zubehör / Miscellaneous & Accessories
 #grid(
