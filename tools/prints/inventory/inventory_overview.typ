@@ -132,9 +132,9 @@ P/K = Pentax / K-Mount (P/K) lens mount
 
 SD = Secure Digital (SD) memory card
 
-SDMC = Secure Digital MultiMediaCard (SD/MMC) memory card
-
 SDHC = Secure Digital High Capacity (SDHC) memory card
+
+SDMC = Secure Digital MultiMediaCard (SD/MMC) memory card
 
 SDXC = Secure Digital eXtended Capacity (SDXC) memory card
 
