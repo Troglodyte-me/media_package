@@ -67,24 +67,40 @@ Kurzer Begriffserklärungs-Guide:
 #v(12pt)// Section 1: Cameras
 == 1. Kameras / Cameras
 #let camera-columns = (
-  // "id",
-  "brand_model",
-  "camera_type",
-  "sensor",
-  "mount",
-  "battery",
-  "storage",
-  "location",
-  "notes",
+  "ID",
+  "Brand\nModel",
+  "Camera Type",
+  "Sensor\n(pixel)",
+  "Mount/Lens",
+  "Battery",
+  "Storage",
+  "Location",
+  "Notes",
 )
 #let camera-data = csv("cameras_inventory.csv", row-type: dictionary)
+#let camera-field(row, key) = {
+  row.at(key, default: row.at(" " + key, default: "")).trim()
+}
+#let stack-lines(lines) = {
+  lines.filter(line => line != "").join("\n")
+}
 #table(
-  columns: (2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr),
+  columns: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },// Table Headers with white text
 ..camera-columns.map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),// Table Rows
-..camera-data.map(row => camera-columns.map(col => text(size: 8.5pt)[#row.at(col, default: "")])).flatten()
+..camera-data.map(row => (
+  text(size: 8.5pt)[#camera-field(row, "id")],
+  text(size: 8.5pt)[#stack-lines((camera-field(row, "brand"), camera-field(row, "model")))],
+  text(size: 8.5pt)[#camera-field(row, "camera_type")],
+  text(size: 8.5pt)[#stack-lines((camera-field(row, "sensor"), camera-field(row, "pixel")))],
+  text(size: 8.5pt)[#stack-lines((camera-field(row, "mount"), camera-field(row, "lens_aperture"), camera-field(row, "lens_length")))],
+  text(size: 8.5pt)[#camera-field(row, "battery")],
+  text(size: 8.5pt)[#camera-field(row, "storage")],
+  text(size: 8.5pt)[#camera-field(row, "location")],
+  text(size: 8.5pt)[#camera-field(row, "notes")],
+)).flatten()
 )
 #v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
 == 2. Sensorgrößen & Brennweiten / Sensor Sizes & Perception
