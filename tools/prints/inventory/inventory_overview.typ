@@ -65,6 +65,7 @@ Kurzer Begriffserklärungs-Guide:
   ]
 )
 #v(12pt)// Section 1: Cameras
+#let table-font-size = 7.0pt
 == 1. Kameras / Cameras
 #let camera-columns = (
   "ID",
@@ -74,6 +75,7 @@ Kurzer Begriffserklärungs-Guide:
   "Mount/Lens",
   "Battery",
   "Storage",
+  "Serial ID",
   "Location",
   "Notes",
 )
@@ -85,24 +87,61 @@ Kurzer Begriffserklärungs-Guide:
   lines.filter(line => line != "").join("\n")
 }
 #table(
-  columns: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr),
+  columns: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr, 3fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },// Table Headers with white text
-..camera-columns.map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),// Table Rows
+..camera-columns.map(header => text(fill: white, weight: "bold", size: table-font-size)[#header]),// Table Rows
 ..camera-data.map(row => (
-  text(size: 8.5pt)[#camera-field(row, "id")],
-  text(size: 8.5pt)[#stack-lines((camera-field(row, "brand"), camera-field(row, "model")))],
-  text(size: 8.5pt)[#camera-field(row, "camera_type")],
-  text(size: 8.5pt)[#stack-lines((camera-field(row, "sensor"), camera-field(row, "pixel")))],
-  text(size: 8.5pt)[#stack-lines((camera-field(row, "mount"), camera-field(row, "lens_aperture"), camera-field(row, "lens_length")))],
-  text(size: 8.5pt)[#camera-field(row, "battery")],
-  text(size: 8.5pt)[#camera-field(row, "storage")],
-  text(size: 8.5pt)[#camera-field(row, "location")],
-  text(size: 8.5pt)[#camera-field(row, "notes")],
+  text(size: table-font-size)[#camera-field(row, "id")],
+  text(size: table-font-size)[#stack-lines((camera-field(row, "brand"), text(weight: "bold")[#camera-field(row, "model")]))],
+  text(size: table-font-size)[#camera-field(row, "camera_type")],
+  text(size: table-font-size)[#stack-lines((camera-field(row, "sensor"), camera-field(row, "pixel")))],
+  text(size: table-font-size)[#stack-lines((camera-field(row, "mount"), camera-field(row, "lens_aperture"), camera-field(row, "lens_length")))],
+  text(size: table-font-size)[#camera-field(row, "battery")],
+  text(size: table-font-size)[#camera-field(row, "storage")],
+  text(size: table-font-size)[#camera-field(row, "serial_id")],
+  text(size: table-font-size)[#camera-field(row, "location")],
+  text(size: table-font-size)[#camera-field(row, "notes")],
 )).flatten()
 )
 #v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
+AA = Alkaline battery (AA)
+
+AF = Autofocus (AF) lens
+
+BLN-1 = Olympus BLM-1 Li-Ion battery
+
+BLS-1 = Olympus BLS-1 Li-Ion battery
+
+CCD = Charge-Coupled Device (CCD) image sensor
+
+CMOS = Complementary Metal-Oxide-Semiconductor (CMOS) image sensor
+
+Li-Ion = Lithium-Ion (Li-Ion) rechargeable battery
+
+LR44 = Button cell battery (LR44)
+
+MF = Manual Focus (MF) lens
+
+MFT or m4/3 = Micro Four Thirds / MFT-Systemkamera
+
+MP = Megapixel (MP) = 1 million pixels
+
+P/K = Pentax / K-Mount (P/K) lens mount
+
+SD = Secure Digital (SD) memory card
+
+SDMC = Secure Digital MultiMediaCard (SD/MMC) memory card
+
+SDHC = Secure Digital High Capacity (SDHC) memory card
+
+SDXC = Secure Digital eXtended Capacity (SDXC) memory card
+
+SLR = Spiegelreflexkamera / Single Lens Reflex (SLR)
+
+#pagebreak()
+
 == 2. Sensorgrößen & Brennweiten / Sensor Sizes & Perception
 #block(
   width: 100%,
@@ -128,8 +167,8 @@ Kurzer Begriffserklärungs-Guide:
 #v(16pt)// Section 3: Lenses
 == 3. Objektive / Lenses
 #let lens-columns = (
-  // "id",
-  "brand",
+  "id",
+  "brand", "model",
   "focal_length",
   "aperture",
   "focus",
@@ -143,16 +182,17 @@ Kurzer Begriffserklärungs-Guide:
 )
 #let lens-data = csv("lenses_inventory.csv", row-type: dictionary)
 #table(
-  columns: (1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.7fr, 1.2fr, 1.2fr, 1.8fr),
+  columns: (auto, 1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.7fr, 1.2fr, 1.2fr, 1.8fr),
   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..lens-columns.map(header => text(fill: white, weight: "bold", size: 8pt)[#header]),
 ..lens-data.map(row => lens-columns.map(col => text(size: 8pt)[#row.at(col, default: "")])).flatten()
 )
 #v(16pt)// Section 4: Filters & Adapters
+
 == 4. Filter & Adapter / Filters & Adapters
 #let filter-columns = (
-  // "id",
+  "id",
   "brand",
   "filter_type",
   "thread_size",

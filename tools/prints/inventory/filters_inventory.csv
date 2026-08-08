@@ -1,6 +1,6 @@
-id,brand,filter_type,thread_size,location,notes,image_path,qr_url,icon_path
-1,Brand E,UV Filter / MRC,46mm,Box / Kiste,Lens protection / Schutzfilter,images/mage.png,https://example.com/mage,icons/fire.png
-2,Brand F,ND Filter (ND1000),58mm,Box / Kiste,For long exposures / Für Langzeitbelichtung,images/knight.png,https://example.com/knight,icons/shield.png
-3,Brand G,Circular Polarizer (CPL),55mm,Box / Kiste,Reduces reflections / Entspiegelung,images/rogue.png,https://example.com/rogue,icons/dagger.png
-4,Generic,Step-Up Ring,49mm -> 55mm,Box / Kiste,Adapter ring for larger filters,images/mage.png,https://example.com/mage,icons/fire.png
-5,Generic,Macro Close-up (+3),52mm,Box / Kiste,Macro attachment / Nahlinse,images/knight.png,https://example.com/knight,icons/shield.png
+id,brand,filter_type,thread_size,location,notes,image_path,qr_url,icon_path, serial_id
+1,Brand E,UV Filter / MRC,46mm,Box / Kiste,Lens protection / Schutzfilter,images/mage.png,https://example.com/mage,icons/fire.png, 123
+2,Brand F,ND Filter (ND1000),58mm,Box / Kiste,For long exposures / Für Langzeitbelichtung,images/knight.png,https://example.com/knight,icons/shield.png, 124
+3,Brand G,Circular Polarizer (CPL),55mm,Box / Kiste,Reduces reflections / Entspiegelung,images/rogue.png,https://example.com/rogue,icons/dagger.png, 125
+4,Generic,Step-Up Ring,49mm -> 55mm,Box / Kiste,Adapter ring for larger filters,images/mage.png,https://example.com/mage,icons/fire.png, 126
+5,Generic,Macro Close-up (+3),52mm,Box / Kiste,Macro attachment / Nahlinse,images/knight.png,https://example.com/knight,icons/shield.png, 127
