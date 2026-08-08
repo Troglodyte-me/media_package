@@ -19,6 +19,26 @@
 // Read CSV rows as dictionaries (safely referencing columns by name)
 #let cards = csv("cameras_inventory.csv", row-type: dictionary)
 
+// Some CSV exports include leading spaces in header/value cells.
+#let field(card, key) = {
+  card.at(key, default: card.at(" " + key, default: "")).trim()
+}
+
+#let display-name(card) = {
+  let explicit = field(card, "name")
+  if explicit != "" {
+    explicit
+  } else {
+    let brand = field(card, "brand")
+    let model = field(card, "model")
+    if brand != "" and model != "" {
+      brand + " " + model
+    } else {
+      brand + model
+    }
+  }
+}
+
 // ==========================================
 // 2. DEFINE FRONT AND BACK CARD DESIGNS
 // ==========================================
@@ -31,7 +51,7 @@
     stroke: 0.25pt + rgb("#bbbbbb"), // Thin cutline guide
     inset: 5mm,
     align(center + horizon)[
-      #image(card.at("image_path"), width: 100%, height: 100%, fit: "contain")
+      #image(field(card, "image_path"), width: 100%, height: 100%, fit: "contain")
     ]
   )
 }
@@ -47,15 +67,15 @@
     [
       // Icon in top right
       #place(top + right, dx: 0pt, dy: 0pt)[
-        #image(card.at("icon_path"), width: 10mm, height: 10mm, fit: "contain")
+        #image(field(card, "icon_path"), width: 10mm, height: 10mm, fit: "contain")
       ]
       
       // Center QR & Name
       #align(center + horizon)[
         #stack(
           spacing: 1.2em,
-          qr-code(card.at("qr_url"), width: 30mm),
-          text(weight: "bold", size: 10pt)[#card.at("name")]
+          qr-code(field(card, "qr_url"), width: 30mm),
+          text(weight: "bold", size: 10pt)[#display-name(card)]
         )
       ]
     ]

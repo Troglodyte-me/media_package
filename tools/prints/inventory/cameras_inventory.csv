@@ -1,5 +1,5 @@
 id,brand, model,camera_type,sensor,pixel,mount,lens_aperture, lens_length,battery,storage,location,notes,image_path,qr_url,icon_path
-1,Brand A, Model SLR-100,SLR / Spiegelreflex (Analog),35mm, analog Film,P/K Mount,,,2x LR44,35mm Film,Auf Anfrage / On Request,Clip-on flash included, images/mage.png,https://example.com/mage,icons/fire.png
-2,Brand B, Compact-X1,Digital Compact / Kompaktkamera,1/2.5" CCD, 6 MP,,f/2.8-4.5,6.1-36.6mm,2x AA,SD (max 2GB),Box / Kiste,6x Optical Zoom,  images/knight.png,https://example.com/knight,icons/shield.png
-3,Brand C, Flex-500,Digital Mirrorless / Systemkamera,MFT / Micro Four Thirds, 16 MP,M4/3 Mount,,,BLN-1 Li-Ion,SDXC,Koffer / Camera Case,Optional grip, RAW support, images/rogue.png,https://example.com/rogue
-4,Brand C, Lite-20,Digital Mirrorless / Systemkamera,MFT / Micro Four Thirds, 20 MP,M4/3 Mount,,,BLS-5 Li-Ion,SDXC,Auf Anfrage / On Request,Compact body, RAW support, images/mage.png,https://example.com/mage
+1,Brand A, Model SLR-100,SLR / Spiegelreflex (Analog),35mm, analog Film,P/K Mount,,,2x LR44,35mm Film,Auf Anfrage / On Request,Clip-on flash included,images/mage.svg,https://example.com/mage,icons/fire.svg
+2,Brand B, Compact-X1,Digital Compact / Kompaktkamera,1/2.5" CCD, 6 MP,,f/2.8-4.5,6.1-36.6mm,2x AA,SD (max 2GB),Box / Kiste,6x Optical Zoom,images/knight.svg,https://example.com/knight,icons/shield.svg
+3,Brand C, Flex-500,Digital Mirrorless / Systemkamera,MFT / Micro Four Thirds, 16 MP,M4/3 Mount,,,BLN-1 Li-Ion,SDXC,Koffer / Camera Case,"Optional grip, RAW support",images/rogue.svg,https://example.com/rogue,icons/dagger.svg
+4,Brand C, Lite-20,Digital Mirrorless / Systemkamera,MFT / Micro Four Thirds, 20 MP,M4/3 Mount,,,BLS-5 Li-Ion,SDXC,Auf Anfrage / On Request,"Compact body, RAW support",images/mage.svg,https://example.com/mage,icons/fire.svg
