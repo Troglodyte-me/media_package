@@ -216,7 +216,7 @@ We get a better "stillness", when grounding ourselves and control our breathing 
 
 > **"Joe McNally" Shoulder Grip**: [Da Grip](https://joemcnally.com/2008/03/10/da-grip/) push the camera with both hands into your shoulder (best for bulkier models) and look over your shoulder through the viewfinder. 
 
-> **Marksman’s "Natural Respiratory Pause"**
+> **Marksman's "Natural Respiratory Pause"**
 
 > **Tension-Based Stabilization (The Strap Hack)**
 
