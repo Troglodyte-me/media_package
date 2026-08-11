@@ -1,7 +1,7 @@
 # Media Package
 
 ### Choose your language:
-|  |  | 
+| Flag | Description | 
 | :---: | :--- | 
 | [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" height="33" alt="German national flag representing German language selection, horizontal stripes of black, red, and gold, neutral tone">](./docs/index.de.md) | **Deutsche Version (Vollständig)** |
 | [<img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg" height="33" alt="Union Jack flag representing English language selection, rectangular flag with red cross and diagonal white and red stripes on blue background, neutral tone">](./docs/index.en.md) | **English Version** |
