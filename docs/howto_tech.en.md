@@ -267,6 +267,43 @@ Letting in sun light through windows, can create uneven lighting but also pictur
 Artificial light, is hardly ever as strong (and can even be perceived as painfull to subjects when created). 
 
 ## Exposure
+Cameras - especially modern photo cameras - measure the exposure when pressing the shutter button half way. 
+A well exposed picture is usually represented in a display with a meter and a marker. 
+If the marker is in the middle of the meter, the exposure is balanced (meaning its neither too dark nor too light).
+This is useful to determine and control how well light or how dark the photo should become.
+The further the marker goes to either side, the picture will be over lit (too light) or under lit (too dark). 
+However, it is sometimes either not possible or desireable to shoot a well balanced photo.
+In the end lighting is an artistic choice, dependent on the szene to be shot.
+
+> [!TIP]
+> In general it is advised to shoot pictures a bit darker then perfectly balanced. 
+> The reason is, that in most cases some details can still be recreated from dark spots in post-production; but once the image is white (over-exposed), nothing can be fixed anymore.
+> However, if it's already black, then that's too dark as well. 
+> As a photographer you may look for a sweet spot and make your own (artistic) descision.
+
+The feature itself comes - dependent on the camera - in two defierent base flawors and accordingly with implications how to handle camera.
+To reach these, one needs to dial in a mode, represented on photo camaeras often with a round dial with letters on. 
+Smaller cameras or smart phones may not offer this choice (and go directly to a form of automation) or only give it in some form of menu select. 
+In either case, please consult the manual for this.
+
+### Manual Mode
+When the camera is dialed to manual mode (usually "M" on the dial), the exposure is only measured and displayed. 
+This is allows the photographer to estimate how light/dark the picture will become with the current settings.
+To make the photo more light, either raise the ISO of the sensor, choose a slower shutter speed, lower the f-stop or use more light in your szene (turn on the lights, go in the sun, etc.).
+Conversely, to make the picture darker either lower the ISO of the sensor, choose a faster shutter speed, raise the f-stop or dimm down the light in your szene (turn off the lights, go in the shadows, etc.).
+However, each of these actions will each come with their respective caviats to the image you can produce. 
+See the respective chapters for the (see ISO, aperture/f-stop, speed, and light). 
+
+### Automatic Modes
+Cameras usually come with different features of automation.
+If you dial in "P" or "auto" the camera will fully take controll over ISO, shutter speed and f-stop and calculate the best values for each in order to arrive at the most accurate exposure. 
+However, most cameras offer half-automated modes like "A" or "S" in which the photographer can still controll (respectively) the Aperature/f-stop or Shutter Speed but the camera controlls the rest.
+These functions are useful, especially for beginners as well as advanced photographers as they allow to determine an important factor (like fast shutter speed at sports, or low f-stop for portraits) and allow the camera to take care of the rest.
+
+Whether fully or partially automated, the exposure meter is then not converted from a display (just showing the current exposure) to a controll intrument, allowing the photographer to dial in how light/dark the photo should become. 
+
+
+This measurement 
 * exposure triangle
   * over/under exposure
   * metering
