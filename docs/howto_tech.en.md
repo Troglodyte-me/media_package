@@ -297,11 +297,12 @@ See the respective chapters for the (see ISO, aperture/f-stop, speed, and light)
 ### Automatic Modes
 Cameras usually come with different features of automation.
 If you dial in "P" or "auto" the camera will fully take controll over ISO, shutter speed and f-stop and calculate the best values for each in order to arrive at the most accurate exposure. 
-However, most cameras offer half-automated modes like "A" or "S" in which the photographer can still controll (respectively) the Aperature/f-stop or Shutter Speed but the camera controlls the rest.
-These functions are useful, especially for beginners as well as advanced photographers as they allow to determine an important factor (like fast shutter speed at sports, or low f-stop for portraits) and allow the camera to take care of the rest.
+This fully automated modes are either completely from the secret sauce of the manufacturer (usually "auto") or programmable by the photographer (usually "P").
 
-Whether fully or partially automated, the exposure meter is then not converted from a display (just showing the current exposure) to a controll intrument, allowing the photographer to dial in how light/dark the photo should become. 
+However, most cameras offer partially-automated modes like "A" or "S" in which the photographer can still controll (respectively) the Aperature/f-stop or Shutter Speed and the camera takes care of the rest.
+These functions are useful, especially for beginners as well as advanced photographers as they allow to determine an important factor (like fast shutter speed for sports, or low f-stop doing portraits) and not worry about anything else.
 
+Whether fully or partially automated, the exposure meter is in these cases converted from a pure display (only *showing* the current exposure) to a controll intrument, allowing the photographer to dial in how light/dark the photo should become. 
 
 This measurement 
 * exposure triangle
