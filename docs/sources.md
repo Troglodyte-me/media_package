@@ -18,10 +18,11 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 | --- | --- | --- |
 | 🇨🇿 | Czech Language | Tschechische Sprache |
 | 🇬🇧 | English Language | Englische Sprache |
-| 🔥 | Fire Fighting | Feuerwehr |
+| :fire: | Fire Fighting | Feuerwehr |
 | 🇩🇪 | German Language | Deutsche Sprache |
 | ⚕️ | Medical Emergency | Notfallmedizin |
 | 👮 | Police & Civil Security | Polizei & Zivile Sicherheit |
+| :wrench: | Technical Relief Organizations | Technisches Hilfswerk |
 | 🇺🇿 | Uzbek Language | Usbekische Sprache |
 
 <!-- * Author, Date: Title. Sub-Title. (Last Access) -->
@@ -54,12 +55,18 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 - <img src="https://www.blender.org/wp-content/uploads/2019/07/blender_logo.svg" alt="Blender logo, orange and blue abstract eye shape with circular design, dynamic and modern tone, no text" width="20"/> [**Blender**](https://www.blender.org/): Für 3D-Modellierung und Animation. Anspruchsvoll, professionelle Ergebnisse.
 - <img src="https://obsproject.com/assets/images/new_icon_small.png" alt="OBS Studio logo, three swirling black shapes forming a circular pattern, minimalist and neutral tone, no text" width="20"/> [**OBS Studio**](https://obsproject.com/): Für Videoaufzeichnung und Streaming. Einfacher Einstieg, vielseitig.
 
-# Inspirations
+
+
+# Inspiration
+## News & Media
+* *Feuerwehr Magazin: Online-Portal für Feuerwehr und Rettungsdienst*. Ebner Media Group. https://www.feuerwehrmagazin.de/ (August 14, 2026)
+
+## Social Media
 <!-- * Title (Country Code | Specialisations)
     * [Platform](URL)
     | [Platform](URL) -->
 
-* Bewerbsgruppe Glanz (🇩🇪 | 🔥)
+* Bewerbsgruppe Glanz (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/bewerbsgruppe_glanz/)
 
 * Die_OpBros (🇩🇪 | ⚕️)
@@ -70,60 +77,60 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Website](https://www.opbros.de/)
     | [Instagram](https://www.instagram.com/die_opsisters/)
 
-<!-- * Elizabeth McMullen (🇬🇧 | 🔥)
+<!-- * Elizabeth McMullen (🇬🇧 | :fire:)
     * [Instagram](https://www.instagram.com/elizabeth.mcmullen27/)
     | [Threads](https://www.threads.com/@elizabeth.mcmullen27) -->
 
-* Favqulodda vaziyatlar vazirligi (Uzbek Minitry of Emergency Situations) (🇺🇿 | 🔥)
+* Favqulodda vaziyatlar vazirligi (Uzbek Minitry of Emergency Situations) (🇺🇿 | :fire:)
     * [Instagram](https://www.instagram.com/fvvmchs/)
-* Fire Department Chronicles (🇬🇧 | ⚕️ | 🔥)
+* Fire Department Chronicles (🇬🇧 | ⚕️ | :fire:)
     * [Instagram](https://www.instagram.com/firedepartmentchronicles/)
     | [Threads](https://www.threads.com/@firedepartmentchronicles)
     | [YouTube](https://www.youtube.com/@FireDepartmentChronicles)
-* Fire Department Coffee (🇬🇧 | 🔥)
+* Fire Department Coffee (🇬🇧 | :fire:)
     * [Webshop](https://www.firedeptcoffee.com/)
     | [Instagram](https://www.instagram.com/firedeptcoffee/)
     | [Threads](https://www.threads.com/@firedeptcoffee)
-* Firehouse Innovations Training Corp. (🇬🇧 | 🔥)
+* Firehouse Innovations Training Corp. (🇬🇧 | :fire:)
     * [Facebook](https://www.facebook.com/profile.php?id=61582870006991)
     | [Instagram](https://www.instagram.com/firehouseinnovationstraining/)
     | [YouTube](https://www.youtube.com/@firehouseinnovationstraining)
-* FireLouis (🇩🇪 | 🔥)
+* FireLouis (🇩🇪 | :fire:)
     * [Website](https://www.firelouis.de/)
     | [Instagram](https://www.instagram.com/xfirelouis/)
     | [TikTok](https://www.tiktok.com/@xfirelouis)
     | [YouTube](https://www.youtube.com/@xFireLouis)
     | [Linktree](https://linktr.ee/xfirelouis)
-* "*Feuer und Flamme*" (🇩🇪 | ⚕️ | 🔥)
+* "*Feuer und Flamme*" (🇩🇪 | ⚕️ | :fire:)
     * [WDR/ARD Mediathek](https://www.ardmediathek.de/serie/feuer-und-flamme)
-* Feuerwehr Guttaring (🇩🇪 | 🔥)
+* Feuerwehr Guttaring (🇩🇪 | :fire:)
     * [Website](https://ff-guttaring.at/)
     | [Instagram](https://www.instagram.com/feuerwehr_guttaring/)
-* Freiwillige Feuerwehr Ahrensburg (🇩🇪 | 🔥)
+* Freiwillige Feuerwehr Ahrensburg (🇩🇪 | :fire:)
     * [Website](https://www.feuerwehr-ahrensburg.de)
     | [Facebook](https://www.facebook.com/FFAhrensburg/)
     | [Instagram](https://www.instagram.com/feuerwehr.ahrensburg/)
-* Freiwillige Feuerwehr Gilching (🇩🇪 | 🔥)
+* Freiwillige Feuerwehr Gilching (🇩🇪 | :fire:)
     * [Website](https://www.feuerwehr-gilching.de)
     | [Facebook](https://www.facebook.com/FFGilching)
     | [Instagram](https://www.instagram.com/feuerwehrgilching/)
-* Freiwillige Feuerwehr Hademarschen (🇩🇪 | 🔥)
+* Freiwillige Feuerwehr Hademarschen (🇩🇪 | :fire:)
     * [Website](http://feuerwehr-hademarschen.de)
     | [Facebook](https://www.facebook.com/FFHademarschen)
     | [Instagram](https://www.instagram.com/feuerwehr__hademarschen/)
     | [Mail](mailto:feuerwehr@hanerau-hademarschen.de)
-* Freiwillige Feuerwehr Samtgemeinde Tostedt (🇩🇪 | 🔥)
+* Freiwillige Feuerwehr Samtgemeinde Tostedt (🇩🇪 | :fire:)
     * [Website](https://www.ff-sgtostedt.de/)
     | [Instagram](https://www.instagram.com/ff_sgtostedt)
 
-* Gemeinsam im Feuer (🇩🇪 | 🔥)
+* Gemeinsam im Feuer (🇩🇪 | :fire:)
     * [Beacons.AI](https://beacons.ai/gemeinsamimfeuer112)
     | [Atește birlikte @ Instagram](https://www.instagram.com/gemeinsamimfeuer_atestebirlik)
     | [Cinar Taha Eren @ Instgram](https://www.instagram.com/firetaha_112)
     | [Erkan Eren @ YouTube](https://www.youtube.com/@GemeinsamimFeuer112)
     | [Itfaiye @ TikTok](https://www.tiktok.com/@gemeinsamimfeuer_112)
     | [Mail](mailto:gemeinsamimfeuer112@outlook.de)
-* *gesundheitsakademiebohndorf* (🇩🇪 | ⚕️ | 🔥)
+* *gesundheitsakademiebohndorf* (🇩🇪 | ⚕️ | :fire:)
     * [Website](https://gesundheitsakademie-bohndorf.de)
     | [Instagram](https://www.instagram.com/gesundheitsakademiebohndorf/)
     | [Threads](https://www.threads.com/@gesundheitsakademiebohndorf)
@@ -137,7 +144,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [TikTok](https://www.tiktok.com/@hannahbair1218) 
     | [Linktree](https://linktr.ee/hannahbair1218)
 
-* Innenministerium Sachsen (🇩🇪 | 🔥 | 👮)
+* Innenministerium Sachsen (🇩🇪 | :fire: | 👮)
     * [Website](https://www.smi.sachsen.de/) 
     | [Facebook](https://www.facebook.com/SMIsachsen/)
     | [Instagram](https://www.instagram.com/smisachsen/) 
@@ -146,7 +153,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [Twitter/X](https://x.com/SMIsachsen)
     | [YouTube](https://www.youtube.com/@smisachsen)
 
-* Jan Kelle (🇩🇪 | 🔥)
+* Jan Kelle (🇩🇪 | :fire:)
     * [Website](https://flare-management.de/tc/jan-kelle/)
     | [Instagram](https://www.instagram.com/jankelle_/)
     | [TikTok](https://www.tiktok.com/@jankelle_)
@@ -163,17 +170,17 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Instagram](https://www.instagram.com/ueberdrahtpodcast/)
     | [Spotify](https://open.spotify.com/show/77Zp516i9v1D4h1Lst6dnj?si=b75249fdd40a4177)
 
-* Leo Liti (🇩🇪 | 🔥)
+* Leo Liti (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/leo.liti/)
     | [Threads](https://www.threads.com/@leo.liti)
 * Luis Teichmann / *5_sprechwunsch* (🇩🇪 | ⚕️)
     * [Instagram](https://www.instagram.com/5_sprechwunsch/)    
     | [Threads](https://www.threads.com/@5_sprechwunsch)
-* Luna lvk (🇩🇪 | 🔥)
+* Luna lvk (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/luna.lvk/)
     | [TikTok](https://www.tiktok.com/@luna.lvk)
 
-<!-- * Malte Brenneisen (🇩🇪 | 🔥)
+<!-- * Malte Brenneisen (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/brenneisen/)
     | [Threads](https://www.threads.com/@brenneisen) -->
 * mehr.ztin (🇩🇪 | ⚕️)
@@ -182,7 +189,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [YouTube](https://www.youtube.com/@mehrztin)
     | [Mail](mailto:mehrztin@wholesome-artists.de)
     | [Linktree](https://linktr.ee/mehr.ztin)
-* "*Mein Einsatz*" (Podcast 🇩🇪 | 🔥)
+* "*Mein Einsatz*" (Podcast 🇩🇪 | :fire:)
     * [NDR/ARD Sounds](https://www.ardsounds.de/sendung/mein-einsatz-der-ndr-feuerwehr-podcast)
 
 * Nurse Gwenny (🇬🇧 | ⚕️)
@@ -230,22 +237,21 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Website](https://blaulicht-milieu.de)
     | [Instagram](https://www.instagram.com/blaulicht.milieu/)
 
-* S.K.V. Nordost (🇩🇪 | 🔥)
+* S.K.V. Nordost (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/s.k.v.nordost/)
-* SDH Pozděchov (🇨🇿 | 🔥)
+* SDH Pozděchov (🇨🇿 | :fire:)
     * [Instagram](https://www.instagram.com/sdhpozdechov/)
-* South Carolina Air National Guard (🇬🇧 | 🔥)
+* South Carolina Air National Guard (🇬🇧 | :fire:)
     * [Facebook](https://www.facebook.com/scang.swampfox)
     | [Flickr](https://www.flickr.com/photos/thescang/albums/)
     | [Instagram](https://www.instagram.com/scairnationalguard/)
     | [Threads](https://www.threads.com/@scairnationalguard)
     | [YouTube](https://www.youtube.com/@SCAirNationalGuard)
 
-* *utoky_od_naty* (🇨🇿 | 🔥)
+* *utoky_od_naty* (🇨🇿 | :fire:)
     * [Instagram](https://www.instagram.com/utoky_od_naty/)
     | [Mail](mailto:utokyodnaty@gmail.com)
 
 * Wiebke Kempen Notärztin und Hausärztin (🇩🇪 | ⚕️)
     * [Instagram](https://www.instagram.com/wiebodoc)
     | [Threads](https://www.threads.com/@wiebodoc)
-
