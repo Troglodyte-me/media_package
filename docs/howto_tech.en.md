@@ -248,7 +248,17 @@ There is a wide variety of tripods, mono-pods and similar gear.
 However, they are usually bulky and less usefull for photography.
 
 ### White balance
-...
+When exposure deals with the quantity of light processed, ``white balance`` poses the question of the quality of light. 
+ Is it raw yellow sunlight?
+ Is it blue-ish neon light?
+ Does the light, tint natural colors in unnatural ways? 
+ Is that desireable?
+
+Usually the correct white balance is estimated how neutral a white or mute grey a certain surface is. 
+Professionals therefore often either do either of these: 
+ * **professional**: use a light meter, measuring quality and quantity of light
+ * **intermediate**: use a color palate, including a set of greys and white, so they can be assessed as reference for later post processing.
+ * **immergency**: instead of a color plate, shoot a photo of a white sheet of paper as a reference.
 
 --> good source [Understanding and Using Color Temperature in Photography](https://progradedigital.com/understanding-and-using-color-temperature-in-photography/)
 
@@ -267,21 +277,23 @@ Letting in sun light through windows, can create uneven lighting but also pictur
 Artificial light, is hardly ever as strong (and can even be perceived as painfull to subjects when created). 
 
 ## Exposure
-Cameras - especially modern photo cameras - measure the exposure when pressing the shutter button half way. 
-A well exposed picture is usually represented in a display with a meter and a marker. 
-If the marker is in the middle of the meter, the exposure is balanced (meaning its neither too dark nor too light).
+When pressing the shutter button half way down, modern cameras measure the amount of light expected to hit to the sensor when taking the photo. 
+Too much light, will make the make the photo more white and therefore ``overexposed``.
+If it's not enough, the picture will be too dark and therefore ``underexposed``.
+
+Depending on the camera, a well exposed picture is usually represented in a display with a meter and a marker. 
+If the marker is in the middle of the meter, the exposure is balanced (meaning its neither overexposed nor underexposed).
 This is useful to determine and control how well light or how dark the photo should become.
 The further the marker goes to either side, the picture will be over lit (too light) or under lit (too dark). 
 However, it is sometimes either not possible or desireable to shoot a well balanced photo.
 In the end lighting is an artistic choice, dependent on the szene to be shot.
 
 > [!TIP]
-> In general it is advised to shoot pictures a bit darker then perfectly balanced. 
-> The reason is, that in most cases some details can still be recreated from dark spots in post-production; but once the image is white (over-exposed), nothing can be fixed anymore.
-> However, if it's already black, then that's too dark as well. 
-> As a photographer you may look for a sweet spot and make your own (artistic) descision.
+> In general it is advised to shoot pictures slightly underexposed rather then perfectly balanced. 
+> The reason is, that in most cases some details can still be recreated from dark spots in post-production; but from white pixels (overexposed), nothing can be fixed anymore.
+> So as long as the picture doesn't go black, you can look for a sweet spot and make your own (artistic) descision.
 
-The feature itself comes - dependent on the camera - in two defierent base flawors and accordingly with implications how to handle camera.
+The feature itself comes -- dependent on the camera -- in two different base flawors and accordingly with implications how to handle camera.
 To reach these, one needs to dial in a mode, represented on photo camaeras often with a round dial with letters on. 
 Smaller cameras or smart phones may not offer this choice (and go directly to a form of automation) or only give it in some form of menu select. 
 In either case, please consult the manual for this.
