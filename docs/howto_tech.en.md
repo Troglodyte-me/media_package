@@ -277,13 +277,13 @@ Letting in sun light through windows, can create uneven lighting but also pictur
 Artificial light, is hardly ever as strong (and can even be perceived as painfull to subjects when created). 
 
 ## Exposure
-Shooting a photo requires light passing from outside, (1) through the lens (2) over time (3) onto a medium. 
+Shooting a photo requires light passing from outside, through the lens over time onto a medium. 
 This is the same in every form of photography; whether analog or digital, with professional camera equipment or on the cheap.
 
-Depending how much light is available, what's the subject of the photo and how to show it within a photo; one needs to find a balance between Aparature, ISO and Shutter Speed. 
+Depending how much light is available, what's the subject of the photo and how one likes to present it within a photo; one needs to find a balance between Aparature, ISO and Shutter Speed. 
 This is called the **Exposure Triangle** and as much a mathematical as an artistic challange.
 
-In doing this, smartphones as well as modern cameras usually offer a feature calles a light or exposure meter. 
+To give photographers more controll in this, smartphones as well as modern cameras usually offer a feature called a light or exposure meter. 
 For instance, When pressing the shutter button half way down most cameras measure the amount of light expected to hit to the sensor when taking the photo. 
 Too much light, will make the make the photo more white and therefore ``overexposed``.
 If it's not enough, the picture will be too dark and therefore ``underexposed``.
@@ -309,33 +309,28 @@ In either case, please consult the manual for this.
 
 ### Manual Mode
 When the camera is dialed to manual mode (usually "M" on the dial), the exposure is only measured and displayed. 
-This is allows the photographer to estimate how light/dark the picture will become with the current settings.
+This allows the photographer to estimate how light/dark the picture will become with the current settings.
 To make the photo more light, either raise the ISO of the sensor, choose a slower shutter speed, lower the f-stop or use more light in your szene (turn on the lights, go in the sun, etc.).
 Conversely, to make the picture darker either lower the ISO of the sensor, choose a faster shutter speed, raise the f-stop or dimm down the light in your szene (turn off the lights, go in the shadows, etc.).
-However, each of these actions will each come with their respective caviats to the image you can produce. 
+However, for each of these actions there are respective caviats to the image you can produce. 
 See the respective chapters for the (see ISO, aperture/f-stop, speed, and light). 
 
 ### Automatic Modes
 Cameras usually come with different features of automation.
-If you dial in "P" or "auto" the camera will fully take controll over ISO, shutter speed and f-stop and calculate the best values for each in order to arrive at the most accurate exposure. 
+If you dial in "P" or "auto" the camera will fully take controll over ISO, shutter speed and f-stop and calculate the best values for each in order to arrive at the most accurate exposure.
 This fully automated modes are either completely from the secret sauce of the manufacturer (usually "auto") or programmable by the photographer (usually "P").
+Please consult the respective manual for details on this.
 
 However, most cameras offer partially-automated modes like "A" or "S" in which the photographer can still controll (respectively) the Aperature/f-stop or Shutter Speed and the camera takes care of the rest.
 These functions are useful, especially for beginners as well as advanced photographers as they allow to determine an important factor (like fast shutter speed for sports, or low f-stop doing portraits) and not worry about anything else.
 
 Whether fully or partially automated, the exposure meter is in these cases converted from a pure display (only *showing* the current exposure) to a controll intrument, allowing the photographer to dial in how light/dark the photo should become. 
 
-This measurement 
-* exposure triangle
+This measurement ...
+<!-- * exposure triangle
   * over/under exposure
-  * metering
+  * metering -->
   * histogram
-
-To compensate, one can choose to go back to aperture/f-stop or sensor sensitivity (ISO). 
-All three are complementary. 
-There are ideals how an image should be lit, and it takes quite some practice to do it well in all circumstances.
-However, the choice how to configure each aspect, is less technical but certainly an artistic choice. 
-There is no right or wrong! 
 
 If you want to test the exposure triangle as well as other settings try [photoskop.com](https://photoskop.com/).
 
