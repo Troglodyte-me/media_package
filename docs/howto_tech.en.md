@@ -277,7 +277,14 @@ Letting in sun light through windows, can create uneven lighting but also pictur
 Artificial light, is hardly ever as strong (and can even be perceived as painfull to subjects when created). 
 
 ## Exposure
-When pressing the shutter button half way down, modern cameras measure the amount of light expected to hit to the sensor when taking the photo. 
+Shooting a photo requires light passing from outside, (1) through the lens (2) over time (3) onto a medium. 
+This is the same in every form of photography; whether analog or digital, with professional camera equipment or on the cheap.
+
+Depending how much light is available, what's the subject of the photo and how to show it within a photo; one needs to find a balance between Aparature, ISO and Shutter Speed. 
+This is called the **Exposure Triangle** and as much a mathematical as an artistic challange.
+
+In doing this, smartphones as well as modern cameras usually offer a feature calles a light or exposure meter. 
+For instance, When pressing the shutter button half way down most cameras measure the amount of light expected to hit to the sensor when taking the photo. 
 Too much light, will make the make the photo more white and therefore ``overexposed``.
 If it's not enough, the picture will be too dark and therefore ``underexposed``.
 
@@ -287,6 +294,8 @@ This is useful to determine and control how well light or how dark the photo sho
 The further the marker goes to either side, the picture will be over lit (too light) or under lit (too dark). 
 However, it is sometimes either not possible or desireable to shoot a well balanced photo.
 In the end lighting is an artistic choice, dependent on the szene to be shot.
+
+Beyond that, many cameras also offer color highlighting for "blown out" or "dead spots" in your picture (where are nearly totally black/white pixels are), so the photographer knows how overexposed or underexposed a picture is and which areas are mostly affected. 
 
 > [!TIP]
 > In general it is advised to shoot pictures slightly underexposed rather then perfectly balanced. 
