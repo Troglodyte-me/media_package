@@ -390,6 +390,13 @@ However, they also allow for more control and better results when done right.
 For this purpose **[darktable](https://www.darktable.org/)** & **[RawTherapee](https://rawtherapee.com/)** are two open-source RAW image processors. 
 One can use them for free to open, edit and export RAW files. 
 
+# Outlook and Next Steps
+Handling the camera is only the first step. 
+From here you should look into three directions: 
+* What should or shouldn't be photographed? --> see ethics and legalities
+* How to make a picture look good? --> see aestatics
+* How to enhance my pictures and publish them? --> Post-Processing.
+
 # FAQ
 ## Blurry photos
 In general there are two reasons for blur:
