@@ -104,6 +104,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 * "*Feuer & Flamme*" von WDR/ARD (🇩🇪 | ⚕️ | :fire:)
     * [Website](https://www1.wdr.de/fernsehen/feuer-und-flamme)
     | [YouTube](https://www.youtube.com/playlist?list=PLO8lnEN5VWhNi5Kx56by3RN3niYloy27E)
+    | [PressePortal](https://www.presseportal.de/blaulicht/nr/149821)
 * Feuerwehr Guttaring (🇩🇪 | :fire:)
     * [Website](https://ff-guttaring.at/)
     | [Instagram](https://www.instagram.com/feuerwehr_guttaring/)
@@ -128,6 +129,9 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 * Freiwillige Feuerwehr Samtgemeinde Tostedt (🇩🇪 | :fire:)
     * [Website](https://www.ff-sgtostedt.de/)
     | [Instagram](https://www.instagram.com/ff_sgtostedt)
+* Freiwillige Feuerwehr Südheide
+    * [Website](http://www.gemeinde-suedheide.de)
+    | [PressePortal](https://www.presseportal.de/blaulicht/nr/177692)
 
 * Gemeinsam im Feuer (🇩🇪 | :fire:)
     * [Beacons.AI](https://beacons.ai/gemeinsamimfeuer112)
@@ -175,6 +179,12 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
 * "*Komm mal über Draht*" (Podcast 🇩🇪)
     * [Instagram](https://www.instagram.com/ueberdrahtpodcast/)
     | [Spotify](https://open.spotify.com/show/77Zp516i9v1D4h1Lst6dnj?si=b75249fdd40a4177)
+* Kreisfeuerwehr Oldenburg
+    * [Website](https://kreisfeuerwehr-oldenburg.de)
+    | [Presseportal](https://www.presseportal.de/blaulicht/nr/172811)
+* Kreisfeuerwehr Rotenburg (Wümme)
+    * [Website](https://www.lk-row.de)
+    | [PressPortal](https://www.presseportal.de/blaulicht/nr/134804)
 
 * Leo Liti (🇩🇪 | :fire:)
     * [Instagram](https://www.instagram.com/leo.liti/)
