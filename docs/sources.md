@@ -1,11 +1,11 @@
 # Preambel
-## in English [🇬🇧]
+## in English 🇬🇧
 The following sources, repeat sources already mentioned elsewhere for further research or inspiration for you own projects.
 This project does not share the world views of the authors, nor can the quality and truthfulness of each statement be fully checked here. 
 Please handle with care and make up your own mind. 
 Discussion and feedback is welcome.
 
-## in Deutsch [🇩🇪]
+## in Deutsch 🇩🇪
 Die folgenden Quellen wiederholen bisher bereits genannte Quellen für weitere Recherchen oder Inspiration für die eigenen Projekte.
 Dieses Projekt teilt nicht die Weltanschaulichen perspektiven der Verfasserenden, noch kann die Qualität und Wahrheitsgehalt jedes Statements vollständig geprüft und bewertet werden.
 Bitte immer eine eigene kritische Meinung im Umgang mit diesen Quellen erwerben.
@@ -66,95 +66,95 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     * [Platform](URL)
     | [Platform](URL) -->
 
-* Bewerbsgruppe Glanz (🇩🇪 | :fire:)
+* Bewerbsgruppe Glanz 🇩🇪 :fire:
     * [Instagram](https://www.instagram.com/bewerbsgruppe_glanz/)
 
-* Die_OpBros (🇩🇪 | ⚕️)
+* Die_OpBros 🇩🇪 ⚕️
     * [Website](https://www.opbros.de/)
     | [Instagram](https://www.instagram.com/die_opbros)
     | [YouTube](https://www.youtube.com/@die_op_bros)
-* Die_OpSisters (🇩🇪 | ⚕️)
+* Die_OpSisters 🇩🇪 ⚕️
     * [Website](https://www.opbros.de/)
     | [Instagram](https://www.instagram.com/die_opsisters/)
 
-<!-- * Elizabeth McMullen (🇬🇧 | :fire:)
+<!-- * Elizabeth McMullen 🇬🇧 :fire:
     * [Instagram](https://www.instagram.com/elizabeth.mcmullen27/)
     | [Threads](https://www.threads.com/@elizabeth.mcmullen27) -->
 
-* Favqulodda vaziyatlar vazirligi (Uzbek Minitry of Emergency Situations) (🇺🇿 | :fire:)
+* Favqulodda vaziyatlar vazirligi (Uzbek Minitry of Emergency Situations) 🇺🇿 :fire:
     * [Instagram](https://www.instagram.com/fvvmchs/)
-* Fire Department Chronicles (🇬🇧 | ⚕️ | :fire:)
+* Fire Department Chronicles 🇬🇧 ⚕️ :fire:
     * [Instagram](https://www.instagram.com/firedepartmentchronicles/)
     | [Threads](https://www.threads.com/@firedepartmentchronicles)
     | [YouTube](https://www.youtube.com/@FireDepartmentChronicles)
-* Fire Department Coffee (🇬🇧 | :fire:)
+* Fire Department Coffee 🇬🇧 :fire:
     * [Webshop](https://www.firedeptcoffee.com/)
     | [Instagram](https://www.instagram.com/firedeptcoffee/)
     | [Threads](https://www.threads.com/@firedeptcoffee)
-* Firehouse Innovations Training Corp. (🇬🇧 | :fire:)
+* Firehouse Innovations Training Corp. 🇬🇧 :fire:
     * [Facebook](https://www.facebook.com/profile.php?id=61582870006991)
     | [Instagram](https://www.instagram.com/firehouseinnovationstraining/)
     | [YouTube](https://www.youtube.com/@firehouseinnovationstraining)
-* FireLouis (🇩🇪 | :fire:)
+* FireLouis 🇩🇪 :fire:
     * [Website](https://www.firelouis.de/)
     | [Instagram](https://www.instagram.com/xfirelouis/)
     | [TikTok](https://www.tiktok.com/@xfirelouis)
     | [YouTube](https://www.youtube.com/@xFireLouis)
     | [Linktree](https://linktr.ee/xfirelouis)
-* "*Feuer & Flamme*" von WDR/ARD (🇩🇪 | ⚕️ | :fire:)
+* "*Feuer & Flamme*" von WDR/ARD 🇩🇪 ⚕️ :fire:
     * [Website](https://www1.wdr.de/fernsehen/feuer-und-flamme)
     | [YouTube](https://www.youtube.com/playlist?list=PLO8lnEN5VWhNi5Kx56by3RN3niYloy27E)
     | [PressePortal](https://www.presseportal.de/blaulicht/nr/149821)
-* Feuerwehr Guttaring (🇩🇪 | :fire:)
+* Feuerwehr Guttaring 🇩🇪 :fire:
     * [Website](https://ff-guttaring.at/)
     | [Instagram](https://www.instagram.com/feuerwehr_guttaring/)
-* Freiwillige Feuerwehr Ahrensburg (🇩🇪 | :fire:)
+* Freiwillige Feuerwehr Ahrensburg 🇩🇪 :fire:
     * [Website](https://www.feuerwehr-ahrensburg.de)
     | [Facebook](https://www.facebook.com/FFAhrensburg/)
     | [Instagram](https://www.instagram.com/feuerwehr.ahrensburg/)
-* Freiwillige Feuerwehr Celle (🇩🇪 | :fire:)
+* Freiwillige Feuerwehr Celle 🇩🇪 :fire:
     * [Webseite](https://www.feuerwehr-celle.de/)
     | [Feed](https://www.feuerwehr-celle.de/feed/)
     | [Facebook](https://www.facebook.com/Feuerwehr-Celle-177145102308057)
     | [Instgram](https://www.instagram.com/feuerwehr_celle/)
-* Freiwillige Feuerwehr Gilching (🇩🇪 | :fire:)
+* Freiwillige Feuerwehr Gilching 🇩🇪 :fire:
     * [Website](https://www.feuerwehr-gilching.de)
     | [Facebook](https://www.facebook.com/FFGilching)
     | [Instagram](https://www.instagram.com/feuerwehrgilching/)
-* Freiwillige Feuerwehr Hademarschen (🇩🇪 | :fire:)
+* Freiwillige Feuerwehr Hademarschen 🇩🇪 :fire:
     * [Website](http://feuerwehr-hademarschen.de)
     | [Facebook](https://www.facebook.com/FFHademarschen)
     | [Instagram](https://www.instagram.com/feuerwehr__hademarschen/)
     | [Mail](mailto:feuerwehr@hanerau-hademarschen.de)
-* Freiwillige Feuerwehr Samtgemeinde Tostedt (🇩🇪 | :fire:)
+* Freiwillige Feuerwehr Samtgemeinde Tostedt 🇩🇪 :fire:
     * [Website](https://www.ff-sgtostedt.de/)
     | [Instagram](https://www.instagram.com/ff_sgtostedt)
-* Freiwillige Feuerwehr Südheide
+* Freiwillige Feuerwehr Südheide 🇩🇪 :fire:
     * [Website](http://www.gemeinde-suedheide.de)
     | [PressePortal](https://www.presseportal.de/blaulicht/nr/177692)
 
-* Gemeinsam im Feuer (🇩🇪 | :fire:)
+* Gemeinsam im Feuer 🇩🇪 :fire:
     * [Beacons.AI](https://beacons.ai/gemeinsamimfeuer112)
     | [Atește birlikte @ Instagram](https://www.instagram.com/gemeinsamimfeuer_atestebirlik)
     | [Cinar Taha Eren @ Instgram](https://www.instagram.com/firetaha_112)
     | [Erkan Eren @ YouTube](https://www.youtube.com/@GemeinsamimFeuer112)
     | [Itfaiye @ TikTok](https://www.tiktok.com/@gemeinsamimfeuer_112)
     | [Mail](mailto:gemeinsamimfeuer112@outlook.de)
-* *gesundheitsakademiebohndorf* (🇩🇪 | ⚕️ | :fire:)
+* *gesundheitsakademiebohndorf* 🇩🇪 ⚕️ :fire:
     * [Website](https://gesundheitsakademie-bohndorf.de)
     | [Instagram](https://www.instagram.com/gesundheitsakademiebohndorf/)
     | [Threads](https://www.threads.com/@gesundheitsakademiebohndorf)
 
-* Hana Gabriel (🇩🇪 | ⚕️)
+* Hana Gabriel 🇩🇪 ⚕️
     * [Facebook](https://www.facebook.com/profile.php?id=61578243483437)
     | [Instagram](https://www.instagram.com/hanagabr1el/)
     | [Threads](https://www.threads.com/@hanagabr1el)
-* Hannah Bair Gonzalez (🇬🇧 | ⚕️)
+* Hannah Bair Gonzalez 🇬🇧 ⚕️
     * [Instagram](https://www.instagram.com/hannahbair.g/)
     | [TikTok](https://www.tiktok.com/@hannahbair1218) 
     | [Linktree](https://linktr.ee/hannahbair1218)
 
-* Innenministerium Sachsen (🇩🇪 | :fire: | 👮)
+* Innenministerium Sachsen 🇩🇪 :fire: 👮
     * [Website](https://www.smi.sachsen.de/) 
     | [Facebook](https://www.facebook.com/SMIsachsen/)
     | [Instagram](https://www.instagram.com/smisachsen/) 
@@ -163,77 +163,77 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [Twitter/X](https://x.com/SMIsachsen)
     | [YouTube](https://www.youtube.com/@smisachsen)
 
-* Jan Kelle (🇩🇪 | :fire:)
+* Jan Kelle 🇩🇪 :fire:
     * [Website](https://flare-management.de/tc/jan-kelle/)
     | [Instagram](https://www.instagram.com/jankelle_/)
     | [TikTok](https://www.tiktok.com/@jankelle_)
     | [YouTube](https://www.youtube.com/@jankelle)
     | [Twitch](https://www.twitch.tv/jankelle)
     | [Linktree](https://linktr.ee/jankelle_)
-* Johanniter-Unfall-Hilfe Wilhelmshaven (🇩🇪 | ⚕️)
+* Johanniter-Unfall-Hilfe Wilhelmshaven 🇩🇪 ⚕️
     * [Instagram](https://www.instagram.com/johanniter_wilhelmshaven/)
 
-* Katha.shiftsfit (🇩🇪 | ⚕️)
+* Katha.shiftsfit 🇩🇪 ⚕️
     * [Instagram](https://www.instagram.com/katha.shiftsfit)
     | [TikTok](https://www.tiktok.com/@katha.shiftsfit)
 * "*Komm mal über Draht*" (Podcast 🇩🇪)
     * [Instagram](https://www.instagram.com/ueberdrahtpodcast/)
     | [Spotify](https://open.spotify.com/show/77Zp516i9v1D4h1Lst6dnj?si=b75249fdd40a4177)
-* Kreisfeuerwehr Oldenburg
+* Kreisfeuerwehr Oldenburg 🇩🇪 :fire:
     * [Website](https://kreisfeuerwehr-oldenburg.de)
     | [Presseportal](https://www.presseportal.de/blaulicht/nr/172811)
-* Kreisfeuerwehr Rotenburg (Wümme)
+* Kreisfeuerwehr Rotenburg (Wümme) 🇩🇪 :fire:
     * [Website](https://www.lk-row.de)
     | [PressPortal](https://www.presseportal.de/blaulicht/nr/134804)
 
-* Leo Liti (🇩🇪 | :fire:)
+* Leo Liti 🇩🇪 :fire:
     * [Instagram](https://www.instagram.com/leo.liti/)
     | [Threads](https://www.threads.com/@leo.liti)
-* Luis Teichmann / *5_sprechwunsch* (🇩🇪 | ⚕️)
+* Luis Teichmann / *5_sprechwunsch* 🇩🇪 ⚕️
     * [Instagram](https://www.instagram.com/5_sprechwunsch/)    
     | [Threads](https://www.threads.com/@5_sprechwunsch)
-* Luna lvk (🇩🇪 | :fire:)
+* Luna lvk 🇩🇪 :fire:
     * [Instagram](https://www.instagram.com/luna.lvk/)
     | [TikTok](https://www.tiktok.com/@luna.lvk)
 
-<!-- * Malte Brenneisen (🇩🇪 | :fire:)
+<!-- * Malte Brenneisen 🇩🇪 :fire:
     * [Instagram](https://www.instagram.com/brenneisen/)
     | [Threads](https://www.threads.com/@brenneisen) -->
-* mehr.ztin (🇩🇪 | ⚕️)
+* mehr.ztin 🇩🇪 ⚕️
     * [Instagram](https://www.instagram.com/mehr.ztin/)
     | [TikTok](https://www.tiktok.com/@mehr.ztin)
     | [YouTube](https://www.youtube.com/@mehrztin)
     | [Mail](mailto:mehrztin@wholesome-artists.de)
     | [Linktree](https://linktr.ee/mehr.ztin)
-* "*Mein Einsatz*" (Podcast 🇩🇪 | :fire:)
+* "*Mein Einsatz*" Podcast 🇩🇪 :fire:
     * [NDR/ARD Sounds](https://www.ardsounds.de/sendung/mein-einsatz-der-ndr-feuerwehr-podcast)
 
-* Nurse Gwenny (🇬🇧 | ⚕️)
+* Nurse Gwenny 🇬🇧 ⚕️
     * [Website](https://www.NurseGwenny.com) 
     | [Instagram](https://www.instagram.com/nursegwennyrn/) 
     | [TikTok](https://www.tiktok.com/@nurse.gwenny)
     | [YouTube](https://www.youtube.com/@NurseGwenny) 
     | [linktree](https://linktr.ee/NurseGwenny)
 
-* Polizei Hamburg (🇩🇪 | 👮)
+* Polizei Hamburg 🇩🇪 👮
     * [Website](https://www.polizei.hamburg/)
     | [Facebook](https://www.facebook.com/polizeihamburg)
     | [Instagram](https://www.instagram.com/polizeihamburg)
     | [LinkedIn](https://www.linkedin.com/company/polizeihamburg/)
     | [Twitter/X](https://x.com/polizeihamburg)
     | [YouTube](https://www.youtube.com/@PolizeiHamburgYoutube)
-* Polizei Frankfurt am Main (🇩🇪 | 👮)
+* Polizei Frankfurt am Main 🇩🇪 👮
     * [Website](https://www.polizei.hessen.de/polizeipraesidien/polizeipraesidium-frankfurt-am-main/)
     | [Facebook](https://www.facebook.com/PolizeiFrankfurt/)
     | [Instagram](https://www.instagram.com/polizei_ffm/)
     | [Twitter/X](https://x.com/Polizei_Ffm)
-* Polizeidirektion Hannover (🇩🇪 | 👮)
+* Polizeidirektion Hannover 🇩🇪 👮
     * [Website](https://www.pd-h.polizei-nds.de/startseite/)
-* Polizeikommissar Petermax (🇩🇪 | 👮)
+* Polizeikommissar Petermax 🇩🇪 👮
     * [Instagram](https://www.instagram.com/polizei.h.petermax/)
-* Polizeikommissarin Jasmin (🇩🇪 | 👮)
+* Polizeikommissarin Jasmin 🇩🇪 👮
     * [Instagram](https://www.instagram.com/polizei.h.jasmin/)
-* Prof. Dr. Thomas-Gabriel Rüdiger (🇩🇪 | 👮)
+* Prof. Dr. Thomas-Gabriel Rüdiger 🇩🇪 👮
     * [Instagram](https://www.instagram.com/cyberkriminologe)
     | [LinkedIn](https://www.linkedin.com/in/tgruediger/)
     | [Threads](https://www.threads.com/@cyberkriminologe)
@@ -241,7 +241,7 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [Twitter/X](https://x.com/TGRuediger)
     | [Linktree](https://linktr.ee/cyberkriminologe)
 
-* Robert Constantin (🇩🇪 | ⚕️)
+* Robert Constantin 🇩🇪 ⚕️
     * [Facebook](https://www.facebook.com/profile.php?id=61575781640043)
     | [Instagram](https://www.instagram.com/robmedc_official/)
     | [LinkedIn](https://www.linkedin.com/in/robert-constantin-9a4a2b383/)
@@ -249,25 +249,25 @@ Diskussion und Feedback sind ausdrücklich wilkommen.
     | [YouTube](https://www.youtube.com/@robmedc_official)
     | [Mail](mailto:robmedc@medworkmedia.com)
     | [Linktree](https://linktr.ee/robmedc)
-* Robert Lukasczyk / *Blaulicht Milieu* (🇩🇪 | ⚕️)
+* Robert Lukasczyk / *Blaulicht Milieu* 🇩🇪 ⚕️
     * [Website](https://blaulicht-milieu.de)
     | [Instagram](https://www.instagram.com/blaulicht.milieu/)
 
-* S.K.V. Nordost (🇩🇪 | :fire:)
+* S.K.V. Nordost 🇩🇪 :fire:
     * [Instagram](https://www.instagram.com/s.k.v.nordost/)
-* SDH Pozděchov (🇨🇿 | :fire:)
+* SDH Pozděchov 🇨🇿 :fire:
     * [Instagram](https://www.instagram.com/sdhpozdechov/)
-* South Carolina Air National Guard (🇬🇧 | :fire:)
+* South Carolina Air National Guard 🇬🇧 :fire:
     * [Facebook](https://www.facebook.com/scang.swampfox)
     | [Flickr](https://www.flickr.com/photos/thescang/albums/)
     | [Instagram](https://www.instagram.com/scairnationalguard/)
     | [Threads](https://www.threads.com/@scairnationalguard)
     | [YouTube](https://www.youtube.com/@SCAirNationalGuard)
 
-* *utoky_od_naty* (🇨🇿 | :fire:)
+* *utoky_od_naty* 🇨🇿 :fire:
     * [Instagram](https://www.instagram.com/utoky_od_naty/)
     | [Mail](mailto:utokyodnaty@gmail.com)
 
-* Wiebke Kempen Notärztin und Hausärztin (🇩🇪 | ⚕️)
+* Wiebke Kempen Notärztin und Hausärztin 🇩🇪 ⚕️
     * [Instagram](https://www.instagram.com/wiebodoc)
     | [Threads](https://www.threads.com/@wiebodoc)
