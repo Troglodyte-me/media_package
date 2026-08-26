@@ -18,4 +18,17 @@ In doubt, consult an expert/layer!
 
 Feedback and error correction always welcome.
 
-## Sources
+
+# Legal framework
+[here come some base laws and international standards to operate]
+
+# Ethics
+## Basic Principles
+1. verify important claims
+1. use at least two genuinely independent sources where practical
+1. distinguish observation from interpretation
+1. identify uncertainty
+1. do not let an image or quick comment imply more than they show
+1. preserve context
+1. correct mistakes openly
+1. consider the dignity and privacy of affected people
