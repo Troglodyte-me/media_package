@@ -17,6 +17,7 @@ Standard language is German. An English version for international audiences is p
     * [Shoot a Photo](./howto_tech.en.md)
     * [Process Images](./howto_post.en.md) 
     * [Picture Aesthetics](./howto_aesthetics.en.md)
+    * [Media Work](./howto_media.en.md)
 * **Tools & Prints**
     * GIMP PlugIn "Media Package" ([GIMP2](../tools/GIMP2/)|[GIMP3](../tools/GIMP3/plug-ins/kk_media_package/readme.md))
     * [Prints](../tools/prints/readme.md)

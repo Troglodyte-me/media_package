@@ -12,15 +12,16 @@ Die Standardsprache ist Deutsch. Für ein internationales Publikum wird lediglic
 Die Standardsprache ist Deutsch. Eine englische Version für ein internationales Publikum...
 
 # Navigation (EN)
-* **[Ethics & Legal](./ethics_legal.en.md)**
-* **HowTo**:
-    * [Shoot a Photo](./howto_tech.en.md)
-    * [Process Images](./howto_post.en.md) 
-    * [Picture Aesthetics](./howto_aesthetics.en.md)
+* **[Ethik & Legalität](./ethics_legal.de.md)**
+* **Wie geht... ?** 
+    * [Ein Photo schießen](./howto_tech.de.md)
+    * [Photos bearbeiten & veröffentlichen](./howto_post.de.md) 
+    * [Bildaesthetic](./howto_aesthetics.de.md)
+    * [Medienarbeit](./howto_media.de.md)
 * **Tools & Prints**
     * GIMP PlugIn "Media Package" ([GIMP2](../tools/GIMP2/)|[GIMP3](../tools/GIMP3/plug-ins/kk_media_package/readme.md))
     * [Prints](../tools/prints/readme.md)
-* **[Disclaimer](./DISCLAIMER.en.md)**
+* **[Disclaimer](./DISCLAIMER.de.md)**
 * **[Sources](./sources.md)** (multi-lingual)
 
 ---
