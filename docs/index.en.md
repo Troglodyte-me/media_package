@@ -1,15 +1,19 @@
-## 🇬🇧 Welcome to Media Package 
+## Welcome to Media Package 🇬🇧 
 
 # Media Documentation (Overview)
 
 Welcome to the documentation for the Fire Department Media Package. This repository serves as a central hub for media-related tasks for volunteer firefighters and other related use cases.
-This is a private project.
 
-Basic guidelines for photography and media handling for emergency services.
+This repository is a private project.
+Nothing here is set in stone, final or screened.
+Everything is open for debate. 
+Be aware of errors, stay critical and in doubt double-check. 
+If you find anything missing or wrong you are welcome to contribute and comment. 
 
-Standard language is German. Only a basic version is provided in English for international audiences.
+<!-- Basic guidelines for photography and media handling for emergency services. -->
 
-Standard language is German. An English version for international audiences is provided, although in its most basic version only.
+Standard language here is German. 
+Only a basic version is provided in English for international audiences.
 
 # Navigation
 * **[Ethics & Legal](./ethics_legal.en.md)**
