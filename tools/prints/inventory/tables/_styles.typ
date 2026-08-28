@@ -18,13 +18,16 @@
   filter: (auto, 1.8fr, 1.4fr, 1.2fr, 1.8fr, 2.4fr),
 )
 
-#let table_fill(theme) = (x, y) =>
+#let table_fill(theme) = (x, y) => {
   if y == 0 { theme.header_fill }
   else if calc.even(y) { theme.row_even_fill }
   else { theme.row_odd_fill }
+}
 
-#let table_stroke(theme) = (x, y) =>
+#let table_stroke(theme) = (x, y) => {
   if y == 0 { none } else { theme.body_stroke }
+}
 
-#let table_align = (col, row) =>
+#let table_align = (col, row) => {
   if row == 0 { center + horizon } else { left + horizon }
+}
