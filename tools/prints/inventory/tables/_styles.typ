@@ -9,13 +9,13 @@
 #let inventory_table_font_sizes = (
   camera: 7pt,
   lens: 8pt,
-  filter: 8.5pt,
+  filter: 7.4pt,
 )
 
 #let inventory_table_columns = (
   camera: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr, 3fr),
-  lens: (auto, 1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.9fr, 0.9fr, 1.2fr, 1.2fr, 1.8fr),
-  filter: (auto, 1.8fr, 1.4fr, 1.2fr, 1.8fr, 2.4fr),
+  lens: (auto, 2.2fr, 1.2fr, 0.9fr, 1.5fr, 0.9fr, 1.1fr, 1.2fr, 1.6fr, 2.8fr),
+  filter: (auto, 2.6fr, 1.1fr, 1.5fr, 1.8fr, 3fr),
 )
 
 #let table_fill(theme) = (x, y) => {

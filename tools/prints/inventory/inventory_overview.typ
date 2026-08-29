@@ -8,7 +8,9 @@
 
 #import "tables/_styles.typ": inventory_table_theme, inventory_table_font_sizes, inventory_table_columns
 #import "tables/camera_table.typ": render_camera_table
-
+#import "tables/lens_table.typ": render_lens_table
+#import "tables/filter_table.typ": render_filter_table
+// #import "tables/accessory_table.typ": render_accessory_table
 
 #set page(
   paper: "a4",
@@ -83,46 +85,6 @@ Kurzer Begriffserklärungs-Guide:
   font_size: inventory_table_font_sizes.camera,
 )
 
-// #let table-font-size = 7.0pt
-// == 1. Kameras / Cameras
-// #let camera-columns = (
-//   "ID",
-//   "Brand\nModel",
-//   "Camera Type",
-//   "Sensor\n(pixel)",
-//   "Mount/Lens",
-//   "Battery",
-//   "Storage",
-//   "Serial ID",
-//   "Location",
-//   "Notes",
-// )
-// #let camera-data = csv("cameras_inventory.csv", row-type: dictionary)
-// #let camera-field(row, key) = {
-//   row.at(key, default: row.at(" " + key, default: "")).trim()
-// }
-// #let stack-lines(lines) = {
-//   lines.filter(line => line != "").join("\n")
-// }
-// #table(
-//   columns: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr, 3fr),
-//   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
-//   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-//   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },// Table Headers with white text
-// ..camera-columns.map(header => text(fill: white, weight: "bold", size: table-font-size)[#header]),// Table Rows
-// ..camera-data.map(row => (
-//   text(size: table-font-size)[#camera-field(row, "id")],
-//   text(size: table-font-size)[#stack-lines((camera-field(row, "brand"), text(weight: "bold")[#camera-field(row, "model")]))],
-//   text(size: table-font-size)[#camera-field(row, "camera_type")],
-//   text(size: table-font-size)[#stack-lines((camera-field(row, "sensor"), camera-field(row, "pixel")))],
-//   text(size: table-font-size)[#stack-lines((camera-field(row, "mount"), camera-field(row, "lens_aperture"), camera-field(row, "lens_length")))],
-//   text(size: table-font-size)[#camera-field(row, "battery")],
-//   text(size: table-font-size)[#camera-field(row, "storage")],
-//   text(size: table-font-size)[#camera-field(row, "serial_id")],
-//   text(size: table-font-size)[#camera-field(row, "location")],
-//   text(size: table-font-size)[#camera-field(row, "notes")],
-// )).flatten()
-// )
 #v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
 AA = Alkaline battery (AA)
 
@@ -186,158 +148,22 @@ SLR = Spiegelreflexkamera / Single Lens Reflex (SLR)
 // == 3. Objektive / Lenses
 == 3. Objektive / Lenses
 #let lens_data = csv("lenses_inventory.csv", row-type: dictionary)
-#let lens_font_size = 7.2pt
-
-#let lens_field(row, key) = {
-  row.at(key, default: row.at(" " + key, default: "")).trim()
-}
-
-#let lens_missing(value) = {
-  if value == "" { "—" } else { value }
-}
-
-#let lens_stack(lines) = {
-  let filtered = lines.filter(line => line != "")
-  if filtered.len() == 0 { "—" } else { filtered.join("\n") }
-}
-
-#let lens_columns = (
-  (key: "id", header: "ID"),
-  (key: "lens", header: "Brand\nModel"),
-  (key: "focal", header: "Focal\nLength"),
-  (key: "aperture", header: "Aperture"),
-  (key: "compat", header: "Focus\nSystem / Mount"),
-  (key: "thread", header: "Filter\nThread"),
-  (key: "hood", header: "Hood"),
-  (key: "serial", header: "Serial ID"),
-  (key: "location", header: "Location"),
-  (key: "notes", header: "Notes"),
+#render_lens_table(
+  lens_data,
+  inventory_table_theme,
+  inventory_table_columns.lens,
+  font_size: inventory_table_font_sizes.lens,
 )
-
-#table(
-  columns: (auto, 2.2fr, 1.2fr, 0.9fr, 1.5fr, 0.9fr, 1.1fr, 1.2fr, 1.6fr, 2.8fr),
-  fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
-  stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
-  ..lens_columns.map(col => text(fill: white, weight: "bold", size: lens_font_size)[#col.header]),
-  ..lens_data.map(row => (
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "id"))],
-    text(size: lens_font_size)[
-      #lens_stack((
-        lens_field(row, "brand"),
-        text(weight: "bold")[#lens_field(row, "model")],
-      ))
-    ],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "focal_length"))],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "aperture"))],
-    text(size: lens_font_size)[
-      #lens_stack((
-        lens_field(row, "focus"),
-        lens_field(row, "system"),
-        lens_field(row, "mount"),
-      ))
-    ],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "filter_thread"))],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "hood"))],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "serial_id"))],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "location"))],
-    text(size: lens_font_size)[#lens_missing(lens_field(row, "notes"))],
-  )).flatten(),
-)
-// // == 3. Objektive / Lenses
-// // #let lens-columns = (
-// //   "id",
-// //   "brand", "model",
-// //   "focal_length",
-// //   "aperture",
-// //   "focus",
-// //   "system",
-// //   "mount",
-// //   "filter_thread",
-// //   "hood",
-// //   "serial_id",
-// //   "location",
-// //   "notes",
-// // )
-// // #let lens-data = csv("lenses_inventory.csv", row-type: dictionary)
-// // #table(
-// //   columns: (auto, 1.8fr, 1.2fr, 1.2fr, 0.8fr, 1fr, 1fr, 1fr, 0.7fr, 1.2fr, 1.2fr, 1.8fr),
-// //   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
-// //   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-// //   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..lens-columns.map(header => text(fill: white, weight: "bold", size: 8pt)[#header]),
-// // ..lens-data.map(row => lens-columns.map(col => text(size: 8pt)[#row.at(col, default: "")])).flatten()
-// // )
-// #v(16pt)// Section 4: Filters & Adapters
 
 == 4. Filter & Adapter / Filters & Adapters
 #let filter_data = csv("filters_inventory.csv", row-type: dictionary)
-#let filter_font_size = 7.4pt
-
-#let filter_field(row, key) = {
-  row.at(key, default: row.at(" " + key, default: "")).trim()
-}
-
-#let filter_missing(value) = {
-  if value == "" { "—" } else { value }
-}
-
-#let filter_stack(lines) = {
-  let filtered = lines.filter(line => line != "")
-  if filtered.len() == 0 { "—" } else { filtered.join("\n") }
-}
-
-#let filter_columns = (
-  (key: "id", header: "ID"),
-  (key: "filter", header: "Brand\nModel / Type"),
-  (key: "thread_size", header: "Thread\nSize"),
-  (key: "mount", header: "Mount\nCompatibility"),
-  (key: "location", header: "Location"),
-  (key: "notes", header: "Notes"),
+#render_filter_table(
+  filter_data,
+  inventory_table_theme,
+  inventory_table_columns.filter,
+  font_size: inventory_table_font_sizes.filter,
 )
 
-#table(
-  columns: (auto, 2.6fr, 1.1fr, 1.5fr, 1.8fr, 3fr),
-  fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
-  stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
-  ..filter_columns.map(col => text(fill: white, weight: "bold", size: filter_font_size)[#col.header]),
-  ..filter_data.map(row => (
-    text(size: filter_font_size)[#filter_missing(filter_field(row, "id"))],
-    text(size: filter_font_size)[
-      #filter_stack((
-        filter_field(row, "brand"),
-        filter_field(row, "model"),
-        filter_field(row, "filter_type"),
-      ))
-    ],
-    text(size: filter_font_size)[#filter_missing(filter_field(row, "thread_size"))],
-    text(size: filter_font_size)[
-      #filter_stack((
-        filter_field(row, "mount"),
-        filter_field(row, "system"),
-      ))
-    ],
-    text(size: filter_font_size)[#filter_missing(filter_field(row, "location"))],
-    text(size: filter_font_size)[#filter_missing(filter_field(row, "notes"))],
-  )).flatten(),
-)
-// == 4. Filter & Adapter / Filters & Adapters
-// #let filter-columns = (
-//   "id",
-//   "brand",
-//   "filter_type",
-//   "thread_size",
-//   "location",
-//   "notes",
-// )
-// #let filter-data = csv("filters_inventory.csv", row-type: dictionary)
-// #table(
-//   columns: (1.8fr, 3fr, 1.2fr, 1.5fr, 3fr),
-//   fill: (x, y) => if y == 0 { secondary-color } else if calc.even(y) { rgb("#f1f5f9") } else { white },
-//   stroke: (x, y) => if y == 0 { none } else { 0.4pt + rgb("#cbd5e1") },
-//   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },..filter-columns.map(header => text(fill: white, weight: "bold", size: 8.5pt)[#header]),
-//   ..filter-data.map(row => filter-columns.map(col => text(size: 8.5pt)[#row.at(col, default: "")])).flatten()
-// )
 == 5. Sonstiges & Zubehör / Miscellaneous & Accessories
 #grid(
   columns: (1fr, 1fr),
