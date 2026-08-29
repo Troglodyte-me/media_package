@@ -3,14 +3,12 @@
 // thanks at Google Gemini.Canvas for the inspiration and guidance on this project. The inventory overview is designed to provide a comprehensive snapshot of all cameras, lenses, filters, and accessories included in the media package. It includes detailed specifications, usage notes, and visual aids to help users understand the equipment's capabilities and applications.
 
 #let primary-color = rgb("#1a365d")
-#let secondary-color = rgb("#2b6cb0")
 #let light-bg = rgb("#f7fafc")
 
 #import "tables/_styles.typ": inventory_table_theme, inventory_table_font_sizes, inventory_table_columns
 #import "tables/camera_table.typ": render_camera_table
 #import "tables/lens_table.typ": render_lens_table
 #import "tables/filter_table.typ": render_filter_table
-// #import "tables/accessory_table.typ": render_accessory_table
 
 #set page(
   paper: "a4",
@@ -33,9 +31,8 @@
   size: 9.5pt,
   lang: "de"
 )
-#let primary-color = rgb("#1a365d")
-#let secondary-color = rgb("#2b6cb0")
-#let light-bg = rgb("#f7fafc")// Document Title Header
+
+// Document Title Header
 #align(center)[
   #block(
     fill: primary-color,
@@ -144,8 +141,6 @@ SLR = Spiegelreflexkamera / Single Lens Reflex (SLR)
       ]
   ]
 )
-// #v(16pt)// Section 3: Lenses
-// == 3. Objektive / Lenses
 == 3. Objektive / Lenses
 #let lens_data = csv("lenses_inventory.csv", row-type: dictionary)
 #render_lens_table(
