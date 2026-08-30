@@ -82,40 +82,7 @@ Kurzer Begriffserklärungs-Guide:
   font_size: inventory_table_font_sizes.camera,
 )
 
-#v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
-AA = Alkaline battery (AA)
-
-AF = Autofocus (AF) lens
-
-BLN-1 = Olympus BLM-1 Li-Ion battery
-
-BLS-1 = Olympus BLS-1 Li-Ion battery
-
-CCD = Charge-Coupled Device (CCD) image sensor
-
-CMOS = Complementary Metal-Oxide-Semiconductor (CMOS) image sensor
-
-Li-Ion = Lithium-Ion (Li-Ion) rechargeable battery
-
-LR44 = Button cell battery (LR44)
-
-MF = Manual Focus (MF) lens
-
-MFT or m4/3 = Micro Four Thirds / MFT-Systemkamera
-
-MP = Megapixel (MP) = 1 million pixels
-
-P/K = Pentax / K-Mount (P/K) lens mount
-
-SD = Secure Digital (SD) memory card
-
-SDHC = Secure Digital High Capacity (SDHC) memory card
-
-SDMC = Secure Digital MultiMediaCard (SD/MMC) memory card
-
-SDXC = Secure Digital eXtended Capacity (SDXC) memory card
-
-SLR = Spiegelreflexkamera / Single Lens Reflex (SLR)
+// #v(16pt)// Section 2: Focal Length & Sensor Field of View Visualizer
 
 #pagebreak()
 
