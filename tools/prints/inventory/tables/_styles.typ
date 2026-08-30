@@ -7,13 +7,13 @@
 )
 
 #let inventory_table_font_sizes = (
-  camera: 7pt,
+  camera: 6.8pt,
   lens: 8pt,
   filter: 7.4pt,
 )
 
 #let inventory_table_columns = (
-  camera: (auto, 2.2fr, 2fr, 1.8fr, 1.2fr, 1fr, 1fr, 1.2fr, 2fr, 3fr),
+  camera: (auto, 2.8fr, 1.25fr, 1.75fr, 1.45fr, 0.95fr, 0.9fr, 1fr, 3.1fr),
   lens: (auto, 2.2fr, 1.2fr, 0.9fr, 1.5fr, 0.9fr, 1.1fr, 1.2fr, 1.6fr, 2.8fr),
   filter: (auto, 2.6fr, 1.1fr, 1.5fr, 1.8fr, 3fr),
 )
