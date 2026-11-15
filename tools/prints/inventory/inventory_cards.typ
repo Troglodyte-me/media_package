@@ -17,7 +17,7 @@
 )
 
 // Read CSV rows as dictionaries (safely referencing columns by name)
-#let cards = csv("cameras_inventory.csv", row-type: dictionary)
+#let cards = csv(read("cameras_inventory_20260630.csv", encoding: "utf8"), row-type: dictionary)
 
 // Some CSV exports include leading spaces in header/value cells.
 #let field(card, key) = {
