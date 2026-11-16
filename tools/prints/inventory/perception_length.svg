@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="580" viewBox="0 0 1280 580" role="img" aria-labelledby="title description">
+  <title id="title">Photographic field of view by focal length and sensor diagonal</title>
+  <desc id="description">A chart of actual focal length from 0 to 300 millimetres against sensor diagonal normalized to a 43.3 millimetre full-frame diagonal. Diagonal 35, 50, and 70 millimetre full-frame-equivalent lines distinguish wide, normal, and telephoto conventions. Sensor formats are representative examples, and phone sensor types are illustrative rather than universal.</desc>
+  <metadata>
+    Sensor diagonal examples: medium format 44 by 33 mm, full frame 36 by 24 mm,
+    common APS-C example 23.5 by 15.6 mm, Micro Four Thirds 17.3 by 13 mm,
+    1/1.3-type approximately 12.6 mm diagonal, and 1/2.3-type approximately
+    7.7 mm diagonal. Phone sensor types vary by device.
+    References: https://en.wikipedia.org/wiki/Image_sensor_format
+    https://en.wikipedia.org/wiki/Angle_of_view_(photography)
+  </metadata>
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #1c2933; }
+      .muted { fill: #637580; }
+      .grid { stroke: #d9e2e5; stroke-width: 1; }
+      .axis { stroke: #637580; stroke-width: 1.5; }
+      .eq35 { stroke: #7d8f9b; stroke-width: 1.5; stroke-dasharray: 6 5; }
+      .eq50 { stroke: #e97132; stroke-width: 3; }
+      .eq70 { stroke: #7d8f9b; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    </style>
+  </defs>
+  <rect width="1280" height="580" fill="#ffffff"/>
+  <text x="20" y="34" font-size="24" font-weight="700" fill="#1a365d">Photographic field of view</text>
+  <text x="20" y="60" font-size="15" class="muted">Actual focal length vs sensor diagonal · phone examples are illustrative, not universal</text>
+  <text x="735" y="32" font-size="14" class="muted">θ = 2 atan(d / 2f)</text>
+  <text x="735" y="54" font-size="14" class="muted">FF equivalent = f × 43.3 / d</text>
+
+  <!-- Plot spans 0–300 mm and sensor-diagonal ratios 0–1.35. -->
+  <g>
+    <polygon points="190,470 190,120 353.8,120" fill="#edf3f7"/>
+    <polygon points="190,470 353.8,120 517.6,120" fill="#f3f5f6"/>
+    <polygon points="517.6,120 1230,120 1230,470 190,470" fill="#f7f3ef"/>
+
+    <line x1="190" y1="470" x2="1230" y2="470" class="grid"/>
+    <line x1="190" y1="405.2" x2="1230" y2="405.2" class="grid"/>
+    <line x1="190" y1="340.4" x2="1230" y2="340.4" class="grid"/>
+    <line x1="190" y1="275.6" x2="1230" y2="275.6" class="grid"/>
+    <line x1="190" y1="210.7" x2="1230" y2="210.7" stroke="#1a365d" stroke-width="2.2"/>
+    <line x1="190" y1="145.9" x2="1230" y2="145.9" class="grid"/>
+
+    <line x1="190" y1="120" x2="190" y2="470" class="axis"/>
+    <line x1="276.7" y1="120" x2="276.7" y2="470" class="grid"/>
+    <line x1="363.3" y1="120" x2="363.3" y2="470" class="grid"/>
+    <line x1="450" y1="120" x2="450" y2="470" class="grid"/>
+    <line x1="536.7" y1="120" x2="536.7" y2="470" class="grid"/>
+    <line x1="623.3" y1="120" x2="623.3" y2="470" class="grid"/>
+    <line x1="710" y1="120" x2="710" y2="470" class="grid"/>
+    <line x1="796.7" y1="120" x2="796.7" y2="470" class="grid"/>
+    <line x1="883.3" y1="120" x2="883.3" y2="470" class="grid"/>
+    <line x1="970" y1="120" x2="970" y2="470" class="grid"/>
+    <line x1="1056.7" y1="120" x2="1056.7" y2="470" class="grid"/>
+    <line x1="1143.3" y1="120" x2="1143.3" y2="470" class="grid"/>
+    <line x1="1230" y1="120" x2="1230" y2="470" class="axis"/>
+
+    <line x1="190" y1="470" x2="353.8" y2="120" class="eq35"/>
+    <line x1="190" y1="470" x2="424" y2="120" class="eq50"/>
+    <line x1="190" y1="470" x2="517.6" y2="120" class="eq70"/>
+
+    <text x="245" y="140" font-size="14" font-weight="700" fill="#1a365d">WIDE</text>
+    <text x="408" y="140" font-size="14" font-weight="700" fill="#1a365d">NORMAL</text>
+    <text x="845" y="140" font-size="14" font-weight="700" fill="#1a365d">TELEPHOTO</text>
+
+    <text x="305" y="228" font-size="12" class="muted" transform="rotate(-65 305 228)">35 mm eq</text>
+    <text x="355" y="225" font-size="13" font-weight="700" fill="#b84e1d" transform="rotate(-65 355 225)">50 mm eq</text>
+    <text x="417" y="228" font-size="12" class="muted" transform="rotate(-65 417 228)">70 mm eq</text>
+
+    <text x="179" y="474" text-anchor="end" font-size="13" class="muted">0</text>
+    <text x="179" y="410" text-anchor="end" font-size="13" class="muted">0.25</text>
+    <text x="179" y="345" text-anchor="end" font-size="13" class="muted">0.50</text>
+    <text x="179" y="280" text-anchor="end" font-size="13" class="muted">0.75</text>
+    <text x="179" y="215" text-anchor="end" font-size="13" font-weight="700" fill="#1a365d">1.00</text>
+    <text x="179" y="151" text-anchor="end" font-size="13" class="muted">1.25</text>
+
+    <text x="190" y="496" text-anchor="middle" font-size="13" class="muted">0</text>
+    <text x="276.7" y="496" text-anchor="middle" font-size="13" class="muted">25</text>
+    <text x="363.3" y="496" text-anchor="middle" font-size="13" class="muted">50</text>
+    <text x="450" y="496" text-anchor="middle" font-size="13" class="muted">75</text>
+    <text x="536.7" y="496" text-anchor="middle" font-size="13" class="muted">100</text>
+    <text x="623.3" y="496" text-anchor="middle" font-size="13" class="muted">125</text>
+    <text x="710" y="496" text-anchor="middle" font-size="13" class="muted">150</text>
+    <text x="796.7" y="496" text-anchor="middle" font-size="13" class="muted">175</text>
+    <text x="883.3" y="496" text-anchor="middle" font-size="13" class="muted">200</text>
+    <text x="970" y="496" text-anchor="middle" font-size="13" class="muted">225</text>
+    <text x="1056.7" y="496" text-anchor="middle" font-size="13" class="muted">250</text>
+    <text x="1143.3" y="496" text-anchor="middle" font-size="13" class="muted">275</text>
+    <text x="1230" y="496" text-anchor="middle" font-size="13" class="muted">300</text>
+    <text x="710" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#1a365d">Actual focal length (mm)</text>
+
+    <text x="12" y="142" font-size="14" font-weight="700" fill="#1a365d">MF 44×33 · 1.27×</text>
+    <text x="12" y="212" font-size="14" font-weight="700" fill="#1a365d">Full frame · 1.00×</text>
+    <text x="12" y="303" font-size="14" class="muted">APS-C · ≈0.65×</text>
+    <text x="12" y="342" font-size="14" class="muted">MFT · ≈0.50×</text>
+    <text x="12" y="397" font-size="14" class="muted">Phone 1/1.3-type · ≈0.29×</text>
+    <text x="12" y="426" font-size="14" class="muted">Phone 1/2.3-type · ≈0.18×</text>
+    <text x="710" y="557" text-anchor="middle" font-size="12" class="muted">Sensor diagonal ratio = diagonal ÷ 43.3 mm · examples are representative; dimensions vary by format and device</text>
+  </g>
+</svg>
