@@ -1,36 +1,33 @@
-# Inventory Print Procedure
+# Camera Inventory Print
 
-This folder contains Typst sources and CSV data for the inventory printouts.
+The bilingual camera inventory PDF is generated from `camera_inventory_overview.typ`.
+Shared data, localization, and table helpers live in `camera_inventory_common.typ`;
+the camera, lens, and accessory sections are in `sections/`.
 
-## Files and Responsibilities
-- `inventory_overview.typ`: Main document orchestration (sections, imports, page setup).
-- `inventory_cards.typ`: Card sheet generation with front/back imposition.
-- `tables/_styles.typ`: Shared table theme, font sizes, and column layouts.
-- `tables/camera_table.typ`: Reusable camera table renderer.
-- `tables/lens_table.typ`: Reusable lens table renderer.
-- `tables/filter_table.typ`: Reusable filter table renderer.
-- `cameras_inventory.csv`, `lenses_inventory.csv`, `filters_inventory.csv`: Source data.
+## Data and localization
 
-## Update Workflow
-1. Edit CSV data first.
-2. Keep CSV column names stable whenever possible.
-3. If layout changes are needed, update `tables/_styles.typ` for widths/font sizes.
-4. Keep section-specific formatting logic inside table modules, not in `inventory_overview.typ`.
-5. Re-run Typst diagnostics/build and verify no missing fields render as blanks.
+- `cameras_inventory_20261110.yaml` is the source of truth. Keep its top-level
+  `schema_version` at `1` unless the Typst renderers are updated for a new schema.
+- Each gear record has a stable, unique ID, a category, and an `availability`
+  boolean. Missing availability is treated as available. By default, unavailable
+  items are omitted; change `include-unavailable` in
+  `camera_inventory_common.typ` to include them.
+- UI strings and item prose are translated under `translations.en` and
+  `translations.de`. Set `print-locale` in `camera_inventory_common.typ` to `en`
+  or `de`; missing localized item fields fall back to English, then source data.
+- IDs must use the prefix associated with their category. The renderer checks
+  schema version, category coverage, ID uniqueness/prefixes, and availability
+  types during compilation.
 
-## Data Handling Rules
-- Renderers use trimmed dictionary access so CSV headers/values with leading spaces still resolve.
-- Missing values should display as an em dash (`—`) instead of empty content.
-- Multi-part cells (for example Brand + Model) should stack lines and collapse empty parts.
+## Build and review
 
-## Section Wiring Pattern
-In `inventory_overview.typ`, each section should follow this pattern:
-1. Import a `render_*_table` function from `tables/*.typ`.
-2. Load CSV with `csv(..., row-type: dictionary)`.
-3. Call renderer with:
-   - data
-   - `inventory_table_theme`
-   - matching `inventory_table_columns.*`
-   - matching `inventory_table_font_sizes.*`
+From this directory, compile with Typst:
 
-This keeps the main file clean and makes each table independently reusable.
+```powershell
+typst compile camera_inventory_overview.typ camera_inventory_overview.pdf
+```
+
+Review the resulting PDF in both locales after changing translations or layout.
+The overview uses the `tiaoma` Typst package for its footer QR code. Its
+perception chart is conceptual, spans actual focal lengths from 0 to 200 mm,
+and deliberately omits longer lenses.
