@@ -31,3 +31,10 @@ Review the resulting PDF in both locales after changing translations or layout.
 The overview uses the `tiaoma` Typst package for its footer QR code. Its
 perception chart is conceptual, spans actual focal lengths from 0 to 200 mm,
 and deliberately omits longer lenses.
+
+## Handoff notes
+
+For contributors or assistants picking up this work, see
+[`handoff/mission.md`](handoff/mission.md),
+[`handoff/conversation.md`](handoff/conversation.md), and
+[`handoff/progress.md`](handoff/progress.md).
