@@ -1,4 +1,4 @@
-#import "../camera_inventory_common.typ": *
+#import "../inventory_common.typ": *
 
 #let render-accessories() = {
   let accessory-categories = ("filter", "thread-adapter", "iris", "hood")

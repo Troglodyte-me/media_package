@@ -1,4 +1,4 @@
-#import "../camera_inventory_common.typ": *
+#import "../inventory_common.typ": *
 
 #let render-cameras() = {
   let cameras = {

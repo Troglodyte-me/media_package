@@ -11,7 +11,7 @@
 // [~] Battery capacity filtering is deferred; generic gear is counted in the PDF.
 
 #import "@preview/tiaoma:0.3.0": qrcode
-#import "camera_inventory_common.typ": *
+#import "inventory_common.typ": *
 #import "sections/cameras.typ": render-cameras
 #import "sections/lenses.typ": render-lenses
 #import "sections/accessories.typ": render-accessories
